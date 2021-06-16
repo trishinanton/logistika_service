@@ -17,14 +17,9 @@
     background: url(../img/main_screen/industrial-port-container-yard\ 1.png) no-repeat ;
     background-size:cover;
     color: white;
-    
-    &__gradient{
-        background: linear-gradient(0deg, #2B2B51 -6.39%, rgba(43, 43, 81, 0) 110.94%);
-        width: 100vw;
-        height: 100vh;
-    }
     &__wrapper{
-        background: linear-gradient(180deg, #2B2B51 2.92%, rgba(255, 255, 255, 0.07) 54.17%);
+        background-image: url(../img/main_screen/gradient.png);
+        background-size: cover;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -32,14 +27,15 @@
         height: 100vh;
     }
     &__header{
-        padding: 16px 60px;
+        padding-top: 16px;
+        box-sizing: border-box;
     }
 }
 .header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    // border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     position: relative;
     &__number{
         font-family: Arial;
@@ -59,6 +55,7 @@
             transform: rotate(-90deg);
         }
     }
+    
 }
 .logo{
     display: flex;
@@ -72,6 +69,16 @@
         font-style: normal;
         font-size: 18px;
         line-height: 21px;
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            background-image: url(../img/main_screen/logo_white\ 1.png);
+            background-size: cover;
+            width: 74px;
+            height: 65.24px;
+            transform: translateX(-110%);
+        }
     }
 }
 .button{
@@ -192,22 +199,32 @@
 .grid{
     display: flex;
     justify-content: space-between;
-    height: 200vh;
+    height: 100vh;
     width: 100%;
     position: absolute;
-    top: -100%;
+    top:0;
     right: 0;
     &__block{
         border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    &-vertical__block{
+        width: 100vw;
+        height: 95px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
 }
 .body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 75vh;
 }
 .main{
     &-body{
+        // margin-top: 20vh;
     &__name{
         font-family: Arial;
         font-style: normal;
@@ -228,7 +245,7 @@
 &-footer{
     &__advantage{
         margin-left: 31px;
-        margin-top: 10vh;
+        // margin-top: 7vh;
     }
 }
 &-skgroup{
