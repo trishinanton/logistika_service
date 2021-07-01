@@ -517,7 +517,7 @@
 }
 .excellence-card__delivery:before {
   content: '';
-  background-image: url(../img/excellence/finance.png);
+  background-image: url(../img/excellence/delivery_black.png);
   background-size: cover;
   position: absolute;
   width: 87.56px;
@@ -1020,4 +1020,102 @@
   line-height: 21px;
   color: #737272;
   margin-top: 42px;
+}
+.question {
+  background-color: #2B2B51;
+  position: relative;
+  height: 658px;
+  width: 100%;
+}
+.question::before {
+  content: '';
+  position: absolute;
+  background-image: url(../img/question/woman.png);
+  background-size: cover;
+  width: 527px;
+  height: 585px;
+  right: 0px;
+  z-index: 1;
+  top: 50px;
+}
+.question__white-fon {
+  position: absolute;
+  background: white;
+  height: 658px;
+  width: 30%;
+  right: 0;
+  top: 0;
+}
+.question__name {
+  font-size: 42px;
+  line-height: 87px;
+}
+.question__name:after {
+  content: '';
+  position: absolute;
+  background-image: url(../img/about/Крестики\ --\ под\ заголовки.png);
+  background-size: cover;
+  z-index: 2;
+  width: 110px;
+  height: 62px;
+  top: -17px;
+  right: -65px;
+}
+.question__subname {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 42px;
+  line-height: 37px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 2px #FFFFFF;
+  position: relative;
+  display: inline-block;
+}
+.question-form {
+  margin-top: 117px;
+}
+.question-form__contact {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 36px;
+}
+.question-form__send {
+  display: flex;
+  flex-direction: row;
+}
+.question-form__button {
+  width: 305.32px;
+  height: 58.52px;
+  background: #F07676;
+  border: 2px solid #F07676;
+  box-sizing: border-box;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  padding-top: 17px;
+}
+.question-form__name {
+  margin-right: 36px;
+}
+.question-form__email {
+  margin-right: 36px;
+}
+.question .form {
+  background-color: transparent;
+  border: 2px solid #FFFFFF;
+  width: 305.32px;
+  height: 58.52px;
+  box-sizing: border-box;
+  padding-left: 32px;
+}
+.question .form::placeholder {
+  color: white;
+  font-family: Arial;
+  font-size: 18px;
 }
