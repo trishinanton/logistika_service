@@ -11,9 +11,9 @@
     padding: 0;
 }
 .container{
-    min-width: 1150px;
-    max-width: 1150px;
+    max-width: 1200px;
     margin: 0 auto;
+    position: relative;
     &-fluid{
         width: 100vw;
     }
@@ -49,48 +49,58 @@
     // border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     &__info{
         display: flex;
-        justify-content: space-between;
-        width: 40%;
+        justify-content: flex-end;
         align-items: center;
+    }
+    &-menu{
+        margin-left: 33px;
+    }
+    &__button{
+        margin-left: 14px;
     }
     &__number{
         font-family: 'Arial';
         font-style: normal;
-        font-weight: bold;
-        font-size: 18px;
+        font-weight: 700;
+        font-size: 24px;
         line-height: 21px;
     }
     &__menu{
         font-family: 'Arial';
         font-style: normal;
-        font-weight: bold;
-        font-size: 18px;
+        font-weight: 700;
+        font-size: 24px;
         line-height: 23px;
         text-transform: uppercase;
         &-active{
             transform: rotate(-90deg);
         }
     }
+    &__logo{
+        // transform: translateX(-97px);
+        margin-left: 20px;
+    }
     
 }
 .logo{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     & img{
         background-size: cover;
     }
     &-image{
-        width: 176px;
-        height: 153px;
+        width: 196px;
+        height: 173px;
         margin-right: 31px;
     }
     &-name{
-        font-family: 'Roboto'; 
+        font-family: 'Arial'; 
         font-style: normal;
         font-weight: 900;
-        font-size: 18px;
+        font-size: 22px;
         text-transform: uppercase;
         position: relative;
+        margin-top: 26px;
         /* &:before{
             content: '';
             position: absolute;
@@ -105,8 +115,8 @@
 .button{
     font-family: 'Arial';
     font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
+    font-weight: 400;
+    font-size: 18px;
     line-height: 18px;
     text-align: center;
     padding-top: 9px;
@@ -254,7 +264,7 @@
     }
     &-vertical__block{
         width: 100vw;
-        height: 203px;
+        height: 195px;
         position: absolute;
         top: 0;
         right: 0;
@@ -276,16 +286,17 @@
         font-style: normal;
         font-size: 22px;
         line-height: 35px;
+        font-weight: 400;
         &-uppercase{
             text-transform: uppercase;
-            font-weight: bold;
+            font-weight: 600;
         }
     }
     &__description{
         
         font-size: 36px;
         line-height: 50px;
-        font-weight: bold;
+        font-weight: 900;
     }
 }
 &-footer{
@@ -297,8 +308,8 @@
 }
 &-skgroup{
     font-family: 'Arial';
-    font-size: 133px;
-    line-height: 110px;
+    font-size: 10.9vw;
+    line-height: 8vw;
     text-transform: uppercase;
     text-align: center;
     font-weight: bold;
@@ -317,7 +328,7 @@
     &__wrapper{
         width: 24.62px;
         height: 49.23px;
-        transform: translateX(-150%);
+        transform: translateX(-200%);
         position: relative;
         margin-bottom: 9vh;
         &:after{
@@ -1099,6 +1110,36 @@
     position: relative;
     height: 658px;
     width: 100%;
+    &__wrapper{
+        position: relative;
+        height: 100%;
+        &:after{
+            content: '';
+            width: 62.39px;
+            height: 62.39px;
+            position: absolute;
+            border: 15px solid #FFFFFF;
+            box-sizing: border-box;
+            filter: blur(3px);
+            transform: rotate(-45deg);
+            top: 64%;
+            left: -18px;
+            box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+        }
+    }
+    &::after{
+        content: '';
+    width: 90.35px;
+    height: 90.35px;
+    position: absolute;
+    border: 20px solid #FFFFFF;
+    box-sizing: border-box;
+    filter: blur(2px);
+    transform: rotate(-23deg);
+    bottom: 0;
+    left: 15%;
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+    }
     &::before{
         content: '';
         position: absolute;
