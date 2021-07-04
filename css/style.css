@@ -830,6 +830,7 @@ body {
   position: relative;
   width: 46px;
   height: 46px;
+  z-index: 1;
 }
 .cooperation .stages__wrapper:first-child {
   margin-left: -23px;
@@ -1297,6 +1298,7 @@ body {
 .footer__wrapper {
   display: flex;
   justify-content: space-between;
+  padding: 22px 24px 22px 15px;
 }
 .footer-logo {
   display: flex;
@@ -1306,4 +1308,64 @@ body {
   font-weight: 900;
   font-size: 18px;
   color: #FFFFFF;
+  padding-left: 13px;
+  text-transform: uppercase;
+  width: 328px;
+  padding-top: 20px;
+}
+.footer-services__name {
+  font-family: 'Arial';
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 18px;
+  color: #FFFFFF;
+}
+.footer-services__description {
+  font-family: 'Arial';
+  font-weight: 400;
+  font-size: 18px;
+  color: #FFFFFF;
+  line-height: 27px;
+}
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-contact__phone {
+  font-family: 'Arial';
+  font-weight: normal;
+  font-size: 18px;
+  color: #FFFFFF;
+  position: relative;
+}
+.footer-contact__phone:before {
+  content: '';
+  background-image: url(../img/contact/wats_footer.png);
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -30px;
+}
+.footer-contact__politics {
+  font-family: 'Arial';
+  font-weight: normal;
+  font-size: 18px;
+  color: #D5D5D5;
+  text-decoration-line: underline;
+  padding-top: 23px;
+}
+.good-product {
+  height: 40px;
+  background: #2B2B51;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.good-product__name {
+  font-family: 'Arial';
+  font-weight: normal;
+  font-size: 18px;
+  color: #D5D5D5;
 }
