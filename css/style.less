@@ -14,10 +14,11 @@ body{
     overflow-x: hidden;
 }
 .container{
-    min-width: 1200px;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
+    // min-width: 1200px;
+    // max-width: 1200px;
+    padding: 0 10%;
+    // margin: 0 auto;
+    // position: relative;
     &-fluid{
         width: 100vw;
     }
@@ -25,20 +26,15 @@ body{
 .main-screen{
     width: 100vw;
     height: 100vh;
-    background: url(../img/main_screen/industrial-port-container-yard\ 1.png) no-repeat ;
+    background: url(../img/main_screen/main_bacground.png) no-repeat ;
     background-size:cover;
     color: white;
-    &__wrapper{
-        background-image: url(../img/main_screen/gradient.png);
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 100vw;
-        height: 100vh;
-    }
+    background-position: 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     &__header{
-        padding-top: 16px;
+        padding: 16px 3% 0;
         box-sizing: border-box;
         position: absolute;
         width: 100%;
@@ -80,10 +76,7 @@ body{
             transform: rotate(-90deg);
         }
     }
-    &__logo{
-        // transform: translateX(-97px);
-        margin-left: 20px;
-    }
+    
     
 }
 .logo{
@@ -271,6 +264,7 @@ body{
     box-sizing: border-box;
     z-index: 1;
     position: absolute;
+    padding: 0 10%;
     &__block{
         &-white{
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -297,7 +291,7 @@ body{
 .main{
     &-body{
         font-family: 'Arial';
-        // margin-top: 20vh;
+        margin-top: 45px;
     &__name{
         
         font-style: normal;
@@ -426,7 +420,6 @@ body{
     &__name{
         position: relative;
         margin-top: 55px;
-        width: 87%;
     }
     
     &__content{
@@ -436,6 +429,7 @@ body{
     &__description{
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
         width: 50%;
         height: 662px;
     }
@@ -549,11 +543,12 @@ body{
         width: 110px;
         height: 62px;
         top: -17px;
-        right: -50px;
+        right: -57px;
 
     }
 }
 .excellence{
+    position: relative;
     &__name{
         margin-top: 101px;
         margin-bottom: 64px;
@@ -574,6 +569,8 @@ body{
         box-shadow: 0 0 45px rgba(0,0,0,0.2);
         margin-bottom: 105px;
         position: relative;
+        z-index: 1;
+        background-color: white;
         &__delivery{
             &:before{
                 content: '';
@@ -707,6 +704,8 @@ body{
 }
 
 .services{
+    position: relative;
+    height: 850px;
     &__name{
         margin-top: 100px;
         margin-bottom: 71px;
@@ -716,7 +715,6 @@ body{
         display: flex;
         flex-direction: row;
         justify-content: center;
-        margin-bottom: 104px;
         font-family: 'Roboto'; 
         font-style: normal;
         font-weight: 900;
@@ -724,6 +722,8 @@ body{
         line-height: 30px;
         color: #FFFFFF;
         box-shadow: 0px 4px 13px #a5a5c5;
+        position: relative;
+        z-index: 2;
     }
     &-card{
         height: 497px;
@@ -837,19 +837,31 @@ body{
         left: -0.5%;
         box-shadow: 0 0 10px rgb(0 0 0 / 20%);
     }
+    &__band{
+        position: absolute;
+        height: 0px;
+        width: 100%;
+        background-color: #C4C4C4;
+        border: 1.5px solid #C4C4C4;
+        bottom: 22px;
+        left: 0px;
+    }
     &__wrapper{
         display: flex;
         flex-direction: column;
+        position: relative;
     }
     &__name{
         font-size: 58px;
         margin-top: 56px;
+        width: 1146px;
     }
     &__body{
         margin-top: 180px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
     }
     & .stages{
         border: 2px solid #FFFFFF;
@@ -858,7 +870,7 @@ body{
         box-sizing: border-box;
         transform: rotate(45deg);
         position: relative;
-        z-index: 1;
+        background-color: #2B2B51;
         &__wrapper{
             position: relative;
             width: 46px;
@@ -876,16 +888,16 @@ body{
                     width: 0px;
                 }
             }
-            &:after{
-                content: '';
-                position: absolute;
-                height: 0px;
-                width: 130px;
-                background-color: #C4C4C4;
-                border: 1.5px solid #C4C4C4;
-                bottom: 22px;
-                left: 53px;
-            }
+            // &:after{
+            //     content: '';
+            //     position: absolute;
+            //     height: 0px;
+            //     width: 130px;
+            //     background-color: #C4C4C4;
+            //     border: 1.5px solid #C4C4C4;
+            //     bottom: 22px;
+            //     left: 53px;
+            // }
             &:nth-child(odd){
                 &:before{
                     content: '';
@@ -1063,6 +1075,7 @@ body{
 }
 
 .reviews{
+    position: relative;
     &__name{
         -webkit-text-stroke: 2px #5b5b91;
         margin-top: 86px;
@@ -1081,6 +1094,7 @@ body{
         box-sizing: border-box;
         margin-bottom: 40px;
         position: relative;
+        z-index: 1;
         &::before{
             content: '';
             position: absolute;
@@ -1165,17 +1179,6 @@ body{
     left: 15%;
     box-shadow: 0 0 10px rgb(0 0 0 / 20%);
     }
-    &::before{
-        content: '';
-        position: absolute;
-        background-image: url(../img/question/woman.png);
-        background-size: cover;
-        width: 527px;
-        height: 585px;
-        right: 0px;
-        z-index: 1;
-        top: 50px;
-    }
     &__white-fon{
         position: absolute;
         background: white;
@@ -1187,6 +1190,7 @@ body{
     &__name{
         font-size: 42px;
         line-height: 87px;
+        margin-top: 66px;
         &:after{
             content: '';
             position: absolute;
@@ -1237,6 +1241,22 @@ body{
             color: white;
             text-align: center;
             padding-top: 17px;
+            position: relative;
+            z-index: 1;
+            &:hover{
+                cursor: pointer;
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                background-image: url(../img/question/woman.png);
+                background-size: cover;
+                width: 527px;
+                height: 585px;
+                z-index: 1;
+                bottom: -176px;
+                left: 362px; 
+            }
             
         }
         &__name{
@@ -1253,6 +1273,10 @@ body{
         height: 58.52px;
         box-sizing: border-box;
         padding-left: 32px;
+        outline: none;
+        color: white;
+        font-size: 18px;
+        font-weight: 400;
         &::placeholder{
             color: white;
             font-family: Arial;
@@ -1262,26 +1286,113 @@ body{
 }
 
 .contact{
+    position: relative;
+    &__wrapper{
+        position: relative;
+    }
     &__name{
        -webkit-text-stroke: 2px #2B2B51;
         margin-top: 86px; 
     }
     &__map{
         position: relative;
-        z-index: 1;
-        &::before{
+        margin-top: 67px;
+        right: 0;
+        display: flex;
+        justify-content: flex-end;
+        &::after{
             content: '';
             position: absolute;
             width: 835px;
             height: 461px;
             background: #2B2B51;
             z-index: 0;
-            bottom: 18px;
-            left: 26px;
+            bottom: 14px;
+            right: -17px;
         }
     }
-    & map{
+    & .map{
         width: 835px;
         height: 461px;
+        z-index: 1;
+        position: relative;
+    }
+    & .our-address{
+        background-color: white;
+        box-shadow: 0px 4px 20px rgba(43, 43, 81, 0.15);
+        width: 567px;
+        height: 321px;
+        box-sizing: border-box;
+        position: relative;
+        &__wrapper{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+        }
+        &:after{
+            content: '';
+            width: 56.26px;
+            height: 56.26px;
+            position: absolute;
+            border: 15px solid #2B2B51;
+            box-sizing: border-box;
+            transform: rotate(-45deg);
+            top: 152px;
+            left: -28px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+        }
+        &:before{
+            content: '';
+            background-image: url(../img/contact/rhombus_with_icon.png);
+            background-size: cover;
+            position: absolute;
+            width: 139.88px;
+            height: 139.88px;
+            top: -48px;
+            right: -40px;
+            z-index: 1;
+        }
+        &__title{
+            font-family: 'Arial';
+            font-size: 36px;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #2B2B51;
+            padding-top: 34px;
+            padding-left: 57px;
+        }
+        &__name{
+            font-family: 'Arial';
+            font-weight: normal;
+            font-size: 24px;
+            font-weight: normal;
+            color: #2B2B51;
+            padding-top: 20px;
+            padding-left: 57px;
+        }
+        &__social{
+            display: flex;
+            justify-content: space-between;
+            padding: 36px 71px 56px 73px ;
+        }
+    }
+}
+
+
+.footer{
+    background: #1B1B36;
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+    }
+    &-logo{
+        display: flex;
+        &__name{
+            font-family: 'Arial';
+            font-weight: 900;
+            font-size: 18px;
+            color: #FFFFFF;
+        }
     }
 }
