@@ -11,6 +11,7 @@
   padding: 0;
 }
 .container {
+  min-width: 1200px;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
@@ -20,7 +21,7 @@
 }
 .main-screen {
   width: 100vw;
-  height: 100vh;
+  height: 97.5vh;
   background: url(../img/main_screen/industrial-port-container-yard\ 1.png) no-repeat;
   background-size: cover;
   color: white;
@@ -90,6 +91,11 @@
   width: 196px;
   height: 173px;
   margin-right: 31px;
+  position: relative;
+  z-index: 2;
+}
+.logo-image:hover {
+  cursor: pointer;
 }
 .logo-name {
   font-family: 'Arial';
@@ -121,6 +127,8 @@
   height: 40px;
   border: 2px solid #FFFFFF;
   box-sizing: border-box;
+  position: relative;
+  z-index: 2;
 }
 .button:hover {
   background-color: white;
@@ -134,7 +142,7 @@
   transition: all 1s ease 0s;
   transform-origin: 100% 0;
   z-index: 3;
-  margin-right: 25px;
+  margin-right: 40px;
 }
 .menu__span {
   width: 20.67px;
@@ -200,6 +208,10 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.active-content__number {
+  font-weight: 400;
+  font-size: 18px;
+}
 @keyframes show_menu_contant {
   0% {
     transform: translateX(500px);
@@ -246,10 +258,12 @@
   justify-content: space-between;
   height: 100%;
   width: 100%;
-  position: absolute;
+  padding: 0px 6%;
   top: 0;
   right: 0;
+  box-sizing: border-box;
   z-index: 1;
+  position: absolute;
 }
 .grid__block-white {
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -297,11 +311,11 @@
 }
 .main-skgroup {
   font-family: 'Arial';
-  font-size: 10.9vw;
+  font-size: 9.8vw;
+  font-weight: 900;
   line-height: 8vw;
   text-transform: uppercase;
   text-align: center;
-  font-weight: bold;
   color: transparent;
   -webkit-text-stroke: 2px rgba(255, 255, 255, 0.14);
   position: absolute;
@@ -373,8 +387,9 @@
   position: absolute;
   width: 62.39px;
   height: 62.39px;
-  right: -2.3%;
-  bottom: 5%;
+  right: -27.3px;
+  bottom: 32px;
+  filter: blur(2px);
 }
 .about:after {
   content: '';
@@ -385,14 +400,14 @@
   box-sizing: border-box;
   filter: blur(2px);
   transform: rotate(-45deg);
-  bottom: -6%;
-  right: 3%;
+  bottom: -31px;
+  right: 45px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .about__name {
   position: relative;
   margin-top: 55px;
-  width: 90%;
+  width: 87%;
 }
 .about__content {
   display: flex;
@@ -413,11 +428,11 @@
   font-family: 'Arial';
   font-style: normal;
   font-size: 18px;
+  font-weight: 400;
 }
 .about__sliders {
   display: flex;
   justify-content: flex-end;
-  margin-top: 150px;
 }
 .sliders__number {
   font-family: Arial;
@@ -426,18 +441,23 @@
   font-size: 15px;
   line-height: 17px;
   text-transform: lowercase;
-  position: relative;
-  z-index: 1;
   color: rgba(255, 255, 255, 0.4);
   display: flex;
   justify-content: flex-end;
   top: 55px;
+  margin-top: 59px;
+  margin-right: 20px;
 }
 .sliders__wrapper {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .sliders__wrapper-img {
   position: relative;
+  margin-top: 40px;
+  margin-right: 20px;
 }
 .sliders__wrapper-img:before {
   content: '';
@@ -469,7 +489,8 @@
   z-index: 1;
   display: flex;
   justify-content: flex-end;
-  margin-top: 36px;
+  margin-top: 26px;
+  margin-right: 20px;
 }
 .button-slide {
   width: 40px;
@@ -506,7 +527,7 @@
 }
 .excellence__name {
   margin-top: 101px;
-  margin-bottom: 71px;
+  margin-bottom: 64px;
   -webkit-text-stroke: 2px #5b5b91;
 }
 .excellence__description {
@@ -522,7 +543,7 @@
   width: 30%;
   height: 160px;
   box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
-  margin-bottom: 77px;
+  margin-bottom: 105px;
   position: relative;
 }
 .excellence-card__delivery:before {
@@ -678,7 +699,7 @@
   background-size: cover;
 }
 .services-card__counseling {
-  background-image: url(../img/services/counseling.png);
+  background-image: url(../img/services/cargo.png);
   background-size: cover;
 }
 .services-card-active {
@@ -1158,4 +1179,26 @@
   color: white;
   font-family: Arial;
   font-size: 18px;
+}
+.contact__name {
+  -webkit-text-stroke: 2px #2B2B51;
+  margin-top: 86px;
+}
+.contact__map {
+  position: relative;
+  z-index: 1;
+}
+.contact__map::before {
+  content: '';
+  position: absolute;
+  width: 835px;
+  height: 461px;
+  background: #2B2B51;
+  z-index: 0;
+  bottom: 18px;
+  left: 26px;
+}
+.contact map {
+  width: 835px;
+  height: 461px;
 }
