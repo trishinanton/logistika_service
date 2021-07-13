@@ -1,8 +1,22 @@
+// import '@/css/style.css'
+// import '@/css/style.less'
+
+// import * as $ from 'jquery'
+
 let menu = document.querySelector('.menu');
 let excellenceCard = document.querySelectorAll('.excellence-card');
 let arrExcellenceCard = Array.prototype.slice.call(excellenceCard);
 let servicesCard = document.querySelectorAll('.services-card');
 let arrServicesCard = Array.prototype.slice.call(servicesCard);
+
+let arrExcellenceCardActive = [
+    'excellence-card-active__delivery', 
+    'excellence-card-active__finance',
+    'excellence-card-active__document',
+    'excellence-card-active__optimization',
+    'excellence-card-active__oneWindow',
+    'excellence-card-active__guarantee'
+]
 
 menu.addEventListener('click',()=>{
     menu.classList.toggle('menu-active');
@@ -16,12 +30,18 @@ menu.addEventListener('click',()=>{
 });
 
 arrExcellenceCard.map((el,i)=>{
-    el.addEventListener('mouseover', ()=>{
-        el.classList.add('excellence-card-active')
-    });
-    el.addEventListener('mouseout', ()=>{
-        el.classList.remove('excellence-card-active')
-    });
+    arrExcellenceCardActive.map((ela,j)=>{
+        el.addEventListener('mouseover', ()=>{
+            if(i==j) el.classList.add(ela)
+        });    
+        el.addEventListener('mouseout', ()=>{
+        el.classList.remove(ela)
+        });
+       
+    
+    })
+    
+    
 });
 
 arrServicesCard.map((el,i)=>{
