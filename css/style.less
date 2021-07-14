@@ -67,6 +67,10 @@ body{
         font-weight: 700;
         font-size: 24px;
         line-height: 21px;
+        &>a{
+            text-decoration: none;
+            color: white;
+        }
     }
     &__menu{
         font-family: 'Arial';
@@ -307,7 +311,7 @@ body{
     }
     &__description{
         
-        font-size: 36px;
+        font-size: 32px;
         line-height: 50px;
         font-weight: 900;
     }
@@ -323,7 +327,7 @@ body{
     font-family: 'Arial';
     font-size: 9.8vw;
     font-weight: 900;
-    // line-height: 8vw;
+    line-height: 84%;
     text-transform: uppercase;
     text-align: center;
     color: transparent;
@@ -333,7 +337,7 @@ body{
     left: 0;
     bottom: 0;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
 }
 &-scroll{
     &__img{
@@ -367,6 +371,24 @@ body{
     }
     100%{
         transform: translateY(0px)
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .main{
+        &-body{
+            &__description{
+                font-size: 30px;
+            }
+        }
+    }
+    .advantage{
+        &__name{
+            &-wsize{
+              width: 325px;  
+            }
+            
+        }
     }
 }
 
@@ -440,6 +462,7 @@ body{
         height: 662px;
     }
     &__purpose{
+        line-height: 22px;
         margin-right: 60px;
         margin-left: 4px;
         color: white; 
@@ -558,6 +581,45 @@ body{
 
     }
 }
+@media(min-width: 1280px) and (max-width: 1670px){
+    .sliders{
+        &__wrapper{
+            &-img{
+                &:before{
+                    width: 412px;
+                    height: 294px;
+                }
+            }
+        }
+        &__img{
+            width: 420px;
+            height: 291px;
+        }
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .about{
+        &__name{
+            font-size: 60px;
+        }
+    }
+    .sliders{
+        &__wrapper{
+            &-img{
+                &:before{
+                    // content: '';
+                    width: 383px;
+                    height: 294px;
+                }
+            }
+        }
+        &__img{
+            width: 391px;
+            height: 291px;
+        }
+    }
+}
 .excellence{
     position: relative;
     z-index: 1;
@@ -576,7 +638,7 @@ body{
     &-card{
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: space-between;
         box-sizing: border-box;
         width: 30%;
         height: 160px;
@@ -585,7 +647,7 @@ body{
         position: relative;
         z-index: 1;
         background-color: white;
-        padding-bottom: 30px;
+        padding: 26px 54px 32px 32px;
         
         &__delivery{
             &:before{
@@ -599,7 +661,8 @@ body{
                 right: -28px;
             }
             & > .excellence-card__name{
-                margin-bottom: 28px;
+                // margin-top: 26px;
+                // margin-bottom: 26px;
             }
         }
         &__finance{
@@ -638,7 +701,8 @@ body{
                 right: -28px;
             }
             & > .excellence-card__name{
-                margin-bottom: 28px;
+                // margin-top: 26px;
+                // margin-bottom: 26px;
             }
         }
         &__oneWindow{
@@ -870,23 +934,156 @@ body{
             }
         }
         &__name{
-            margin-bottom: 16px;
-            margin-left: 10px;
-            margin-right: 98px;
+            // margin-bottom: 10px;
+            // margin-top: 26px;
+            // margin-left: 22px;
+            margin-right: 65px;
             font-family: Arial;
             font-weight: 900;
             font-size: 18px;
             color: #2B2B51;
         }
         &__description{
-            margin-left: 10px;
-            margin-right: 50px;
+            // margin-left: 22px;
+            // margin-right: 50px;
             font-family: Arial;
             font-style: normal;
             font-weight: normal;
             font-size: 14px;
             line-height: 16px;
             color: #969696;
+        }
+    }
+}
+@media(min-width: 1280px) and (max-width: 1670px){
+    .excellence{
+        &-card{
+            padding: 19px 54px 28px 20px;
+            &__name{
+                margin-right: 38px;
+                font-size: 14px;
+            }
+            &__description{
+                font-size: 13px;
+            }
+            &__delivery{
+                &:before{
+                    width: 110px;
+                    height: 110px;
+                    top: -24px;
+                    right: -24px;
+                }
+            }
+            &__finance{
+                &:before{
+                    width: 110px;
+                    height: 110px;
+                    top: -24px;
+                    right: -24px;
+                }
+            }
+            &__document{
+                &:before{
+                    width: 110px;
+                    height: 110px;
+                    top: -24px;
+                    right: -24px;
+                }
+            }
+            &__optimization{
+                &:before{
+                    width: 110px;
+                    height: 110px;
+                    top: -24px;
+                    right: -24px;
+                }
+            }
+            &__oneWindow{
+                &:before{
+                    width: 110px;
+                    height: 110px;
+                    top: -24px;
+                    right: -24px;
+                }
+            }
+            &__guarantee{
+                &:before{
+                    width: 110px;
+                    height: 110px;
+                    top: -24px;
+                    right: -24px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1280px) {
+    .excellence{
+        &-card{
+            padding: 24px 45px 25px 27px;
+            &:after{
+                width: 30px;
+                height: 30px;
+                border: 8px solid #2B2B51;
+                bottom: -13px;
+                left: -13px;
+            }
+            &__name{
+                font-size: 14px;
+                margin-right: 40px;
+            }
+            &__description{
+                font-size: 12px;
+            }
+            &__delivery{
+                &:before{
+                    width: 108px;
+                    height: 108px;
+                    top: -25px;
+                    right: -23px;
+                }
+            }
+            &__finance{
+                &:before{
+                    width: 108px;
+                    height: 108px;
+                    top: -25px;
+                    right: -23px;
+                }
+            }
+            &__document{
+                &:before{
+                    width: 108px;
+                    height: 108px;
+                    top: -25px;
+                    right: -23px;
+                }
+            }
+            &__optimization{
+                &:before{
+                    width: 108px;
+                    height: 108px;
+                    top: -25px;
+                    right: -23px;
+                }
+            }
+            &__oneWindow{
+                &:before{
+                    width: 108px;
+                    height: 108px;
+                    top: -25px;
+                    right: -23px;
+                }
+            }
+            &__guarantee{
+                &:before{
+                    width: 108px;
+                    height: 108px;
+                    top: -25px;
+                    right: -23px;
+                }
+            }
         }
     }
 }
@@ -1047,9 +1244,9 @@ body{
         position: relative;
     }
     &__name{
-        font-size: 58px;
+        font-size: 52px;
         margin-top: 56px;
-        width: 1146px;
+        width: 93%;
     }
     &__body{
         margin-top: 180px;
@@ -1269,6 +1466,26 @@ body{
         }
     }
 }
+@media(min-width: 1280px) and (max-width: 1670px){
+    .cooperation{
+        &__name{
+            font-size: 48px;
+            width: 951px;
+            line-height: 74px;
+        }
+    }
+
+}
+@media screen and(max-width:1280px) {
+    .cooperation{
+        &__name{
+            font-size: 48px;
+            margin-top: 56px;
+            width: 950px;
+            line-height: 72px;
+        }
+    }
+}
 
 .reviews{
     position: relative;
@@ -1330,6 +1547,7 @@ body{
             text-transform: uppercase;
             color: #000000;
           
+          
         }
         &__logo{
             margin-right: 16px;
@@ -1354,6 +1572,33 @@ body{
         }
     }
 }
+@media(min-width: 1280px) and (max-width: 1670px){
+    .reviews{
+        & .comment{
+            padding: 37px 23.6px 58px 33.8px;
+            &__name{
+                &-size{
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .reviews{
+       & .comment{
+        padding: 48px 23.6px 58px 33.8px;
+        &__name{
+            &-size{
+                font-size: 17px;
+            }  
+        }
+    } 
+    }
+    
+    
+}
 
 .question{
     height: 658px;
@@ -1364,6 +1609,7 @@ body{
         position: relative;
         height: 100%;
         background-color: #2B2B51;
+        z-index: -2;
         &:after{
             content: '';
             width: 62.39px;
@@ -1377,20 +1623,7 @@ body{
             left: -18px;
             box-shadow: 0 0 10px rgb(0 0 0 / 20%);
         }
-        &:before{
-            content: '';
-            width: 90.35px;
-            height: 90.35px;
-            position: absolute;
-            border: 20px solid #2B2B51;
-            box-sizing: border-box;
-            filter: blur(2px);
-            transform: rotate(-45deg);
-            top: -35px;
-            right: -30px;
-            z-index: 1;
-            box-shadow: 0 0 20px rgb(0 0 0 / 20%);
-        }
+        
     }
     &::after{
         content: '';
@@ -1428,6 +1661,20 @@ body{
         width: 30%;
         right: 0;
         top: 0;
+        &:before{
+            content: '';
+            width: 90.35px;
+            height: 90.35px;
+            position: absolute;
+            border: 20px solid #2B2B51;
+            box-sizing: border-box;
+            filter: blur(2px);
+            transform: rotate(-45deg);
+            top: -35px;
+            right: -5px;
+            z-index: 1;
+            box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+        }
     }
     &__name{
         font-size: 42px;
@@ -1512,6 +1759,17 @@ body{
             color: white;
             font-family: Arial;
             font-size: 18px;
+        }
+    }
+}
+
+@media screen and (max-width:1280px) {
+    .question{
+        &__name{
+            font-size: 40px;
+        }
+        &__subname{
+            font-size: 40px;
         }
     }
 }
@@ -1677,6 +1935,9 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
+        &>a{
+            text-decoration: none;
+        }
         &__phone{
             font-family: 'Arial';
             font-weight: normal;
