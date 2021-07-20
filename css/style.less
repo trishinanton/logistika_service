@@ -37,7 +37,7 @@ body{
     flex-direction: column;
     justify-content: space-between;
     &__header{
-        padding: 16px 3% 0;
+        padding: 16px 3% 10px;
         box-sizing: border-box;
         position: absolute;
         width: 100%;
@@ -49,7 +49,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     &__info{
         display: flex;
         justify-content: flex-end;
@@ -76,8 +76,8 @@ body{
         font-family: 'Arial';
         font-style: normal;
         font-weight: 700;
-        font-size: 24px;
-        line-height: 23px;
+        font-size: 20px;
+        line-height: 20px;
         text-transform: uppercase;
         &-active{
             transform: rotate(-90deg);
@@ -94,7 +94,7 @@ body{
     }
     &-image{
         width: 196px;
-        height: 173px;
+       
         margin-right: 31px;
         position: relative;
         z-index: 2;
@@ -151,8 +151,7 @@ body{
     margin-right: 40px;
     &__span{
         width: 20.67px;
-        height: 0px;
-        border: 1.0px solid #FFFFFF;
+        height: 2px;
         position: relative;
         background: white;
         left: 5px;
@@ -160,21 +159,21 @@ body{
             content: '';
             width: 31px;
             height: 0px;
-            border: 1.0px solid #FFFFFF;
+            border: 1px solid #FFFFFF;
             background: white;
             position: absolute;
             top: 8px;
-            left: -1px;
+            left: 0px;
         }
         &:before{
             content: '';
             width: 10.33px;
             height: 0px;
-            border: 1.0px solid #FFFFFF;
+            border: 1px solid #FFFFFF;
             background: white;
             position: absolute;
             bottom: 8px;
-            left: -1px;
+            left: 0px;
         }
     }
 }
@@ -209,7 +208,7 @@ body{
     }
     &__points{
         height: 65%;
-        width: 28%;
+        min-width: 226px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -271,12 +270,20 @@ body{
     z-index: -1;
     position: absolute;
     padding: 0 10%;
+    &-adaptive{
+        display: none;
+    }
     &__block{
         &-white{
             border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.1);
         }
         &-black{
             border: 1px solid rgba(38, 38, 38, 0.2);
+            background-color: rgba(38, 38, 38, 0.2);
+        }
+        &-transparent{
+            background-color: transparent;
         }
     }
     &-vertical__block{
@@ -1608,8 +1615,6 @@ body{
     &__wrapper{
         position: relative;
         height: 100%;
-        background-color: #2B2B51;
-        z-index: -2;
         &:after{
             content: '';
             width: 62.39px;
@@ -1642,6 +1647,8 @@ body{
         position: absolute;
         height: 100%;
         width: 70%;
+        background-color: #2B2B51;
+        z-index: -1;
         &::before{
             content: '';
             position: absolute;
@@ -1649,7 +1656,6 @@ body{
             background-size: cover;
             width: 527px;
             height: 585px;
-            z-index: 1;
             bottom: 0px;
             right: -416px; 
         }
@@ -1661,6 +1667,7 @@ body{
         width: 30%;
         right: 0;
         top: 0;
+        z-index: -2;
         &:before{
             content: '';
             width: 90.35px;
