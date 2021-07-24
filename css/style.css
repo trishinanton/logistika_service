@@ -15,6 +15,15 @@ body {
   overflow-x: hidden;
   width: 100vw;
 }
+a {
+  text-decoration: none;
+}
+a:hover {
+  cursor: pointer;
+}
+button {
+  cursor: pointer;
+}
 .container {
   padding: 0 10%;
 }
@@ -66,7 +75,6 @@ body {
   line-height: 21px;
 }
 .header__number > a {
-  text-decoration: none;
   color: white;
 }
 .header__menu {
@@ -82,7 +90,7 @@ body {
 }
 .logo {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 .logo img {
   background-size: cover;
@@ -93,9 +101,6 @@ body {
   position: relative;
   z-index: 2;
 }
-.logo-image:hover {
-  cursor: pointer;
-}
 .logo-name {
   font-family: 'Arial';
   font-style: normal;
@@ -103,7 +108,6 @@ body {
   font-size: 22px;
   text-transform: uppercase;
   position: relative;
-  margin-top: 26px;
   /* &:before{
             content: '';
             position: absolute;
@@ -142,6 +146,9 @@ body {
   transform-origin: 100% 0;
   z-index: 3;
   margin-right: 40px;
+}
+.menu:hover {
+  cursor: pointer;
 }
 .menu__span {
   width: 20.67px;
@@ -237,7 +244,7 @@ body {
   display: block;
   position: absolute;
   width: 100%;
-  height: 1.5px;
+  height: 1px;
   background-color: #FFFFFF;
   margin-top: 25px;
 }
@@ -267,11 +274,11 @@ body {
   display: none;
 }
 .grid__block-white {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
   background-color: rgba(255, 255, 255, 0.1);
 }
 .grid__block-black {
-  border: 1px solid rgba(38, 38, 38, 0.2);
+  border-right: 1px solid rgba(38, 38, 38, 0.2);
   background-color: rgba(38, 38, 38, 0.2);
 }
 .grid__block-transparent {
@@ -591,7 +598,7 @@ body {
 .excellence-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   box-sizing: border-box;
   width: 30%;
   height: 160px;
@@ -879,6 +886,7 @@ body {
   font-size: 14px;
   line-height: 16px;
   color: #969696;
+  margin-top: 15px;
 }
 @media (min-width: 1280px) and (max-width: 1670px) {
   .excellence-card {
@@ -1723,6 +1731,7 @@ body {
 }
 .footer-logo {
   display: flex;
+  align-items: center;
 }
 .footer-logo__name {
   font-family: 'Arial';
@@ -1732,10 +1741,12 @@ body {
   padding-left: 13px;
   text-transform: uppercase;
   width: 328px;
-  padding-top: 15px;
 }
 .footer-logo__img:hover {
   cursor: pointer;
+}
+.footer-services {
+  margin-right: 9%;
 }
 .footer-services__name {
   font-family: 'Arial';
@@ -1744,7 +1755,7 @@ body {
   font-size: 18px;
   color: #FFFFFF;
 }
-.footer-services__description {
+.footer-services__description > a {
   font-family: 'Arial';
   font-weight: 400;
   font-size: 18px;

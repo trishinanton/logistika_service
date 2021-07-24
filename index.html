@@ -14,13 +14,16 @@
     <section class="main-screen">
         <!-- <div class="grid-vertical__block"></div> -->
         <header class="main-screen__header header">
-            <div class="header__logo logo">
-                <img src="./img/main_screen/logo_big.png" alt="logo" class="logo-image">
-                <div class="logo-name">ВЭД<br>Логистика<br>Таможенное оформление</div>
-            </div>
+            <a>
+                <div class="header__logo logo">
+                    <img src="./img/main_screen/logo_big.png" alt="logo" class="logo-image">
+                    <div class="logo-name">ВЭД<br>Логистика<br>Таможенное оформление</div> 
+                </div>
+            </a>
+            
             <div class="header__info">
                 <div class="header__number"><a href="tel:+79531085929">+7 (953) 108-59-29</a></div>
-                <div class="header__button button">Заказать звонок</div>
+                <div class="header__button button"><a>Заказать звонок</a></div>
                 <div class="menu header-menu">
                     <div class="header__menu">Меню</div>
                     <span class="menu__span"></span>
@@ -84,30 +87,42 @@
         <div class="menu-active__content active-content">
             <div class="active-content__wrapper">
                 <div class="active-content__points">
-                    <div class="points points__about">
-                        <div class="points__name">О компании</div>
-                        <div class="points__number">01</div>
-                    </div>
-                    <div class="points points__whyWe">
-                        <div class="points__name">Почему мы</div>
-                        <div class="points__number">02</div>
-                    </div>
-                    <div class="points points__services">
-                        <div class="points__name">Услуги</div>
-                        <div class="points__number">03</div>
-                    </div>
-                    <div class="points points__reviews">
-                        <div class="points__name">Отзывы</div>
-                        <div class="points__number">04</div>
-                    </div>
-                    <div class="points points__online">
-                        <div class="points__name">On-line заявка</div>
-                        <div class="points__number">05</div>
-                    </div>
-                    <div class="points points__contacts">
-                        <div class="points__name">Контакты</div>
-                        <div class="points__number">06</div>
-                    </div>
+                    <a href="#about">
+                        <div class="points points__about">
+                            <div class="points__name">О компании</div>
+                            <div class="points__number">01</div>
+                        </div>
+                    </a>
+                    <a href="#excellence">
+                        <div class="points points__whyWe">
+                            <div class="points__name">Почему мы</div>
+                            <div class="points__number">02</div>
+                        </div>
+                    </a>
+                    <a href="#services">
+                        <div class="points points__services">
+                            <div class="points__name">Услуги</div>
+                            <div class="points__number">03</div>
+                        </div>
+                    </a>
+                    <a href="#reviews">
+                        <div class="points points__reviews">
+                            <div class="points__name">Отзывы</div>
+                            <div class="points__number">04</div>
+                        </div>
+                    </a>
+                    <a href="#question">
+                        <div class="points points__online">
+                            <div class="points__name">On-line заявка</div>
+                            <div class="points__number">05</div>
+                        </div>
+                    </a>
+                    <a href="#contact">
+                        <div class="points points__contacts">
+                            <div class="points__name">Контакты</div>
+                            <div class="points__number">06</div>
+                        </div>
+                    </a>
                 </div>
                 <div class="active-content__number header__number">+7 (953) 108-59-29</div>
                 <div class="active-content__button button">Заказать звонок</div>
@@ -123,7 +138,7 @@
 
     </section>
 
-    <section class="about">
+    <section class="about" id='about'>
         <div class="grid">
             <div class="grid__block-white"></div>
             <div class="grid__block-white"></div>
@@ -183,7 +198,7 @@
 
     </section>
 
-    <section class="excellence">
+    <section class="excellence" id='excellence'>
         <div class="grid">
                 <div class="grid__block-black"></div>
                 <div class="grid__block-black"></div>
@@ -211,7 +226,7 @@
                         оплатим товар поставщику и привезем оформленный товар Вам на склад.</div>
                 </div>
                 <div class="excellence-card excellence-card__document">
-                    <div class="excellence-card__name ">Закрывающие документы</div>
+                    <div class="excellence-card__name ">Закрывающие<br>документы</div>
                     <div class="excellence-card__description">Предоставляем закрывающие документы с Вашей номенклатурой
                         товаров для дальнейшей реализации на территории РФ.</div>
                 </div>
@@ -221,12 +236,12 @@
                         таможенного оформления Вашего груза.</div>
                 </div>
                 <div class="excellence-card excellence-card__oneWindow">
-                    <div class="excellence-card__name ">Работаем по принципу «одного окна»</div>
+                    <div class="excellence-card__name ">Работаем по принципу<br>«одного окна»</div>
                     <div class="excellence-card__description">Берем на себя всю цепочку транспортно-экспедиторских
                         услуг: таможенное оформление, логистика, сертификация.</div>
                 </div>
                 <div class="excellence-card excellence-card__guarantee">
-                    <div class="excellence-card__name ">Гарантия неизменности рассчитанной ставки</div>
+                    <div class="excellence-card__name ">Гарантия неизменности<br>рассчитанной ставки</div>
                     <div class="excellence-card__description">Мы предоставим понятную схему расчёта и после Вашего
                         утверждения данной сметы, работаем в рамках ставки.</div>
                 </div>
@@ -234,7 +249,7 @@
         </div>
     </section>
 
-    <section class="services">
+    <section class="services" id='services'>
         <div class="grid">
             <div class="grid__block-black"></div>
             <div class="grid__block-black"></div>
@@ -252,22 +267,22 @@
             <div class="services__description">
                 <div class="services-card services-card__registration">
                     <div class="services-card-active">
-                        <div class="services-card__title">Таможенное<br>оформление</div>
-                        <button class="services-card__btn customs-btn">Подробнее</button>
+                        <a href="./index-tamojnya.html"><div class="services-card__title">Таможенное<br>оформление</div></a>
+                        <a href="./index-tamojnya.html"><button class="services-card__btn customs-btn">Подробнее</button></a>
                     </div>
                     <div class="services-card__name">Таможенное<br>оформление</div>
                 </div>
                 <div class="services-card services-card__service">
                     <div class="services-card-active">
-                        <div class="services-card__title">Аутсорсинг ВЭД</div>
-                        <button class="services-card__btn outsourcing-btn">Подробнее</button>
+                        <a href="./index-autsorsing.html"><div class="services-card__title">Аутсорсинг ВЭД</div></a>
+                        <a href="./index-autsorsing.html"><button class="services-card__btn outsourcing-btn">Подробнее</button></a>
                     </div>
                     <div class="services-card__name">Аутсорсинг ВЭД</div>
                 </div>
                 <div class="services-card services-card__counseling">
                     <div class="services-card-active">
-                        <div class="services-card__title">Сборные грузы</div>
-                        <button class="services-card__btn cargo-btn">Подробнее</button>
+                        <a href="./index-cargo.html"><div class="services-card__title">Сборные грузы</div></a>
+                        <a href="./index-cargo.html"><button class="services-card__btn cargo-btn">Подробнее</button></a>
                     </div>
                     <div class="services-card__name">Сборные грузы</div>
                 </div>
@@ -352,7 +367,7 @@
     </section>
 
 
-    <section class="reviews">
+    <section class="reviews" id='reviews'>
         <div class="grid">
                 <div class="grid__block-black"></div>
                 <div class="grid__block-black"></div>
@@ -429,7 +444,7 @@
     </section>
 
 
-    <section class="question">
+    <section class="question" id='question'>
         <div class="question__blue-fon"></div>
         <div class="question__white-fon"></div>
         <div class="grid">
@@ -470,7 +485,7 @@
 
     </section>
 
-    <section class="contact">
+    <section class="contact" id='contact'>
         <div class="grid">
             <div class="grid__block-black"></div>
             <div class="grid__block-black"></div>
@@ -519,23 +534,28 @@
 
     <footer class="footer">
         <div class="footer__wrapper">
-            <div class="footer-logo">
-                <a href=""><img src="./img/contact/logo_footer.png" alt="logo" class="footer-logo__img"></a>
-                <div class="footer-logo__name">ВЭД<br>Логистика<br>Таможенное оформление</div>
-            </div>
+            <a href="">
+                <div class="footer-logo">
+                    <img src="./img/contact/logo_footer.png" alt="logo" class="footer-logo__img">
+                    <div class="footer-logo__name">ВЭД<br>Логистика<br>Таможенное оформление</div>
+                </div>
+            </a>
             <div class="footer-services">
                 <div class="footer-services__name">Услуги:</div>
-                <div class="footer-services__description">Аутсорсинг ВЭД<br>Таможенное оформление<br>Консультирование</div>
+                <div class="footer-services__description">
+                    <a href="./index-autsorsing.html">Аутсорсинг ВЭД</a><br>
+                    <a href="./index-tamojnya.html">Таможенное оформление</a><br>
+                    <a href="./index-cargo.html">Консультирование</a></div>
             </div>
             <div class="footer-contact">
                 <a href="tel: +9160831789"><div class="footer-contact__phone">+7 (916) 083-17-89</div></a>
-                <div class="footer-contact__politics">Политика конфиденциальности</div>
+                <a><div class="footer-contact__politics">Политика конфиденциальности</div></a>
             </div>
         </div>
     </footer>
 
     <section class="good-product">
-        <div class="good-product__name">Создано веб-студией "Good Production"</div>
+        <a href="https://good-production.ru/" rel='nofollow'><div class="good-product__name">Создано веб-студией "Good Production"</div></a>
     </section>
 <script src="./js/index.js"></script>
 </body>
