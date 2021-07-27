@@ -10,6 +10,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     overflow-x: hidden;
@@ -22,7 +23,12 @@ a{
     }
 }
 button{
-    cursor: pointer;
+    transition: 0.3s linear;
+    &:hover{
+        background-color: white;
+        color: #2B2B51;
+        cursor: pointer;
+    }
 }
 .container{
     // min-width: 1200px;
@@ -48,7 +54,7 @@ button{
     &__header{
         padding: 16px 3% 10px;
         box-sizing: border-box;
-        position: absolute;
+        // position: absolute;
         width: 100%;
         left: 0;
         top: 0;
@@ -59,6 +65,8 @@ button{
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 2;
+    position: fixed;
     &__info{
         display: flex;
         justify-content: flex-end;
@@ -66,18 +74,33 @@ button{
     }
     &-menu{
         margin-left: 33px;
+        
     }
     &__button{
         margin-left: 14px;
+        transition: 0.3s linear;
+        &:hover{
+            transform: translateY(5px);
+        }
     }
     &__number{
+        display: block;
         font-family: 'Arial';
         font-style: normal;
         font-weight: 700;
         font-size: 24px;
         line-height: 21px;
+        transition: 0.2s linear;
         &>a{
             color: white;
+            transition: 0.2s linear;
+            &:hover{
+                color: rgb(223, 223, 223);
+            }
+        }
+        &:hover{
+            transition: 0.2s linear;
+            transform: scale(1.02);
         }
     }
     &__menu{
@@ -87,9 +110,11 @@ button{
         font-size: 20px;
         line-height: 20px;
         text-transform: uppercase;
+        
         &-active{
             transform: rotate(-90deg);
         }
+        
     }
     
     
@@ -114,7 +139,7 @@ button{
         font-size: 22px;
         text-transform: uppercase;
         position: relative;
-       
+        color: white;
         /* &:before{
             content: '';
             position: absolute;
@@ -140,6 +165,7 @@ button{
     box-sizing: border-box;
     position: relative;
     z-index: 2;
+    color: white;
     &:hover{
         background-color: white;
         color: #2B2B51;
@@ -154,6 +180,7 @@ button{
     transform-origin: 100% 0;
     z-index: 3;
     margin-right: 40px;
+    color: white;
     &:hover{
         cursor: pointer;
     }
@@ -184,9 +211,11 @@ button{
             left: 0px;
         }
     }
+    
 }
 .menu-active{
     transform: rotate(-90deg);
+   position: fixed;
     &__content{
         // display: none;
         background: linear-gradient(90.5deg, rgba(255, 255, 255, 0.04) -0.21%, rgba(255, 255, 255, 0.01) 100.56%);
@@ -195,7 +224,7 @@ button{
         backdrop-filter: blur(40px);
         height: 100vh;
         width: 50%;
-        position: absolute;
+        position: fixed;
         left: 50%;
         z-index: 2;
         text-align: center;
@@ -222,8 +251,19 @@ button{
         justify-content: space-between;
     }
     &__number{
-        font-weight: 400;
-        font-size: 18px;
+        font-family: 'Arial';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 21px;
+        color: white;
+        &>a{
+            transition: 0.3s linear;
+            &:hover{
+                color: rgb(223, 223, 223);
+                
+            }
+        }
     }
 }
 @keyframes show_menu_contant {
@@ -351,12 +391,14 @@ button{
     width: 100%;
     left: 0;
     bottom: 0;
-    display: flex;
-    justify-content: center;
 }
 &-scroll{
     &__img{
         background-size: cover;
+        transition: 0.3s linear;
+        &:hover{
+            transform: scale(1.1);
+        }
     }
     &__wrapper{
         width: 24.62px;
@@ -485,8 +527,9 @@ button{
         margin-top: 20px;
         font-family: 'Arial';
         font-style: normal;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 400;
+        letter-spacing: 0.3px;
     }
     }
     &__sliders{
@@ -515,31 +558,69 @@ button{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        &-img{
-            position: relative;
-            margin-top: 36px;
-            margin-right: 20px;
-            &:before{
-                content: '';
-                position: absolute;
-                width: 476px;
-                height: 322px;
-                background: rgba(232, 232, 232, 0.13);
-                z-index: 1;
-                bottom: 18px;   
-                left: 26px;
-            }
-            &:after{
-                content: '';
-                position: absolute;
-                background-image: url(../img/about/crosses.png);
-                background-size: cover;
-                z-index: 2;
-                width: 110px;
-                height: 62px;
-                bottom: -26px;
-                left: -57px;
-            }
+        // &-img{
+        //     position: relative;
+        //     margin-top: 36px;
+        //     margin-right: 20px;
+        //     &:before{
+        //         content: '';
+        //         position: absolute;
+        //         width: 483px;
+        //         height: 321px;
+        //         background: rgba(232, 232, 232, 0.13);
+        //         z-index: 1;
+        //         bottom: 18px;
+        //         left: 18px;
+        //     }
+        //     &:after{
+        //         content: '';
+        //         position: absolute;
+        //         background-image: url(../img/about/crosses.png);
+        //         background-size: cover;
+        //         z-index: 2;
+        //         width: 110px;
+        //         height: 62px;
+        //         bottom: -26px;
+        //         left: -57px;
+        //     }
+        // }
+    }
+    .test-slider{
+        width: 483.8px;
+        height: 321.96px;
+        margin-top: 36px;
+        margin-right: 20px;
+        &:before{
+            content: '';
+            position: absolute;
+            width: 483px;
+            height: 321px;
+            background: rgba(232, 232, 232, 0.13);
+            z-index: 1;
+            bottom: 18px;
+            left: 18px;
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            background-image: url(../img/about/crosses.png);
+            background-size: cover;
+            z-index: 2;
+            width: 110px;
+            height: 62px;
+            bottom: -26px;
+            left: -57px;
+        }
+        .slick-arrow{
+            position: absolute;
+            bottom: -66px;
+            right: 0;
+        }
+        .slick-prev{
+            right: 38px;
+        }
+        .slick-list{
+            z-index: 1;
         }
     }
     &__img{
@@ -568,7 +649,15 @@ button{
         background-color: transparent;
         color: rgba(255, 255, 255, 0.44);
         font-size: 35px;
+        transition: 0.3s linear;
+        &:hover{
+        background-color: white;
+        color: #2B2B51;
+        cursor: pointer;
+        transform: translateY(3px);
+        }
     }
+    
 }
 .block-header{
     font-family: Arial;
@@ -597,20 +686,8 @@ button{
     }
 }
 @media(min-width: 1280px) and (max-width: 1670px){
-    .sliders{
-        &__wrapper{
-            &-img{
-                &:before{
-                    width: 412px;
-                    height: 294px;
-                }
-            }
-        }
-        &__img{
-            width: 420px;
-            height: 291px;
-        }
-    }
+    
+    
 }
 
 @media screen and (max-width: 1280px) {
@@ -620,20 +697,15 @@ button{
         }
     }
     .sliders{
-        &__wrapper{
-            &-img{
-                &:before{
-                    // content: '';
-                    width: 383px;
-                    height: 294px;
-                }
-            }
-        }
-        &__img{
-            width: 391px;
-            height: 291px;
-        }
-    }
+        .test-slider{
+             width: 420px;
+             height: 290px;
+             &:before{
+                width: 420px;
+                height: 290px;
+             }
+         } 
+     }
 }
 .excellence{
     position: relative;
@@ -968,6 +1040,7 @@ button{
             line-height: 16px;
             color: #969696;
             margin-top: 15px;
+            letter-spacing: 0.3px;
         }
     }
 }
@@ -1205,10 +1278,14 @@ button{
             font-size: 26px;
             line-height: 30px;
             color: #FFFFFF;
-
             margin: 0 28px;
             position: relative;
             top: 335px;
+            transition: 0.3s linear;
+            &:hover{
+                color: rgb(223, 223, 223);
+                
+    }
         }
     }
 }
@@ -1584,7 +1661,8 @@ button{
             font-size: 18px;
             line-height: 21px;
             color: #737272;
-            margin-top:42px
+            margin-top:42px;
+            letter-spacing: 0.3px;
         }
     }
 }
@@ -1745,11 +1823,16 @@ button{
             font-size: 18px;
             color: white;
             text-align: center;
-            padding-top: 17px;
+            padding-top: 3px;
             position: relative;
             z-index: 1;
+            transition: 0.3s linear;
             &:hover{
                 cursor: pointer;
+                background: #e44d4d;
+                border: 2px solid #e44d4d;
+                transform: translateY(5px);
+                color: rgb(225, 225, 225)
             }
             
         }
@@ -1806,15 +1889,18 @@ button{
         display: flex;
         justify-content: flex-end;
         &-img{
+            width: 835px;
+            height: 461px;
+            position: relative;
             &::after{
                 content: '';
                 position: absolute;
-                width: 100%;
+                width: 835px;
                 height: 461px;
                 background: #2B2B51;
-                z-index: 0;
-                bottom: 14px;
-                right: -17px;
+                z-index: -1;
+                bottom: 13px;
+                right: -13px;
             }
         }
         /* &::after{
@@ -1903,6 +1989,14 @@ button{
             align-items: center;
         }
     }
+    .social{
+        &__icon{
+            transition: 0.3s linear;
+            &:hover{
+                transform: scale(1.1);  
+            }
+        }
+    }
 }
 
 
@@ -1912,6 +2006,7 @@ button{
         display: flex;
         justify-content: space-between;
         padding: 22px 24px 22px 15px;
+        
     }
     &-logo{
         display: flex;
@@ -1949,6 +2044,10 @@ button{
             font-size: 18px;
             color: #FFFFFF;
             line-height:27px; 
+            transition: 0.3s linear;
+            &:hover{
+                color: rgb(116, 141, 168);
+            }
             }
         }
     }
@@ -1956,6 +2055,7 @@ button{
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         &>a{
             text-decoration: none;
         }
@@ -1965,6 +2065,10 @@ button{
             font-size: 18px;
             color: #FFFFFF;
             position: relative;
+            transition: 0.3s linear;
+            &:hover{
+                transform: scale(1.02);
+            }
             &:before{
                 content: '';
                 background-image: url(../img/contact/wats_footer.png);
@@ -1982,6 +2086,10 @@ button{
             color: #D5D5D5;
             text-decoration-line: underline;
             padding-top: 23px;
+            transition: 0.3s linear;
+            &:hover{
+                color: rgb(116, 141, 168);
+            }
         }
     }
 }
@@ -1992,10 +2100,26 @@ button{
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    
     &__name{
         font-family: 'Arial';
         font-weight: normal;
         font-size: 18px;
-        color: #D5D5D5;
+        
+        &>a{
+            color: #D5D5D5;
+            transition: 0.3s linear;
+            &:hover{
+                color: rgb(116, 141, 168);
+                transition: 0.3s linear;
+          }  
+          }
     }
 }
+
+
+// .slick-list{
+//     width: 483.8px;
+//     height: 321.96px;
+// }

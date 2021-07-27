@@ -8,29 +8,75 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/style-adaptive.css">
+    <link rel="stylesheet" type="text/css" href="./css/slick-slider/slick-slider.css"/>
+
 </head>
 
 <body>
-    <section class="main-screen">
-        <!-- <div class="grid-vertical__block"></div> -->
-        <header class="main-screen__header header">
-            <a>
-                <div class="header__logo logo">
-                    <img src="./img/main_screen/logo_big.png" alt="logo" class="logo-image">
-                    <div class="logo-name">ВЭД<br>Логистика<br>Таможенное оформление</div> 
-                </div>
-            </a>
-            
-            <div class="header__info">
-                <div class="header__number"><a href="tel:+79531085929">+7 (953) 108-59-29</a></div>
-                <div class="header__button button"><a>Заказать звонок</a></div>
-                <div class="menu header-menu">
-                    <div class="header__menu">Меню</div>
-                    <span class="menu__span"></span>
-                </div>
+    <div class="menu-active__content active-content">
+        <div class="active-content__wrapper">
+            <nav class="active-content__points" id="menu">
+                <a href="#about">
+                    <div class="points points__about">
+                        <div class="points__name">О компании</div>
+                        <div class="points__number">01</div>
+                    </div>
+                </a>
+                <a href="#excellence">
+                    <div class="points points__whyWe">
+                        <div class="points__name">Почему мы</div>
+                        <div class="points__number">02</div>
+                    </div>
+                </a>
+                <a href="#services">
+                    <div class="points points__services">
+                        <div class="points__name">Услуги</div>
+                        <div class="points__number">03</div>
+                    </div>
+                </a>
+                <a href="#reviews">
+                    <div class="points points__reviews">
+                        <div class="points__name">Отзывы</div>
+                        <div class="points__number">04</div>
+                    </div>
+                </a>
+                <a href="#question">
+                    <div class="points points__online">
+                        <div class="points__name">On-line заявка</div>
+                        <div class="points__number">05</div>
+                    </div>
+                </a>
+                <a href="#contact">
+                    <div class="points points__contacts">
+                        <div class="points__name">Контакты</div>
+                        <div class="points__number">06</div>
+                    </div>
+                </a>
+            </nav>
+            <div class="active-content__number"><a>+7 (953) 108-59-29</a></div>
+            <div class="active-content__button button">Заказать звонок</div>
+        </div>
+    </div>
+    
+    <header class="main-screen__header header" id="header">
+        <a>
+            <div class="header__logo logo">
+                <img src="./img/main_screen/logo_big.png" alt="logo" class="logo-image">
+                <div class="logo-name">ВЭД<br>Логистика<br>Таможенное оформление</div> 
             </div>
+        </a>
+        
+        <div class="header__info">
+            <div class="header__number"><a href="tel:+79531085929">+7 (953) 108-59-29</a></div>
+            <div class="header__button button"><a>Заказать звонок</a></div>
+            <div class="menu header-menu">
+                <div class="header__menu">Меню</div>
+                <span class="menu__span"></span>
+            </div>
+        </div>
+    </header>
 
-        </header>
+    <section class="main-screen">
         <div class="grid">
             <div class="grid__block-white"></div>
             <div class="grid__block-white"></div>
@@ -65,7 +111,7 @@
                     </div>
                     <div class="main-scroll">
                         <div class="main-scroll__wrapper">
-                            <a href="" rel='nofollow'><img src="./img/main_screen/mose.png" alt="scroll" class="main-scroll__img"></a>
+                            <a href="#about" rel='nofollow'><img src="./img/main_screen/mose.png" alt="scroll" class="main-scroll__img"></a>
                         </div>
                     </div>
                 </div>
@@ -83,59 +129,6 @@
         <div class="main-skgroup">
             SK Group Trans
         </div>
-
-        <div class="menu-active__content active-content">
-            <div class="active-content__wrapper">
-                <div class="active-content__points">
-                    <a href="#about">
-                        <div class="points points__about">
-                            <div class="points__name">О компании</div>
-                            <div class="points__number">01</div>
-                        </div>
-                    </a>
-                    <a href="#excellence">
-                        <div class="points points__whyWe">
-                            <div class="points__name">Почему мы</div>
-                            <div class="points__number">02</div>
-                        </div>
-                    </a>
-                    <a href="#services">
-                        <div class="points points__services">
-                            <div class="points__name">Услуги</div>
-                            <div class="points__number">03</div>
-                        </div>
-                    </a>
-                    <a href="#reviews">
-                        <div class="points points__reviews">
-                            <div class="points__name">Отзывы</div>
-                            <div class="points__number">04</div>
-                        </div>
-                    </a>
-                    <a href="#question">
-                        <div class="points points__online">
-                            <div class="points__name">On-line заявка</div>
-                            <div class="points__number">05</div>
-                        </div>
-                    </a>
-                    <a href="#contact">
-                        <div class="points points__contacts">
-                            <div class="points__name">Контакты</div>
-                            <div class="points__number">06</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="active-content__number header__number">+7 (953) 108-59-29</div>
-                <div class="active-content__button button">Заказать звонок</div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
     </section>
 
     <section class="about" id='about'>
@@ -178,18 +171,24 @@
                 </div>
                 <div class="sliders__wrapper">
                     <div class="sliders__number">
-                        01 / 03
+                        0<span class="sliders__number-current">1</span>/ 0<span class="sliders__number-total"></span>
                     </div>
                     <div class="about__sliders sliders">
-                        <div class="sliders__wrapper-img">
-                            <img src="./img/about/about__img.png" alt="slide" class="sliders__img">
-                        </div>
+                        <!-- <div class="sliders__wrapper-img"> -->
+                            <!-- <img src="./img/about/about__img.png" alt="slide" class="sliders__img"> -->
+                            <div class="test-slider">
+                                <img src="./img/about/about__img.png" alt="slide" class="sliders__img">
+                                <img src="./img/about/about__img.png" alt="slide" class="sliders__img">
+                                <img src="./img/about/about__img.png" alt="slide" class="sliders__img">
+                                <img src="./img/about/about__img.png" alt="slide" class="sliders__img">
+                            </div>
+                        <!-- </div> -->
                     </div>
-                    <div class="sliders-button">
+                    <!-- <div class="sliders-button">
                         <button class="sliders-button__left button-slide">
                             &lt </button>
                                 <button class="sliders-button__right button-slide"> &gt </button>
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
@@ -477,7 +476,7 @@
                     <div class="question-form__send">
                         <div class="question-form__email"><input type="text" placeholder="E-mail"
                                 class="form__email form"></div>
-                        <div class="question-form__button">Оставить заявку</div>
+                        <button class="button question-form__button">Оставить заявку</button>
                     </div>
                 </form>
             </div>
@@ -504,7 +503,8 @@
                 <div class="contact__map">
                     <div class="map__wrapper">
                         <div class="contact__map-img">
-                            <img src="./img/contact/map.png" alt="map" class="map">
+                            <!-- <img src="./img/contact/map.png" alt="map" class="map"> -->
+                            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A2b8dc3880c224b57b4d92e56fe5ce424cedfd7aafbaecab4c072e8e300c19b7e&amp;source=constructor" width="835" height="461" frameborder="0"></iframe>
                         </div> 
                          
                         <div class="our-address__wrapper">
@@ -555,8 +555,11 @@
     </footer>
 
     <section class="good-product">
-        <a href="https://good-production.ru/" rel='nofollow'><div class="good-product__name">Создано веб-студией "Good Production"</div></a>
+       <div class="good-product__name"><a href="https://good-production.ru/" rel='nofollow'>Создано веб-студией "Good Production"</a></div>
     </section>
+
+<script src='./js/jquery/jquery.js'></script>
+<script type="text/javascript" src="./js/slick-slider/slick-slider.js"></script>
 <script src="./js/index.js"></script>
 </body>
 
