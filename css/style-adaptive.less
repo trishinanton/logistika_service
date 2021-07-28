@@ -208,7 +208,7 @@
                 width: 100%;
                 height: 200px;
             }
-            .test-slider{
+            .slider-about{
                 width: 96%;
                 height: 200px;
                 margin-right: 10px;
@@ -281,15 +281,6 @@
             &-slide{
                 height: 160px;   
             }
-            &-dots{
-                margin-left: 20px;
-                // display: flex;
-                // justify-content: center;
-                // width: 320px;
-                &>li>button{
-                    display: none;
-                }
-            }
            
         }
         
@@ -298,24 +289,36 @@
             margin-left: 0px;
             width: 320px;
             left: -22px;
-            .slick-arrow{
+            .slick-dots li button:before{
+                content: '';
+                width: 8px;
+                height: 8px;
+                background: rgba(43, 43, 81, 0.5);
+                border: 2px solid #FFFFFF;
+                transform: rotate(45.63deg);
+            }
+            .slick-dots li.slick-active button:before{
+                background: #2B2B51;
+            }
+            .excellence-arrow{
                 color: rgba(43, 43, 81, 0.5);;
                 border: none;
                 font-size: 24px;
                 font-weight: 800;
                 background-color: transparent;
+                z-index: 1;
             }
-            .slick-prev{
+            .excellence-prev{
                 position: absolute;
                 top: 80px;
                 left: 2px;
                 transition: 0.3s linear;
-                z-index: 1;
+                z-index: 2;
                 &:active{
                     transform: scale(0.5);
                 }
             }
-            .slick-next{
+            .excellence-next{
                 position: absolute;
                 top: 80px;
                 right: 4px;
@@ -615,10 +618,54 @@
         }
         &__cards{
             flex-direction: column;
+            .slick-list{
+                height: 349px;
+                width: 320px;
+                left: -22px;
+                padding: 0 20px;
+            }
+            .reviews-arrow{
+                color: rgba(43, 43, 81, 0.5);;
+                border: none;
+                font-size: 30px;
+                font-weight: 800;
+                background-color: transparent;
+                z-index: 1;
+            }
+            .reviews-prev{
+                position: absolute;
+                top: 148px;
+                left: -20px;
+                transition: 0.3s linear;
+                z-index: 2;
+                &:active{
+                    transform: scale(0.5);
+                }
+            }
+            .reviews-next{
+                position: absolute;
+                top: 148px;
+                right: -18px;
+                transition: 0.3s linear;
+                &:active{
+                    transform: scale(0.5);
+                }
+            }
+            .slick-dots li button:before{
+                content: '';
+                width: 8px;
+                height: 8px;
+                background: rgba(43, 43, 81, 0.5);
+                border: 2px solid #FFFFFF;
+                transform: rotate(45.63deg);
+            }
+            .slick-dots li.slick-active button:before{
+                background: #2B2B51;
+            }
         }
         & .comment{
-            height: 335px;
-            padding: 21px 17px 38px 17px;
+            height: 320px;
+            padding: 4px 17px 38px 17px;
             width: 100%;
             transform: translateX(0px);
             &:nth-child(odd){

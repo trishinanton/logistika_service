@@ -585,7 +585,7 @@ button{
         //     }
         // }
     }
-    .test-slider{
+    .slider-about{
         width: 483.8px;
         height: 321.96px;
         margin-top: 36px;
@@ -611,17 +611,7 @@ button{
             bottom: -26px;
             left: -57px;
         }
-        .slick-arrow{
-            position: absolute;
-            bottom: -66px;
-            right: 0;
-        }
-        .slick-prev{
-            right: 38px;
-        }
-        .slick-list{
-            z-index: 1;
-        }
+        
     }
     &__img{
         position: relative;
@@ -636,28 +626,35 @@ button{
         margin-top: 26px;
         margin-right: 20px;
         &__left{
-            margin-right: 16px;
+            margin-right: 56px;
         }
+        
     }
 }
 .button{
     &-slide{
+        position: absolute;
         width: 40px;
         height: 40px;
         border: 2px solid rgba(255, 255, 255, 0.44);
         box-sizing: border-box;
         background-color: transparent;
         color: rgba(255, 255, 255, 0.44);
-        font-size: 35px;
+        font-size: 27px;
         transition: 0.3s linear;
+        right: 0;
+        bottom: -66px;
         &:hover{
         background-color: white;
         color: #2B2B51;
         cursor: pointer;
-        transform: translateY(3px);
+        transform: translateY(1px);
         }
     }
     
+}
+.slick-list{
+    z-index: 1;
 }
 .block-header{
     font-family: Arial;
@@ -2119,7 +2116,3 @@ button{
 }
 
 
-// .slick-list{
-//     width: 483.8px;
-//     height: 321.96px;
-// }

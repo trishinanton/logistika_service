@@ -515,13 +515,13 @@ button:hover {
   flex-direction: column;
   justify-content: flex-start;
 }
-.sliders .test-slider {
+.sliders .slider-about {
   width: 483.8px;
   height: 321.96px;
   margin-top: 36px;
   margin-right: 20px;
 }
-.sliders .test-slider:before {
+.sliders .slider-about:before {
   content: '';
   position: absolute;
   width: 483px;
@@ -531,7 +531,7 @@ button:hover {
   bottom: 18px;
   left: 18px;
 }
-.sliders .test-slider:after {
+.sliders .slider-about:after {
   content: '';
   position: absolute;
   background-image: url(../img/about/crosses.png);
@@ -541,17 +541,6 @@ button:hover {
   height: 62px;
   bottom: -26px;
   left: -57px;
-}
-.sliders .test-slider .slick-arrow {
-  position: absolute;
-  bottom: -66px;
-  right: 0;
-}
-.sliders .test-slider .slick-prev {
-  right: 38px;
-}
-.sliders .test-slider .slick-list {
-  z-index: 1;
 }
 .sliders__img {
   position: relative;
@@ -566,23 +555,29 @@ button:hover {
   margin-right: 20px;
 }
 .sliders-button__left {
-  margin-right: 16px;
+  margin-right: 56px;
 }
 .button-slide {
+  position: absolute;
   width: 40px;
   height: 40px;
   border: 2px solid rgba(255, 255, 255, 0.44);
   box-sizing: border-box;
   background-color: transparent;
   color: rgba(255, 255, 255, 0.44);
-  font-size: 35px;
+  font-size: 27px;
   transition: 0.3s linear;
+  right: 0;
+  bottom: -66px;
 }
 .button-slide:hover {
   background-color: white;
   color: #2B2B51;
   cursor: pointer;
-  transform: translateY(3px);
+  transform: translateY(1px);
+}
+.slick-list {
+  z-index: 1;
 }
 .block-header {
   font-family: Arial;

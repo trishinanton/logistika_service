@@ -60,12 +60,22 @@ arrServicesCard.map((el,i)=>{
 });
 
 /* Инициализация слайдера "О компании"*/
-$('.test-slider').slick({
+$('.slider-about').slick({
     infinite: true,
     speed: 500,
     fade: true,
-    cssEase: 'linear'
+    cssEase: 'linear',
+    prevArrow: '<button class="sliders-button__left button-slide"> ❮ </button>',
+    nextArrow: '<button class="sliders-button__right button-slide"> ❯ </button>'
   });
+
+/* Счетчик слайдеров */  
+$(".slider-about").on("afterChange", function(event, slick, currentSlide, nextSlide){
+    $(".sliders__number-current").text(currentSlide + 1);
+});
+let totalSlides = $('.slider-about').slick("getSlick").slideCount
+document.querySelector('.sliders__number-total').innerHTML=totalSlides
+
 
 /*Инициализация слайдера "Наши преимущества"  */
 $('.excellence__description').slick({
@@ -73,24 +83,25 @@ $('.excellence__description').slick({
   infinite: true,
   speed: 500,
   fade: true,
-  cssEase: 'linear'
+  cssEase: 'linear',
+  prevArrow: '<button class="excellence-arrow excellence-prev"> ❮ </button>',
+    nextArrow: '<button class="excellence-arrow excellence-next"> ❯ </button>'
 });
-document.querySelector('.excellence__description .slick-prev').innerHTML='❮'
-document.querySelector('.excellence__description .slick-next').innerHTML='❯'
 
-/* Счетчик слайдеров */  
-$(".test-slider").on("afterChange", function(event, slick, currentSlide, nextSlide){
-    $(".sliders__number-current").text(currentSlide + 1);
+/*Инициализация слайдера "Отзывы клиентов"  */
+$('.reviews__cards').slick({
+    dots: true,
+  infinite: true,
+  speed: 500,
+  fade: true,
+  cssEase: 'linear',
+  prevArrow: '<button class="reviews-arrow reviews-prev"> ❮ </button>',
+    nextArrow: '<button class="reviews-arrow reviews-next"> ❯ </button>'
 });
-let totalSlides = $('.test-slider').slick("getSlick").slideCount
-document.querySelector('.sliders__number-total').innerHTML=totalSlides
 
-/* Логика кнопок */
-document.querySelector('.slick-prev').classList.add('sliders-button__left','button-slide');
-document.querySelector('.slick-prev').innerHTML='&lt';
 
-document.querySelector('.slick-next').innerHTML='&gt';
-document.querySelector('.slick-next').classList.add('sliders-button__right','button-slide');
+
+
 
 /* Плавный скролл */
 $(document).ready(function(){
@@ -117,3 +128,7 @@ $(document).ready(function($) {
       g_top = top;    
     });
   });
+
+$('.test-slide').slick({
+    dots: true
+})
