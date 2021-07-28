@@ -23,13 +23,13 @@ menu.addEventListener('click',()=>{
     if(menu.classList.contains('menu-active')){
         document.querySelector('.header__menu').innerHTML = 'Закрыть';
         document.querySelector('.active-content').style.display = 'block';
-        document.querySelector('.header__number').style.display = 'none';
-        document.querySelector('.header__button').style.display = 'none'; 
+        document.querySelector('.header__number').style.opacity = '0';
+        document.querySelector('.header__button').style.opacity = '0'; 
     }else{
         document.querySelector('.header__menu').innerHTML = 'Меню';
         document.querySelector('.active-content').style.display = 'none';
-        document.querySelector('.header__number').style.display = 'block';
-        document.querySelector('.header__button').style.display = 'block';  
+        document.querySelector('.header__number').style.opacity = '1';
+        document.querySelector('.header__button').style.opacity = '1';  
     }
 });
 

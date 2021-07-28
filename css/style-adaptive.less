@@ -1,10 +1,6 @@
-@media screen and (max-width: 320px){
-
+@media screen and (max-width: 375px){
     .grid{
         display: none;
-        &-vertical__block{
-            height: 80px;
-        }
         &-adaptive{
             display: flex;
             justify-content: space-between;
@@ -24,9 +20,9 @@
 
 
     .logo{
+        width: 155px;
         &-image{
             width: 65px;
-            height: 57px;
             margin-right: 4px;
         }
         &-name{
@@ -36,11 +32,14 @@
         }
     }
     .header{
+        width: 100vw;
         &__number{
             display: none;
+         
         }
         &__button{
             display: none;
+          
         }
         &__menu{
             font-size: 16px;
@@ -52,6 +51,7 @@
         &__span{
             height: 1px;
             border: none;
+            width: 16.67px;
             &::before{
                 bottom: 5px;
                 height: 1px;
@@ -59,7 +59,7 @@
                 left: 0;
             }
             &::after{
-                width: 30px;
+                width: 26px;
                 height: 1px;
                 border: none;
                 top: 5px;
@@ -68,20 +68,32 @@
         }
         &-active{
             &__content{
-                padding: 45% 0 14%;
+                padding: 45% 0 21%;
                 width: 100vw;
                 left: 0;
-                
+                position: absolute;
             }
         }
     }
-
+    .active{
+        &-content{
+            &__number{
+                font-size: 18px;
+            }
+            &__button{
+                font-size: 16px;
+            }
+        }
+    }
     .main-screen{
         background-position: 29% 50%;
+        &__header{
+            padding: 10px 1% 10px;
+        }
         .body{
             justify-content: space-between;
             padding-top: 95px;
-            padding-bottom: 35px;
+            padding-bottom: 74px;
             box-sizing: border-box;
         }
         .active{
@@ -92,18 +104,25 @@
                     width: 56%;
                 }
                 &__number{
-                    display: block;
+                    display: block;  
                 }
+                
             }
         }
         .main{
             &-body{
                 margin-top: 0px;
+                &__wrapper{
+                    height: 49vh;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
                 &__name{
-                    font-size: 10px;
+                    font-size: 12px;
                 }
                 &__description{
-                    font-size: 22px;
+                    font-size: 25px;
                     line-height: 30px;
                 }
             }
@@ -111,7 +130,7 @@
                 &__wrapper{
                     transform: translateX(-50%);
                     margin-bottom: 0px; 
-                    margin-top: 30px;
+                    
                 }
                 
 
@@ -120,7 +139,7 @@
                 .advantage{
                     flex-direction: column;
                     &__name{
-                        font-size: 14px;
+                        font-size: 18px;
                         margin: 3px 0 3px 0;
                         width: 100%;
                         &:before{
@@ -146,8 +165,8 @@
             }
         }
         
-    }  
-
+    } 
+        /* О компании */
     .about{
         padding: 61px 0px 156px;
         &:after{
@@ -173,7 +192,7 @@
             margin-right: 0px;
             line-height: 18px;
             &>p{
-                font-size: 16px;
+                font-size: 14px;
             }
         }
         .sliders{
@@ -181,7 +200,7 @@
                 width: 100%; 
             } 
             &__number{
-                font-size: 15px;
+                font-size: 14px;
                 margin-top: 20px;
                 margin-top: 57px;
             }
@@ -197,11 +216,16 @@
                 &:before{
                     width: 100%;
                     height: 200px;
-                    bottom: 10px;
-                    left: 10px;
+                    bottom: 8px;
+                    left: 8px;
                 }
                 &:after{
                     display: none;
+                }
+            }
+            .slick{
+                &-arrow{
+                    bottom: -54px;
                 }
             }
             &-button{
@@ -221,8 +245,9 @@
             top: 14px;
             right: -27px;
         }
-    }
-    
+    } 
+
+    /* Наши преимущества */
     .excellence{
         padding: 50px 0px 50px;
         &__name{
@@ -231,16 +256,22 @@
             font-size: 26px;
             line-height: 39px;
             -webkit-text-stroke: 1px#2B2B51;
+            &>span{
+                position: relative;
+                &:after{
+                    content: '';
+                    position: absolute;
+                    background-image: url(../img/about/crosses_for_header.png);
+                    background-size: cover;
+                    z-index: 2;
+                    width: 47px;
+                    height: 26px;
+                    top: 30px;
+                    right: -22px
+                }  
+            }
             &:after{
-                content: '';
-                position: absolute;
-                background-image: url(../img/about/crosses_for_header.png);
-                background-size: cover;
-                z-index: 2;
-                width: 47px;
-                height: 26px;
-                top: 30px;
-                right: -19px;
+                display: none;
             }
         }
         .slick{
@@ -248,8 +279,16 @@
             padding: 20px;
             }
             &-slide{
-                height: 160px;
-                
+                height: 160px;   
+            }
+            &-dots{
+                margin-left: 20px;
+                // display: flex;
+                // justify-content: center;
+                // width: 320px;
+                &>li>button{
+                    display: none;
+                }
             }
            
         }
@@ -352,7 +391,7 @@
             }
         }
     }
-
+    /* Услуги компании */
     .services{
         height: auto;
         padding-bottom: 84px;
@@ -361,16 +400,22 @@
             -webkit-text-stroke: 1px#2B2B51;
             line-height: 39px;
             margin-bottom: 33px;
+            &>span{
+                position: relative;
+                &:after{
+                    content: '';
+                    position: absolute;
+                    background-image: url(../img/about/crosses_for_header.png);
+                    background-size: cover;
+                    z-index: 2;
+                    width: 47px;
+                    height: 26px;
+                    top: 30px;
+                    right: -27px;
+                }  
+            }
             &:after{
-                content: '';
-                position: absolute;
-                background-image: url(../img/about/crosses_for_header.png);
-                background-size: cover;
-                z-index: 2;
-                width: 47px;
-                height: 26px;
-                top: 28px;
-                right: 48px;
+                display: none;
             }  
         }
         &__description{
@@ -383,10 +428,16 @@
             &__name{
                 top: 326px;
             }
+            &__title{
+                top: 280px;
+            }
+            &__btn{
+                top: 292px;
+            }
         }
         
     }
-    
+    /* Как начать сотрудничество */
     .cooperation{
         padding: 56px 0 173px;
         height: auto;
@@ -408,25 +459,31 @@
             font-size: 22px;
             width: 100%;
             line-height: 37px;
+            &>span{
+                position: relative;
+                &:after{
+                    content: '';
+                    position: absolute;
+                    background-image: url(../img/about/crosses_for_header.png);
+                    background-size: cover;
+                    z-index: 2;
+                    width: 45px;
+                    height: 24px;
+                    top: 26px;
+                    right: -26px;
+                } 
+            }
             &:after{
-                content: '';
-                position: absolute;
-                background-image: url(../img/about/crosses_for_header.png);
-                background-size: cover;
-                z-index: 2;
-                width: 45px;
-                height: 24px;
-                top: 30px;
-                right: -6px;
+                display: none;
             }
         }
         &__body{
             flex-direction: column;
-            height: 1250px;
+            height: 900px;
             margin-top: 96px;
         }
         &__band{
-            height: 1225px;
+            height: 870px;
             width: 0;
             left: 50%;
         }
@@ -437,6 +494,9 @@
             }
             &:last-child{
                 margin-right: 0px;
+                &:before{
+                    display: none;
+                }
             }
             &:nth-child(odd){
                 &:before{
@@ -505,11 +565,15 @@
                 }
                 &.stages-1,
                 &.stages-3,
-                &.stages-5,
-                &.stages-7{
+                &.stages-5{
                     &:after{
                         top: 16px;
                         left: 127px
+                    }
+                }
+                &.stages-7{
+                    &:after{
+                        display: none;
                     }
                 }
                 &.stages-2,
@@ -525,12 +589,29 @@
         
         
     }
-
+    /* Отзывы клиентов */
     .reviews{
         padding: 64px 0 84px;
         &__name{
             -webkit-text-stroke: 1px #5b5b91;
             line-height: 39px;
+            &>span{
+                position: relative;
+                &:after{
+                    content: '';
+                    position: absolute;
+                    background-image: url(../img/about/crosses_for_header.png);
+                    background-size: cover;
+                    z-index: 2;
+                    width: 47px;
+                    height: 26px;
+                    top: 30px;
+                    right: -26px;
+                }
+            }
+            &:after{
+                display: none;
+            }
         }
         &__cards{
             flex-direction: column;
@@ -560,7 +641,7 @@
         }
         
     }
-
+    /* Остались вопросы */
     .question{
         background-color: #2B2B51;
         padding: 38px 0 95px;
@@ -589,14 +670,27 @@
             line-height: 39px;
             font-size: 26px;
             &:after{
-                top: 110px;
-                right: -13px;
+                display: none;
             }
         }
         &__subname{
             line-height: 39px;
             font-size: 26px;
             -webkit-text-stroke: 1px #FFFFFF;
+            &>span{
+                position: relative;
+                &:after{
+                    content: '';
+                    position: absolute;
+                    background-image: url(../img/about/crosses_for_header.png);
+                    background-size: cover;
+                    z-index: 2;
+                    width: 47px;
+                    height: 26px;
+                    top: 31px;
+                    right: -26px;
+                }
+            }
         }
         &__form{
             margin-top: 32px;
@@ -627,7 +721,7 @@
             width: 100%;
         }
     }
-
+    /* Контакты */
     .contact{
         padding-top: 60px;
         &__name{
@@ -641,11 +735,13 @@
             margin-top: 14px;
             &-img{
                 position: relative;
+                width: 100%;
+                height: 180px;
                 &:after{
                     width: 98%;
                     height: 180px;
-                    bottom: 10px;
-                    right: 0px;
+                    bottom: 8px;
+                    right: 2px;
                 }
             }
         }
@@ -661,6 +757,11 @@
                 width: 100%;
             }
         }
+        .iframe{
+            width: 97%;
+            height: 180px;
+            margin-left: 1px;
+        }
         & .our-address{
             display: flex;
             flex-direction: column;
@@ -668,8 +769,8 @@
             height: 162px;
             padding: 15px 57px 28px 23px;
             &:before{
-                width: 70px;
-                height: 70px;
+                width: 100px;
+                height: 100px;
                 top: -22px;
                 right: -22px;
             }
@@ -709,16 +810,20 @@
             }
         }
     }
-    
+    /* Подвал */
     .footer{
         &__wrapper{
             flex-direction: column;
             align-items: center;
+            padding: 44px 24px 46px 24px;
+            &>a{
+                width: 100%;
+            }
         }
         &-logo{
             width: 100%;
             &__name{
-                font-size: 13px;
+                font-size: 12px;
             }
         }
         &-services{
@@ -728,6 +833,18 @@
             }
             &__description{
                 text-align: center;
+                &>a{
+                    font-size: 18px;
+                }
+            }
+        }
+        &-contact{
+            margin-top: 48px;
+            &__phone{
+                font-size: 18px;
+            }
+            &__politics{
+                font-size: 18px;
             }
         }
     }
@@ -737,6 +854,76 @@
                font-size: 12px; 
             }
             
+        }
+    }
+}
+@media screen and (max-width: 320px){
+    .main-screen{
+        .body{
+            padding-top: 95px;
+            padding-bottom: 35px;
+            
+        }
+        .main{
+            &-body{
+                &__name{
+                    font-size: 10px;
+                }
+                &__description{
+                    font-size: 22px;
+                    line-height: 30px
+                }
+            }
+        }
+    }
+    &-footer{
+        .advantage{
+            &__name{
+                font-size: 14px;
+                margin: 3px 0 3px 0;
+                width: 100%;
+                &:before{
+                    background-image: url(../img/main_screen/Rectangle_adaptive.png);
+                    width: 11px;
+                    height: 11px;
+                    left: -20px;
+                    top: 5px;
+                }
+                &-wsize{
+                    &:before{
+                        top: 15px;
+                    }
+                }
+            }
+        }
+        &__advantage{
+            margin-left: 23px;
+        }
+    }
+    .menu{
+      &-active{
+        &__content{
+            padding: 45% 0 14%;
+        }
+    }  
+    }
+
+    .footer{
+        &-services{
+            &__description{
+                &>a{
+                    font-size: 16px;
+                }
+            }
+        }
+        &-contact{
+            
+            &__phone{
+                font-size: 16px;
+            }
+            &__politics{
+                font-size: 16px;
+            }
         }
     }
 }

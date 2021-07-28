@@ -3,10 +3,6 @@
   font-family: 'Roboto';
   src: url(../fonts/roboto/Roboto-Regular.ttf);
 }
-/* @font-face {
-	font-family: 'Arial'; 
-	src: url(../fonts/arial/9041.ttf); 
-} */
 * {
   margin: 0;
   padding: 0;
@@ -1473,7 +1469,7 @@ button:hover {
   margin-top: 5px;
 }
 .reviews .comment__description {
-  font-family: Arial;
+  font-family: 'Arial';
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
