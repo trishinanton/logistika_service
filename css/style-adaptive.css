@@ -1,4 +1,132 @@
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 0 6%;
+  }
+  .grid {
+    padding: 0px 6%;
+  }
+  .logo {
+    width: 390px;
+  }
+  .logo-image {
+    width: 155px;
+  }
+  .logo-name {
+    font-size: 18px;
+  }
+  .header__number {
+    font-size: 20px;
+  }
+  .header__menu {
+    font-size: 16px;
+  }
+  .button {
+    font-size: 16px;
+  }
+  .main-screen {
+    background-position: 39% 50%;
+  }
+  .advantage__name-size {
+    width: 165px;
+  }
+  /* О компании */
+  .block-header {
+    font-size: 50px;
+  }
+  .block-header:after {
+    width: 100px;
+    height: 53px;
+    top: -16px;
+  }
+  .about__purpose > p {
+    font-size: 15px;
+  }
+  .sliders .slider-about {
+    width: 406px;
+    height: 275px;
+  }
+  .sliders .slider-about:before {
+    width: 406px;
+    height: 270px;
+    top: -18px;
+  }
+  .sliders .slider-about:after {
+    width: 100px;
+    height: 53px;
+    bottom: -20px;
+    left: -50px;
+  }
+  /* Услуги компании */
+  .services__description {
+    font-size: 23px;
+  }
+  .services-card__title {
+    font-size: 23px;
+  }
+  /* Как начать сотрудничество */
+  .cooperation__name > span {
+    position: relative;
+  }
+  .cooperation__name > span:after {
+    content: '';
+    position: absolute;
+    background-image: url(../img/about/crosses_for_header.png);
+    background-size: cover;
+    z-index: 2;
+    width: 100px;
+    height: 53px;
+    bottom: 39px;
+    right: -59px;
+  }
+  .cooperation__name:after {
+    display: none;
+  }
+  .cooperation .stages__description.stages-1:before,
+  .cooperation .stages__description.stages-2:before,
+  .cooperation .stages__description.stages-3:before,
+  .cooperation .stages__description.stages-4:before,
+  .cooperation .stages__description.stages-5:before,
+  .cooperation .stages__description.stages-6:before {
+    font-size: 16px;
+  }
+  /* Остались вопросы */
+  .question__name {
+    font-size: 41px;
+  }
+  .question__subname {
+    font-size: 34px;
+  }
+  .question .form {
+    width: 290px;
+  }
+  .question-form__button {
+    width: 290px;
+  }
+  .question__blue-fon:before {
+    height: 439px;
+    width: 400px;
+    right: -314px;
+  }
+  /* Контакты */
+  .contact .our-address__wrapper {
+    left: -269px;
+    width: 50vw;
+  }
+  .contact__map-img {
+    width: 60vw;
+  }
+  .contact__map-img:after {
+    width: 100%;
+  }
+  .contact .iframe {
+    width: 100%;
+  }
+  .footer-logo__name {
+    font-size: 16px;
+    width: 275px;
+  }
+}
+@media screen and (max-width: 480px) {
   .grid {
     display: none;
   }
@@ -252,8 +380,8 @@
   .excellence__description {
     flex-direction: column;
     margin-left: 0px;
-    width: 320px;
-    left: -22px;
+    width: 96vw;
+    left: -5vw;
   }
   .excellence__description .slick-dots li button:before {
     content: '';
@@ -539,11 +667,11 @@
   }
   .reviews__cards {
     flex-direction: column;
+    width: 96vw;
+    left: -5vw;
   }
   .reviews__cards .slick-list {
     height: 349px;
-    width: 320px;
-    left: -22px;
     padding: 0 20px;
   }
   .reviews__cards .reviews-arrow {
@@ -557,7 +685,6 @@
   .reviews__cards .reviews-prev {
     position: absolute;
     top: 148px;
-    left: -20px;
     transition: 0.3s linear;
     z-index: 2;
   }
@@ -567,7 +694,7 @@
   .reviews__cards .reviews-next {
     position: absolute;
     top: 148px;
-    right: -18px;
+    right: 0px;
     transition: 0.3s linear;
   }
   .reviews__cards .reviews-next:active {
@@ -838,6 +965,22 @@
   }
   .menu-active__content {
     padding: 45% 0 14%;
+  }
+  /* Наши преимущества */
+  .excellence .slick-list {
+    padding: 20px;
+  }
+  .excellence__description {
+    left: -19px;
+    width: 98vw;
+  }
+  .reviews__cards {
+    width: 98vw;
+    left: -6vw;
+  }
+  .reviews__cards .slick-list {
+    height: 349px;
+    padding: 0 20px;
   }
   .footer-services__description > a {
     font-size: 16px;

@@ -55,7 +55,7 @@ button{
         padding: 16px 3% 10px;
         box-sizing: border-box;
         // position: absolute;
-        width: 100%;
+        width: 100vw;
         left: 0;
         top: 0;
     }
@@ -1886,19 +1886,22 @@ button{
         display: flex;
         justify-content: flex-end;
         &-img{
-            width: 835px;
+            width: 50vw;
             height: 461px;
             position: relative;
             &::after{
                 content: '';
                 position: absolute;
-                width: 835px;
+                width: 100%;
                 height: 461px;
                 background: #2B2B51;
                 z-index: -1;
                 bottom: 13px;
                 right: -13px;
             }
+        }
+        .iframe{
+            width: 100%;
         }
         /* &::after{
             content: '';
