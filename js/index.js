@@ -4,10 +4,12 @@
 // import * as $ from 'jquery'
 
 let menu = document.querySelector('.menu');
+const activeMenu = document.querySelector('.menu-active__wrapper')
 let excellenceCard = document.querySelectorAll('.excellence-card');
 let arrExcellenceCard = Array.prototype.slice.call(excellenceCard);
 let servicesCard = document.querySelectorAll('.services-card');
 let arrServicesCard = Array.prototype.slice.call(servicesCard);
+let clientWidth = document.body.clientWidth; // current width screen for sliders
 
 let arrExcellenceCardActive = [
     'excellence-card-active__delivery', 
@@ -20,18 +22,15 @@ let arrExcellenceCardActive = [
 
 menu.addEventListener('click',()=>{
     menu.classList.toggle('menu-active');
-    if(menu.classList.contains('menu-active')){
-        document.querySelector('.header__menu').innerHTML = 'Закрыть';
-        document.querySelector('.active-content').style.display = 'block';
-        document.querySelector('.header__number').style.opacity = '0';
-        document.querySelector('.header__button').style.opacity = '0'; 
-    }else{
-        document.querySelector('.header__menu').innerHTML = 'Меню';
-        document.querySelector('.active-content').style.display = 'none';
-        document.querySelector('.header__number').style.opacity = '1';
-        document.querySelector('.header__button').style.opacity = '1';  
-    }
+    menu.style.animation = 'none';
+    document.querySelector('.active-content').style.display = 'block';
+    activeMenu.style.transition = 'transition: 2s linear'
 });
+
+activeMenu.addEventListener('click',()=>{
+    document.querySelector('.active-content').style.display = 'none';
+    menu.style.animation = 'open_menu 2s';
+})
 
 arrExcellenceCard.map((el,i)=>{
     arrExcellenceCardActive.map((ela,j)=>{
@@ -78,29 +77,43 @@ document.querySelector('.sliders__number-total').innerHTML=totalSlides
 
 
 /*Инициализация слайдера "Наши преимущества"  */
-$('.excellence__description').slick({
-    dots: true,
-  infinite: true,
-  speed: 500,
-  fade: true,
-  cssEase: 'linear',
-  prevArrow: '<button class="excellence-arrow excellence-prev"> ❮ </button>',
-    nextArrow: '<button class="excellence-arrow excellence-next"> ❯ </button>'
-});
+
+function resizeExcellenceSlider(clientWidth){
+    if (clientWidth <= 1024){
+
+        $('.excellence__description').slick({
+            dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        prevArrow: '<button class="excellence-arrow excellence-prev"> ❮ </button>',
+            nextArrow: '<button class="excellence-arrow excellence-next"> ❯ </button>'
+            
+        });
+    } else {
+        $('.excellence__description').unslick;
+    }
+}
+resizeExcellenceSlider(clientWidth)
 
 /*Инициализация слайдера "Отзывы клиентов"  */
-$('.reviews__cards').slick({
-    dots: true,
-  infinite: true,
-  speed: 500,
-  fade: true,
-  cssEase: 'linear',
-  prevArrow: '<button class="reviews-arrow reviews-prev"> ❮ </button>',
-    nextArrow: '<button class="reviews-arrow reviews-next"> ❯ </button>'
-});
-
-
-
+function resizeReviewsSlider(clientWidth){
+    if (clientWidth <= 1024){
+        $('.reviews__cards').slick({
+            dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        prevArrow: '<button class="reviews-arrow reviews-prev"> ❮ </button>',
+            nextArrow: '<button class="reviews-arrow reviews-next"> ❯ </button>'
+        });
+    } else {
+        $('.reviews__cards').unslick
+    }
+}
+resizeReviewsSlider(clientWidth)
 
 
 /* Плавный скролл */
@@ -129,6 +142,9 @@ $(document).ready(function($) {
     });
   });
 
-$('.test-slide').slick({
-    dots: true
-})
+// Отслеживание хедера
+function backgroundHeader(differenceWidth){
+    if (differenceWidth > 0) $('.header').addClass('header-top')
+}
+let differenceWidth = $('.header').offset().top
+console.log(width)

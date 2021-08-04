@@ -1,0 +1,100 @@
+@media screen and (max-width: 320px){
+    .main-screen{
+        .body{
+            padding-top: 95px;
+            padding-bottom: 35px;
+            
+        }
+        .main{
+            &-body{
+                &__name{
+                    font-size: 10px;
+                }
+                &__description{
+                    font-size: 22px;
+                    line-height: 30px
+                }
+            }
+        }
+    }
+    &-footer{
+        .advantage{
+            &__name{
+                font-size: 14px;
+                margin: 3px 0 3px 0;
+                width: 100%;
+                &:before{
+                    background-image: url(../img/main_screen/Rectangle_adaptive.png);
+                    width: 11px;
+                    height: 11px;
+                    left: -20px;
+                    top: 5px;
+                }
+                &-wsize{
+                    &:before{
+                        top: 15px;
+                    }
+                }
+            }
+        }
+        &__advantage{
+            margin-left: 23px;
+        }
+    }
+    .menu{
+      &-active{
+        &__content{
+            padding: 38% 0 14%;
+        }
+        &__wrapper{
+            right: -8vw;
+            top: 62px;
+        }
+    }  
+    }
+
+/* Наши преимущества */
+    .excellence{
+        .slick{
+            &-list{
+            padding: 20px;
+            }
+            
+        }
+        &__description{
+            left: -19px;
+            width: 98vw;
+        }
+    }
+
+    .reviews{
+        &__cards{
+            width: 98vw;
+            left: -6vw;
+            .slick-list{
+                height: 349px;
+                padding: 0 20px;
+            }
+        }
+        
+        
+    }
+    .footer{
+        &-services{
+            &__description{
+                &>a{
+                    font-size: 16px;
+                }
+            }
+        }
+        &-contact{
+            
+            &__phone{
+                font-size: 16px;
+            }
+            &__politics{
+                font-size: 16px;
+            }
+        }
+    }
+}

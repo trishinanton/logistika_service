@@ -1,0 +1,63 @@
+@media screen and (max-width: 320px) {
+  .main-screen .body {
+    padding-top: 95px;
+    padding-bottom: 35px;
+  }
+  .main-screen .main-body__name {
+    font-size: 10px;
+  }
+  .main-screen .main-body__description {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  -footer .advantage__name {
+    font-size: 14px;
+    margin: 3px 0 3px 0;
+    width: 100%;
+  }
+  -footer .advantage__name:before {
+    background-image: url(../img/main_screen/Rectangle_adaptive.png);
+    width: 11px;
+    height: 11px;
+    left: -20px;
+    top: 5px;
+  }
+  -footer .advantage__name-wsize:before {
+    top: 15px;
+  }
+  -footer__advantage {
+    margin-left: 23px;
+  }
+  .menu-active__content {
+    padding: 38% 0 14%;
+  }
+  .menu-active__wrapper {
+    right: -8vw;
+    top: 62px;
+  }
+  /* Наши преимущества */
+  .excellence .slick-list {
+    padding: 20px;
+  }
+  .excellence__description {
+    left: -19px;
+    width: 98vw;
+  }
+  .reviews__cards {
+    width: 98vw;
+    left: -6vw;
+  }
+  .reviews__cards .slick-list {
+    height: 349px;
+    padding: 0 20px;
+  }
+  .footer-services__description > a {
+    font-size: 16px;
+  }
+  .footer-contact__phone {
+    font-size: 16px;
+  }
+  .footer-contact__politics {
+    font-size: 16px;
+  }
+}
