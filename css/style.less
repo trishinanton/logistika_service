@@ -78,7 +78,8 @@ button{
     }
     &__button{
         margin-left: 14px;
-        transition: 0.3s linear;
+        // transition: 0.3s linear;
+      
         
     }
     &__number{
@@ -125,10 +126,13 @@ button{
     }
     &-image{
         width: 196px;
-       
         margin-right: 31px;
         position: relative;
         z-index: 2;
+        transition: linear 0.5s;
+        &__scroll{
+            width: 129px;
+        }
     }
     &-name{
         font-family: 'Arial'; 
@@ -138,6 +142,9 @@ button{
         text-transform: uppercase;
         position: relative;
         color: white;
+        &__scroll{
+            font-size: 19px;
+        }
         /* &:before{
             content: '';
             position: absolute;
@@ -164,10 +171,17 @@ button{
     position: relative;
     z-index: 2;
     color: white;
+    transition: 0.3s linear;
+    &>a{
+        color: white;
+    }
     &:hover{
         background-color: white;
         color: #2B2B51;
         cursor: pointer;
+        &>a{
+            color: #2B2B51;  
+        }
     }
 }
 .menu{
@@ -236,10 +250,10 @@ button{
    }
     &__content{
         // display: none;
-        background: linear-gradient(90.5deg, rgba(255, 255, 255, 0.04) -0.21%, rgba(255, 255, 255, 0.01) 100.56%);
+        background: rgba(145,141,154, 0.8);
         opacity: 1;
         box-shadow: 0px 4px 8px rgba(43, 43, 81, 0.07);
-        backdrop-filter: blur(40px);
+        backdrop-filter: blur(11px);
         height: 100vh;
         width: 50%;
         position: fixed;
@@ -285,6 +299,7 @@ button{
         color: white;
         &>a{
             transition: 0.3s linear;
+            color: white;
             &:hover{
                 color: rgb(223, 223, 223);
                 
@@ -667,7 +682,7 @@ button{
         box-sizing: border-box;
         background-color: transparent;
         color: rgba(255, 255, 255, 0.44);
-        font-size: 27px;
+        font-size: 26px;
         transition: 0.3s linear;
         right: 0;
         bottom: -66px;

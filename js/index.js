@@ -116,7 +116,7 @@ function resizeReviewsSlider(clientWidth){
 resizeReviewsSlider(clientWidth)
 
 
-/* Плавный скролл */
+/* Плавный скролл меню*/
 $(document).ready(function(){
     $("#menu").on("click","a", function (event) {
         event.preventDefault();
@@ -126,6 +126,25 @@ $(document).ready(function(){
         });
     });
 
+/* Плавный скролл по кнопке "О Компании"*/
+$(document).ready(function(){
+    $(".main-scroll__wrapper").on("click","a", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+            top = $(id).offset().top;
+            $('body,html').animate({scrollTop: top}, 1500);
+        });
+    });
+
+/* Плавный скролл по кнопке "Заказать звонок"*/
+$(document).ready(function(){
+    $(".button").on("click","a", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+            top = $(id).offset().top;
+            $('body,html').animate({scrollTop: top}, 1500);
+        });
+    });
 /* Фиксированное меню */
 $(document).ready(function($) {
     var g_top = 0;
@@ -133,7 +152,7 @@ $(document).ready(function($) {
       var top = $(this).scrollTop();
       
       if ( top > g_top ) {
-        $('.header').fadeOut(400);
+        $('.header').fadeOut(200);
       } else {
         $('.header').fadeIn(400);
       }
@@ -141,6 +160,34 @@ $(document).ready(function($) {
       g_top = top;    
     });
   });
+
+$(window).on("scroll", function () {
+    var scrolled = $(this).scrollTop();
+    if( scrolled > 200 ) {
+        $('.header').css('background','#2B2B51');
+        $('.header').css('box-shadow', '0px 0px 26px white')
+        $('.logo-image').addClass('logo-image__scroll')
+        $('.logo-name').addClass('logo-name__scroll')
+    }   
+    if( scrolled <= 100 ) {     
+        $('.header').css('background','transparent');
+        $('.header').css('box-shadow', 'none')
+        $('.logo-image').removeClass('logo-image__scroll')
+        $('.logo-name').removeClass('logo-name__scroll')
+    }
+});
+    
+$(window).on('scroll', function(){
+    let scrolled = $(this).scrollTop();
+    var heightScreen = $(window).height();
+    if(scrolled > heightScreen){
+        $('.menu-active__content').css('background','rgba(16,16,39, 0.9)')
+    }
+    if(scrolled < heightScreen){
+        $('.menu-active__content').css('background', 'rgba(145,141,154, 0.3)')
+    }
+})
+
 
 // Отслеживание хедера
 function backgroundHeader(differenceWidth){
