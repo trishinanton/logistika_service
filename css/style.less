@@ -4,7 +4,6 @@
 // 	src: url(../fonts/roboto/Roboto-Regular.ttf); 
 // }
 //  @font-face {
-//     font-family: 'Arial'; 
 //     src: url(../fonts/arial/9041.ttf); 
 // } 
 *{
@@ -14,7 +13,8 @@
 }
 body{
     overflow-x: hidden;
-    width: 100vw;
+    width: 100%;
+    font-family: 'Arial';
 } 
 a{
     text-decoration: none;
@@ -52,7 +52,7 @@ button{
     flex-direction: column;
     justify-content: space-between;
     &__header{
-        padding: 16px 3% 10px;
+        padding: 16px 3%;
         box-sizing: border-box;
         // position: absolute;
         width: 100vw;
@@ -74,17 +74,12 @@ button{
     }
     &-menu{
         margin-left: 33px;
-        
     }
     &__button{
         margin-left: 14px;
-        // transition: 0.3s linear;
-      
-        
     }
     &__number{
         display: block;
-        font-family: 'Arial';
         font-style: normal;
         font-weight: 700;
         font-size: 24px;
@@ -100,7 +95,6 @@ button{
        
     }
     &__menu{
-        font-family: 'Arial';
         font-style: normal;
         font-weight: 700;
         font-size: 20px;
@@ -125,17 +119,18 @@ button{
         background-size: cover;
     }
     &-image{
-        width: 196px;
-        margin-right: 31px;
+        width: 180px;
+        // width: 110px;
+        margin-right: 30px;
         position: relative;
         z-index: 2;
         transition: linear 0.5s;
         &__scroll{
-            width: 129px;
+            margin-right: 20px;
+            width: 90px;
         }
     }
     &-name{
-        font-family: 'Arial'; 
         font-style: normal;
         font-weight: 900;
         font-size: 22px;
@@ -143,21 +138,11 @@ button{
         position: relative;
         color: white;
         &__scroll{
-            font-size: 19px;
+            font-size: 16px;
         }
-        /* &:before{
-            content: '';
-            position: absolute;
-            background-image: url(../img/main_screen/logo_white\ 1.png);
-            background-size: cover;
-            width: 74px;
-            height: 65.24px;
-            transform: translateX(-110%);
-        } */
     }
 }
 .button{
-    font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -192,10 +177,15 @@ button{
     transform-origin: 100% 0;
     z-index: 3;
     margin-right: 40px;
-    color: white;
     // animation: close_menu 5s;
     &:hover{
         cursor: pointer;
+        .header__menu{
+            color: rgb(226, 226, 226);
+        }
+        .menu__span{
+            background:rgb(226, 226, 226);
+        }
     }
     &__span{
         width: 20.67px;
@@ -292,7 +282,6 @@ button{
         justify-content: space-between;
     }
     &__number{
-        font-family: 'Arial';
         font-style: normal;
         font-weight: 700;
         font-size: 24px;
@@ -317,7 +306,6 @@ button{
     }
 }
 .points{
-    font-family: Arial;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -394,7 +382,6 @@ button{
 }
 .main{
     &-body{
-        font-family: 'Arial';
         margin-top: 45px;
     &__name{
         
@@ -415,14 +402,12 @@ button{
     }
 }
 &-footer{
-    font-family: 'Arial';
     &__advantage{
         margin-left: 31px;
         // margin-top: 7vh;
     }
 }
 &-skgroup{
-    font-family: 'Arial';
     font-size: 9.8vw;
     font-weight: 900;
     line-height: 84%;
@@ -439,8 +424,9 @@ button{
     &__img{
         background-size: cover;
         transition: 0.3s linear;
+        display: block;
         &:hover{
-            transform: scale(1.1);
+            transform: scale(0.94);
         }
     }
     &__wrapper{
@@ -497,7 +483,6 @@ button{
     justify-content: space-between;
     &__name{
         position: relative;
-        font-family: Arial;
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
@@ -568,7 +553,6 @@ button{
         color: white; 
         &>p{
         margin-top: 20px;
-        font-family: 'Arial';
         font-style: normal;
         font-size: 16px;
         font-weight: 400;
@@ -583,7 +567,6 @@ button{
 }
 .sliders{
     &__number{
-        font-family: Arial;
         font-style: normal;
         font-weight: normal;
         font-size: 15px;
@@ -700,7 +683,6 @@ button{
     z-index: 1;
 }
 .block-header{
-    font-family: Arial;
     font-style: normal;
     font-weight: 900;
     font-size: 62px;
@@ -1065,7 +1047,6 @@ button{
             // margin-top: 26px;
             // margin-left: 22px;
             margin-right: 65px;
-            font-family: Arial;
             font-weight: 900;
             font-size: 18px;
             color: #2B2B51;
@@ -1073,7 +1054,6 @@ button{
         &__description{
             // margin-left: 22px;
             // margin-right: 50px;
-            font-family: Arial;
             font-style: normal;
             font-weight: normal;
             font-size: 14px;
@@ -1230,7 +1210,6 @@ button{
         display: flex;
         flex-direction: row;
         justify-content: center;
-        font-family: 'Arial'; 
         font-style: normal;
         font-weight: 900;
         font-size: 26px;
@@ -1242,8 +1221,9 @@ button{
     }
     &-card{
         height: 497px;
-        transition: all 1s ease 0s;
+        transition: all 1s ease-in-out 0s;
         width: 33.3%;
+        position: relative;
         &__name{
             margin: 0 28px;
             position: relative;
@@ -1261,28 +1241,18 @@ button{
             background-image: url(../img/services/cargo.png);
             background-size: cover;
         }
-        &-active{
-            display: none;
-            font-family: 'Arial'; 
-            font-style: normal;
-            font-weight: 900;
-            font-size: 26px;
-            line-height: 35px;
-            background-image: url(../img/services/fon-active.png);
-            background-size: cover;
-            width: 100%;
-            height: 100%;
-        
-        }
         &__btn{
+            opacity: 0;
             width: 173px;
             height: 40px;
             margin: 0 28px;
-            top: 345px;
+            // top: 345px;
+            top: 380px;
+            display: flex;
+            align-items: center;
             border: 2px solid #FFFFFF;
             box-sizing: border-box;
             background: transparent;
-            font-family: Arial;
             font-style: normal;
             font-weight: normal;
             font-size: 16px;
@@ -1291,7 +1261,9 @@ button{
             text-align: left;
             padding-left: 14px;
             position: relative;
-            animation: rotate 1s ;
+            z-index: 2;
+            animation: rotate 0.7s ease-in-out ;
+            transition: all 0.7s ease-in-out, background-color 0.3s ease-in-out;
             &:after{
                 content: '';
                 background-image: url(../img/services/arrow.png);
@@ -1301,6 +1273,10 @@ button{
                 position: absolute;
                 right: 30px;
                 top: 14px;
+            }
+            &:hover{
+                background-color: #fff;
+                color: #2B2B51;
             }
         }
         @keyframes rotate {
@@ -1312,20 +1288,43 @@ button{
             }
         }
         &__title{
-            font-family: Arial;
-            font-style: normal;
+            display: block;
             font-weight: 900;
             font-size: 26px;
             line-height: 30px;
             color: #FFFFFF;
             margin: 0 28px;
             position: relative;
-            top: 335px;
+            top: 376px;
             transition: 0.3s linear;
+            z-index: 2;
+            transition: all 0.7s ease-in-out;
             &:hover{
-                color: rgb(223, 223, 223);
-                
-    }
+                color: rgba(223, 223, 223, 0.829);
+            }
+        }
+        &--hover{
+            .services-card__title{
+                top: 335px;
+            }
+            .services-card__btn{
+                opacity: 1;
+                top: 345px;
+            }
+            .services-card__btn:hover::after{
+                background-image: url(../img/services/arrow--dark.png);
+            }
+            &::after{
+                content: '';
+                display: block;
+                position: absolute;
+                z-index: 1;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                background-image: url(../img/services/fon-active.png);
+            }
         }
     }
 }
@@ -1458,7 +1457,6 @@ button{
                &:before{
                 content: 'Заявка на расчет ';
                 position: absolute;
-                font-family: Arial;
                 font-size: 18px;
                 line-height: 21px;
                 text-transform: uppercase;
@@ -1473,7 +1471,6 @@ button{
                &:before{
                 content: 'расчет ставки ';
                 position: absolute;
-                font-family: Arial;
                 font-size: 18px;
                 line-height: 21px;
                 text-transform: uppercase;
@@ -1488,7 +1485,6 @@ button{
                 &:before{
                  content: 'Подписание договора ';
                  position: absolute;
-                 font-family: Arial;
                  font-size: 18px;
                  line-height: 21px;
                  text-transform: uppercase;
@@ -1503,7 +1499,6 @@ button{
                 &:before{
                  content: 'Оплата поставщику ';
                  position: absolute;
-                 font-family: Arial;
                  font-size: 18px;
                  line-height: 21px;
                  text-transform: uppercase;
@@ -1518,7 +1513,6 @@ button{
                 &:before{
                  content: 'Перевозка и таможня';
                  position: absolute;
-                 font-family: Arial;
                  font-size: 18px;
                  line-height: 21px;
                  text-transform: uppercase;
@@ -1533,7 +1527,6 @@ button{
                 &:before{
                  content: 'Передаем груз и документы ';
                  position: absolute;
-                 font-family: Arial;
                  font-size: 18px;
                  line-height: 21px;
                  text-transform: uppercase;
@@ -1585,7 +1578,6 @@ button{
         }
         &__number{
             position: absolute;
-            font-family: Arial;
             font-size: 28px;
             line-height: 33px;
             letter-spacing: 0.05em;
@@ -1672,7 +1664,6 @@ button{
             align-items: center;
         }
         &__name{
-            font-family: Arial;
             font-style: normal;
             font-weight: bold;
             font-size: 18px;
@@ -1686,7 +1677,6 @@ button{
             margin-right: 16px;
         }
         &__caption{
-            font-family: Arial;
             font-style: normal;
             font-weight: normal;
             font-size: 14px;
@@ -1695,7 +1685,6 @@ button{
             margin-top: 5px;
         }
         &__description{
-            font-family: 'Arial';
             font-style: normal;
             font-weight: normal;
             font-size: 18px;
@@ -1828,7 +1817,6 @@ button{
         }
     }
     &__subname{
-        font-family: Arial;
         font-style: normal;
         font-weight: 900;
         font-size: 42px;
@@ -1857,7 +1845,6 @@ button{
             background: #F07676;
             border: 2px solid #F07676;
             box-sizing: border-box;
-            font-family: Arial;
             font-style: normal;
             font-weight: normal;
             font-size: 18px;
@@ -1895,7 +1882,6 @@ button{
         font-weight: 400;
         &::placeholder{
             color: white;
-            font-family: Arial;
             font-size: 18px;
         }
     }
@@ -1945,16 +1931,6 @@ button{
         .iframe{
             width: 100%;
         }
-        /* &::after{
-            content: '';
-            position: absolute;
-            width: 835px;
-            height: 461px;
-            background: #2B2B51;
-            z-index: 0;
-            bottom: 14px;
-            right: -17px;
-        } */
     }
     & .map{
         height: 461px;
@@ -1971,7 +1947,6 @@ button{
     & .our-address{
         background-color: white;
         box-shadow: 0px 4px 20px rgba(43, 43, 81, 0.15);
-        // width: 567px;
         height: 321px;
         box-sizing: border-box;
         
@@ -2006,7 +1981,6 @@ button{
             z-index: 1;
         }
         &__title{
-            font-family: 'Arial';
             font-size: 36px;
             font-weight: 900;
             text-transform: uppercase;
@@ -2015,9 +1989,8 @@ button{
             padding-left: 57px;
         }
         &__name{
-            font-family: 'Arial';
             font-weight: normal;
-            font-size: 24px;
+            font-size: 18px;
             font-weight: normal;
             color: #2B2B51;
             padding-top: 20px;
@@ -2034,6 +2007,10 @@ button{
     .social{
         &__icon{
             transition: 0.3s linear;
+            &>a>img{
+                // height: 50px;
+                // width: auto;
+            }
             &:hover{
                 transform: scale(1.1);  
             }
@@ -2047,14 +2024,17 @@ button{
     &__wrapper{
         display: flex;
         justify-content: space-between;
-        padding: 22px 24px 22px 15px;
+        padding: 34px 24px 34px 20px;
         
     }
     &-logo{
         display: flex;
         align-items: center;
+        &>a{
+            display: flex;
+            align-items: center;
+        }
         &__name{
-            font-family: 'Arial';
             font-weight: 900;
             font-size: 18px;
             color: #FFFFFF;
@@ -2072,21 +2052,22 @@ button{
     &-services{
         margin-right: 9%;
         &__name{
-            font-family: 'Arial';
             text-transform: uppercase;
             font-weight: 900;
             font-size: 18px;
             color: #FFFFFF;
+            margin-bottom: 12px;
         }
         &__description{
             
             &>a{
-               font-family: 'Arial';
-            font-weight: 400;
-            font-size: 18px;
-            color: #FFFFFF;
-            line-height:27px; 
-            transition: 0.3s linear;
+                font-weight: 400;
+                font-size: 16px;
+                color: #FFFFFF;
+                // line-height:27px;
+                display: block;
+                margin-bottom: 14px; 
+                transition: 0.3s linear;
             &:hover{
                 color: rgb(116, 141, 168);
             }
@@ -2102,7 +2083,6 @@ button{
             text-decoration: none;
         }
         &__phone{
-            font-family: 'Arial';
             font-weight: normal;
             font-size: 18px;
             color: #FFFFFF;
@@ -2122,9 +2102,8 @@ button{
             }
         }
         &__politics{
-            font-family: 'Arial';
             font-weight: normal;
-            font-size: 18px;
+            font-size: 16px;
             color: #D5D5D5;
             text-decoration-line: underline;
             padding-top: 23px;
@@ -2140,14 +2119,15 @@ button{
     height: 40px;
     background: #2B2B51;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    
-    
+    padding: 0 1%;
+    font-size: 14px;
+    &_copyrigth{
+        color: #d5d5d59f;
+    }
     &__name{
-        font-family: 'Arial';
         font-weight: normal;
-        font-size: 18px;
         
         &>a{
             color: #D5D5D5;
