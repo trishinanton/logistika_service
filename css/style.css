@@ -5,7 +5,8 @@
 }
 body {
   overflow-x: hidden;
-  width: 100vw;
+  width: 100%;
+  font-family: 'Arial';
 }
 a {
   text-decoration: none;
@@ -40,7 +41,7 @@ button:hover {
   justify-content: space-between;
 }
 .main-screen__header {
-  padding: 16px 3% 10px;
+  padding: 16px 3%;
   box-sizing: border-box;
   width: 100vw;
   left: 0;
@@ -67,7 +68,6 @@ button:hover {
 }
 .header__number {
   display: block;
-  font-family: 'Arial';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -82,7 +82,6 @@ button:hover {
   color: #dfdfdf;
 }
 .header__menu {
-  font-family: 'Arial';
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -105,38 +104,28 @@ button:hover {
   background-size: cover;
 }
 .logo-image {
-  width: 196px;
-  margin-right: 31px;
+  width: 180px;
+  margin-right: 30px;
   position: relative;
   z-index: 2;
   transition: linear 0.5s;
 }
 .logo-image__scroll {
-  width: 129px;
+  margin-right: 20px;
+  width: 90px;
 }
 .logo-name {
-  font-family: 'Arial';
   font-style: normal;
   font-weight: 900;
   font-size: 22px;
   text-transform: uppercase;
   position: relative;
   color: white;
-  /* &:before{
-            content: '';
-            position: absolute;
-            background-image: url(../img/main_screen/logo_white\ 1.png);
-            background-size: cover;
-            width: 74px;
-            height: 65.24px;
-            transform: translateX(-110%);
-        } */
 }
 .logo-name__scroll {
-  font-size: 19px;
+  font-size: 16px;
 }
 .button {
-  font-family: 'Arial';
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -171,10 +160,15 @@ button:hover {
   transform-origin: 100% 0;
   z-index: 3;
   margin-right: 40px;
-  color: white;
 }
 .menu:hover {
   cursor: pointer;
+}
+.menu:hover .header__menu {
+  color: #e2e2e2;
+}
+.menu:hover .menu__span {
+  background: #e2e2e2;
 }
 .menu__span {
   width: 20.67px;
@@ -268,7 +262,6 @@ button:hover {
   justify-content: space-between;
 }
 .active-content__number {
-  font-family: 'Arial';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -291,7 +284,6 @@ button:hover {
   }
 }
 .points {
-  font-family: Arial;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -364,7 +356,6 @@ button:hover {
   height: 100vh;
 }
 .main-body {
-  font-family: 'Arial';
   margin-top: 45px;
 }
 .main-body__name {
@@ -382,14 +373,10 @@ button:hover {
   line-height: 50px;
   font-weight: 900;
 }
-.main-footer {
-  font-family: 'Arial';
-}
 .main-footer__advantage {
   margin-left: 31px;
 }
 .main-skgroup {
-  font-family: 'Arial';
   font-size: 9.8vw;
   font-weight: 900;
   line-height: 84%;
@@ -405,9 +392,10 @@ button:hover {
 .main-scroll__img {
   background-size: cover;
   transition: 0.3s linear;
+  display: block;
 }
 .main-scroll__img:hover {
-  transform: scale(1.1);
+  transform: scale(0.94);
 }
 .main-scroll__wrapper {
   width: 24.62px;
@@ -451,7 +439,6 @@ button:hover {
 }
 .advantage__name {
   position: relative;
-  font-family: Arial;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -519,7 +506,6 @@ button:hover {
 }
 .about__purpose > p {
   margin-top: 20px;
-  font-family: 'Arial';
   font-style: normal;
   font-size: 16px;
   font-weight: 400;
@@ -530,7 +516,6 @@ button:hover {
   justify-content: flex-end;
 }
 .sliders__number {
-  font-family: Arial;
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -614,7 +599,6 @@ button:hover {
   z-index: 1;
 }
 .block-header {
-  font-family: Arial;
   font-style: normal;
   font-weight: 900;
   font-size: 62px;
@@ -946,13 +930,11 @@ button:hover {
 }
 .excellence-card__name {
   margin-right: 65px;
-  font-family: Arial;
   font-weight: 900;
   font-size: 18px;
   color: #2B2B51;
 }
 .excellence-card__description {
-  font-family: Arial;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -1078,7 +1060,6 @@ button:hover {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  font-family: 'Arial';
   font-style: normal;
   font-weight: 900;
   font-size: 26px;
@@ -1090,8 +1071,9 @@ button:hover {
 }
 .services-card {
   height: 497px;
-  transition: all 1s ease 0s;
+  transition: all 1s ease-in-out 0s;
   width: 33.3%;
+  position: relative;
 }
 .services-card__name {
   margin: 0 28px;
@@ -1110,27 +1092,17 @@ button:hover {
   background-image: url(../img/services/cargo.png);
   background-size: cover;
 }
-.services-card-active {
-  display: none;
-  font-family: 'Arial';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 26px;
-  line-height: 35px;
-  background-image: url(../img/services/fon-active.png);
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-}
 .services-card__btn {
+  opacity: 0;
   width: 173px;
   height: 40px;
   margin: 0 28px;
-  top: 345px;
+  top: 380px;
+  display: flex;
+  align-items: center;
   border: 2px solid #FFFFFF;
   box-sizing: border-box;
   background: transparent;
-  font-family: Arial;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -1139,7 +1111,9 @@ button:hover {
   text-align: left;
   padding-left: 14px;
   position: relative;
-  animation: rotate 1s ;
+  z-index: 2;
+  animation: rotate 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out, background-color 0.3s ease-in-out;
 }
 .services-card__btn:after {
   content: '';
@@ -1151,6 +1125,10 @@ button:hover {
   right: 30px;
   top: 14px;
 }
+.services-card__btn:hover {
+  background-color: #fff;
+  color: #2B2B51;
+}
 @keyframes rotate {
   0% {
     transform: translateY(50px);
@@ -1160,19 +1138,41 @@ button:hover {
   }
 }
 .services-card__title {
-  font-family: Arial;
-  font-style: normal;
+  display: block;
   font-weight: 900;
   font-size: 26px;
   line-height: 30px;
   color: #FFFFFF;
   margin: 0 28px;
   position: relative;
-  top: 335px;
+  top: 376px;
   transition: 0.3s linear;
+  z-index: 2;
+  transition: all 0.7s ease-in-out;
 }
 .services-card__title:hover {
-  color: #dfdfdf;
+  color: rgba(223, 223, 223, 0.829);
+}
+.services-card--hover .services-card__title {
+  top: 335px;
+}
+.services-card--hover .services-card__btn {
+  opacity: 1;
+  top: 345px;
+}
+.services-card--hover .services-card__btn:hover::after {
+  background-image: url(../img/services/arrow--dark.png);
+}
+.services-card--hover::after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(../img/services/fon-active.png);
 }
 .cooperation {
   background: #2B2B51;
@@ -1286,7 +1286,6 @@ button:hover {
 .cooperation .stages__description.stages-1:before {
   content: 'Заявка на расчет ';
   position: absolute;
-  font-family: Arial;
   font-size: 18px;
   line-height: 21px;
   text-transform: uppercase;
@@ -1299,7 +1298,6 @@ button:hover {
 .cooperation .stages__description.stages-2:before {
   content: 'расчет ставки ';
   position: absolute;
-  font-family: Arial;
   font-size: 18px;
   line-height: 21px;
   text-transform: uppercase;
@@ -1312,7 +1310,6 @@ button:hover {
 .cooperation .stages__description.stages-3:before {
   content: 'Подписание договора ';
   position: absolute;
-  font-family: Arial;
   font-size: 18px;
   line-height: 21px;
   text-transform: uppercase;
@@ -1325,7 +1322,6 @@ button:hover {
 .cooperation .stages__description.stages-4:before {
   content: 'Оплата поставщику ';
   position: absolute;
-  font-family: Arial;
   font-size: 18px;
   line-height: 21px;
   text-transform: uppercase;
@@ -1338,7 +1334,6 @@ button:hover {
 .cooperation .stages__description.stages-5:before {
   content: 'Перевозка и таможня';
   position: absolute;
-  font-family: Arial;
   font-size: 18px;
   line-height: 21px;
   text-transform: uppercase;
@@ -1351,7 +1346,6 @@ button:hover {
 .cooperation .stages__description.stages-6:before {
   content: 'Передаем груз и документы ';
   position: absolute;
-  font-family: Arial;
   font-size: 18px;
   line-height: 21px;
   text-transform: uppercase;
@@ -1396,7 +1390,6 @@ button:hover {
 }
 .cooperation .stages__number {
   position: absolute;
-  font-family: Arial;
   font-size: 28px;
   line-height: 33px;
   letter-spacing: 0.05em;
@@ -1477,7 +1470,6 @@ button:hover {
   align-items: center;
 }
 .reviews .comment__name {
-  font-family: Arial;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
@@ -1489,7 +1481,6 @@ button:hover {
   margin-right: 16px;
 }
 .reviews .comment__caption {
-  font-family: Arial;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -1498,7 +1489,6 @@ button:hover {
   margin-top: 5px;
 }
 .reviews .comment__description {
-  font-family: 'Arial';
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -1616,7 +1606,6 @@ button:hover {
   right: -65px;
 }
 .question__subname {
-  font-family: Arial;
   font-style: normal;
   font-weight: 900;
   font-size: 42px;
@@ -1646,7 +1635,6 @@ button:hover {
   background: #F07676;
   border: 2px solid #F07676;
   box-sizing: border-box;
-  font-family: Arial;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -1683,7 +1671,6 @@ button:hover {
 }
 .question .form::placeholder {
   color: white;
-  font-family: Arial;
   font-size: 18px;
 }
 @media screen and (max-width: 1280px) {
@@ -1710,16 +1697,6 @@ button:hover {
   right: 0;
   display: flex;
   justify-content: flex-end;
-  /* &::after{
-            content: '';
-            position: absolute;
-            width: 835px;
-            height: 461px;
-            background: #2B2B51;
-            z-index: 0;
-            bottom: 14px;
-            right: -17px;
-        } */
 }
 .contact__map-img {
   width: 50vw;
@@ -1788,7 +1765,6 @@ button:hover {
   z-index: 1;
 }
 .contact .our-address__title {
-  font-family: 'Arial';
   font-size: 36px;
   font-weight: 900;
   text-transform: uppercase;
@@ -1797,8 +1773,7 @@ button:hover {
   padding-left: 57px;
 }
 .contact .our-address__name {
-  font-family: 'Arial';
-  font-size: 24px;
+  font-size: 18px;
   font-weight: normal;
   color: #2B2B51;
   padding-top: 20px;
@@ -1823,14 +1798,17 @@ button:hover {
 .footer__wrapper {
   display: flex;
   justify-content: space-between;
-  padding: 22px 24px 22px 15px;
+  padding: 34px 24px 34px 20px;
 }
 .footer-logo {
   display: flex;
   align-items: center;
 }
+.footer-logo > a {
+  display: flex;
+  align-items: center;
+}
 .footer-logo__name {
-  font-family: 'Arial';
   font-weight: 900;
   font-size: 18px;
   color: #FFFFFF;
@@ -1845,18 +1823,18 @@ button:hover {
   margin-right: 9%;
 }
 .footer-services__name {
-  font-family: 'Arial';
   text-transform: uppercase;
   font-weight: 900;
   font-size: 18px;
   color: #FFFFFF;
+  margin-bottom: 12px;
 }
 .footer-services__description > a {
-  font-family: 'Arial';
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   color: #FFFFFF;
-  line-height: 27px;
+  display: block;
+  margin-bottom: 14px;
   transition: 0.3s linear;
 }
 .footer-services__description > a:hover {
@@ -1872,7 +1850,6 @@ button:hover {
   text-decoration: none;
 }
 .footer-contact__phone {
-  font-family: 'Arial';
   font-weight: normal;
   font-size: 18px;
   color: #FFFFFF;
@@ -1892,9 +1869,8 @@ button:hover {
   left: -30px;
 }
 .footer-contact__politics {
-  font-family: 'Arial';
   font-weight: normal;
-  font-size: 18px;
+  font-size: 16px;
   color: #D5D5D5;
   text-decoration-line: underline;
   padding-top: 23px;
@@ -1907,13 +1883,16 @@ button:hover {
   height: 40px;
   background: #2B2B51;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 1%;
+  font-size: 14px;
+}
+.good-product_copyrigth {
+  color: #d5d5d59f;
 }
 .good-product__name {
-  font-family: 'Arial';
   font-weight: normal;
-  font-size: 18px;
 }
 .good-product__name > a {
   color: #D5D5D5;
