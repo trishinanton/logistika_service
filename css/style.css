@@ -1591,7 +1591,7 @@ button:hover {
 }
 .question__name {
   font-size: 42px;
-  line-height: 87px;
+  line-height: 56px;
   margin-top: 66px;
 }
 .question__name:after {
@@ -1602,23 +1602,14 @@ button:hover {
   z-index: 2;
   width: 110px;
   height: 62px;
-  top: -17px;
+  top: -29px;
   right: -65px;
 }
-.question__subname {
-  font-style: normal;
-  font-weight: 900;
-  font-size: 42px;
-  line-height: 37px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: transparent;
-  -webkit-text-stroke: 2px #FFFFFF;
-  position: relative;
-  display: inline-block;
-}
-.question-form {
-  margin-top: 117px;
+.question__description {
+  margin: 33px 0 33px 4px;
+  font-size: 22px;
+  color: #FFFFFF;
+  width: 764px;
 }
 .question-form__contact {
   display: flex;

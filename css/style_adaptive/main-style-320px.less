@@ -1,4 +1,8 @@
 @media screen and (max-width: 320px){
+    .block-header > span:after{
+        top: 27px;
+        right: -27px;
+    }
     .main-screen{
         .body{
             padding-top: 95px;
@@ -24,7 +28,7 @@
                 margin: 3px 0 3px 0;
                 width: 100%;
                 &:before{
-                    background-image: url(../img/main_screen/Rectangle_adaptive.png);
+                    background-image: url(../../img/main_screen/Rectangle_adaptive.png);
                     width: 11px;
                     height: 11px;
                     left: -20px;
@@ -52,9 +56,42 @@
         }
     }  
     }
-
+// О компании
+.about{
+    &__name{
+        &>span{
+            &:after{
+                content: '';
+                position: absolute;
+                background-image: url(../../img/about/crosses_for_header.png);
+                background-size: cover;
+                z-index: 2;
+                width: 47px;
+                height: 26px;
+                top: -9px;
+                right: -27px;
+            }
+        }
+    }
+}
 /* Наши преимущества */
     .excellence{
+        &__name{
+            &>span{
+                &:after{
+                   content: '';
+                position: absolute;
+                background-image: url(../../img/about/crosses_for_header.png);
+                background-size: cover;
+                z-index: 2;
+                width: 47px;
+                height: 26px;
+                top: 29px;
+                right: -23px;
+                }
+                
+            }
+        }
         .slick{
             &-list{
             padding: 20px;
@@ -79,6 +116,18 @@
         
         
     }
+    .question{
+        &__name{ 
+            font-size: 21px;
+            line-height: 34px;
+            &>span{
+                &:before{
+                    top: -11px;
+                    right: -69px;
+                }
+            }
+        }
+    }
     .footer{
         &-services{
             &__description{
@@ -88,12 +137,33 @@
             }
         }
         &-contact{
-            
             &__phone{
                 font-size: 16px;
             }
             &__politics{
                 font-size: 16px;
+            }
+        }
+        &-logo{
+            &__name{
+                width: 140px;
+            }
+        }
+    }
+    .contact{
+        &__name{
+            &>span{
+                &:after{
+                    content: '';
+                    position: absolute;
+                    background-image: url(../../img/about/crosses_for_header.png);
+                    background-size: cover;
+                    z-index: 2;
+                    width: 47px;
+                    height: 26px;
+                    top: -9px;
+                    right: -27px;
+                }
             }
         }
     }

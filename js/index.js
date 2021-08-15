@@ -102,7 +102,7 @@ $(document).ready(function(){
 
     /*Инициализация слайдера "Отзывы клиентов"  */
     function resizeReviewsSlider(clientWidth){
-        if (clientWidth <= 1024){
+        if (clientWidth <= 102){ //на всякий оставлю, вдруг она опять передумает
             $('.reviews__cards').slick({
                 dots: true,
             infinite: true,

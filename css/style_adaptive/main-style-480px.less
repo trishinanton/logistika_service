@@ -244,10 +244,21 @@
         margin-top: 0px;
         -webkit-text-stroke: 1px #FFFFFF;
         &:after{
-            width: 47px;
-            height: 26px;
-            top: 14px;
-            right: -27px;
+            display: none;
+        }
+        &>span{
+            position: relative;
+            &:after{
+                content: '';
+                position: absolute;
+                background-image: url(../../img/about/crosses_for_header.png);
+                background-size: cover;
+                z-index: 2;
+                width: 47px;
+                height: 26px;
+                top: -9px;
+                right: -27px;
+            }  
         }
     } 
 
@@ -260,23 +271,23 @@
             font-size: 26px;
             line-height: 39px;
             -webkit-text-stroke: 1px#2B2B51;
-            &>span{
-                position: relative;
-                &:after{
-                    content: '';
-                    position: absolute;
-                    background-image: url(../img/about/crosses_for_header.png);
-                    background-size: cover;
-                    z-index: 2;
-                    width: 47px;
-                    height: 26px;
-                    top: 30px;
-                    right: -22px
-                }  
-            }
-            &:after{
-                display: none;
-            }
+            // &>span{
+            //     position: relative;
+            //     &:after{
+            //         content: '';
+            //         position: absolute;
+            //         background-image: url(../../img/about/crosses_for_header.png);
+            //         background-size: cover;
+            //         z-index: 2;
+            //         width: 47px;
+            //         height: 26px;
+            //         top: -11px;
+            //         right: -24px;
+            //     }  
+            // }
+            // &:after{
+            //     display: none;
+            // }
         }
         .slick{
             &-list{
@@ -407,23 +418,23 @@
             -webkit-text-stroke: 1px#2B2B51;
             line-height: 39px;
             margin-bottom: 33px;
-            &>span{
-                position: relative;
-                &:after{
-                    content: '';
-                    position: absolute;
-                    background-image: url(../img/about/crosses_for_header.png);
-                    background-size: cover;
-                    z-index: 2;
-                    width: 47px;
-                    height: 26px;
-                    top: 30px;
-                    right: -27px;
-                }  
-            }
-            &:after{
-                display: none;
-            }  
+            // &>span{
+            //     position: relative;
+            //     &:after{
+            //         content: '';
+            //         position: absolute;
+            //         background-image: url(../../img/about/crosses_for_header.png);
+            //         background-size: cover;
+            //         z-index: 2;
+            //         width: 47px;
+            //         height: 26px;
+            //         top: 30px;
+            //         right: -27px;
+            //     }  
+            // }
+            // &:after{
+            //     display: none;
+            // }  
         }
         &__description{
             flex-direction: column;
@@ -471,7 +482,7 @@
                 &:after{
                     content: '';
                     position: absolute;
-                    background-image: url(../img/about/crosses_for_header.png);
+                    background-image: url(../../img/about/crosses_for_header.png);
                     background-size: cover;
                     z-index: 2;
                     width: 45px;
@@ -602,23 +613,23 @@
         &__name{
             -webkit-text-stroke: 1px #5b5b91;
             line-height: 39px;
-            &>span{
-                position: relative;
-                &:after{
-                    content: '';
-                    position: absolute;
-                    background-image: url(../img/about/crosses_for_header.png);
-                    background-size: cover;
-                    z-index: 2;
-                    width: 47px;
-                    height: 26px;
-                    top: 30px;
-                    right: -26px;
-                }
-            }
-            &:after{
-                display: none;
-            }
+            // &>span{
+            //     position: relative;
+            //     &:after{
+            //         content: '';
+            //         position: absolute;
+            //         background-image: url(../../img/about/crosses_for_header.png);
+            //         background-size: cover;
+            //         z-index: 2;
+            //         width: 47px;
+            //         height: 26px;
+            //         top: 30px;
+            //         right: -26px;
+            //     }
+            // }
+            // &:after{
+            //     display: none;
+            // }
         }
         &__cards{
             flex-direction: column;
@@ -720,28 +731,30 @@
         &__name{
             line-height: 39px;
             font-size: 26px;
-            &:after{
-                display: none;
-            }
-        }
-        &__subname{
-            line-height: 39px;
-            font-size: 26px;
-            -webkit-text-stroke: 1px #FFFFFF;
             &>span{
                 position: relative;
-                &:after{
+                &:before{
                     content: '';
                     position: absolute;
-                    background-image: url(../img/about/crosses_for_header.png);
+                    background-image: url(../../img/about/crosses_for_header.png);
                     background-size: cover;
                     z-index: 2;
                     width: 47px;
                     height: 26px;
-                    top: 31px;
-                    right: -26px;
+                    top: -9px;
+                    right: -78px;
+                }
+                &:after{
+                    display: none;
                 }
             }
+            &:after{
+                display: none;
+            }
+        }
+        &__description{
+            font-size: 15px;
+            width: 100%;
         }
         &__form{
             margin-top: 32px;
