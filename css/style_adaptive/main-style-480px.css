@@ -214,9 +214,20 @@
     -webkit-text-stroke: 1px #FFFFFF;
   }
   .block-header:after {
+    display: none;
+  }
+  .block-header > span {
+    position: relative;
+  }
+  .block-header > span:after {
+    content: '';
+    position: absolute;
+    background-image: url(../../img/about/crosses_for_header.png);
+    background-size: cover;
+    z-index: 2;
     width: 47px;
     height: 26px;
-    top: 14px;
+    top: -9px;
     right: -27px;
   }
   /* Наши преимущества */
@@ -230,23 +241,6 @@
     line-height: 39px;
     -webkit-text-stroke: 1px #2B2B51;
   }
-  .excellence__name > span {
-    position: relative;
-  }
-  .excellence__name > span:after {
-    content: '';
-    position: absolute;
-    background-image: url(../img/about/crosses_for_header.png);
-    background-size: cover;
-    z-index: 2;
-    width: 47px;
-    height: 26px;
-    top: 30px;
-    right: -22px;
-  }
-  .excellence__name:after {
-    display: none;
-  }
   .excellence .slick-list {
     padding: 20px;
   }
@@ -256,7 +250,7 @@
   .excellence__description {
     flex-direction: column;
     margin-left: 0px;
-    width: 96vw;
+    width: 100%;
     left: -5vw;
   }
   .excellence__description .slick-dots li button:before {
@@ -300,7 +294,9 @@
   .excellence-card {
     padding: 24px 22px 17px 16px;
     box-shadow: 0 0 13px rgba(0, 0, 0, 0.2);
-    margin-bottom: 0px;
+    margin-bottom: 63px;
+    margin-left: 2px;
+    width: 99%;
   }
   .excellence-card__name {
     font-size: 15px;
@@ -361,23 +357,6 @@
     line-height: 39px;
     margin-bottom: 33px;
   }
-  .services__name > span {
-    position: relative;
-  }
-  .services__name > span:after {
-    content: '';
-    position: absolute;
-    background-image: url(../img/about/crosses_for_header.png);
-    background-size: cover;
-    z-index: 2;
-    width: 47px;
-    height: 26px;
-    top: 30px;
-    right: -27px;
-  }
-  .services__name:after {
-    display: none;
-  }
   .services__description {
     flex-direction: column;
     font-size: 23px;
@@ -425,7 +404,7 @@
   .cooperation__name > span:after {
     content: '';
     position: absolute;
-    background-image: url(../img/about/crosses_for_header.png);
+    background-image: url(../../img/about/crosses_for_header.png);
     background-size: cover;
     z-index: 2;
     width: 45px;
@@ -524,27 +503,10 @@
     -webkit-text-stroke: 1px #5b5b91;
     line-height: 39px;
   }
-  .reviews__name > span {
-    position: relative;
-  }
-  .reviews__name > span:after {
-    content: '';
-    position: absolute;
-    background-image: url(../img/about/crosses_for_header.png);
-    background-size: cover;
-    z-index: 2;
-    width: 47px;
-    height: 26px;
-    top: 30px;
-    right: -26px;
-  }
-  .reviews__name:after {
-    display: none;
-  }
   .reviews__cards {
     flex-direction: column;
-    width: 96vw;
-    left: -5vw;
+    width: 99%;
+    margin-left: 2px;
   }
   .reviews__cards .slick-list {
     height: 349px;
@@ -588,10 +550,11 @@
     background: #2B2B51;
   }
   .reviews .comment {
-    height: 320px;
-    padding: 4px 17px 38px 17px;
+    height: 283px;
+    padding: 25px 17px 38px 17px;
     width: 100%;
     transform: translateX(0px);
+    margin-bottom: 25px;
   }
   .reviews .comment:nth-child(odd) {
     margin-right: 0px;
@@ -609,6 +572,9 @@
   .reviews .comment__description {
     margin-top: 20px;
     font-size: 14px;
+  }
+  .reviews .reviews__majaro {
+    padding: 46px 17px 38px 17px;
   }
   /* Остались вопросы */
   .question {
@@ -637,27 +603,29 @@
     line-height: 39px;
     font-size: 26px;
   }
-  .question__name:after {
-    display: none;
-  }
-  .question__subname {
-    line-height: 39px;
-    font-size: 26px;
-    -webkit-text-stroke: 1px #FFFFFF;
-  }
-  .question__subname > span {
+  .question__name > span {
     position: relative;
   }
-  .question__subname > span:after {
+  .question__name > span:before {
     content: '';
     position: absolute;
-    background-image: url(../img/about/crosses_for_header.png);
+    background-image: url(../../img/about/crosses_for_header.png);
     background-size: cover;
     z-index: 2;
     width: 47px;
     height: 26px;
-    top: 31px;
-    right: -26px;
+    top: -9px;
+    right: -78px;
+  }
+  .question__name > span:after {
+    display: none;
+  }
+  .question__name:after {
+    display: none;
+  }
+  .question__description {
+    font-size: 15px;
+    width: 100%;
   }
   .question__form {
     margin-top: 32px;

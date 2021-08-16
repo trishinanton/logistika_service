@@ -8,22 +8,85 @@
     <link rel="stylesheet" href="./css/style_cargo.css">
 </head>
 <body>
-    <section class="main-screen">
-        <header class="main-screen__header header">
+    <div class="menu-active__content active-content">
+        <div class="menu-active__wrapper">
+            <div class="menu-active__close header__menu">Закрыть</div>
+            <span class="menu__span"></span>
+        </div>
+
+        <div class="active-content__wrapper">
+            <nav class="active-content__points" id="menu">
+                <a href="#about">
+                    <div class="points points__about">
+                        <div class="points__name">О компании</div>
+                        <div class="points__number">01</div>
+                    </div>
+                </a>
+                <a href="#excellence">
+                    <div class="points points__whyWe">
+                        <div class="points__name">Почему мы</div>
+                        <div class="points__number">02</div>
+                    </div>
+                </a>
+                <a href="#services">
+                    <div class="points points__services">
+                        <div class="points__name">Услуги</div>
+                        <div class="points__number">03</div>
+                    </div>
+                </a>
+                <a href="#reviews">
+                    <div class="points points__reviews">
+                        <div class="points__name">Отзывы</div>
+                        <div class="points__number">04</div>
+                    </div>
+                </a>
+                <a href="#question">
+                    <div class="points points__online">
+                        <div class="points__name">On-line заявка</div>
+                        <div class="points__number">05</div>
+                    </div>
+                </a>
+                <a href="#contact">
+                    <div class="points points__contacts">
+                        <div class="points__name">Контакты</div>
+                        <div class="points__number">06</div>
+                    </div>
+                </a>
+            </nav>
+            <div class="active-content__number"><a href="tel:+79531085929">+7 (953) 108-59-29</a></div>
+            <div class="active-content__button button"><a href="#question">Заказать звонок</a></div>
+        </div>
+    </div>
+
+    <header class="main-screen__header header" id="header">
+        <a>
             <div class="header__logo logo">
                 <img src="./img/main_screen/logo_big.png" alt="logo" class="logo-image">
                 <div class="logo-name">ВЭД<br>Логистика<br>Таможенное оформление</div>
             </div>
-            <div class="header__info">
-                <div class="header__number"><a href="tel:+79531085929">+7 (953) 108-59-29</a></div>
-                <div class="header__button button">Заказать звонок</div>
-                <div class="menu header-menu">
-                    <div class="header__menu">Меню</div>
-                    <span class="menu__span"></span>
-                </div>
+        </a>
+
+        <div class="header__info">
+            <div class="header__number"><a href="tel:+79531085929">+7 (953) 108-59-29</a></div>
+            <div class="header__button button"><a href="#question">Заказать звонок</a></div>
+            <div class="menu header-menu">
+                <div class="header__menu">Меню</div>
+                <span class="menu__span"></span>
             </div>
-        </header>
-    
+        </div>
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+    <section class="main-screen">
         <div class="body__header">
             <div class="grid">
                 <div class="grid__block-black"></div>
@@ -117,5 +180,9 @@
             </div>
         </div>
     </section>
+    <script src='./js/jquery/jquery.js'></script>
+    <script src='./js/jquery/jquery.nicescroll.min.js'></script>
+    <script type="text/javascript" src="./js/slick-slider/slick-slider.js"></script>
+    <script src='./js/index-cargo.js'></script>
 </body>
 </html>

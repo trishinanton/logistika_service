@@ -1,20 +1,28 @@
-@import "~normalize.css";
-@font-face {
-	font-family: 'Roboto'; 
-	src: url(../fonts/roboto/Roboto-Regular.ttf); 
-}
-/* @font-face {
-	font-family: 'Arial'; 
-	src: url(../fonts/arial/9041.ttf); 
-} */
+
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     overflow-x: hidden;
-    width: 100vw;
+    width: 100%;
+    font-family: 'Arial';
 } 
+a{
+    text-decoration: none;
+    &:hover{
+        cursor: pointer;
+    }
+}
+button{
+    transition: 0.3s linear;
+    &:hover{
+        background-color: white;
+        color: #2B2B51;
+        cursor: pointer;
+    }
+}
 .container{
     // min-width: 1200px;
     // max-width: 1200px;
@@ -52,7 +60,315 @@ body{
             background-color: transparent;
         }
     }
+    &-vertical__block{
+        width: 100vw;
+        height: 195px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
 }
+.main-screen{
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    background: url(../img/main_screen/main_bacground.png) no-repeat ;
+    background-size:cover;
+    color: white;
+    background-position: 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &__header{
+        padding: 16px 3%;
+        box-sizing: border-box;
+        // position: absolute;
+        width: 100vw;
+        left: 0;
+        top: 0;
+    }
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 2;
+    position: fixed;
+    &__info{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &-menu{
+        margin-left: 33px;
+    }
+    &__button{
+        margin-left: 14px;
+    }
+    &__number{
+        display: block;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 21px;
+        transition: 0.2s linear;
+        &>a{
+            color: white;
+            transition: 0.2s linear;
+            &:hover{
+                color: rgb(223, 223, 223);
+            }
+        }
+       
+    }
+    &__menu{
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: white;
+        &-active{
+            transform: rotate(-90deg);
+        }
+        
+    }
+    &-top{
+        background: #2B2B51;
+        box-shadow: 0 0px 29px rgb(255 255 255 / 20%);
+    }
+    
+}
+.logo{
+    display: flex;
+    align-items: center;
+    & img{
+        background-size: cover;
+    }
+    &-image{
+        width: 180px;
+        // width: 110px;
+        margin-right: 30px;
+        position: relative;
+        z-index: 2;
+        transition: linear 0.5s;
+        &__scroll{
+            margin-right: 20px;
+            width: 90px;
+        }
+    }
+    &-name{
+        font-style: normal;
+        font-weight: 900;
+        font-size: 22px;
+        text-transform: uppercase;
+        position: relative;
+        color: white;
+        &__scroll{
+            font-size: 16px;
+        }
+    }
+}
+.button{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    padding-top: 9px;
+    width: 173px;
+    height: 40px;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+    color: white;
+    transition: 0.3s linear;
+    &>a{
+        color: white;
+    }
+    &:hover{
+        background-color: white;
+        color: #2B2B51;
+        cursor: pointer;
+        &>a{
+            color: #2B2B51;  
+        }
+    }
+}
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    transition: all 1s ease 0s;
+    transform-origin: 100% 0;
+    z-index: 3;
+    margin-right: 40px;
+    // animation: close_menu 5s;
+    &:hover{
+        cursor: pointer;
+        .header__menu{
+            color: rgb(226, 226, 226);
+        }
+        .menu__span{
+            background:rgb(226, 226, 226);
+        }
+    }
+    &__span{
+        width: 20.67px;
+        height: 2px;
+        position: relative;
+        background: white;
+        left: 5px;
+        &:after{
+            content: '';
+            width: 31px;
+            height: 0px;
+            border: 1px solid #FFFFFF;
+            background: white;
+            position: absolute;
+            top: 8px;
+            left: 0px;
+        }
+        &:before{
+            content: '';
+            width: 10.33px;
+            height: 0px;
+            border: 1px solid #FFFFFF;
+            background: white;
+            position: absolute;
+            bottom: 8px;
+            left: 0px;
+        }
+    }
+    
+}
+@keyframes open_menu{
+    0%{
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+.menu-active{
+   position: relative;
+   &__wrapper{
+       position: absolute;
+       top: 100px;
+       right: 2vw;
+       display: flex;
+       align-items: center;
+       transform: rotate(-90deg);
+       animation: show_active_menu 5s;
+       &:hover{
+           cursor: pointer;
+       }
+   }
+    &__content{
+        // display: none;
+        background: rgba(145,141,154, 0.6);
+        opacity: 1;
+        box-shadow: 0px 4px 8px rgba(43, 43, 81, 0.07);
+        // backdrop-filter: blur(11px);
+        backdrop-filter: saturate(180%) blur(20px);
+        height: 100vh;
+        width: 50%;
+        position: fixed;
+        left: 50%;
+        z-index: 3;
+        text-align: center;
+        padding: 16vh 0 10vh;
+        box-sizing: border-box;
+    }
+}
+@keyframes show_active_menu{
+    0%{
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+.active-content{
+    display: none;
+    transition: all 1s ease 0s;
+    animation: show_menu_contant 1s ;
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+    &__points{
+        height: 65%;
+        min-width: 226px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__number{
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 21px;
+        color: white;
+        &>a{
+            transition: 0.3s linear;
+            color: white;
+            &:hover{
+                color: rgb(223, 223, 223);
+                
+            }
+        }
+    }
+}
+@keyframes show_menu_contant {
+    0%{
+        transform: translateX(500px);
+    }
+    50%{
+        transform: translateX(0px);
+    }
+}
+.points{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFFFFF;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    &:hover{
+        cursor: pointer;
+        &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color:  #FFFFFF;
+        bottom: -8px;
+     
+        }
+    }
+    &:before{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0%;
+        height: 1px;
+        background-color: #FFFFFF;
+        bottom: -8px;
+        transition: 0.2s;
+    }
+}
+
+
 .block-header{
     font-family: Arial;
     font-style: normal;
