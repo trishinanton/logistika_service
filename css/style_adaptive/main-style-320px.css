@@ -67,15 +67,23 @@
   }
   .excellence__description {
     left: -19px;
-    width: 98vw;
+    width: 100%;
   }
   .reviews__cards {
-    width: 98vw;
+    width: 100%;
     left: -6vw;
   }
   .reviews__cards .slick-list {
     height: 349px;
     padding: 0 20px;
+  }
+  .reviews .comment {
+    width: 99%;
+    padding: 0px 17px 38px 17px;
+    height: 320px;
+  }
+  .reviews .reviews__majaro {
+    padding: 22px 17px 38px 17px;
   }
   .question__name {
     font-size: 21px;

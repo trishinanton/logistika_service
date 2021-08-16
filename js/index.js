@@ -82,7 +82,7 @@ $(document).ready(function(){
     /*Инициализация слайдера "Наши преимущества"  */
 
     function resizeExcellenceSlider(clientWidth){
-        if (clientWidth <= 1024){
+        if (clientWidth <= 102){ //на всякий оставлю, вдруг она опять передумает
 
             $('.excellence__description').slick({
                 dots: true,
