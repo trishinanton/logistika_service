@@ -55,13 +55,13 @@ $(document).ready(function(){
         var scrolled = $(this).scrollTop();
         if( scrolled > 200 ) {
             $('.header').addClass('header--scroll');
-            $('.header').css('background','#2B2B51');
+            // $('.header').css('background','#2B2B51');
             $('.header').css('box-shadow', '0px -16px 20px white');
             $('.logo-image').addClass('logo-image__scroll');
             $('.logo-name').addClass('logo-name__scroll');
         }   
         if( scrolled <= 100 ) {     
-            $('.header').css('background','transparent');
+            // $('.header').css('background','#2B2B51');
             $('.header').css('box-shadow', 'none');
             $('.logo-image').removeClass('logo-image__scroll');
             $('.logo-name').removeClass('logo-name__scroll');
@@ -78,4 +78,21 @@ $(document).ready(function(){
             $('.menu-active__content').css('background', 'rgba(145,141,154, 0.3)');
         }
     })
+
+    /* Инициализация слайдера "О компании"*/
+    $('.slider-about').slick({
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        prevArrow: '<button class="sliders-button__left button-slide"> ❮ </button>',
+        nextArrow: '<button class="sliders-button__right button-slide"> ❯ </button>'
+    });
+
+    /* Счетчик слайдеров */  
+    $(".slider-about").on("afterChange", function(event, slick, currentSlide, nextSlide){
+        $(".sliders__number-current").text(currentSlide + 1);
+    });
+    let totalSlides = $('.slider-about').slick("getSlick").slideCount
+    document.querySelector('.sliders__number-total').innerHTML=totalSlides
 });
