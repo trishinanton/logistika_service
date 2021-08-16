@@ -620,20 +620,64 @@ button{
         //     }
         // }
     }
-    .slider-about{
-        width: 483.8px;
-        height: 321.96px;
-        margin-top: 36px;
-        margin-right: 20px;
-        &:before{
+    .img{
+        &-wrapper{
+            position: relative;
+            // z-index: 1;
+            overflow: hidden;
+        }
+        &-wrapper::after{
             content: '';
             position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(113.08deg, #5a5a8079, rgb(43 43 81 / 23%) 54.99%, rgb(43 43 81 / 55%) 110.07%);
+        }
+        &-caption{
+            position: absolute;
+            transform: rotate(270deg);
+            transform-origin: right;
+            transform-origin: left;
+            top: 150px;
+            left: 18px;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 14px;
+            z-index: 3;
+            color: rgba(255, 255, 255, 0.37);
+        }
+
+    }
+    .slider-about{
+        position: relative;
+        width: 483px;
+        height: 321px;
+        z-index: 0;
+        &__item{
+            position: relative;
             width: 483px;
             height: 321px;
-            background: rgba(232, 232, 232, 0.13);
-            z-index: 1;
-            bottom: 18px;
-            left: 18px;
+            // z-index: 4;
+            & img{
+                height: 100%;
+                width: 100%;
+                min-height: 309px; //взаимосвязаны с max-heigth у подложки
+            }
+            margin-top: 36px;
+            margin-right: 20px;
+            &:before{
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background: rgba(232, 232, 232, 0.13);
+                z-index: -1;
+                bottom: 30px;
+                left: 18px;
+                max-height: 309px; //взаимосвязаны с min-heigth у картинки
+            }
         }
         &:after{
             content: '';
@@ -643,12 +687,18 @@ button{
             z-index: 2;
             width: 110px;
             height: 62px;
-            bottom: -26px;
-            left: -57px;
+            // bottom: -26px;
+            // left: -57px;
+            bottom: -15%;
+            left: -10%;
         }
-        
     }
-    &__img{
+    // &__img{
+    //     position: relative;
+    //     z-index: 2;
+        // GP
+    // }
+    &__item{
         position: relative;
         z-index: 2;
         
@@ -678,7 +728,7 @@ button{
         font-size: 26px;
         transition: 0.3s linear;
         right: 0;
-        bottom: -66px;
+        bottom: -30%;
         &:hover{
         background-color: white;
         color: #2B2B51;
