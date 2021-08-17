@@ -5,7 +5,7 @@
 }
 body {
   overflow-x: hidden;
-  width: 100%;
+  position: relative;
   font-family: 'Arial';
 }
 a {
@@ -153,9 +153,9 @@ button:hover {
   font-size: 18px;
   line-height: 18px;
   text-align: center;
-  padding-top: 9px;
+  padding: 9px;
   width: 173px;
-  height: 40px;
+  min-height: 40px;
   border: 2px solid #FFFFFF;
   box-sizing: border-box;
   position: relative;
