@@ -52,6 +52,7 @@ button{
     flex-direction: column;
     justify-content: space-between;
     animation: preload_fon .8s linear;
+    transition: 0.5s ease;
     &__header{
         padding: 16px 3%;
         box-sizing: border-box;
@@ -63,10 +64,10 @@ button{
 }
 @keyframes preload_fon{
     0%{
-        transform: scale(1.5);
+        background-size: 120% 120%;
     }
     100% {
-        transform: scale(1);
+        background-size: 100% 100%;
     }
 }
 .header{
