@@ -1,3 +1,9 @@
-.reviews .comment {
-  height: 320px;
+@media screen and (max-width: 375px) {
+  /* Остались вопросы */
+  .question__name {
+    font-size: 7vw;
+  }
+  .question__name:before {
+    right: -82px;
+  }
 }

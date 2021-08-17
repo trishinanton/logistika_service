@@ -28,10 +28,10 @@ $(document).ready(function(){
     // }
     
     menu.addEventListener('click',()=>{
-        menu.classList.toggle('menu-active');
+        menu.classList.add('menu-active');
         if(windowWidth < 421){
             $('body').css('overflow', 'hidden');
-            $('body').css('height', '100vh');
+            // $('body').css('height', '100vh');
         }
         menu.style.animation = 'none';
         document.querySelector('.active-content').style.display = 'block';
@@ -41,11 +41,17 @@ $(document).ready(function(){
     activeMenu.addEventListener('click',()=>{
         document.querySelector('.active-content').style.display = 'none';
         menu.style.animation = 'open_menu 2s';
+        menu.classList.remove('menu-active');
         if(windowWidth < 421){
             $('body').css('overflow-y', 'scroll ');
             $('body').css('height', 'auto');
         }
     })
+
+    // отслеживание изменения vieport
+    window.onresize = function(event) {
+        // $('body').css('height', '100vh');
+    };
 
     arrExcellenceCard.map((el,i)=>{
         arrExcellenceCardActive.map((ela,j)=>{
