@@ -31,11 +31,8 @@ button{
     }
 }
 .container{
-    // min-width: 1200px;
-    // max-width: 1200px;
     padding: 0 10%;
-    // margin: 0 auto;
-    // position: relative;
+    position: relative;
     &-fluid{
         width: 100vw;
     }
@@ -44,15 +41,25 @@ button{
     position: relative;
     z-index: 1;
     height: 100vh;
-    background: url(../img/main_screen/main_bacground.png) no-repeat ;
-    background-size:cover;
     color: white;
-    background-position: 0 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    animation: preload_fon .8s linear;
-    transition: 0.5s ease;
+    &:after{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background: url(../img/main_screen/main_bacground.png) no-repeat ;
+        background-size:cover;
+        background-position: center center;
+        animation: preload_fon 1.3s ease-in-out;
+        transition: 0.5s ease;
+        z-index: -1;
+    }
     &__header{
         padding: 16px 3%;
         box-sizing: border-box;
@@ -64,10 +71,11 @@ button{
 }
 @keyframes preload_fon{
     0%{
-        background-size: 120% 120%;
+        transform: scale(1.3);
     }
     100% {
-        background-size: 100% 100%;
+        transform: scale(1);
+        z-index: -1;
     }
 }
 .header{
@@ -389,6 +397,7 @@ button{
     flex-direction: column;
     justify-content: center;
     height: 100vh;
+    z-index: 1;
 }
 .main{
     &-body{
