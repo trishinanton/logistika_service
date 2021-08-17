@@ -23,18 +23,15 @@ $(document).ready(function(){
     
     // Nice scroll - кастомный скролбар (полоса прокрутки)
     $("html").niceScroll({cursorwidth: "6px", zindex: 99,cursoropacitymin: 0, cursoropacitymax: 0.5, cursorcolor:"#424242"});
-    if(windowWidth > 421){
+    // if(windowWidth > 421){
         $('.nicescroll-rails.nicescroll-rails-hr').remove();
-    }
-
-    // $('html').css('overflow','auto')
+    // }
+    
     menu.addEventListener('click',()=>{
         menu.classList.toggle('menu-active');
-        if(windowWidth > 421){
+        if(windowWidth < 421){
             $('body').css('overflow', 'hidden');
-            $('html').css('overflow', 'hidden');
-            $('.menu-active__content').css('overflow', 'hidden');
-            $('.active-content__wrapper').css('overflow', 'hidden');
+            $('body').css('height', '100vh');
         }
         menu.style.animation = 'none';
         document.querySelector('.active-content').style.display = 'block';
@@ -44,9 +41,9 @@ $(document).ready(function(){
     activeMenu.addEventListener('click',()=>{
         document.querySelector('.active-content').style.display = 'none';
         menu.style.animation = 'open_menu 2s';
-        if(windowWidth > 421){
+        if(windowWidth < 421){
             $('body').css('overflow-y', 'scroll ');
-            $('html').css('overflow-y', 'scroll ');
+            $('body').css('height', 'auto');
         }
     })
 
