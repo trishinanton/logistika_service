@@ -67,6 +67,7 @@ $(document).ready(function(){
         speed: 500,
         fade: true,
         cssEase: 'linear',
+        adaptiveHeight: true,
         prevArrow: '<button class="sliders-button__left button-slide"> ❮ </button>',
         nextArrow: '<button class="sliders-button__right button-slide"> ❯ </button>'
     });
