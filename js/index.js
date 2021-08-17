@@ -3,8 +3,7 @@
 
 // import * as $ from 'jquery'
 $(document).ready(function(){
-    $("html").niceScroll({cursorwidth: "6px", zindex: 99,cursoropacitymin: 0, cursoropacitymax: 0.5, cursorcolor:"#424242"});
-    $('.nicescroll-rails.nicescroll-rails-hr').remove();
+    let windowWidth= window.outerWidth ;
     let menu = document.querySelector('.menu');
     const activeMenu = document.querySelector('.menu-active__wrapper')
     let excellenceCard = document.querySelectorAll('.excellence-card');
@@ -12,7 +11,7 @@ $(document).ready(function(){
     let servicesCard = document.querySelectorAll('.services-card');
     let arrServicesCard = Array.prototype.slice.call(servicesCard);
     let clientWidth = document.body.clientWidth; // current width screen for sliders
-
+    
     let arrExcellenceCardActive = [
         'excellence-card-active__delivery', 
         'excellence-card-active__finance',
@@ -21,17 +20,34 @@ $(document).ready(function(){
         'excellence-card-active__oneWindow',
         'excellence-card-active__guarantee'
     ]
+    
+    // Nice scroll - кастомный скролбар (полоса прокрутки)
+    $("html").niceScroll({cursorwidth: "6px", zindex: 99,cursoropacitymin: 0, cursoropacitymax: 0.5, cursorcolor:"#424242"});
+    if(windowWidth > 421){
+        $('.nicescroll-rails.nicescroll-rails-hr').remove();
+    }
 
+    // $('html').css('overflow','auto')
     menu.addEventListener('click',()=>{
         menu.classList.toggle('menu-active');
+        if(windowWidth > 421){
+            $('body').css('overflow', 'hidden');
+            $('html').css('overflow', 'hidden');
+            $('.menu-active__content').css('overflow', 'hidden');
+            $('.active-content__wrapper').css('overflow', 'hidden');
+        }
         menu.style.animation = 'none';
         document.querySelector('.active-content').style.display = 'block';
-        activeMenu.style.transition = 'transition: 2s linear'
+        activeMenu.style.transition = 'transition: 2s linear';
     });
 
     activeMenu.addEventListener('click',()=>{
         document.querySelector('.active-content').style.display = 'none';
         menu.style.animation = 'open_menu 2s';
+        if(windowWidth > 421){
+            $('body').css('overflow-y', 'scroll ');
+            $('html').css('overflow-y', 'scroll ');
+        }
     })
 
     arrExcellenceCard.map((el,i)=>{
