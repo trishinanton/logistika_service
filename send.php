@@ -71,4 +71,4 @@ if ($mail->send()) {
 
 // Отображение результата
 echo json_encode(["result" => $result, "resultfile" => $rfile, "status" => $status]);
-header (location: "mail.php")
+header (location: "index-cargo.html")
