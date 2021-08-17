@@ -10,7 +10,7 @@
     top: 0;
     right: 0;
     box-sizing: border-box;
-    z-index: -1;
+    z-index: 0;
     position: absolute;
     padding: 0 7%;
   }
@@ -79,8 +79,9 @@
   .active-content__button {
     font-size: 16px;
   }
-  .main-screen {
+  .main-screen:after {
     background-position: 29% 50%;
+    transform-origin: 29% 50%;
   }
   .main-screen__header {
     padding: 10px 1% 10px;
@@ -101,11 +102,21 @@
   .main-screen .active-content__number {
     display: block;
   }
+  @keyframes preload_fon {
+    0% {
+      transform: scale(1.3);
+    }
+    100% {
+      transform-origin: 29% 50%;
+      transform: scale(1);
+      z-index: -1;
+    }
+  }
   .main-screen .main-body {
     margin-top: 0px;
   }
   .main-screen .main-body__wrapper {
-    height: 49vh;
+    height: 45vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -125,8 +136,9 @@
     flex-direction: column;
   }
   .main-screen .main-footer .advantage__name {
-    font-size: 16px;
-    margin: 3px 0 3px 0;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 3px 0 14px 0;
     width: 100%;
   }
   .main-screen .main-footer .advantage__name:before {
@@ -175,27 +187,49 @@
   .about__purpose > p {
     font-size: 14px;
   }
+  .about .img-caption {
+    top: 58%;
+    font-size: 12px;
+    font-weight: 700;
+  }
   .about .sliders__wrapper {
     width: 100%;
   }
   .about .sliders__number {
-    font-size: 14px;
+    font-size: 15px;
     margin-top: 20px;
     margin-top: 57px;
   }
   .about .sliders__img {
     width: 100%;
-    height: 200px;
+    height: 207px;
   }
   .about .sliders .slider-about {
-    width: 96%;
-    height: 200px;
-    margin-right: 10px;
-    margin-top: 21px;
+    width: 100%;
+    height: auto;
+    margin-right: 0px;
+  }
+  .about .sliders .slider-about__item {
+    height: auto;
+    margin-right: 12px;
+    margin-top: 28px;
+    width: 100%;
+  }
+  .about .sliders .slider-about__item img {
+    height: 100%;
+    width: 100%;
+    max-height: 207px;
+    min-height: 207px;
+  }
+  .about .sliders .slider-about__item:before {
+    max-height: 207px;
+    top: -10px;
+    right: -10px;
+    left: unset;
   }
   .about .sliders .slider-about:before {
     width: 100%;
-    height: 200px;
+    height: 207px;
     bottom: 8px;
     left: 8px;
   }
@@ -209,7 +243,7 @@
     margin-right: 10px;
   }
   .block-header {
-    font-size: 28px;
+    font-size: 38px;
     margin-top: 0px;
     -webkit-text-stroke: 1px #FFFFFF;
   }
@@ -227,7 +261,7 @@
     z-index: 2;
     width: 47px;
     height: 26px;
-    top: -9px;
+    top: -10px;
     right: -27px;
   }
   /* Наши преимущества */
@@ -237,9 +271,12 @@
   .excellence__name {
     margin-top: 0px;
     margin-bottom: 64px;
-    font-size: 26px;
+    font-size: 8vw;
     line-height: 39px;
     -webkit-text-stroke: 1px #2B2B51;
+  }
+  .excellence__name span::after {
+    top: 34%;
   }
   .excellence .slick-list {
     padding: 20px;
@@ -352,10 +389,13 @@
     padding-bottom: 84px;
   }
   .services__name {
-    font-size: 28px;
+    font-size: 9vw;
     -webkit-text-stroke: 1px #2B2B51;
     line-height: 39px;
     margin-bottom: 33px;
+  }
+  .services__name span::after {
+    top: 34%;
   }
   .services__description {
     flex-direction: column;
@@ -369,10 +409,16 @@
     top: 326px;
   }
   .services-card__title {
-    top: 280px;
+    top: 300px;
   }
   .services-card__btn {
-    top: 292px;
+    top: 305px;
+  }
+  .services-card--hover .services-card__title {
+    top: 264px;
+  }
+  .services-card--hover .services-card__btn {
+    top: 274px;
   }
   /* Как начать сотрудничество */
   .cooperation {
@@ -394,23 +440,12 @@
     left: -10.5px;
   }
   .cooperation__name {
-    font-size: 22px;
+    font-size: 7.2vw;
     width: 100%;
     line-height: 37px;
   }
-  .cooperation__name > span {
-    position: relative;
-  }
-  .cooperation__name > span:after {
-    content: '';
-    position: absolute;
-    background-image: url(../../img/about/crosses_for_header.png);
-    background-size: cover;
-    z-index: 2;
-    width: 45px;
-    height: 24px;
-    top: 26px;
-    right: -26px;
+  .cooperation__name span::after {
+    top: 34%;
   }
   .cooperation__name:after {
     display: none;
@@ -423,7 +458,7 @@
   .cooperation__band {
     height: 870px;
     width: 0;
-    left: 50%;
+    left: 49.7%;
   }
   .cooperation .stages__wrapper:first-child {
     margin-left: 0px;
@@ -444,41 +479,32 @@
     top: 21px;
     left: -83px;
   }
-  .cooperation .stages__description.stages-1:before {
+  .cooperation .stages__description:before {
     font-size: 16px;
+  }
+  .cooperation .stages__description.stages-1:before {
     width: 93px;
     bottom: 55px;
-    left: 66px;
   }
   .cooperation .stages__description.stages-2:before {
-    font-size: 16px;
     width: 93px;
     top: -55px;
-    left: -110px;
   }
   .cooperation .stages__description.stages-3:before {
-    font-size: 16px;
     width: 93px;
     bottom: 55px;
-    left: 51px;
   }
   .cooperation .stages__description.stages-4:before {
-    font-size: 16px;
     width: 93px;
     top: -55px;
-    left: -125px;
   }
   .cooperation .stages__description.stages-5:before {
-    font-size: 16px;
     width: 101px;
     bottom: 55px;
-    left: 68px;
   }
   .cooperation .stages__description.stages-6:before {
-    font-size: 16px;
-    width: 150px;
-    top: -55px;
-    left: -125px;
+    width: 120px;
+    top: -70px;
   }
   .cooperation .stages__description.stages-1:after,
   .cooperation .stages__description.stages-3:after,
@@ -486,14 +512,24 @@
     top: 16px;
     left: 127px;
   }
-  .cooperation .stages__description.stages-7:after {
-    display: none;
+  .cooperation .stages__description.stages-1:before,
+  .cooperation .stages__description.stages-3:before,
+  .cooperation .stages__description.stages-5:before {
+    left: 66px;
   }
   .cooperation .stages__description.stages-2:after,
   .cooperation .stages__description.stages-4:after,
   .cooperation .stages__description.stages-6:after {
     top: 15px;
     left: -96px;
+  }
+  .cooperation .stages__description.stages-2:before,
+  .cooperation .stages__description.stages-4:before,
+  .cooperation .stages__description.stages-6:before {
+    left: -125px;
+  }
+  .cooperation .stages__description.stages-7:after {
+    display: none;
   }
   /* Отзывы клиентов */
   .reviews {
@@ -502,6 +538,10 @@
   .reviews__name {
     -webkit-text-stroke: 1px #5b5b91;
     line-height: 39px;
+    font-size: 9vw;
+  }
+  .reviews__name span::after {
+    top: 34%;
   }
   .reviews__cards {
     flex-direction: column;
@@ -550,7 +590,7 @@
     background: #2B2B51;
   }
   .reviews .comment {
-    height: 283px;
+    height: 309px;
     padding: 25px 17px 38px 17px;
     width: 100%;
     transform: translateX(0px);
@@ -601,7 +641,7 @@
   }
   .question__name {
     line-height: 39px;
-    font-size: 26px;
+    font-size: 9vw;
   }
   .question__name > span {
     position: relative;
@@ -614,7 +654,7 @@
     z-index: 2;
     width: 47px;
     height: 26px;
-    top: -9px;
+    top: -10px;
     right: -78px;
   }
   .question__name > span:after {
@@ -665,7 +705,7 @@
     top: -9px;
   }
   .contact__map {
-    margin-top: 14px;
+    margin-top: 30px;
   }
   .contact__map-img {
     position: relative;
@@ -772,7 +812,12 @@
   .footer-contact__politics {
     font-size: 18px;
   }
-  .good-product__name {
+  .good-product {
+    flex-direction: column-reverse;
+    height: 60px;
+    justify-content: space-evenly;
+  }
+  .good-product__copyrigth {
     font-size: 12px;
   }
 }

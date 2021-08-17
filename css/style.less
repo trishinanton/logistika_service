@@ -1,8 +1,8 @@
 // @import "~normalize.css";
-// @font-face {
-// 	font-family: 'Roboto'; 
-// 	src: url(../fonts/roboto/Roboto-Regular.ttf); 
-// }
+@font-face {
+	font-family: 'Roboto'; 
+	src: url(../fonts/roboto/Roboto-Bold.ttf); 
+}
 //  @font-face {
 //     src: url(../fonts/arial/9041.ttf); 
 // } 
@@ -267,6 +267,7 @@ button{
         width: 50%;
         position: fixed;
         left: 50%;
+        bottom: 0;
         z-index: 3;
         text-align: center;
         padding: 16vh 0 10vh;
@@ -669,7 +670,6 @@ button{
             position: relative;
             width: 483px;
             height: 321px;
-            // z-index: 4;
             & img{
                 height: 100%;
                 width: 100%;
@@ -697,17 +697,10 @@ button{
             z-index: 2;
             width: 110px;
             height: 62px;
-            // bottom: -26px;
-            // left: -57px;
             bottom: -15%;
             left: -10%;
         }
     }
-    // &__img{
-    //     position: relative;
-    //     z-index: 2;
-        // GP
-    // }
     &__item{
         position: relative;
         z-index: 2;
@@ -1364,7 +1357,7 @@ button{
             color: #FFFFFF;
             margin: 0 28px;
             position: relative;
-            top: 376px;
+            top: 375px;
             transition: 0.3s linear;
             z-index: 2;
             transition: all 0.7s ease-in-out;
@@ -2187,7 +2180,7 @@ button{
     align-items: center;
     padding: 0 1%;
     font-size: 14px;
-    &_copyrigth{
+    &__copyrigth{
         color: #d5d5d59f;
     }
     &__name{
