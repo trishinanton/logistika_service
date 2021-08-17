@@ -200,4 +200,7 @@ $(document).ready(function(){
     }
     let differenceWidth = $('.header').offset().top;
     console.log(width);
+
+    // Маска для поля с телефоном
+    $("#form__phone").mask("+7(999) 999-99-99");
 });
