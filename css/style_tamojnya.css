@@ -386,13 +386,14 @@ button:hover {
   font-weight: normal;
   font-size: 18px;
 }
-.body__bread-main {
+.body__bread-main > a {
   color: #2B2B51;
 }
 .body__name {
   text-transform: uppercase;
   -webkit-text-stroke: 2px #2B2B51;
   margin-bottom: 62px;
+  font-size: 60px;
 }
 .body__name:after {
   top: -18px;
@@ -406,14 +407,16 @@ button:hover {
 }
 .about:before {
   content: '';
-  background-image: url(../img/about/Rectangle\ 36.png);
-  background-size: cover;
+  width: 90.35px;
+  height: 90.35px;
   position: absolute;
-  width: 62.39px;
-  height: 62.39px;
-  right: -8.3px;
-  bottom: 25px;
+  border: 20px solid #FFFFFF;
+  box-sizing: border-box;
   filter: blur(2px);
+  transform: rotate(-45deg);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  right: 86px;
+  top: -35px;
 }
 .about:after {
   content: '';
@@ -514,39 +517,6 @@ button:hover {
   position: relative;
   z-index: 1;
 }
-.sliders-button {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 26px;
-  margin-right: 20px;
-}
-.sliders-button__left {
-  margin-right: 56px;
-}
-.button-slide {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  border: 2px solid rgba(255, 255, 255, 0.44);
-  box-sizing: border-box;
-  background-color: transparent;
-  color: rgba(255, 255, 255, 0.44);
-  font-size: 26px;
-  transition: 0.3s linear;
-  right: 0;
-  bottom: -66px;
-}
-.button-slide:hover {
-  background-color: white;
-  color: #2B2B51;
-  cursor: pointer;
-  transform: translateY(1px);
-}
-.slick-list {
-  z-index: 1;
-}
 /* Этапы таможенного оформления */
 .stages {
   padding: 100px 0 131px;
@@ -557,12 +527,27 @@ button:hover {
   -webkit-text-stroke: 2px #2B2B51;
   font-size: 38px;
   display: inline-block;
+  line-height: 68px;
 }
 .stages__description {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-bottom: 50px;
+}
+.stages__description-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.stages__description-left {
+  left: 83px;
+  position: relative;
+}
+.stages__description-right {
+  align-self: flex-end;
+  right: 83px;
+  position: relative;
 }
 .stages .registration {
   background-color: #2B2B51;
@@ -597,7 +582,7 @@ button:hover {
 .stages .registration__phase {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: flex-start;
 }
 .stages .registration__number {
   font-family: 'Arial';
@@ -607,6 +592,45 @@ button:hover {
   color: transparent;
   text-transform: uppercase;
   -webkit-text-stroke: 2px #FFFFFF;
+  position: relative;
+  margin-right: 48px;
+}
+.stages .registration__number:before {
+  content: 'этап';
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.07);
+  transform: rotate(-90deg);
+  text-transform: uppercase;
+  position: absolute;
+  -webkit-text-stroke: transparent;
+  left: 41px;
+  bottom: 44px;
+}
+.stages .registration__number-first:before {
+  content: 'этап';
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.07);
+  transform: rotate(-90deg);
+  text-transform: uppercase;
+  position: absolute;
+  -webkit-text-stroke: transparent;
+  left: 31px;
+  bottom: 44px;
+}
+.stages .registration__stages {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  transform: rotate(-90deg);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.07);
 }
 .stages .registration__contain {
   height: 90px;
@@ -623,7 +647,7 @@ button:hover {
 .stages .registration__span {
   width: 106px;
   height: 0px;
-  border: 3px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 .stages .registration__description {
   font-family: 'Arial';

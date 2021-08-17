@@ -411,13 +411,16 @@ button{
         font-weight: normal;
         font-size: 18px;
         &-main{
-            color: #2B2B51;
+            &>a{
+                color: #2B2B51;
+            }
         }
     }
     &__name{
         text-transform: uppercase;
         -webkit-text-stroke: 2px #2B2B51;
         margin-bottom: 62px;
+        font-size: 60px;
         &:after{
             top: -18px;
             right: -61px;
@@ -432,14 +435,17 @@ button{
     background: #2B2B51;
     &:before{
         content: '';
-        background-image: url(../img/about/Rectangle\ 36.png);
-        background-size: cover;
+        width: 90.35px;
+        height: 90.35px;
         position: absolute;
-        width: 62.39px;
-        height: 62.39px;
-        right: -8.3px;
-        bottom: 25px;
+        border: 20px solid #FFFFFF;
+        box-sizing: border-box;
         filter: blur(2px);
+        transform: rotate(-45deg);
+        box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+        right: 86px;
+        top: -35px;
+        
     }
     &:after{
         content: '';
@@ -572,44 +578,8 @@ button{
         z-index: 1;
         
     }
-    &-button{
-        position: relative;
-        z-index: 1;
-        display: flex;
-        justify-content: flex-end;
-        margin-top: 26px;
-        margin-right: 20px;
-        &__left{
-            margin-right: 56px;
-        }
-        
-    }
 }
-.button{
-    &-slide{
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        border: 2px solid rgba(255, 255, 255, 0.44);
-        box-sizing: border-box;
-        background-color: transparent;
-        color: rgba(255, 255, 255, 0.44);
-        font-size: 26px;
-        transition: 0.3s linear;
-        right: 0;
-        bottom: -66px;
-        &:hover{
-        background-color: white;
-        color: #2B2B51;
-        cursor: pointer;
-        transform: translateY(1px);
-        }
-    }
-    
-}
-.slick-list{
-    z-index: 1;
-}
+
 
 /* Этапы таможенного оформления */
 
@@ -626,12 +596,27 @@ button{
         -webkit-text-stroke: 2px #2B2B51;
         font-size: 38px;
         display: inline-block;
+        line-height: 68px;
     }
     &__description{
         display: flex;
         align-items: center;
         flex-direction: column;
         margin-bottom: 50px;
+        &-wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &-left{
+            left: 83px;
+            position: relative;
+        }
+        &-right{
+            align-self: flex-end;
+            right: 83px;
+            position: relative;
+        }
     }
     .registration{
         background-color: #2B2B51;
@@ -665,7 +650,7 @@ button{
         &__phase{
             display: flex;
             flex-direction: row;
-            align-items: center;
+            justify-content: flex-start;
         }
         &__number{
             font-family: 'Arial';
@@ -675,6 +660,48 @@ button{
             color: transparent;
             text-transform: uppercase;
             -webkit-text-stroke: 2px #FFFFFF;
+            position: relative;
+            margin-right: 48px;
+            &:before{
+                content: 'этап';
+                font-family: Arial;
+                font-style: normal;
+                font-weight: 900;
+                font-size: 24px;
+                color: rgba(255, 255, 255, 0.07);
+                transform: rotate(-90deg);
+                text-transform: uppercase;
+                position: absolute;
+                -webkit-text-stroke: transparent;
+                left: 41px;
+                bottom: 44px;
+            }
+            &-first{
+                &:before{
+                    content: 'этап';
+                    font-family: Arial;
+                    font-style: normal;
+                    font-weight: 900;
+                    font-size: 24px;
+                    color: rgba(255, 255, 255, 0.07);
+                    transform: rotate(-90deg);
+                    text-transform: uppercase;
+                    position: absolute;
+                    -webkit-text-stroke: transparent;
+                    left: 31px;
+                    bottom: 44px;
+                }
+            }
+        }
+        &__stages{
+            font-family: Arial;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 24px;
+            transform: rotate(-90deg);
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.07);
+            
         }
         // &__stages{
         //     font-family: Arial;
@@ -705,7 +732,7 @@ button{
         &__span{
             width: 106px;
             height: 0px;
-            border: 3px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.2);
         }
         &__description{
             font-family: 'Arial';
