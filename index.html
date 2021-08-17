@@ -485,17 +485,17 @@
                 <h2 class="question__name block-header"><span>Индивидуальная<br>консультация</span></h2>
                 <div class="question__description">Получить бесплатную консультацию или заказать точный расчет.
                     Оставляйте on-line заявку.</div>
-                <form class="question__form question-form">
+                <form action="send.php" method="POST" class="question__form question-form">
                     <div class="question-form__contact">
-                        <div class="question-form__name"><input type="text" placeholder="Имя" class="form__name form">
+                        <div class="question-form__name"><input type="text" name="name" required placeholder="Имя" class="form__name form">
                         </div>
-                        <div class="question-form__phone"><input type="tel" placeholder="Телефон"
+                        <div class="question-form__phone"><input type="tel" name="tel" required placeholder="Телефон"
                                 class="form__phone form"></div>
                     </div>
                     <div class="question-form__send">
-                        <div class="question-form__email"><input type="email" placeholder="E-mail"
+                        <div class="question-form__email"><input type="email" name="email" placeholder="E-mail"
                                 class="form__email form"></div>
-                        <button class="button question-form__button">Оставить заявку</button>
+                        <button class="button question-form__button" type="submit">Оставить заявку</button>
                     </div>
                 </form>
             </div>
