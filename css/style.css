@@ -350,7 +350,7 @@ button:hover {
   top: 0;
   right: 0;
   box-sizing: border-box;
-  z-index: -1;
+  z-index: 0;
   position: absolute;
   padding: 0 10%;
 }
@@ -1698,7 +1698,6 @@ button:hover {
   font-size: 18px;
   color: white;
   text-align: center;
-  padding-top: 3px;
   position: relative;
   z-index: 1;
   transition: 0.3s linear;

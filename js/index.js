@@ -1,7 +1,4 @@
-// import '@/css/style.css'
-// import '@/css/style.less'
 
-// import * as $ from 'jquery'
 $(document).ready(function(){
     let windowWidth= window.outerWidth ;
     let menu = document.querySelector('.menu');
@@ -88,7 +85,17 @@ $(document).ready(function(){
         cssEase: 'linear',
         adaptiveHeight: true,
         prevArrow: '<button class="sliders-button__left button-slide"> ❮ </button>',
-        nextArrow: '<button class="sliders-button__right button-slide"> ❯ </button>'
+        nextArrow: '<button class="sliders-button__right button-slide"> ❯ </button>',
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+        }
+    ]
     });
 
     /* Счетчик слайдеров */  
@@ -213,12 +220,6 @@ $(document).ready(function(){
     })
 
 
-    // Отслеживание хедера
-    function backgroundHeader(differenceWidth){
-        if (differenceWidth > 0) $('.header').addClass('header-top');
-    }
-    let differenceWidth = $('.header').offset().top;
-    console.log(width);
 
     // Маска для поля с телефоном
     $("#form__phone").mask("+7(999) 999-99-99");
