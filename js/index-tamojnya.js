@@ -73,16 +73,7 @@ $(document).ready(function(){
         }
     });
         
-    $(window).on('scroll', function(){
-        let scrolled = $(this).scrollTop();
-        var heightScreen = $(window).height();
-        if(scrolled > heightScreen){
-            $('.menu-active__content').css('background','rgba(16,16,39, 0.9)');
-        }
-        if(scrolled < heightScreen){
-            $('.menu-active__content').css('background', 'rgba(145,141,154, 0.3)');
-        }
-    })
+    
 
     
 

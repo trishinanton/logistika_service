@@ -254,7 +254,7 @@ button:hover {
   cursor: pointer;
 }
 .menu-active__content {
-  background: rgba(145, 141, 154, 0.6);
+  background: rgba(16, 16, 39, 0.9);
   opacity: 1;
   box-shadow: 0px 4px 8px rgba(43, 43, 81, 0.07);
   backdrop-filter: saturate(180%) blur(20px);
@@ -484,7 +484,6 @@ button:hover {
 }
 .sliders .slider-about {
   width: 483.8px;
-  height: 321.96px;
   margin-top: 36px;
   margin-right: 20px;
   position: relative;
@@ -496,7 +495,7 @@ button:hover {
   height: 321px;
   background: rgba(232, 232, 232, 0.13);
   z-index: 1;
-  bottom: 18px;
+  bottom: 23px;
   left: 18px;
 }
 .sliders .slider-about:after {
