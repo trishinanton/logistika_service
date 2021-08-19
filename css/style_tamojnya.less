@@ -597,12 +597,14 @@ button{
         font-size: 38px;
         display: inline-block;
         line-height: 68px;
+        margin-bottom: 31px;
     }
     &__description{
         display: flex;
         align-items: center;
         flex-direction: column;
         margin-bottom: 50px;
+        position: relative;
         &-wrapper{
             display: flex;
             flex-direction: column;
@@ -611,11 +613,67 @@ button{
         &-left{
             left: 83px;
             position: relative;
+            &:first-child{
+                &:before{
+                    display: none;
+                }
+                &:after{
+                    display: none;
+                }
+            }
+            &:before{
+                content: '';
+                position: absolute;
+                width: 42vw;
+                height: 136px;
+                top: -136px;
+                border: 6px dashed #2B2B51;
+                border-bottom: none;
+                border-right: none;
+                left: 87px;
+                z-index: -2;
+            }
+            &:after{
+                content: '';
+                width: 25px;
+                height: 25px;
+                transform: matrix(0.71, 0.72, -0.69, 0.71, 0, 0);
+                background-color: #2B2B51;
+                position: absolute;
+                left: 78px;
+                top: -9px;
+            }
         }
         &-right{
             align-self: flex-end;
             right: 83px;
             position: relative;
+            &:before{
+                content: '';
+                position: absolute;
+                width: 42vw;
+                height: 136px;
+                top: -135px;
+                border: 6px dashed #2B2B51;
+                border-bottom: none;
+                border-left: none;
+                right: 88px;
+                z-index: -2;
+                // border-top-style: dashed;
+                // border-right-style: dashed;
+                // border-width: 5px;
+            }
+            &:after{
+                content: '';
+                width: 25px;
+                height: 25px;
+                transform: matrix(0.71, 0.72, -0.69, 0.71, 0, 0);
+                background-color: #2B2B51;
+                position: absolute;
+                right: 78px;
+                top: -9px;
+              
+            }
         }
     }
     .registration{
@@ -718,10 +776,9 @@ button{
         //     position: relative;
         // }
         &__contain{
-            height: 90px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
         }
         &__name{
             font-family: 'Arial';
@@ -731,8 +788,9 @@ button{
         }
         &__span{
             width: 106px;
-            height: 0px;
             border: 2px solid rgba(255, 255, 255, 0.2);
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
         &__description{
             font-family: 'Arial';
@@ -755,10 +813,10 @@ button{
             font-size: 22px;
         }
         &__description{
-            font-family: 'Arial';
+            letter-spacing: 0.3px;
             font-style: normal;
-            font-weight: normal;
-            font-size: 22px;
+            font-weight: 400;
+            font-size: 21px;
             line-height: 25px;
             margin-top: 19px;
         }
@@ -766,18 +824,19 @@ button{
 }
 
 /* Другие услуги компании */
-.another{
+.services{
     position: relative;
     z-index: 1;
-    padding: 65px 0 65px;
+    height: 850px;
     &__name{
+        margin-top: 100px;
+        margin-bottom: 71px;
         -webkit-text-stroke: 2px #2B2B51;
     }
     &__description{
         display: flex;
         flex-direction: row;
         justify-content: center;
-        font-family: 'Arial'; 
         font-style: normal;
         font-weight: 900;
         font-size: 26px;
@@ -786,21 +845,18 @@ button{
         box-shadow: 0px 4px 13px #a5a5c5;
         position: relative;
         z-index: 2;
-        margin-top: 82px;
     }
     &-card{
         height: 497px;
-        transition: all 1s ease 0s;
+        transition: all 1s ease-in-out 0s;
         width: 50%;
+        position: relative;
         &__name{
             margin: 0 28px;
             position: relative;
             top: 376px;
         }
-        &__registration{
-            background-image: url(../img/services/registration.png);
-            background-size: cover;
-        }
+        
         &__service{
             background-image: url(../img/services/service.png);
             background-size: cover;
@@ -809,28 +865,18 @@ button{
             background-image: url(../img/services/cargo.png);
             background-size: cover;
         }
-        &-active{
-            display: none;
-            font-family: 'Arial'; 
-            font-style: normal;
-            font-weight: 900;
-            font-size: 26px;
-            line-height: 35px;
-            background-image: url(../img/services/fon-active.png);
-            background-size: cover;
-            width: 100%;
-            height: 100%;
-        
-        }
         &__btn{
+            opacity: 0;
             width: 173px;
             height: 40px;
             margin: 0 28px;
-            top: 345px;
+            // top: 345px;
+            top: 380px;
+            display: flex;
+            align-items: center;
             border: 2px solid #FFFFFF;
             box-sizing: border-box;
             background: transparent;
-            font-family: Arial;
             font-style: normal;
             font-weight: normal;
             font-size: 16px;
@@ -839,16 +885,22 @@ button{
             text-align: left;
             padding-left: 14px;
             position: relative;
-            animation: rotate 1s ;
+            z-index: 2;
+            animation: rotate 0.7s ease-in-out ;
+            transition: all 0.7s ease-in-out, background-color 0.3s ease-in-out;
             &:after{
                 content: '';
                 background-image: url(../img/services/arrow.png);
                 background-size: cover;
-                width: 29px;
-                height: 4px;
+                width: 32px;
+                height: 6px;
                 position: absolute;
                 right: 30px;
                 top: 14px;
+            }
+            &:hover{
+                background-color: #fff;
+                color: #2B2B51;
             }
         }
         @keyframes rotate {
@@ -860,32 +912,71 @@ button{
             }
         }
         &__title{
-            font-family: 'Roboto';
-            font-style: normal;
+            display: block;
             font-weight: 900;
             font-size: 26px;
             line-height: 30px;
             color: #FFFFFF;
-
             margin: 0 28px;
             position: relative;
-            top: 335px;
+            top: 375px;
+            transition: 0.3s linear;
+            z-index: 2;
+            transition: all 0.7s ease-in-out;
+            &:hover{
+                color: rgba(223, 223, 223, 0.829);
+            }
+        }
+        &--hover{
+            .services-card__title{
+                top: 335px;
+            }
+            .services-card__btn{
+                opacity: 1;
+                top: 345px;
+            }
+            .services-card__btn:hover::after{
+                background-image: url(../img/services/arrow--dark.png);
+            }
+            &::after{
+                content: '';
+                display: block;
+                position: absolute;
+                z-index: 1;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                background-image: url(../img/services/fon-active.png);
+            }
         }
     }
 }
 
+
 .consultation{
     position: relative;
     z-index: 1;
-    padding-bottom: 154px;
+    padding: 60px 0 154px;
     &__name{
         -webkit-text-stroke: 2px #2B2B51;
         font-size: 48px;
+        &::after{
+            content: '';
+            position: absolute;
+            background-image: url(../img/about/crosses_for_header.png);
+            background-size: cover;
+            z-index: 2;
+            width: 110px;
+            height: 62px;
+            top: -17px;
+            right: -61px;
+        }
     }
     &-form{
         background-color: #2B2B51;
         padding: 57px 87px 57px 87px;
-        margin-top:103px;
+        margin: 90px 47px 0 4px;
         position: relative;
         box-shadow: 0px 4px 13px #a5a5c5;
         &:after{
@@ -894,29 +985,43 @@ button{
             height: 63px;
             border: 15px solid #FFFFFF;
             box-sizing: border-box;
-            filter: blur(2px);
+            filter: blur(1px);
             transform: rotate(-23.76deg);
             position: absolute;
             left: -2px;
             z-index: 1;
         }
+        &:before{
+            content: '';
+            width: 309px;
+            height: 471px;
+            background: url(../img/index-autsorsing/consultation/headphones.png);
+            position: absolute;
+            background-size: cover;
+            top: -67px;
+            right: -42px;
+        
+        }
         &__description{
             font-family: 'Arial';
             font-style: normal;
             font-weight: normal;
-            font-size: 22px;
+            font-size: 18px;
             line-height: 26px;
             color: white;
+            &>a{
+                border-bottom: 1px solid white;
+            }
         }
         &__contact{
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             flex-direction: row;
-            margin-top: 36px;
+            
         }
         &__button{
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             margin-top: 36px;
         }
     }
@@ -936,6 +1041,12 @@ button{
                 color: white;
             }
         }
+        &__name{
+            margin-right: 36px;
+        }
+        &__email{
+            margin-right: 36px;
+        }
         &__button{
             width: 305.32px;
             height: 58.52px;
@@ -951,26 +1062,82 @@ button{
             position: relative;
             z-index: 1;
         }
+        &-tamojnya{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 28px;
+            &__whats{
+                margin-left: 77px;
+            }
+        }
+        &__whats{
+            width: 305.32px;
+            height: 58.52px;
+            background: #00E676;
+            border: 2px solid #00E676;
+            box-sizing: border-box;
+            font-family: Arial;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            color: white;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            &:after{
+                content: '';
+                width: 65.5px;
+                height: 80.5px;
+                position: absolute;
+                background: url(../img/index-autsorsing/consultation/arrow.png) no-repeat;
+                background-size: contain;
+                top: -84px;
+                right: 132px;
+            }
+        }
     }
+}
+@media screen and (max-width: 1580px) {
+    .consultation{
+      .form{
+        &__name, &__phone, &__email, &__button, &__whats{
+            width: 250px;
+        }
+        &__whats{
+            &:after{
+                height: 57.5px;
+                top: -73px;
+                right: 98px;
+            }
+        }
+    }  
+    }
+    
 }
 .footer{
     background: #1B1B36;
     &__wrapper{
         display: flex;
         justify-content: space-between;
-        padding: 22px 24px 22px 15px;
+        padding: 34px 24px 34px 20px;
+        
     }
     &-logo{
         display: flex;
+        align-items: center;
+        &>a{
+            display: flex;
+            align-items: center;
+        }
         &__name{
-            font-family: 'Arial';
             font-weight: 900;
             font-size: 18px;
             color: #FFFFFF;
             padding-left: 13px;
             text-transform: uppercase;
             width: 328px;
-            padding-top:15px;
+            
         }
         &__img{
             &:hover{
@@ -979,34 +1146,47 @@ button{
         }
     }
     &-services{
+        margin-right: 9%;
         &__name{
-            font-family: 'Arial';
             text-transform: uppercase;
             font-weight: 900;
             font-size: 18px;
             color: #FFFFFF;
+            margin-bottom: 12px;
         }
         &__description{
-            font-family: 'Arial';
-            font-weight: 400;
-            font-size: 18px;
-            color: #FFFFFF;
-            line-height:27px;
+            
+            &>a{
+                font-weight: 400;
+                font-size: 16px;
+                color: #FFFFFF;
+                // line-height:27px;
+                display: block;
+                margin-bottom: 14px; 
+                transition: 0.3s linear;
+            &:hover{
+                color: rgb(116, 141, 168);
+            }
+            }
         }
     }
     &-contact{
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         &>a{
             text-decoration: none;
         }
         &__phone{
-            font-family: 'Arial';
             font-weight: normal;
             font-size: 18px;
             color: #FFFFFF;
             position: relative;
+            transition: 0.3s linear;
+            &:hover{
+                transform: scale(1.02);
+            }
             &:before{
                 content: '';
                 background-image: url(../img/contact/wats_footer.png);
@@ -1018,12 +1198,15 @@ button{
             }
         }
         &__politics{
-            font-family: 'Arial';
             font-weight: normal;
-            font-size: 18px;
+            font-size: 16px;
             color: #D5D5D5;
             text-decoration-line: underline;
             padding-top: 23px;
+            transition: 0.3s linear;
+            &:hover{
+                color: rgb(116, 141, 168);
+            }
         }
     }
 }
@@ -1032,13 +1215,24 @@ button{
     height: 40px;
     background: #2B2B51;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 1%;
+    font-size: 14px;
+    &__copyrigth{
+        color: #d5d5d59f;
+    }
     &__name{
-        font-family: 'Arial';
         font-weight: normal;
-        font-size: 18px;
-        color: #D5D5D5;
+        
+        &>a{
+            color: #D5D5D5;
+            transition: 0.3s linear;
+            &:hover{
+                color: rgb(116, 141, 168);
+                transition: 0.3s linear;
+          }  
+          }
     }
 }
 
