@@ -1,4 +1,9 @@
 $(document).ready(function(){
+
+    let servicesCard = document.querySelectorAll('.services-card');
+    let arrServicesCard = Array.prototype.slice.call(servicesCard);
+
+
     $("html").niceScroll({cursorwidth: "6px", zindex: 99,cursoropacitymin: 0, cursoropacitymax: 0.5, cursorcolor:"#424242"});
     $('.nicescroll-rails.nicescroll-rails-hr').remove();
     let menu = document.querySelector('.menu');
@@ -82,9 +87,24 @@ $(document).ready(function(){
     
 
     /* Счетчик слайдеров */  
-    $(".slider-about").on("afterChange", function(event, slick, currentSlide, nextSlide){
-        $(".sliders__number-current").text(currentSlide + 1);
+    // $(".slider-about").on("afterChange", function(event, slick, currentSlide, nextSlide){
+    //     $(".sliders__number-current").text(currentSlide + 1);
+    // });
+    // let totalSlides = $('.slider-about').slick("getSlick").slideCount
+    // document.querySelector('.sliders__number-total').innerHTML=totalSlides
+
+    /* Блок с другими услугами компании */
+    arrServicesCard.map((el,i)=>{
+        el.addEventListener('mouseover', ()=>{
+            el.style.backgroundSize = '120% 120%';     
+            el.classList.add('services-card--hover');
+        });
+        el.addEventListener('mouseout', ()=>{
+            el.style.backgroundSize = '100% 100%'; 
+            el.classList.remove('services-card--hover');
+
+        });
     });
-    let totalSlides = $('.slider-about').slick("getSlick").slideCount
-    document.querySelector('.sliders__number-total').innerHTML=totalSlides
+    // Маска для поля с телефоном
+    $("#form__phone").mask("+7(999) 999-99-99");
 });
