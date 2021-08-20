@@ -1,0 +1,154 @@
+@media screen and (max-width: 1024px){
+    .container{
+        padding: 0 6%;
+    }
+    .grid{
+        padding: 0px 6%;
+    }
+    .logo{
+        width: 390px;
+        &-image{ 
+            width: 155px;
+        }
+        &-name{
+            font-size: 18px;
+        }
+    }
+    .header{
+        &__number{
+            font-size: 20px;
+        }
+        &__menu{
+            font-size: 16px;
+        }
+    }
+    .button{
+        font-size: 16px;
+    }
+    .main-screen{
+        background-position: 39% 50%;
+    }
+    .advantage{
+        &__name{
+            &-size{
+                width: 165px;
+            }
+        }
+    }
+    
+    /* О компании */
+    .block-header{
+        font-size: 50px;
+        &:after{
+            width: 100px;
+            height: 53px;
+            top: -16px;
+        }
+    }
+    .body__name{
+        font-size: 40px;
+    }
+    .about{
+        &__purpose>p{
+            font-size: 15px;
+        }
+    }
+    .sliders{
+      .slider{
+        &-about{
+            width: 400px;
+            margin-right: 14px;
+            &:before{
+                width: 400px;      
+                height: 269px;
+                bottom: 15px;
+                left: 12px;
+            }
+            &>img{
+                width: 100%;
+            }
+        }
+    }  
+    }
+    .event{
+        &__description{
+            font-size: 15px;
+        }
+        &__footer{
+            font-size: 15px;
+        }
+    }
+    // Этапы таможенного оформления
+    .stages{
+        &__name{
+            &:after{
+                content: '';
+                position: absolute;
+                background-image: url(../../img/about/crosses_for_header.png);
+                background-size: cover;
+                z-index: 2;
+                width: 100px;
+                height: 53px;
+                top: -21px;
+                right: 114px;
+            }
+        }
+        &__description{
+            &-right, &-left{
+                &:before{
+                    display: none;
+                }
+                &:after{
+                    display: none;
+                }
+            }
+        }
+        &-footer{
+            &__description{
+                font-size: 18px;
+
+            }
+        }
+    }
+    .consultation{
+        &__name{
+            &:after{
+                content: '';
+                position: absolute;
+                background-image: url(../../img/about/crosses_for_header.png);
+                background-size: cover;
+                z-index: 2;
+                width: 110px;
+                height: 62px;
+                top: -15px;
+                right: 240px;
+            }
+        }
+        &-form{
+            padding: 57px 87px 57px 56px;
+            &__description{
+                font-size: 14px;
+            }
+        }
+        .form-tamojnya__whats {
+            margin-left: 35px;
+        }
+        .form__name, 
+        .form__phone,
+        .form__email,
+        .form__button,
+        .form__whats{
+            width: 215px;
+        }
+    }
+    
+
+    .footer{
+        &-logo{
+            &__name{
+                font-size: 16px;
+                width: 275px;
+            }
+        }
+    }
+}

@@ -696,7 +696,8 @@ button:hover {
 }
 .stages .registration__span {
   width: 106px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.2);
   margin-top: 10px;
   margin-bottom: 10px;
 }
