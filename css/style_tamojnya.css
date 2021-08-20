@@ -948,6 +948,9 @@ button:hover {
 .consultation .form__email {
   margin-right: 36px;
 }
+.consultation .form-or {
+  display: none;
+}
 .consultation .form__button {
   width: 305.32px;
   height: 58.52px;

@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px){
+@media screen and (max-width: 375px){
     html{
         // overflow: unset;
     }
@@ -12,7 +12,7 @@
             top:0;
             right: 0;
             box-sizing: border-box;
-            z-index: 0;
+            z-index: -1;
             position: absolute;
             padding: 0 7%;
         }
@@ -20,71 +20,102 @@
     .container{
         padding: 0 7%
     }
-
-
+    .body__bread{
+        margin-top: 0px;
+        font-size: 14px;
+    }
+    .body__name{
+        margin-bottom: 0px;
+    }
+    .body__header{
+        padding: 20px 0 20px;
+    }
     .logo{
-        width: 501px;
-        &-image{ 
-            width: 113px;
+        width: 100%;
+        &-image{
+            width: 65px;
+            margin-right: 4px;
         }
         &-name{
-            font-size: 18px;
+            z-index: 1;
+            font-size: 10px;
+            margin-top: 0px;
         }
     }
     .header{
+        width: 100vw;
         &__number{
             display: none;
-        }
-        &__menu{
-            font-size: 18px;
+         
         }
         &__button{
             display: none;
+          
         }
-    }
-    .button{
-        font-size: 18px;
+        &__menu{
+            font-size: 16px;
+        }
     }
     .main-screen{
-        margin-top: 133px;
-        &:after{
-            background-position: 40% center;
-
-        }
+        margin-top: 89px;
     }
-    .main-br{
-        display: none;
-    }
-    .main-body{
-        &__description{
-            font-size: 29px;
-        }
-    }
-    .main-scroll__wrapper{
-        transform: translateX(-153%);
-    }
-    .advantage{
-        &__name{
-            &-wsize{
-                width: 238px;
+    
+    .menu{
+        margin-right: 18px;
+        margin-left: 11px;
+        &__span{
+            height: 1px;
+            border: none;
+            width: 16.67px;
+            &::before{
+                bottom: 5px;
+                height: 1px;
+                border: none;
+                left: 0;
             }
-            &-size{
-                width: 136px;
+            &::after{
+                width: 26px;
+                height: 1px;
+                border: none;
+                top: 5px;
+                left: 0;
             }
         }
-    } 
+        &-active{
+            &__content{
+                padding: 45% 0 21%;
+                width: 100vw;
+                left: 0;
+                position: fixed;
+                overflow-y: hidden;
+            }
+            &__wrapper{
+                right: -5vw;
+            }
+        }
+    }
+    .active{
+        &-content{
+            &__number{
+                font-size: 18px;
+            }
+            &__button{
+                font-size: 16px;
+            }
+        }
+    }
         /* О компании */
     .about{
-        padding: 60px 0px 94px;
+        padding: 60px 0px 0px;
         &:before{
             border: 13px solid #FFFFFF;
             filter: blur(3px);
-            top: 653px;
+            top: 773px;
         }
        
        .block-header>span{
            &:after{
-            top: -10px;
+            top: -15px;
             right: -40px;
            }
        }
@@ -122,7 +153,7 @@
             }
         }
         &__sliders{
-            width: 70%;
+            width: 94%;
             height: 340px;
         }
         .sliders{
@@ -144,7 +175,7 @@
                 width: 100%;
                 height: auto;
                 margin-right: 0px;
-                margin-top: 73px;
+                margin-top: 37px;
                 &__item{
                     height: auto;
                     margin-right: 12px;
@@ -166,7 +197,7 @@
                 &:before{
                     width: 100%;
                     height: 207px;
-                    bottom: 68px;
+                    bottom: 106px;
                     left: 8px;
                 }
                 &:after{
@@ -186,8 +217,9 @@
     }
 
     .block-header{
-        margin-top: 0px;
-        line-height: 62px;
+        margin-top: 9px;
+        line-height: 45px;
+        font-size: 31px;
         &:after{
             display: none;
         }
@@ -201,7 +233,7 @@
                 z-index: 2;
                 width: 67px;
                 height: 36px;
-                top: -9px;
+                top: -11px;
                 right: -44px;
             }  
         }
@@ -209,16 +241,19 @@
 
     /* Этапы таможенного офрмления */
     .stages{
+        padding: 50px 0 131px;
         &__name{
-            font-size: 41px;
+            font-size: 30px;
         }
         .block-header>span{
             &:after{
-                top: -13px;
-                right: -274px;
+                top: 31px;
+                right: -70px;
             }
         }
         &__description{
+            width: 100%;
+            margin-bottom: 0px;
             &-left{
                 left: 0;
                 align-self: center;
@@ -228,36 +263,69 @@
                 align-self: center;
             }
         }
-        .registration{   
-             width: 530px;
-             height: 173px;
+        .registration{
+            background-color: transparent;   
+            width: 100%;
+            height: 237px;
+             flex-direction: column;
             &::before{
-                width: 121px;
-                 height: 121px;
-                 left: -61px;
+                display: none;
             }
             &:after{
-                width: 121px;
-                height: 121px;
-                right: -61px;
+                display: none;
+            }
+            &__phase{
+                color: #2B2B51;
+            }
+            &__contain{
+                color: #2B2B51;
+                align-items: center;
             }
              &__name{
-                font-size: 20px;
+                font-size: 16px;
+                text-align: center;
              }
             &__description{
+                font-size: 14px;
+                text-align: center;
+            }
+            &__number{
+                color: #2B2B51;
+                &:before{
+                    color: rgba(43, 43, 81, 0.33);
+                }
+            }
+            &__span{
+                border: 2px solid rgba(43, 43, 81, 0.2);
+                margin-top: 2px;
+                margin-bottom: 3px;
+            }
+        }
+        &-footer{
+            &__description{
                 font-size: 16px;
+                margin-left: 4px;
             }
         }
     }
     /* Другие услуги компании */
     .services{
+        height: 1136px;
         &__name{
             margin-top: 63px;
         }
         .block-header >span{
             &::after{
-                right: -179px;
+                right: -125px;
+                top: -13px;
             }
+        }
+        &__description{
+            flex-direction: column;
+        }
+        &-card{
+            width: 100%;
+            height: 418px;
         }
     }
     
@@ -267,25 +335,48 @@
         padding: 60px 0 10px;
         &__name{
             -webkit-text-stroke: 2px white;
+            font-size: 25px;
         }
         &-br{
             display: none;
         }
         .block-header>span{
             &:after{
-                right: -132px;
+                right: -90px;
+                top: -17px;
             }
         }
         &-form{
             background-color: transparent;
             margin: 0;
-            padding: 42px 4px 57px 4px;
+            padding: 37px 4px 57px 4px;
             box-shadow: none;
             &:before{
                 display: none;
             }
             &__description{
-                font-size: 19px;
+                font-size: 13px;
+            }
+            &__contact{
+                flex-direction: column;
+            }
+            &__button{
+                flex-direction: column;
+                margin-top: 15px;
+            }
+            &__name{
+                margin-bottom: 15px;
+            }
+            &__email{
+                margin-bottom: 15px;
+            }
+            &:after{
+                width: 83px;
+                height: 83px;
+                border: 18px solid #FFFFFF;
+                left: 250px;      
+                z-index: 0;
+
             }
         }
         .form{
@@ -293,11 +384,23 @@
                 flex-direction: column;
                 &__whats{
                     margin-left: 0px;
-                    margin-top: 36px;
+                    margin-top: 16px;
+                    width: 100%;
+                }
+                &__wrapper{
+                    width: 100%;
+                    
                 }
             }
             &__name,&__phone,&__email,&__button,&__whats{
-                width: 307px;
+                width: 100%;
+                margin-right: 0px;
+            }
+            &-or{
+                display: block;
+                font-size: 18px;
+                color: white;
+                margin-top: 16px;
             }
             &__whats{
                &:after{
@@ -310,11 +413,48 @@
     }
     /* Подвал */
     .footer{
-        &-logo{
-            &__name{
-                width: 217px;
-                font-size: 15px;
+        &__wrapper{
+            flex-direction: column;
+            align-items: center;
+            padding: 44px 24px 46px 24px;
+            &>a{
+                width: 100%;
             }
+        }
+        &-logo{
+            width: 100%;
+            &__name{
+                font-size: 12px;
+            }
+        }
+        &-services{
+            &__name{
+                text-align: center;
+                margin-top: 20px;
+            }
+            &__description{
+                text-align: center;
+                &>a{
+                    font-size: 18px;
+                }
+            }
+        }
+        &-contact{
+            margin-top: 48px;
+            &__phone{
+                font-size: 18px;
+            }
+            &__politics{
+                font-size: 18px;
+            }
+        }
+    }
+    .good-product{
+        flex-direction: column-reverse;
+        height: 60px;
+        justify-content: space-evenly;
+        &__copyrigth{
+            font-size: 12px; 
         }
     }
 }
