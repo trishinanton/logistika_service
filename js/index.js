@@ -85,17 +85,7 @@ $(document).ready(function(){
         cssEase: 'linear',
         adaptiveHeight: true,
         prevArrow: '<button class="sliders-button__left button-slide"> ❮ </button>',
-        nextArrow: '<button class="sliders-button__right button-slide"> ❯ </button>',
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                }
-        }
-    ]
+        nextArrow: '<button class="sliders-button__right button-slide"> ❯ </button>' 
     });
 
     /* Счетчик слайдеров */  
