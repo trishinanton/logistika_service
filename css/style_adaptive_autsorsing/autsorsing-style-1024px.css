@@ -38,9 +38,6 @@
     height: 53px;
     top: -16px;
   }
-  .body__name {
-    font-size: 40px;
-  }
   .about__purpose > p {
     font-size: 15px;
   }
@@ -57,60 +54,60 @@
   .sliders .slider-about > img {
     width: 100%;
   }
-  .event__description {
-    font-size: 15px;
+  .enterns__name {
+    font-size: 31px;
   }
-  .event__footer {
-    font-size: 15px;
+  .enterns-card__description {
+    font-size: 16px;
   }
-  .stages__name:after {
-    content: '';
-    position: absolute;
-    background-image: url(../../img/about/crosses_for_header.png);
-    background-size: cover;
-    z-index: 2;
-    width: 100px;
-    height: 53px;
-    top: -21px;
-    right: 114px;
+  /* Индивидуальная консультация */
+  .consultation {
+    background-color: #2B2B51;
+    padding: 60px 0 10px;
   }
-  .stages__description-right:before,
-  .stages__description-left:before {
+  .consultation__name {
+    -webkit-text-stroke: 2px white;
+  }
+  .consultation-br {
     display: none;
   }
-  .stages__description-right:after,
-  .stages__description-left:after {
-    display: none;
+  .consultation .block-header {
+    font-size: 38px;
   }
-  .stages-footer__description {
-    font-size: 18px;
-  }
-  .consultation__name:after {
-    content: '';
-    position: absolute;
-    background-image: url(../../img/about/crosses_for_header.png);
-    background-size: cover;
-    z-index: 2;
-    width: 110px;
-    height: 62px;
-    top: -15px;
-    right: 240px;
+  .consultation .block-header > span:after {
+    right: -132px;
   }
   .consultation-form {
-    padding: 57px 87px 57px 56px;
+    background-color: transparent;
+    margin: 0;
+    padding: 42px 4px 57px 4px;
+    box-shadow: none;
+  }
+  .consultation-form:before {
+    display: none;
   }
   .consultation-form__description {
-    font-size: 14px;
+    font-size: 19px;
+  }
+  .consultation-form__description span:after {
+    display: none;
+  }
+  .consultation .form-tamojnya {
+    flex-direction: column;
   }
   .consultation .form-tamojnya__whats {
-    margin-left: 35px;
+    margin-left: 0px;
+    margin-top: 36px;
   }
   .consultation .form__name,
   .consultation .form__phone,
   .consultation .form__email,
   .consultation .form__button,
   .consultation .form__whats {
-    width: 215px;
+    width: 307px;
+  }
+  .consultation .form__whats:after {
+    display: none;
   }
   .footer-logo__name {
     font-size: 16px;

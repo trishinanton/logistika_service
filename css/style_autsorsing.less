@@ -1,4 +1,3 @@
-
 *{
     margin: 0;
     padding: 0;
@@ -23,12 +22,11 @@ button{
         cursor: pointer;
     }
 }
+.d-sm{
+    display: none;
+}
 .container{
-    // min-width: 1200px;
-    // max-width: 1200px;
     padding: 0 10%;
-    // margin: 0 auto;
-    // position: relative;
     &-fluid{
         width: 100vw;
     }
@@ -75,6 +73,7 @@ button{
     position: relative;
     z-index: 1;
     // height: 100vh;
+    z-index: 10;
     color: white;
     display: flex;
     flex-direction: column;
@@ -86,6 +85,19 @@ button{
         width: 100vw;
         left: 0;
         top: 0;
+    }
+    &::after{
+        content: '';
+        width: 90px;
+        height: 90px;
+        position: absolute;
+        border: 20px solid #FFFFFF;
+        box-sizing: border-box;
+        filter: blur(2px);
+        transform: rotate(-45deg);
+        box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+        right: 120px;
+        bottom: -60px;
     }
 }
 .header{
@@ -304,13 +316,20 @@ button{
         height: 100%;
     }
     &__points{
-        height: 65%;
+        // height: 65%;
+        height: 50%;
         min-width: 226px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
+    &__number-button-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     &__number{
+        margin-bottom: 50px;
         font-style: normal;
         font-weight: 700;
         font-size: 24px;
@@ -405,7 +424,7 @@ button{
     &__bread{
         margin-top: 65px;
         margin-left: 4px;
-        color: #a1a1a1;
+        color: #6E6E8B;
         font-family: Arial;
         font-style: normal;
         font-weight: normal;
@@ -420,7 +439,7 @@ button{
         text-transform: uppercase;
         -webkit-text-stroke: 2px #2B2B51;
         margin-bottom: 62px;
-        font-size: 51px;
+        font-size: 60px;
         &:after{
             top: -18px;
             right: -61px;
@@ -433,21 +452,6 @@ button{
     position: relative;
     z-index: 1;
     background: #2B2B51;
-    padding-bottom: 81px;
-    &:before{
-        content: '';
-        width: 90.35px;
-        height: 90.35px;
-        position: absolute;
-        border: 20px solid #FFFFFF;
-        box-sizing: border-box;
-        filter: blur(2px);
-        transform: rotate(-45deg);
-        box-shadow: 0 0 20px rgb(0 0 0 / 20%);
-        right: 86px;
-        top: -35px;
-        
-    }
     &:after{
         content: '';
         width: 62.35px;
@@ -475,8 +479,7 @@ button{
         flex-direction: column;
         align-items: flex-start;
         width: 50%;
-        height: 574px;
-        
+        height: 662px;
     }
     &__purpose{
         line-height: 22px;
@@ -516,32 +519,6 @@ button{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        // &-img{
-        //     position: relative;
-        //     margin-top: 36px;
-        //     margin-right: 20px;
-        //     &:before{
-        //         content: '';
-        //         position: absolute;
-        //         width: 483px;
-        //         height: 321px;
-        //         background: rgba(232, 232, 232, 0.13);
-        //         z-index: 1;
-        //         bottom: 18px;
-        //         left: 18px;
-        //     }
-        //     &:after{
-        //         content: '';
-        //         position: absolute;
-        //         background-image: url(../img/about/crosses.png);
-        //         background-size: cover;
-        //         z-index: 2;
-        //         width: 110px;
-        //         height: 62px;
-        //         bottom: -26px;
-        //         left: -57px;
-        //     }
-        // }
     }
     .slider-about{
         width: 483.8px;
@@ -581,6 +558,7 @@ button{
     }
 }
 .event{
+    padding-bottom: 81px;
     &__name{
         font-family: Arial;
         font-style: normal;
@@ -614,11 +592,12 @@ button{
     }
 }
 
-/* Что входит в услуги аутсорсинга */
+/* Этапы таможенного оформления */
+
 .enterns{
     position: relative;
     z-index: 1;
-    padding: 101px 0 101px;
+    padding-top: 101px;
     &__name{
         font-size: 38px;
         -webkit-text-stroke: 2px #2B2B51;
@@ -678,16 +657,17 @@ button{
     }
 }
 
+
 /* Другие услуги компании */
 .services{
     position: relative;
     z-index: 1;
-    height: 850px;
+    padding-bottom: 70px;
     &__name{
         margin-top: 100px;
         margin-bottom: 71px;
+        font-size: 58px;
         -webkit-text-stroke: 2px #2B2B51;
-        font-size: 57px;
     }
     &__description{
         display: flex;
@@ -707,6 +687,30 @@ button{
         transition: all 1s ease-in-out 0s;
         width: 50%;
         position: relative;
+        overflow: hidden;
+        &::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(179.93deg, rgba(43, 43, 81, 0.16) -1.65%, rgba(43, 43, 81, 0.31) 40.03%, #2B2B51 101.65%);  
+        }
+        &__firm-name{
+            position: absolute;
+            transform: rotate(270deg);
+            transform-origin: right;
+            transform-origin: left;
+            top: 130px;
+            left: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 1s ease;
+            font-size: 14px;
+            z-index: 3;
+            color: rgba(255, 255, 255, 0.37);
+        }
         &__name{
             margin: 0 28px;
             position: relative;
@@ -714,12 +718,12 @@ button{
         }
         
         &__service{
-            background-image: url(../img/services/registration.png);
-            background-size: cover;
+            background-image: url(../img/services/registration-clear.jpg);
+            background-size: 100% 100%;
         }
         &__counseling{
-            background-image: url(../img/services/cargo.png);
-            background-size: cover;
+            background-image: url(../img/services/cargo-clear.jpg);
+            background-size: 100% 100%;
         }
         &__btn{
             opacity: 0;
@@ -784,6 +788,9 @@ button{
             }
         }
         &--hover{
+            .services-card__firm-name{
+                color: rgb(255 255 255 / 11%);
+            }
             .services-card__title{
                 top: 335px;
             }
@@ -809,13 +816,14 @@ button{
     }
 }
 
+
 .consultation{
     position: relative;
     z-index: 1;
     padding: 60px 0 154px;
     &__name{
         -webkit-text-stroke: 2px #2B2B51;
-        font-size: 46px;
+        font-size: 48px;
         &::after{
             content: '';
             position: absolute;
@@ -864,8 +872,19 @@ button{
             font-size: 18px;
             line-height: 26px;
             color: white;
-            &>a{
+            &>span{
                 border-bottom: 1px solid white;
+                position: relative;
+                &:after{
+                    content: '';
+                    width: 65.5px;
+                    height: 80.5px;
+                    position: absolute;
+                    background: url(../img/index-autsorsing/consultation/arrow.png) no-repeat;
+                    background-size: contain;
+                    top: 100%;
+                    right: -76px;
+                }
             }
         }
         &__contact{
@@ -902,6 +921,9 @@ button{
         &__email{
             margin-right: 36px;
         }
+        &-or{
+            display: none;
+        }
         &__button{
             width: 305.32px;
             height: 58.52px;
@@ -916,6 +938,12 @@ button{
             text-align: center;
             position: relative;
             z-index: 1;
+            &:hover{
+                cursor: pointer;
+                background: #e44d4d;
+                border: 2px solid #e44d4d;
+                color: #e1e1e1;
+            }
         }
         &-tamojnya{
             display: flex;
@@ -923,7 +951,7 @@ button{
             align-items: center;
             margin-top: 28px;
             &__whats{
-                margin-left: 77px;
+                margin-left: 60px;
             }
         }
         &__whats{
@@ -940,54 +968,89 @@ button{
             text-align: center;
             position: relative;
             z-index: 1;
-            &:after{
-                content: '';
-                width: 65.5px;
-                height: 80.5px;
-                position: absolute;
-                background: url(../img/index-autsorsing/consultation/arrow.png) no-repeat;
-                background-size: contain;
-                top: -84px;
-                right: 132px;
+            &:hover{
+                cursor: pointer;
+                background: #02b35d;
+                border: 2px solid #02b35d;
+                color: #e1e1e1;
             }
         }
     }
 }
-@media screen and (max-width: 1580px) {
+@media screen and (min-width: 1024px) and (max-width:1500px){
+    .container,.grid {
+        padding: 0 4%;
+    }
+    .body__name{
+        font-size: 50px;
+    }
+    .stages__name{
+        font-size: 38px;
+    }
+    .services__name{
+        font-size: 50px;
+    }
     .consultation{
-      .form{
-        &__name, &__phone, &__email, &__button, &__whats{
-            width: 250px;
+        &__name{
+            font-size: 40px;
         }
-        &__whats{
-            &:after{
-                height: 57.5px;
-                top: -73px;
-                right: 98px;
+        &-form{
+            margin: 90px 4px 0 4px;
+            &__description{
+                font-size: 15px;
             }
         }
-    }  
+        & .form__name, 
+        & .form__phone,
+        & .form__email,
+        & .form__button,
+        & .form__whats{
+            width: 245px;
+        }
+
+    }
+}
+
+.consultation{
+    &-form{
+        .form{
+            &__whats{
+                &:after{
+                    height: 57.5px;
+                    top: -73px;
+                    right: 98px;
+                }
+            }
+            
+        }  
     }
     
 }
+
+
 .footer{
     background: #1B1B36;
     &__wrapper{
         display: flex;
         justify-content: space-between;
-        padding: 22px 24px 22px 15px;
+        padding: 34px 24px 34px 20px;
+        
     }
     &-logo{
         display: flex;
         align-items: center;
+        &>a{
+            display: flex;
+            align-items: center;
+        }
         &__name{
-            font-family: 'Arial';
             font-weight: 900;
             font-size: 18px;
             color: #FFFFFF;
             padding-left: 13px;
             text-transform: uppercase;
             width: 328px;
+            
         }
         &__img{
             &:hover{
@@ -998,35 +1061,45 @@ button{
     &-services{
         margin-right: 9%;
         &__name{
-            font-family: 'Arial';
             text-transform: uppercase;
             font-weight: 900;
             font-size: 18px;
             color: #FFFFFF;
+            margin-bottom: 12px;
         }
         &__description{
+            
             &>a{
-                font-family: 'Arial';
                 font-weight: 400;
-                font-size: 18px;
+                font-size: 16px;
                 color: #FFFFFF;
-                line-height:27px; 
-             }
+                // line-height:27px;
+                display: block;
+                margin-bottom: 14px; 
+                transition: 0.3s linear;
+            &:hover{
+                color: rgb(116, 141, 168);
+            }
+            }
         }
     }
     &-contact{
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         &>a{
             text-decoration: none;
         }
         &__phone{
-            font-family: 'Arial';
             font-weight: normal;
             font-size: 18px;
             color: #FFFFFF;
             position: relative;
+            transition: 0.3s linear;
+            &:hover{
+                transform: scale(1.02);
+            }
             &:before{
                 content: '';
                 background-image: url(../img/contact/wats_footer.png);
@@ -1038,12 +1111,15 @@ button{
             }
         }
         &__politics{
-            font-family: 'Arial';
             font-weight: normal;
-            font-size: 18px;
+            font-size: 16px;
             color: #D5D5D5;
             text-decoration-line: underline;
             padding-top: 23px;
+            transition: 0.3s linear;
+            &:hover{
+                color: rgb(116, 141, 168);
+            }
         }
     }
 }
@@ -1052,12 +1128,22 @@ button{
     height: 40px;
     background: #2B2B51;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 1%;
+    font-size: 14px;
+    &__copyrigth{
+        color: #d5d5d59f;
+    }
     &__name{
-        font-family: 'Arial';
         font-weight: normal;
-        font-size: 18px;
-        color: #D5D5D5;
+        &>a{
+            color: #D5D5D5;
+            transition: 0.3s linear;
+            &:hover{
+                color: rgb(116, 141, 168);
+                transition: 0.3s linear;
+            }  
+        }
     }
 }
