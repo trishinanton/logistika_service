@@ -1,4 +1,3 @@
-
 *{
     margin: 0;
     padding: 0;
@@ -23,12 +22,11 @@ button{
         cursor: pointer;
     }
 }
+.d-sm{
+    display: none;
+}
 .container{
-    // min-width: 1200px;
-    // max-width: 1200px;
     padding: 0 10%;
-    // margin: 0 auto;
-    // position: relative;
     &-fluid{
         width: 100vw;
     }
@@ -75,6 +73,7 @@ button{
     position: relative;
     z-index: 1;
     // height: 100vh;
+    z-index: 10;
     color: white;
     display: flex;
     flex-direction: column;
@@ -86,6 +85,19 @@ button{
         width: 100vw;
         left: 0;
         top: 0;
+    }
+    &::after{
+        content: '';
+        width: 90px;
+        height: 90px;
+        position: absolute;
+        border: 20px solid #FFFFFF;
+        box-sizing: border-box;
+        filter: blur(2px);
+        transform: rotate(-45deg);
+        box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+        right: 120px;
+        bottom: -60px;
     }
 }
 .header{
@@ -269,7 +281,7 @@ button{
    }
     &__content{
         // display: none;
-        background: rgba(145,141,154, 0.6);
+        background: rgba(16, 16, 39, 0.9);
         opacity: 1;
         box-shadow: 0px 4px 8px rgba(43, 43, 81, 0.07);
         // backdrop-filter: blur(11px);
@@ -304,13 +316,20 @@ button{
         height: 100%;
     }
     &__points{
-        height: 65%;
+        // height: 65%;
+        height: 50%;
         min-width: 226px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
+    &__number-button-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     &__number{
+        margin-bottom: 50px;
         font-style: normal;
         font-weight: 700;
         font-size: 24px;
@@ -405,19 +424,22 @@ button{
     &__bread{
         margin-top: 65px;
         margin-left: 4px;
-        color: #a1a1a1;
+        color: #6E6E8B;
         font-family: Arial;
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
         &-main{
-            color: #2B2B51;
+            &>a{
+                color: #2B2B51;
+            }
         }
     }
     &__name{
         text-transform: uppercase;
         -webkit-text-stroke: 2px #2B2B51;
         margin-bottom: 62px;
+        font-size: 60px;
         &:after{
             top: -18px;
             right: -61px;
@@ -430,28 +452,17 @@ button{
     position: relative;
     z-index: 1;
     background: #2B2B51;
-    &:before{
-        content: '';
-        background-image: url(../img/about/Rectangle\ 36.png);
-        background-size: cover;
-        position: absolute;
-        width: 62.39px;
-        height: 62.39px;
-        right: -8.3px;
-        bottom: 25px;
-        filter: blur(2px);
-    }
     &:after{
         content: '';
-        width: 90.35px;
-        height: 90.35px;
+        width: 62.35px;
+        height: 62.35px;
         position: absolute;
-        border: 20px solid #FFFFFF;
+        border: 15px solid #FFFFFF;
         box-sizing: border-box;
-        filter: blur(2px);
+        filter: blur(3px);
         transform: rotate(-45deg);
-        bottom: -31px;
-        right: 55px;
+        bottom: 43px;
+        left: -30px;
         box-shadow: 0 0 20px rgb(0 0 0 / 20%);
     }
     &__name{
@@ -507,103 +518,281 @@ button{
         width: 50%;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        // &-img{
-        //     position: relative;
-        //     margin-top: 36px;
-        //     margin-right: 20px;
-        //     &:before{
-        //         content: '';
-        //         position: absolute;
-        //         width: 483px;
-        //         height: 321px;
-        //         background: rgba(232, 232, 232, 0.13);
-        //         z-index: 1;
-        //         bottom: 18px;
-        //         left: 18px;
-        //     }
-        //     &:after{
-        //         content: '';
-        //         position: absolute;
-        //         background-image: url(../img/about/crosses.png);
-        //         background-size: cover;
-        //         z-index: 2;
-        //         width: 110px;
-        //         height: 62px;
-        //         bottom: -26px;
-        //         left: -57px;
-        //     }
-        // }
+        justify-content: center;
     }
     .slider-about{
         width: 483.8px;
-        height: 321.96px;
         margin-top: 36px;
         margin-right: 20px;
         position: relative;
         &:before{
             content: '';
             position: absolute;
-            width: 483px;
+            width: 375px;
             height: 321px;
             background: rgba(232, 232, 232, 0.13);
             z-index: 1;
-            bottom: 18px;
+            bottom: 23px;
             left: 18px;
         }
         &:after{
             content: '';
+            width: 62.35px;
+            height: 62.35px;
             position: absolute;
-            background-image: url(../img/about/crosses.png);
-            background-size: cover;
+            border: 15px solid #FFFFFF;
+            box-sizing: border-box;
+            filter: blur(2px);
+            transform: rotate(-45deg);
+            bottom: -31px;
+            left: -31px;
+            box-shadow: 0 0 20px rgb(0 0 0 / 20%);
             z-index: 2;
-            width: 110px;
-            height: 62px;
-            bottom: -26px;
-            left: -57px;
         }
         
     }
     &__img{
         position: relative;
-        z-index: 2;
-        
-    }
-    &-button{
-        position: relative;
         z-index: 1;
-        display: flex;
-        justify-content: flex-end;
-        margin-top: 26px;
-        margin-right: 20px;
-        &__left{
-            margin-right: 56px;
-        }
         
     }
 }
-.button{
-    &-slide{
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        border: 2px solid rgba(255, 255, 255, 0.44);
-        box-sizing: border-box;
-        background-color: transparent;
-        color: rgba(255, 255, 255, 0.44);
-        font-size: 26px;
-        transition: 0.3s linear;
-        right: 0;
-        bottom: -66px;
-        &:hover{
-        background-color: white;
-        color: #2B2B51;
-        cursor: pointer;
-        transform: translateY(1px);
+// Плюсы первозки
+.plus{
+    padding-top: 101px;
+    padding-bottom: 111px;
+    position: relative;
+    &>.container{
+        text-align: center;
+    }
+    &__name{
+        text-align: left;
+        font-size: 34px;
+        line-height: 66px;
+        text-transform: uppercase;
+        -webkit-text-stroke: 2px #2B2B51;
+    }
+    &-body{
+        margin-top: 187px;
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        &__description{
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            color:#2B2B51;
         }
     }
-    
+    .cost_savings{
+        position: relative;
+        &:after{
+            content: '';
+            position: absolute;
+            width: 112px;
+            height: 66px;
+            background: url(../img/index-cargo/cost_savings.png);
+            background-size: cover;
+            bottom: -84px;
+            right: 13px;
+            transform: translateZ(-1px);
+        }
+        &__wrapper{
+            position: absolute;
+            top: -36px;
+            left: -210px;
+            padding: 18px;
+            box-shadow: 0px 4px 20px rgba(43, 43, 81, 0.15);
+            background-color: white;
+            transform-style: preserve-3d;
+            text-align: left;
+        }
+    }
+    .small_parties{
+        position: relative;
+        &:after{
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 147px;
+            background: url(../img/index-cargo/small_parties.png);
+            background-size: cover;
+            bottom: -160px;
+            right: 110px;
+            transform: translateZ(-1px);
+        }
+        &__wrapper{
+            position: absolute;
+            top: -134px;
+            left: 112px;
+            padding: 18px;
+            box-shadow: 0px 4px 20px rgba(43, 43, 81, 0.15);
+            background-color: white;
+            transform-style: preserve-3d;
+            text-align: left;
+        }
+    }
+    .organization{
+        position: relative;
+        &:after{
+            content: '';
+            position: absolute;
+            width: 155px;
+            height: 68px;
+            background: url(../img/index-cargo/organization.png);
+            background-size: cover;
+            bottom: -81px;
+            left: -165px;
+            transform: translateZ(-1px);
+        }
+        &__wrapper{
+            position: absolute;
+            bottom: 247px;
+            right: -291px;      
+            padding: 18px;
+            box-shadow: 0px 4px 20px rgba(43, 43, 81, 0.15);
+            background-color: white;
+            transform-style: preserve-3d;
+            text-align: left;
+        }
+    }
+    .min_delivery{
+        position: relative;
+        &:after{
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 104px;
+            background: url(../img/index-cargo/min_delivery.png);
+            background-size: cover;
+            top: -99px;
+            left: -71px;
+            transform: translateZ(-1px);
+            
+        }
+        &__wrapper{
+            position: absolute;
+            bottom: -61px;
+            right: -307px;               
+            padding: 18px;
+            box-shadow: 0px 4px 20px rgba(43, 43, 81, 0.15);
+            background-color: white;
+            transform-style: preserve-3d;
+            text-align: left;
+        }
+    }
+    .fixed_cost{
+        position: relative;
+        &:after{
+            content: '';
+            position: absolute;
+            width: 103px;
+            height: 89px;
+            background: url(../img/index-cargo/fixed_cost.png);
+            background-size: cover;
+            top: -99px;
+            right: -12px;
+            transform: translateZ(-1px);
+        }
+        &__wrapper{
+            position: absolute;
+            bottom: -48px;
+            left: -163px;            
+            padding: 18px;
+            box-shadow: 0px 4px 20px rgba(43, 43, 81, 0.15);
+            background-color: white;
+            transform-style: preserve-3d;
+            text-align: left;
+        }
+    }
 }
-.slick-list{
-    z-index: 1;
+
+// Этапы работы
+.stages{
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 86px;
+    &__name{
+        -webkit-text-stroke: 2px rgb(43, 43, 81);
+        font-size: 31px;
+        line-height: 50px;
+        margin-bottom: 68px;
+    }
+    .block-header{
+        &:after{
+            top: 19px;
+        }
+    }
+    &__description{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &-card{
+        position: relative;
+        width: 30vw;
+        height: 98px;
+        display: flex;
+        align-items: center;
+        
+        margin-bottom: 47px;
+        background-color: white;
+        box-shadow: 0px 4px 20px rgba(43, 43, 81, 0.15);
+        &__number{
+            position: absolute;
+            font-weight: 900;
+            font-size: 60px;
+            text-transform: uppercase;
+            color: transparent;
+            -webkit-text-stroke: 2px white;
+            background-color: #2B2B51;
+            padding: 0px 25px;
+            line-height: 97px;
+            top: -31px;
+            left: -52px;
+        }
+        &__description{
+            font-weight: bold;
+            font-size: 22px;
+            color: #2B2B51;
+        }
+        .number-right{
+            right: -64px;
+            left: auto;
+        }
+    }
+    &-card:nth-child(odd){  
+        margin-left: 55px;
+        position: relative;
+        justify-content: flex-end;
+        padding-right: 31px;
+        &:after{
+            content: '';
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            border: 10px solid #2B2B51;
+            transform: rotate(45.63deg);
+            box-sizing: border-box;
+            top: -17px;
+            right: -18px;
+        }
+    }
+    &-card:nth-child(even){  
+        margin-right: 67px;
+        position: relative;
+        justify-content: flex-start;
+        padding-left: 31px;
+        &:after{
+            content: '';
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            border: 10px solid #2B2B51;
+            transform: rotate(45.63deg);
+            box-sizing: border-box;
+            bottom: -17px;
+            left: -18px;
+        }
+    }
 }
