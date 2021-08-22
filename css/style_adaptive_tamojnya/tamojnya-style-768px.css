@@ -59,6 +59,11 @@
   .advantage__name-size {
     width: 136px;
   }
+  /* меню навигации  */
+  .active-content__points {
+    height: 30%;
+    margin-top: 10%;
+  }
   /* О компании */
   .about {
     padding: 60px 0px 94px;
@@ -119,7 +124,7 @@
   }
   .about .sliders__img {
     width: 100%;
-    height: 207px;
+    height: 307px;
   }
   .about .sliders .slider-about {
     width: 100%;
@@ -144,9 +149,9 @@
   }
   .about .sliders .slider-about:before {
     width: 100%;
-    height: 207px;
-    bottom: 68px;
-    left: 8px;
+    height: 307px;
+    bottom: -24px;
+    left: 14px;
   }
   .about .sliders .slider-about:after {
     display: none;
@@ -210,9 +215,17 @@
   }
   .stages .registration__name {
     font-size: 20px;
+    line-height: 20px;
   }
   .stages .registration__description {
+    line-height: 18px;
     font-size: 16px;
+  }
+  .stages-footer__description {
+    font-size: 16px;
+  }
+  .stages-footer__description > strong {
+    font-size: 20px;
   }
   /* Другие услуги компании */
   .services__name {
@@ -246,6 +259,9 @@
   }
   .consultation-form__description {
     font-size: 19px;
+  }
+  .consultation-form__description span:after {
+    display: none;
   }
   .consultation .form-tamojnya {
     flex-direction: column;

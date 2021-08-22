@@ -63,7 +63,6 @@ button{
     &__header{
         padding: 16px 3%;
         box-sizing: border-box;
-        // position: absolute;
         width: 100vw;
         left: 0;
         top: 0;
@@ -528,14 +527,15 @@ button{
     background: #2B2B51;
     &:before{
         content: '';
-        background-image: url(../img/about/Rectangle\ 36.png);
-        background-size: cover;
+        border: 11px solid #FFFFFF;
+        transform: rotate(45deg);
+        filter: blur(3px);
+        border: 15px solid #FFFFFF;
         position: absolute;
-        width: 62.39px;
-        height: 62.39px;
-        right: -8.3px;
-        bottom: 25px;
-        filter: blur(2px);
+        width: 30px;
+        height: 30px;
+        right: -24px;
+        bottom: 45px;
     }
     &:after{
         content: '';
@@ -1840,7 +1840,7 @@ button{
     }
     &__white-fon{
         position: absolute;
-        background: white;
+        background: rgba(232, 232, 232, 0.3);;
         height: 658px;
         width: 30%;
         right: 0;

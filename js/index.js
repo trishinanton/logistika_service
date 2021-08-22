@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     let windowWidth= window.outerWidth ;
     let menu = document.querySelector('.menu');
@@ -28,7 +27,6 @@ $(document).ready(function(){
         menu.classList.add('menu-active');
         if(windowWidth < 421){
             $('body').css('overflow', 'hidden');
-            // $('body').css('height', '100vh');
         }
         menu.style.animation = 'none';
         document.querySelector('.active-content').style.display = 'block';
@@ -166,19 +164,15 @@ $(document).ready(function(){
             });
         });
     /* Фиксированное меню */
-    $(document).ready(function($) {
-        var g_top = 0;
-        $(window).scroll(function() {
+    var g_top = 0;
+    $(window).scroll(function() {
         var top = $(this).scrollTop();
-        
         if ( top > g_top ) {
             $('.header').fadeOut(300);
         } else {
             $('.header').fadeIn(300);
         }
-        
         g_top = top;    
-        });
     });
 
     $(window).on("scroll", function () {
@@ -209,6 +203,11 @@ $(document).ready(function(){
         }
     })
 
+    // скрыть хедер если страница загружается не на первом экране, а ниже
+    if($(this).scrollTop() > 0){
+        $('.header').fadeOut(10);
+    }
+    
 
 
     // Маска для поля с телефоном
