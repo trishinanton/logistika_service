@@ -9,7 +9,7 @@
             top:0;
             right: 0;
             box-sizing: border-box;
-            z-index: 0;
+            z-index: -1;
             position: absolute;
             padding: 0 7%;
         }
@@ -213,6 +213,9 @@
 
    /* Плюсы перевозки */
    .plus{
+       &__name{
+        font-size: 31px;
+       }
        &-body{
            display: flex;
            flex-direction: column;
@@ -380,5 +383,14 @@
                 font-size: 15px;
             }
         }
+    }
+}
+
+// Цена транспортирвки
+.price{
+    &__name{
+        
+    line-height: 44px;
+
     }
 }

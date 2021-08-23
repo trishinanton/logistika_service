@@ -834,9 +834,15 @@ button:hover {
   padding: 0 1em;
 }
 #comparisonchart nav > label {
-  color: #339bf0;
+  color: #9C9CBC;
   display: inline-block;
-  padding: 1em;
+  padding: 3px 3px;
+  padding-bottom: 3px;
+  margin-bottom: 13px;
+  margin-right: 37px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
 }
 #comparisonchart table {
   border-collapse: separate;
@@ -847,7 +853,7 @@ button:hover {
 }
 #comparisonchart table td,
 #comparisonchart table th {
-  padding: 45px 25px 40px 20px;
+  padding: 45px 105px 40px 20px;
   width: 33.33%;
   vertical-align: top;
   color: #2B2B51;
@@ -935,24 +941,24 @@ button:hover {
     width: 100%;
   }
   #comparisonchart input:checked:nth-of-type(1) ~ nav label:nth-of-type(1) {
-    border-bottom: 3px solid #000000;
-    color: black;
+    color: white;
+    border-bottom: 2px solid white;
   }
   #comparisonchart input:checked:nth-of-type(1) ~ table tr > td:nth-of-type(1),
   #comparisonchart input:checked:nth-of-type(1) ~ table tr > th:nth-of-type(1) {
     display: table-cell;
   }
   #comparisonchart input:checked:nth-of-type(2) ~ nav label:nth-of-type(2) {
-    border-bottom: 3px solid #000000;
-    color: black;
+    color: white;
+    border-bottom: 2px solid white;
   }
   #comparisonchart input:checked:nth-of-type(2) ~ table tr > td:nth-of-type(2),
   #comparisonchart input:checked:nth-of-type(2) ~ table tr > th:nth-of-type(2) {
     display: table-cell;
   }
   #comparisonchart input:checked:nth-of-type(3) ~ nav label:nth-of-type(3) {
-    border-bottom: 3px solid #000000;
-    color: black;
+    color: white;
+    border-bottom: 2px solid white;
   }
   #comparisonchart input:checked:nth-of-type(3) ~ table tr > td:nth-of-type(3),
   #comparisonchart input:checked:nth-of-type(3) ~ table tr > th:nth-of-type(3) {
@@ -971,6 +977,7 @@ button:hover {
   color: transparent;
   margin-top: 77px;
   margin-bottom: 20px;
+  margin-left: 4px;
 }
 .event__description {
   font-family: 'Arial';
@@ -979,6 +986,7 @@ button:hover {
   font-size: 18px;
   line-height: 35px;
   color: white;
+  margin-left: 4px;
 }
 .event__description > span {
   font-size: 23px;
@@ -1011,6 +1019,7 @@ button:hover {
   font-size: 18px;
   line-height: 35px;
   color: #2B2B51;
+  margin-left: 4px;
 }
 .price__description > span {
   font-size: 23px;

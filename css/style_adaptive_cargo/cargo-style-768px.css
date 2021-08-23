@@ -10,7 +10,7 @@
     top: 0;
     right: 0;
     box-sizing: border-box;
-    z-index: 0;
+    z-index: -1;
     position: absolute;
     padding: 0 7%;
   }
@@ -184,6 +184,9 @@
     right: -44px;
   }
   /* Плюсы перевозки */
+  .plus__name {
+    font-size: 31px;
+  }
   .plus-body {
     display: flex;
     flex-direction: column;
@@ -325,4 +328,7 @@
     width: 217px;
     font-size: 15px;
   }
+}
+.price__name {
+  line-height: 44px;
 }

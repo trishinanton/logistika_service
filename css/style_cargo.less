@@ -865,8 +865,8 @@ button{
 	input:checked:nth-of-type(@{i}) {
 		~ nav {
 			label:nth-of-type(@{i}) {
-				border-bottom: @nav-border-highlight;
-				color: black;
+				color: white;
+                border-bottom: 2px solid white;
 			}
 		}
 		~ table {
@@ -897,9 +897,15 @@ button{
 		justify-content: center;
 		padding: 0 1em;
 		> label {
-			color: @links-color;
+			color: #9C9CBC;
 			display: inline-block;
-			padding: 1em;
+			padding: 3px 3px;
+            padding-bottom: 3px;
+            margin-bottom: 13px;
+            margin-right: 37px;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 18px;
 		}
 	}
 	table {
@@ -909,7 +915,7 @@ button{
 		overflow: hidden;
 		width: 100%;
 		td, th {
-			padding: 45px 25px 40px 20px;
+			padding: 45px 105px 40px 20px;
 			width: 33.33%;
             vertical-align: top;
             color: #2B2B51;
@@ -1057,6 +1063,7 @@ button{
         color: transparent;
         margin-top: 77px;
         margin-bottom: 20px;
+        margin-left: 4px;
     }
     &__description{
         font-family: 'Arial';
@@ -1065,6 +1072,7 @@ button{
         font-size: 18px;
         line-height: 35px;
         color: white;
+        margin-left: 4px;
         &>span{
             font-size: 23px;
         }
@@ -1100,6 +1108,7 @@ button{
         font-size: 18px;
         line-height: 35px;
         color: #2B2B51;
+        margin-left: 4px;
         &>span{
             font-size: 23px;
         }
