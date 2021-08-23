@@ -739,7 +739,7 @@ button{
         background-color: white;
         box-shadow: 0px 4px 20px rgba(43, 43, 81, 0.15);
         &__number{
-            position: absolute;
+            // position: absolute;
             font-weight: 900;
             font-size: 60px;
             text-transform: uppercase;
@@ -748,24 +748,28 @@ button{
             background-color: #2B2B51;
             padding: 0px 25px;
             line-height: 97px;
-            top: -31px;
-            left: -52px;
+            margin-bottom: 50px;
+            margin-left: -55px;
         }
         &__description{
             font-weight: bold;
             font-size: 22px;
             color: #2B2B51;
+            padding: 0 25px;
         }
         .number-right{
-            right: -64px;
+            margin-right: -55px;
             left: auto;
+        }
+        .description-right{
+            padding-right: 89px;
         }
     }
     &-card:nth-child(odd){  
-        margin-left: 55px;
+        margin-left: 57px;
         position: relative;
-        justify-content: flex-end;
-        padding-right: 31px;
+        justify-content: flex-start;
+        // padding-right: 31px;
         &:after{
             content: '';
             position: absolute;
@@ -779,10 +783,11 @@ button{
         }
     }
     &-card:nth-child(even){  
-        margin-right: 67px;
+        margin-right: 57px;
         position: relative;
-        justify-content: flex-start;
-        padding-left: 31px;
+        flex-direction: row-reverse;
+        
+        // padding-left: 31px;
         &:after{
             content: '';
             position: absolute;
@@ -794,5 +799,6 @@ button{
             bottom: -17px;
             left: -18px;
         }
+        
     }
 }

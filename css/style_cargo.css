@@ -703,7 +703,6 @@ button:hover {
   box-shadow: 0px 4px 20px rgba(43, 43, 81, 0.15);
 }
 .stages-card__number {
-  position: absolute;
   font-weight: 900;
   font-size: 60px;
   text-transform: uppercase;
@@ -712,23 +711,26 @@ button:hover {
   background-color: #2B2B51;
   padding: 0px 25px;
   line-height: 97px;
-  top: -31px;
-  left: -52px;
+  margin-bottom: 50px;
+  margin-left: -55px;
 }
 .stages-card__description {
   font-weight: bold;
   font-size: 22px;
   color: #2B2B51;
+  padding: 0 25px;
 }
 .stages-card .number-right {
-  right: -64px;
+  margin-right: -55px;
   left: auto;
 }
+.stages-card .description-right {
+  padding-right: 89px;
+}
 .stages-card:nth-child(odd) {
-  margin-left: 55px;
+  margin-left: 57px;
   position: relative;
-  justify-content: flex-end;
-  padding-right: 31px;
+  justify-content: flex-start;
 }
 .stages-card:nth-child(odd):after {
   content: '';
@@ -742,10 +744,9 @@ button:hover {
   right: -18px;
 }
 .stages-card:nth-child(even) {
-  margin-right: 67px;
+  margin-right: 57px;
   position: relative;
-  justify-content: flex-start;
-  padding-left: 31px;
+  flex-direction: row-reverse;
 }
 .stages-card:nth-child(even):after {
   content: '';
