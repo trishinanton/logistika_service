@@ -805,11 +805,8 @@ button:hover {
   bottom: -6px;
   right: 0px;
 }
-.graph:after {
-  content: '';
+.graph__truck {
   position: absolute;
-  background: url(../img/index-cargo/truck.png);
-  background-size: cover;
   width: 794px;
   height: 181px;
   bottom: 0;
