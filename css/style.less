@@ -3,9 +3,6 @@
 	font-family: 'Roboto'; 
 	src: url(../fonts/roboto/Roboto-Bold.ttf); 
 }
-//  @font-face {
-//     src: url(../fonts/arial/9041.ttf); 
-// } 
 *{
     margin: 0;
     padding: 0;
@@ -1304,7 +1301,7 @@ button{
             left: 20px;
             font-weight: 600;
             text-transform: uppercase;
-            transition: transition: all 1s ease;
+            transition: all 1s ease;
             font-size: 14px;
             z-index: 3;
             color: rgba(255, 255, 255, 0.37);
@@ -1415,7 +1412,7 @@ button{
             }
         }
     }
-
+}
 
 
 .cooperation{
@@ -1703,6 +1700,7 @@ button{
 .reviews{
     position: relative;
     z-index: 1;
+    padding-bottom: 40px;
     &__name{
         -webkit-text-stroke: 2px #5b5b91;
         margin-top: 86px;
@@ -1799,16 +1797,14 @@ button{
 @media screen and (max-width: 1280px) {
     .reviews{
        & .comment{
-        padding: 48px 23.6px 58px 33.8px;
-        &__name{
-            &-size{
-                font-size: 17px;
-            }  
-        }
-    } 
+            padding: 48px 23.6px 58px 33.8px;
+            &__name{
+                &-size{
+                    font-size: 17px;
+                }  
+            }
+        } 
     }
-    
-    
 }
 
 .question{
@@ -2217,7 +2213,7 @@ button{
             &:hover{
                 color: rgb(116, 141, 168);
                 transition: 0.3s linear;
-          }  
-          }
+            }  
+        }
     }
 }
