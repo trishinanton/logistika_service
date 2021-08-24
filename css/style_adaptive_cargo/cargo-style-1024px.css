@@ -75,6 +75,9 @@
     right: -186px;
   }
   /* График и сроки доставки */
+  .graph__name {
+    font-size: 46px;
+  }
   .graph__europe:after {
     width: 130px;
     height: 157px;
@@ -89,7 +92,12 @@
   }
   /* Цена транспортировки */
   .price__name {
-    font-size: 29px;
+    line-height: 50px;
+    font-size: 46px;
+  }
+  .price .block-header:after {
+    top: -33px;
+    right: 88px;
   }
   /* Индивидуальная консультация */
   .consultation {
@@ -98,6 +106,9 @@
   }
   .consultation__name {
     -webkit-text-stroke: 2px white;
+  }
+  .consultation .block-header:after {
+    top: -12px;
   }
   .consultation-br {
     display: none;

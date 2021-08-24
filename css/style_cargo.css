@@ -763,7 +763,7 @@ button:hover {
   position: relative;
   background-color: #2B2B51;
   padding-top: 92px;
-  padding-bottom: 144px;
+  padding-bottom: 185px;
   z-index: 0;
 }
 .graph__europe {
@@ -836,7 +836,6 @@ button:hover {
   padding: 3px 3px;
   padding-bottom: 3px;
   margin-bottom: 13px;
-  margin-right: 37px;
   font-style: normal;
   font-weight: 900;
   font-size: 18px;
@@ -924,6 +923,10 @@ button:hover {
   }
   #comparisonchart nav {
     display: flex;
+    justify-content: center;
+  }
+  #comparisonchart .nav-china {
+    margin: 0 20px;
   }
   #comparisonchart table colgroup > col {
     background: #eeeeee;
