@@ -98,4 +98,17 @@ $(document).ready(function(){
     });
     // Маска для поля с телефоном
     $("#form__phone").mask("+7(999) 999-99-99");
+
+    /* График и сроки доставки, движение грузовика */
+function consoleBG() {
+
+  }
+ 
+  $(window).scroll(function() {
+      let scroll = $('#graph').offset().top 
+      let winScroll = $(window).scrollTop()
+      let right = winScroll-scroll
+        if (winScroll>=scroll) $('.graph__truck').css({'right':right})
+  });
 });
+

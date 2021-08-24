@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Услуга - Таможенное оформление | SK Group Trans 2021</title>
+    <link rel="icon" href="./img/favicon/favicon-120x120.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style_autsorsing.css">
     <link rel="stylesheet" href="./css/style_adaptive_autsorsing/autsorsing-style-1024px.css">
+    <link rel="stylesheet" href="./css/style_adaptive_autsorsing/autsorsing-style-768px.css">
+    <link rel="stylesheet" href="./css/style_adaptive_autsorsing/autsorsing-style-420px.css">
+    <link rel="stylesheet" href="./css/style_adaptive_autsorsing/autsorsing-style-375px.css">
 </head>
+
 <body>
     <div class="menu-active__content active-content">
         <div class="menu-active__wrapper">
@@ -23,9 +29,9 @@
                         <div class="points__number">01</div>
                     </div>
                 </a>
-                <a href="#enterns">
+                <a href="#stages">
                     <div class="points points__whyWe">
-                        <div class="points__name">Аутсорсинг</div>
+                        <div class="points__name">Этапы оформления</div>
                         <div class="points__number">02</div>
                     </div>
                 </a>
@@ -35,15 +41,17 @@
                         <div class="points__number">03</div>
                     </div>
                 </a>
-                <a href="#contact">
+                <!-- <a href="#contact">
                     <div class="points points__contacts">
                         <div class="points__name">Контакты</div>
                         <div class="points__number">04</div>
                     </div>
-                </a>
+                </a> -->
             </nav>
-            <div class="active-content__number"><a href="tel:+79531085929">+7 (953) 108-59-29</a></div>
-            <div class="active-content__button button"><a href="#contact">Заказать звонок</a></div>
+            <div class="active-content__number-button-wrapper">
+                <div class="active-content__number"><a href="tel:+79531085929">+7 (953) 108-59-29</a></div>
+                <div class="active-content__button button"><a href="#contact">Заказать звонок</a></div>
+            </div>
         </div>
     </div>
 
@@ -74,10 +82,16 @@
                 <div class="grid__block-black"></div>
                 <div class="grid__block-black"></div>
             </div>
+            <div class="grid-adaptive">
+                <div class="grid__block-black"></div>
+                <div class="grid__block-black"></div>
+                <div class="grid__block-black"></div>
+            </div>
             <div class="container">
-               <div class="body__bread"><span class="body__bread-main"><a href="/">Главная /</a></span> Аутсорсинг ВЭД</div>
-                <h2 class="body__name block-header"><span>Аутсорсинг ВЭД – это удобно</span></h2> 
-            </div> 
+                <div class="body__bread"><span class="body__bread-main"><a href="/">Главная /</a></span> Аутсорсинг ВЭД</div>
+                <h1 class="body__name block-header"><span>Аутсорсинг ВЭД – это удобно</span>
+            </div>
+        </div>
         </div>
     </section>
 
@@ -193,12 +207,14 @@
         <div class="container">
             <h2 class="services__name block-header"><span>Другие услуги компании</span></h2>
             <div class="services__description">
-                
+
                 <div class="services-card services-card__service">
+                    <span class="services-card__firm-name">SK Group Trans</span>
                     <a href="./index-tamojnya.html" class="services-card__title">Таможенное оформление</a>
                     <a href="./index-tamojnya.html" class="services-card__btn cargo-btn">Подробнее</a>
                 </div>
                 <div class="services-card services-card__counseling">
+                    <span class="services-card__firm-name">SK Group Trans</span>
                     <a href="./index-cargo.html" class="services-card__title">Сборные грузы</a>
                     <a href="./index-cargo.html" class="services-card__btn cargo-btn">Подробнее</a>
                 </div>
@@ -222,20 +238,27 @@
         <div class="container">
             <h2 class="consultation__name block-header"><span>Индивидуальная консультация</span></h2>
             <div class="consultation-form">
-                <div class="consultation-form__description">Бесплатно рассчитать стоимость доставки и возможного выкупа товара.<br class="consultation-br">
-                    Отправляйте заявки на почту или задавайте вопросы с <a>помощью мессенджера.</a></div>
+                <p class="consultation-form__description">Бесплатно рассчитать стоимость доставки и возможного выкупа
+                    товара.<br class="consultation-br">
+                    Отправляйте заявки на почту или задавайте вопросы с <span>помощью мессенджера</span>.</p>
                 <form action="send.php" method="POST" class="form-tamojnya">
                     <div class="form-tamojnya__wrapper">
                         <div class="consultation-form__contact">
-                        <div class="consultation-form__name"><input type="text" name="name" required placeholder="Имя" class="form__name"></div>
-                        <div class="consultation-form__phone"><input type="tel" name="tel" required placeholder="Телефон" class="form__phone" id="form__phone"></div>
+                            <div class="consultation-form__name"><input type="text" name="name" required
+                                    placeholder="Имя" class="form__name"></div>
+                            <div class="consultation-form__phone"><input type="tel" name="tel" required
+                                    placeholder="Телефон" class="form__phone" id="form__phone"></div>
+                        </div>
+                        <div class="consultation-form__button">
+                            <div class="consultation-form__email"><input type="email" name="email" placeholder="E-mail"
+                                    class="form__email"></div>
+                            <a href=""><button class="form__button" type="submit">Оставить заявку</button></a>
+                        </div>
                     </div>
-                    <div class="consultation-form__button">
-                        <div class="consultation-form__email"><input type="email" name="email" placeholder="E-mail" class="form__email"></div>
-                        <a href=""><button class="form__button" type="submit">Оставить заявку</button></a>
-                    </div>
-                    </div>
-                    <div class="form-tamojnya__whats"><a href="https://wa.me/89531085929?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%F0%9F%91%8B"><button class="form__whats">Написать в WhatsApp</button></a></div>
+                    <div class="form-or">ИЛИ</div>
+                    <div class="form-tamojnya__whats"><a
+                            href="https://wa.me/89531085929?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%F0%9F%91%8B"><button
+                                class="form__whats">Написать в WhatsApp</button></a></div>
                 </form>
             </div>
         </div>
@@ -243,32 +266,44 @@
 
     <footer class="footer">
         <div class="footer__wrapper">
-            <a href="./index.html">
-                <div class="footer-logo">
+            <div class="footer-logo">
+                <a href="/">
                     <img src="./img/contact/logo_footer.png" alt="logo" class="footer-logo__img">
                     <div class="footer-logo__name">ВЭД<br>Логистика<br>Таможенное оформление</div>
-                </div>
-            </a>
+                </a>
+            </div>
             <div class="footer-services">
                 <div class="footer-services__name">Услуги:</div>
                 <div class="footer-services__description">
-                    <a href="./index-autsorsing.html">Аутсорсинг ВЭД</a><br>
-                    <a href="./index-tamojnya.html">Таможенное оформление</a><br>
-                    <a href="./index-cargo.html">Консультирование</a></div>
+                    <a href="./index-autsorsing.html">Аутсорсинг ВЭД</a>
+                    <a href="./index-tamojnya.html">Таможенное оформление</a>
+                    <a href="./index-cargo.html">Консультирование</a>
+                </div>
             </div>
             <div class="footer-contact">
-                <a href="tel: +9160831789"><div class="footer-contact__phone">+7 (916) 083-17-89</div></a>
-                <a><div class="footer-contact__politics">Политика конфиденциальности</div></a>
+                <a href="tel: +9160831789">
+                    <div class="footer-contact__phone">+7 (916) 083-17-89</div>
+                </a>
+                <a>
+                    <div class="footer-contact__politics">Политика конфиденциальности</div>
+                </a>
             </div>
         </div>
     </footer>
 
     <section class="good-product">
-        <a href="https://good-production.ru/" rel='nofollow'><div class="good-product__name">Создано веб-студией "Good Production"</div></a>
+        <div class="good-product__copyrigth">
+            Copyright © SKGroupTrans 2021. Все права защищены.
+        </div>
+        <div class="good-product__name">
+            <a href="https://good-production.ru/" rel='nofollow'>Сайт разработан веб-студией "Good Production"</a>
+        </div>
     </section>
     <script src='./js/jquery/jquery.js'></script>
     <script src='./js/jquery/jquery.nicescroll.min.js'></script>
     <script src='./js/jquery.maskedinput.min.js'></script>
-    <script src='./js/index-autsorsing.js'></script>
+    <script type="text/javascript" src="./js/slick-slider/slick-slider.js"></script>
+    <script src="./js/index-tamojnya.js"></script>
 </body>
+
 </html>
