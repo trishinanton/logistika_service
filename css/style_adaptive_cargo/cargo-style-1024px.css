@@ -36,7 +36,8 @@
   .block-header:after {
     width: 100px;
     height: 53px;
-    top: -16px;
+    top: -14px;
+    right: -59px;
   }
   .about__purpose > p {
     font-size: 15px;
@@ -59,8 +60,8 @@
     font-size: 44px;
   }
   .plus .block-header:after {
-    top: -23px;
-    right: -45px;
+    top: -22px;
+    right: -43px;
   }
   .plus-body > img {
     width: 595px;
@@ -74,9 +75,32 @@
   .plus .min_delivery__wrapper {
     right: -186px;
   }
+  .stages .block-header {
+    font-size: 38px;
+  }
+  .stages .block-header:after {
+    top: -28px;
+    right: 105px;
+  }
+  .stages-card__number {
+    font-size: 41px;
+    line-height: 81px;
+  }
+  .stages-card__description {
+    font-size: 17px;
+  }
+  .stages-card:nth-child(odd) {
+    padding-right: 16px;
+  }
   /* График и сроки доставки */
+  #comparisonchart table thead > tr th > h3 {
+    font-size: 22px;
+  }
   .graph__name {
     font-size: 46px;
+  }
+  .graph__name .block-header:after {
+    top: -13px;
   }
   .graph__europe:after {
     width: 130px;
@@ -90,25 +114,32 @@
     width: 130px;
     height: 157px;
   }
+  .graph__truck {
+    width: 436px;
+    height: 139px;
+  }
   /* Цена транспортировки */
   .price__name {
     line-height: 50px;
-    font-size: 46px;
+    font-size: 42px;
   }
   .price .block-header:after {
-    top: -33px;
-    right: 88px;
+    top: -29px;
+    right: 160px;
   }
   /* Индивидуальная консультация */
   .consultation {
     background-color: #2B2B51;
     padding: 60px 0 10px;
   }
+  .consultation .grid {
+    display: none;
+  }
   .consultation__name {
     -webkit-text-stroke: 2px white;
   }
   .consultation .block-header:after {
-    top: -12px;
+    top: -10px;
   }
   .consultation-br {
     display: none;

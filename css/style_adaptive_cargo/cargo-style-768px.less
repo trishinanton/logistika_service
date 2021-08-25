@@ -220,8 +220,10 @@
        .block-header{
            &:after{
                display: block;
-               top: -24px;
-               right: 56px;
+               top: -13px;
+                right: 91px;
+                width: 67px;
+                height: 36px;
            }
        }
        &-body{
@@ -316,6 +318,32 @@
        .fixed_cost{
            &:after{
                display: none;
+           }
+       }
+   }
+
+//    Этапы работы
+   .stages{
+       .block-header{
+        font-size: 31px;
+        line-height: 43px;
+        &:after{
+            display: block;
+            top: -18px;
+            right: 23px;
+            width: 67px;
+            height: 36px;
+        }
+       }
+       &-card{
+           &:nth-child(odd){
+               margin-left: 0px;
+               margin-bottom: 10px;
+           }
+           &__number{
+               position: relative;
+               top: 0;
+               left: 0;
            }
        }
    }

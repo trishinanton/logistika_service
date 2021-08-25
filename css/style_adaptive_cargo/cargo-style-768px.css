@@ -190,8 +190,10 @@
   }
   .plus .block-header:after {
     display: block;
-    top: -24px;
-    right: 56px;
+    top: -13px;
+    right: 91px;
+    width: 67px;
+    height: 36px;
   }
   .plus-body {
     display: flex;
@@ -274,6 +276,26 @@
   .plus .min_delivery:after,
   .plus .fixed_cost:after {
     display: none;
+  }
+  .stages .block-header {
+    font-size: 31px;
+    line-height: 43px;
+  }
+  .stages .block-header:after {
+    display: block;
+    top: -18px;
+    right: 23px;
+    width: 67px;
+    height: 36px;
+  }
+  .stages-card:nth-child(odd) {
+    margin-left: 0px;
+    margin-bottom: 10px;
+  }
+  .stages-card__number {
+    position: relative;
+    top: 0;
+    left: 0;
   }
   .graph .block-header:after {
     display: block;
