@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     styleWidth = getWidthForStyle(window.outerWidth, displays);
 
-    addCSStoHTML(styleWidth)
+    addCSStoHTML(styleWidth);
 
     window.onresize = function(event) {
         addCSStoHTML(getWidthForStyle(window.outerWidth, displays))
@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
     class Preloader {
         constructor() {
             this.dom = {
+                body: document.querySelector('body'),
                 el: document.querySelector('.js-progress'),
                 loader: document.querySelector('.js-progress__loader')
             }
@@ -72,17 +73,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 paused: true,
                 onComplete: () => {
                     this.dom.el.classList.add('is-done')
+                    this.dom.body.classList.add('init')
                     setTimeout(() => {
                         this.dom.el.style.display = 'none'
                     }, 1000);
-                    
-                    // startAnimation();
-                    // TweenMax.from(document.querySelector('h1'), 1, {
-                    // 	y: 100,
-                    // 	alpha: 0,
-                    // 	delay: 0.5,
-                    // 	ease: Expo.easeOut
-                    // })
                 }
             })
 
