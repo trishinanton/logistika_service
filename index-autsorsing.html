@@ -7,12 +7,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Услуга - Таможенное оформление | SK Group Trans 2021</title>
     <link rel="icon" href="./img/favicon/favicon-120x120.png" type="image/x-icon">
+    <!-- Скрипты анимаций и прелоадера. Надо ли их вначале грузить -->
+    <script src='./js/TweenMax.min.js'></script>
+    <script src='./js/build-and-preloader.js'></script>
+    <!-- Стили -->
     <link rel="stylesheet" href="./css/style_autsorsing.css">
-    <link rel="stylesheet" href="./css/style_adaptive_autsorsing/autsorsing-style-1024px.css">
+    <!-- <link rel="stylesheet" href="./css/style_adaptive_autsorsing/autsorsing-style-1024px.css">
     <link rel="stylesheet" href="./css/style_adaptive_autsorsing/autsorsing-style-768px.css">
     <link rel="stylesheet" href="./css/style_adaptive_autsorsing/autsorsing-style-420px.css">
-    <link rel="stylesheet" href="./css/style_adaptive_autsorsing/autsorsing-style-375px.css">
+    <link rel="stylesheet" href="./css/style_adaptive_autsorsing/autsorsing-style-375px.css"> -->
 </head>
+<!-- <Preloader> -->
+<div class="preloader js-progress">
+    <div class="preloader__inner">
+        <div class="logo">
+            <img src="./img/main_screen/logo_big.png" alt="logo" class="logo-image">
+            <div class="logo-name">ВЭД<br>Логистика<br>Таможенное оформление</div>
+        </div>
+    </div>
+    <div class="preloader__loader js-progress__loader"></div>
+</div>
+<style>
+    .preloader {
+        z-index: 99999;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 105vw;
+        height: 100%;
+        background: #2B2B51;
+        /* pointer-events: none; */
+    }
+
+    .preloader__inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        opacity: 0.75;
+        z-index: 2;
+    }
+
+    @media screen and (max-width:420px) {
+        .preloader .logo-image {
+            width: 90px;
+            margin-right: 8px;
+        }
+
+        .preloader .logo-name {
+            font-size: 14px;
+        }
+    }
+
+    .preloader.is-done {
+        opacity: 0;
+        transition: opacity 0.6s cubic-bezier(0.4, 0, 0, 1);
+    }
+
+    .preloader__loader {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #1c1c35;
+        z-index: 1;
+        transform: translateX(-99%);
+    }
+</style>
+<!-- <Preloader/> -->
 
 <body>
     <div class="menu-active__content active-content">
@@ -88,7 +151,8 @@
                 <div class="grid__block-black"></div>
             </div>
             <div class="container">
-                <div class="body__bread"><span class="body__bread-main"><a href="/">Главная /</a></span> Аутсорсинг ВЭД</div>
+                <div class="body__bread"><span class="body__bread-main"><a href="/">Главная /</a></span> Аутсорсинг ВЭД
+                </div>
                 <h1 class="body__name block-header"><span>Аутсорсинг ВЭД – это удобно</span>
             </div>
         </div>
@@ -116,10 +180,15 @@
                     <h2 class="about__name block-header"><span>Об услуге</span></h2>
                     <div class="about__purpose">
                         <p>
-                            <strong>Мы возьмем на себя функции отдела ВЭД</strong> в структуре вашего предприятия. Вам не нужно становиться импортером, вы получите товар по договору купли – продажи в России. Отсутствие скрытых расходов. Понятная стоимость услуг.
+                            <strong>Мы возьмем на себя функции отдела ВЭД</strong> в структуре вашего предприятия. Вам
+                            не нужно становиться импортером, вы получите товар по договору купли – продажи в России.
+                            Отсутствие скрытых расходов. Понятная стоимость услуг.
                         </p>
                         <p>
-                            Для любого юридического лица самостоятельное ведение внешнеэкономической деятельности (ВЭД) сопряжено с дополнительными трудозатратами, нагрузкой на различные отделы фирмы, дополнительной отчетностью и ответственностью перед органами таможни и ФНС. Часто затраты на ввоз продукцию превышают расчетные показатели рентабельности внешнеторговых операций.
+                            Для любого юридического лица самостоятельное ведение внешнеэкономической деятельности (ВЭД)
+                            сопряжено с дополнительными трудозатратами, нагрузкой на различные отделы фирмы,
+                            дополнительной отчетностью и ответственностью перед органами таможни и ФНС. Часто затраты на
+                            ввоз продукцию превышают расчетные показатели рентабельности внешнеторговых операций.
                         </p>
 
 
@@ -136,11 +205,15 @@
             </div>
             <div class="about__event event">
                 <div class="event__name">В каких случаях выгодно передать ВЭД на аутсорсинг:</div>
-                <div class="event__description"><span>⬦</span> Импортные (экспортные) поставки редки (реже 1-2 раз в месяц) или нерегулярны;</div>
-                <div class="event__description"><span>⬦</span> Когда нет времени и желания разбираться в тонкостях ВЭД;</div>
+                <div class="event__description"><span>⬦</span> Импортные (экспортные) поставки редки (реже 1-2 раз в
+                    месяц) или нерегулярны;</div>
+                <div class="event__description"><span>⬦</span> Когда нет времени и желания разбираться в тонкостях ВЭД;
+                </div>
                 <div class="event__description"><span>⬦</span> При развитии нового направления товаров;</div>
-                <div class="event__description"><span>⬦</span> Желание минимизировать риски связанные с проверками таможенных и налоговых органов.</div>
-                <div class="event__footer">Аутсорсинг внешнеэкономической деятельности от компании SK-Group trans решает все перечисленные выше проблемы.
+                <div class="event__description"><span>⬦</span> Желание минимизировать риски связанные с проверками
+                    таможенных и налоговых органов.</div>
+                <div class="event__footer">Аутсорсинг внешнеэкономической деятельности от компании SK-Group trans решает
+                    все перечисленные выше проблемы.
                     Мы оказываем все необходимые услуги в полном объеме, без рисков и переплат.</div>
             </div>
         </div>
@@ -160,33 +233,40 @@
             <div class="enterns__description">
                 <div class="enterns-card">
                     <div class="enterns-card__number">1</div>
-                    <div class="enterns-card__description">Заключение внешнеторгового контракта с поставщиком. Оплачиваем товар от своей компании.</div>
+                    <div class="enterns-card__description">Заключение внешнеторгового контракта с поставщиком.
+                        Оплачиваем товар от своей компании.</div>
                 </div>
                 <div class="enterns-card">
                     <div class="enterns-card__number">2</div>
-                    <div class="enterns-card__description">Логистика. Выбираем самый выгодный способ доставки. Забираем груз с фабрики и доставим до указанного вами адреса.</div>
+                    <div class="enterns-card__description">Логистика. Выбираем самый выгодный способ доставки. Забираем
+                        груз с фабрики и доставим до указанного вами адреса.</div>
                 </div>
                 <div class="enterns-card">
                     <div class="enterns-card__number">3</div>
-                    <div class="enterns-card__description">Подготовка всей необходимой документации: подготовка технической документации, оформление сертификации 
+                    <div class="enterns-card__description">Подготовка всей необходимой документации: подготовка
+                        технической документации, оформление сертификации
                         и прочее.</div>
                 </div>
                 <div class="enterns-card">
                     <div class="enterns-card__number">4</div>
-                    <div class="enterns-card__description">Таможенное оформление, уведомление 
+                    <div class="enterns-card__description">Таможенное оформление, уведомление
                         о выпуске товара.</div>
                 </div>
                 <div class="enterns-card">
                     <div class="enterns-card__number">5</div>
-                    <div class="enterns-card__description">Доставка на ваш склад. Согласовываем время прибытия на склад.</div>
+                    <div class="enterns-card__description">Доставка на ваш склад. Согласовываем время прибытия на склад.
+                    </div>
                 </div>
                 <div class="enterns-card">
                     <div class="enterns-card__number">6</div>
-                    <div class="enterns-card__description">Бухгалтерские документы. Передаем комплект документов купли-продажи.</div>
+                    <div class="enterns-card__description">Бухгалтерские документы. Передаем комплект документов
+                        купли-продажи.</div>
                 </div>
             </div>
             <div class="enterns__footer">
-                Пользуясь услугой аутсорсинг внешнеэкономической деятельности наши клиенты снимают с себя проблемы по техническому взаимодействию с таможенными органами и органами валютного контроля, получают уменьшение сроков доставки, таможенного оформления и полную гарантию финансовой прозрачности всего процесса.
+                Пользуясь услугой аутсорсинг внешнеэкономической деятельности наши клиенты снимают с себя проблемы по
+                техническому взаимодействию с таможенными органами и органами валютного контроля, получают уменьшение
+                сроков доставки, таможенного оформления и полную гарантию финансовой прозрачности всего процесса.
             </div>
         </div>
     </section>

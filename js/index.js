@@ -15,8 +15,9 @@ $(document).ready(function(){
         'excellence-card-active__optimization',
         'excellence-card-active__oneWindow',
         'excellence-card-active__guarantee'
-    ]
+    ];
     
+
     // Nice scroll - кастомный скролбар (полоса прокрутки)
     $("html").niceScroll({cursorwidth: "6px", zindex: 99,cursoropacitymin: 0, cursoropacitymax: 0.5, cursorcolor:"#424242"});
     // if(windowWidth > 421){
@@ -42,11 +43,6 @@ $(document).ready(function(){
             $('body').css('height', 'auto');
         }
     })
-
-    // отслеживание изменения vieport
-    window.onresize = function(event) {
-        // $('body').css('height', '100vh');
-    };
 
     arrExcellenceCard.map((el,i)=>{
         arrExcellenceCardActive.map((ela,j)=>{
