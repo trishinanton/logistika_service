@@ -131,34 +131,28 @@ $(document).ready(function(){
 
 
     /* Плавный скролл меню*/
-    $(document).ready(function(){
-        $("#menu").on("click","a", function (event) {
-            event.preventDefault();
-            var id  = $(this).attr('href'),
-                top = $(id).offset().top;
-                $('body,html').animate({scrollTop: top}, 1500);
-            });
-        });
+    $("#menu").on("click","a", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+        top = $(id).offset().top;
+        $('body,html').animate({scrollTop: top}, 1500);
+    });
 
     /* Плавный скролл по кнопке "О Компании"*/
-    $(document).ready(function(){
-        $(".main-scroll__wrapper").on("click","a", function (event) {
-            event.preventDefault();
-            var id  = $(this).attr('href'),
-                top = $(id).offset().top;
-                $('body,html').animate({scrollTop: top}, 1500);
-            });
-        });
+    $(".main-scroll__wrapper").on("click","a", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+        top = $(id).offset().top;
+        $('body,html').animate({scrollTop: top}, 1500);
+    });
 
     /* Плавный скролл по кнопке "Заказать звонок"*/
-    $(document).ready(function(){
-        $(".button").on("click","a", function (event) {
-            event.preventDefault();
-            var id  = $(this).attr('href'),
-                top = $(id).offset().top;
-                $('body,html').animate({scrollTop: top}, 1500);
-            });
-        });
+    $(".button").on("click","a", function (event) {
+        event.preventDefault();
+        var id  = $(this).attr('href'),
+        top = $(id).offset().top;
+        $('body,html').animate({scrollTop: top}, 1500);
+    });
     /* Фиксированное меню */
     var g_top = 0;
     $(window).scroll(function() {
@@ -204,8 +198,102 @@ $(document).ready(function(){
         $('.header').fadeOut(10);
     }
     
-
-
     // Маска для поля с телефоном
     $("#form__phone").mask("+7(999) 999-99-99");
+
+    /* <движение ромбов за мышкой> */
+    var sectionsWithRombs = []
+    sectionsWithRombs.push($('.cooperation'))
+    sectionsWithRombs.push($('.about'))
+    
+    function getRandomFloat(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    // .cooperation
+    // --float-before: rotate(-45deg);
+    // --float-after: rotate(-45deg);
+    
+    // .cooperation:after
+    // transform: var(--float-before);
+    // transform: var(--float-after);
+    function moving (section, pseudo, speed) {
+        var deviation = pseudo == 'after' ? 30 : 0;
+        var customCSSRule = '--float-' + pseudo;	
+        var defaultValue = section.css(customCSSRule)
+        console.log('def: ', defaultValue);
+        
+        section.on('mousemove', function(event) {
+            console.log('event.pageX:', event.pageX)
+            console.log('event.pageY:', event.pageY)
+            var X = Math.floor((event.pageX.toString().slice(-3,-1)/1+(10+deviation))) + "px";
+            var Y = Math.floor((event.pageY.toString().slice(-3,-1)/1+10)) + "px";
+            console.log('X:', X)
+            console.log('Y:', Y)
+            section.css(customCSSRule, defaultValue + ' translate('+X+' , '+Y+')');
+        });
+        section.on('mouseleave', function(event) {
+            section.css(customCSSRule, defaultValue + ' translate(0px , 0px)');
+        });
+    }
+    // работает криво, пока отключил
+    // sectionsWithRombs.forEach(function (section) {
+    //     moving(section, 'before', getRandomFloat(50,150));
+    //     moving(section, 'after', getRandomFloat(50,150));
+    // });
+
+    /* </движение ромбов за мышкой> */
+
+    /* <Animations> */
+    const splitTextparams = {
+        duration: 1.5,
+        yPercent: 100,
+        ease: "power4",
+        stagger: 0.3
+    }
+
+    const childSplit = new SplitText(".split-text", {
+        type: "lines",
+        linesClass: "split-child"
+    });
+    const parentSplit = new SplitText(".split-text", {
+        linesClass: "split-parent"
+    });
+    
+    var tl = new TimelineLite({
+        paused: true
+    })
+    tl.from(childSplit.lines, splitTextparams);
+    
+    function mainScreenLoad(){
+        $('.main-screen').addClass('animated');
+        tl.play()
+        setTimeout(function() {
+            $('.main-body__name').addClass('animated');
+        }, 2000);
+        setTimeout(function() {
+            $('.main-footer .fade-text').addClass('animated');
+        }, 2500);
+    }
+
+    var observer = new MutationObserver(function (mutation) {
+        // console.log(mutation[0].target.classList.contains('init'));
+        if(mutation[0].target.classList.contains('init')) mainScreenLoad();
+    });
+    observer.observe(document.querySelector('body'), {attributes: true});
+    // init controller
+	var controller = new ScrollMagic.Controller({
+        // globalSceneOptions: {duration: 100}
+    });
+    const scene = new ScrollMagic.Scene({
+        triggerElement: "#trigger1"
+    })
+    .setClassToggle("#test", "active") // add class toggle
+    .addIndicators()
+    // .setTween("#animate1", 0.5, {backgroundColor: "green", scale: 2.5}) // trigger a TweenMax.to tween
+    // .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+    .addTo(controller);
+
+    /* </Animations> */
+
 });

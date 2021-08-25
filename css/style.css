@@ -33,6 +33,32 @@ button:hover {
 .container-fluid {
   width: 100vw;
 }
+/* ANIMATIONS */
+.split-text > div {
+  position: relative;
+  margin: 0;
+}
+.split-parent {
+  overflow: hidden;
+}
+.split-child {
+  display: inline-block;
+}
+.fade-text {
+  opacity: 0;
+  transition: all 1.3s ease-in-out;
+}
+.fade-text--top {
+  transform: translateY(-50%);
+}
+.fade-text--bottom {
+  transform: translateY(50%);
+}
+.fade-text.animated {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+/* BLOCKS  */
 .main-screen {
   position: relative;
   z-index: 1;
@@ -53,9 +79,11 @@ button:hover {
   background: url(../img/main_screen/main_bacground.png) no-repeat;
   background-size: cover;
   background-position: center center;
-  animation: preload_fon 1.3s ease-in-out;
   transition: 0.5s ease;
   z-index: -1;
+}
+.main-screen.animated:after {
+  animation: preload_fon 1.3s ease-in-out;
 }
 .main-screen__header {
   padding: 16px 3%;
@@ -389,7 +417,7 @@ button:hover {
 }
 .main-body__name {
   font-style: normal;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 35px;
   font-weight: 400;
 }
@@ -487,11 +515,12 @@ button:hover {
   position: relative;
   z-index: 1;
   background: #2B2B51;
+  --float-before: rotate(-45deg);
+  --float-after: rotate(-45deg);
 }
 .about:before {
   content: '';
   border: 11px solid #FFFFFF;
-  transform: rotate(45deg);
   filter: blur(3px);
   border: 15px solid #FFFFFF;
   position: absolute;
@@ -499,6 +528,7 @@ button:hover {
   height: 30px;
   right: -24px;
   bottom: 45px;
+  transform: var(--float-before);
 }
 .about:after {
   content: '';
@@ -508,10 +538,10 @@ button:hover {
   border: 20px solid #FFFFFF;
   box-sizing: border-box;
   filter: blur(2px);
-  transform: rotate(-45deg);
   bottom: -31px;
   right: 55px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transform: var(--float-before);
 }
 .about__name {
   position: relative;
@@ -1274,6 +1304,8 @@ button:hover {
   height: 594px;
   position: relative;
   z-index: 1;
+  --float-before: rotate(-45deg);
+  --float-after: rotate(-45deg);
 }
 .cooperation:after {
   content: '';
@@ -1283,12 +1315,14 @@ button:hover {
   border: 20px solid #FFFFFF;
   box-sizing: border-box;
   filter: blur(2px);
-  transform: rotate(-45deg);
   bottom: -1%;
   left: 5%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: var(--float-after);
+  transition: all 0.3s;
 }
 .cooperation:before {
+  transition: all 0.3s;
   content: '';
   width: 62.39px;
   height: 62.39px;
@@ -1296,10 +1330,10 @@ button:hover {
   border: 15px solid #FFFFFF;
   box-sizing: border-box;
   filter: blur(3px);
-  transform: rotate(-45deg);
   bottom: 14%;
   left: -0.5%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: var(--float-before);
 }
 .cooperation__band {
   position: absolute;
