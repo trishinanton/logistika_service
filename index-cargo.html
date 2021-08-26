@@ -8,14 +8,14 @@
     <title>Услуга - Сборные грузы | SK Group Trans 2021</title>
     <link rel="icon" href="./img/favicon/favicon-120x120.png" type="image/x-icon">
     <!-- Скрипты анимаций и прелоадера. Надо ли их вначале грузить -->
-    <script src='./js/TweenMax.min.js'></script>
-    <script src='./js/build-and-preloader.js'></script>
+    <!-- <script src='./js/TweenMax.min.js'></script> -->
+    <!-- <script src='./js/build-and-preloader.js'></script> -->
     <!-- Стили -->
     <link rel="stylesheet" href="./css/style_cargo.css">
-    <!-- <link rel="stylesheet" href="./css/style_adaptive_cargo/cargo-style-1024px.css">
+    <link rel="stylesheet" href="./css/style_adaptive_cargo/cargo-style-1024px.css">
     <link rel="stylesheet" href="./css/style_adaptive_cargo/cargo-style-768px.css">
     <link rel="stylesheet" href="./css/style_adaptive_cargo/cargo-style-420px.css">
-    <link rel="stylesheet" href="./css/style_adaptive_cargo/cargo-style-375px.css"> -->
+    <link rel="stylesheet" href="./css/style_adaptive_cargo/cargo-style-375px.css">
 </head>
 <!-- <Preloader> -->
 <div class="preloader js-progress">
@@ -29,6 +29,7 @@
 </div>
 <style>
     .preloader {
+        display: none;
         z-index: 99999;
         position: fixed;
         left: 0;
@@ -230,7 +231,7 @@
             <div class="grid__block-white"></div>
         </div>
         <div class="container">
-            <h2 class="plus__name block-header services-header">Плюсы перевозки в составе сборной авто</h2>
+            <h2 class="plus__name block-header services-header">Плюсы перевозки<br class="plus-mobile"> в составе сборной авто</h2>
             <div class="plus-body">
                 <img src="./img/index-cargo/dostavka_sb_gruzov.png" alt="">
                 <div class="cost_savings__wrapper">

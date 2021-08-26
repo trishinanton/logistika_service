@@ -63,6 +63,10 @@
   .main-screen::after {
     display: none;
   }
+  .main-screen .block-header > span:after {
+    top: -13px;
+    right: -108px;
+  }
   .menu {
     margin-right: 18px;
     margin-left: 11px;
@@ -233,6 +237,45 @@
     font-size: 14px;
     line-height: 26px;
   }
+  /* Плюсы перевозки */
+  .plus {
+    padding-bottom: 0px;
+  }
+  .plus__name {
+    font-size: 26px;
+  }
+  .plus .block-header:after {
+    top: -16px;
+    right: -11px;
+  }
+  /* Этапы работы по доставке */
+  .stages .block-header {
+    font-size: 17px;
+  }
+  .stages .block-header:after {
+    top: -13px;
+    right: -13px;
+  }
+  .graph__name {
+    font-size: 30px;
+  }
+  .graph .block-header:after {
+    top: -18px;
+    right: -7px;
+  }
+  .graph #comparisonchart table td {
+    padding: 45px 109px 40px 20px;
+  }
+  .graph__europe:after,
+  .graph__china:after,
+  .graph__usa:after {
+    width: 150px;
+    height: 150px;
+  }
+  .graph__truck {
+    width: 213px;
+    height: 67px;
+  }
   .price__name {
     font-size: 20px;
   }
@@ -285,8 +328,8 @@
     display: none;
   }
   .consultation .block-header > span:after {
-    right: -90px;
-    top: -17px;
+    right: -43px;
+    top: -18px;
   }
   .consultation-form {
     background-color: transparent;
@@ -312,6 +355,9 @@
     top: 54%;
     filter: blur(4px);
     z-index: 0;
+  }
+  .consultation-form__description > span:after {
+    display: none;
   }
   .consultation-form__contact {
     flex-direction: column;

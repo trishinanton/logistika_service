@@ -100,15 +100,18 @@ $(document).ready(function(){
     $("#form__phone").mask("+7(999) 999-99-99");
 
     /* График и сроки доставки, движение грузовика */
-function consoleBG() {
 
-  }
  
   $(window).scroll(function() {
       let scroll = $('#graph').offset().top 
       let winScroll = $(window).scrollTop()
-      let right = winScroll-scroll
-        if (winScroll>=scroll) $('.graph__truck').css({'right':right})
+      let right = winScroll-scroll;
+      let rightMobile = right/3;
+      let widthScreen = $(window).width();
+        if(widthScreen<=420 && winScroll>=scroll) {
+            $('.graph__truck').css({'right':rightMobile})
+        }else if (winScroll>=scroll) $('.graph__truck').css({'right':right})
+        
   });
 });
 

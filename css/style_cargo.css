@@ -531,6 +531,9 @@ button:hover {
   padding-bottom: 111px;
   position: relative;
 }
+.plus-mobile {
+  display: none;
+}
 .plus > .container {
   text-align: center;
 }
@@ -926,7 +929,8 @@ button:hover {
     justify-content: center;
   }
   #comparisonchart .nav-china {
-    margin: 0 20px;
+    margin-right: 20px;
+    margin-left: 20px;
   }
   #comparisonchart table colgroup > col {
     background: #eeeeee;

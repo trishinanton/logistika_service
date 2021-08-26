@@ -123,13 +123,14 @@
             width: 70px;
             height: 70px;
             border: 14px solid #FFFFFF;
-            bottom: -13px;
-            left: 651px;
+            bottom: -22px;
+            left: 260px;
         }
         &:before{
             right: -18.3px;
-            width: 48px;
-            height: 48px;
+            width: 28px;
+            height: 28px;
+            top: 801px;
         }
         &__content{
             flex-direction: column;
@@ -239,12 +240,36 @@
         }
     } 
 
+    /* Плюсы перевозки в сотаве */
+    .plus{
+        &__name{
+            font-size: 18px;
+        }
+        &-mobile{
+            display: block;
+        }
+        .block-header{
+            &:after{
+                top: -11px;
+                right: 39px;
+            }
+        }
+    }
     /* График и сроки доставки */
     .graph{
         padding-bottom: 113px;
         &__truck{
             width: 174px;
             height: 60px;
+        }
+        &__name{
+            font-size: 26px;
+        }
+        .block-header{
+            &:after{
+                top: -13px;
+                right: -5px;
+            }
         }
     }
     

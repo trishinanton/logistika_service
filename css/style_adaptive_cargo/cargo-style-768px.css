@@ -299,15 +299,33 @@
   }
   .graph .block-header:after {
     display: block;
-    top: -26px;
-    right: 51px;
+    top: -13px;
+    right: 163px;
+    width: 67px;
+    height: 36px;
+  }
+  .graph__name {
+    font-size: 42px;
+  }
+  .graph__truck {
+    width: 308px;
+    height: 95px;
+  }
+  /* График и сроки доставки */
+  #comparisonchart {
+    margin-top: 21px;
+  }
+  #comparisonchart table td {
+    padding: 45px 186px 40px 20px;
   }
   /* Другие услуги компании */
   .services__name {
     margin-top: 63px;
+    font-size: 54px;
   }
   .services .block-header > span::after {
-    right: -179px;
+    right: -192px;
+    top: -7px;
   }
   /* Индивидуальная консультация */
   .consultation {
@@ -316,13 +334,14 @@
   }
   .consultation__name {
     -webkit-text-stroke: 2px white;
+    font-size: 43px;
   }
   .consultation-br {
     display: none;
   }
   .consultation .block-header > span:after {
-    right: -112px;
-    top: -14px;
+    right: -43px;
+    top: -13px;
   }
   .consultation-form {
     background-color: transparent;
@@ -364,7 +383,12 @@
 }
 .price__name {
   line-height: 44px;
+  font-size: 31px;
 }
 .price .block-header:after {
   display: block;
+  top: -16px;
+  right: 114px;
+  width: 67px;
+  height: 36px;
 }

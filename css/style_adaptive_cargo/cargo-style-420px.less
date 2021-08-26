@@ -67,6 +67,12 @@
         &::after{
             display: none;
         }
+        .block-header>span{
+            &:after{
+                top: -13px;
+                right: -108px;
+            }
+        }
     }
     
     .menu{
@@ -266,6 +272,54 @@
         line-height: 26px;
     }
 }
+
+/* Плюсы перевозки */
+.plus{
+   padding-bottom: 0px;
+    &__name{
+        font-size: 26px;
+    }
+    .block-header{
+        &:after{
+            top: -16px;
+            right: -11px;
+        }
+    }
+}
+/* Этапы работы по доставке */
+.stages{
+    .block-header{
+        font-size: 17px;
+        &:after{
+            top: -13px;
+            right: -13px;
+        }
+    }
+}
+.graph{
+    &__name{
+        font-size: 30px;
+    }
+    .block-header{
+        &:after{
+            top: -18px;
+            right: -7px;
+        }
+    }
+    #comparisonchart table td {
+        padding: 45px 109px 40px 20px;
+    }
+    &__europe, &__china, &__usa{
+        &:after{
+            width: 150px;
+            height: 150px;
+        }
+    }
+    &__truck{
+        width: 213px;
+        height: 67px;
+    }
+}
 //   Цены
 .price{
     &__name{
@@ -327,8 +381,8 @@
         }
         .block-header>span{
             &:after{
-                right: -90px;
-                top: -17px;
+                right: -43px;
+                top: -18px;
             }
         }
         &-form{
@@ -354,6 +408,11 @@
                     top: 54%;
                     filter: blur(4px);    
                     z-index: 0;
+                }
+                &>span{
+                    &:after{
+                        display: none;
+                    }
                 }
             }
             &__contact{
