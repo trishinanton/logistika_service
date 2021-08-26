@@ -219,6 +219,8 @@
     text-align: center;
     margin-bottom: 46px;
     padding: 26px 18px;
+    width: 99%;
+    margin-left: 3px;
   }
   .plus .cost_savings__wrapper:before {
     content: '';
@@ -227,7 +229,7 @@
     background-size: cover;
     width: 65px;
     height: 65px;
-    top: -29px;
+    top: -23px;
     left: -20px;
   }
   .plus .small_parties__wrapper:before {
@@ -237,7 +239,7 @@
     background-size: cover;
     width: 65px;
     height: 65px;
-    top: -29px;
+    top: -23px;
     left: -20px;
   }
   .plus .organization__wrapper:before {
@@ -247,7 +249,7 @@
     background-size: cover;
     width: 65px;
     height: 65px;
-    top: -29px;
+    top: -23px;
     left: -20px;
   }
   .plus .min_delivery__wrapper:before {
@@ -257,7 +259,7 @@
     background-size: cover;
     width: 65px;
     height: 65px;
-    top: -29px;
+    top: -23px;
     left: -20px;
   }
   .plus .fixed_cost__wrapper:before {
@@ -267,7 +269,7 @@
     background-size: cover;
     width: 65px;
     height: 65px;
-    top: -29px;
+    top: -23px;
     left: -20px;
   }
   .plus .cost_savings:after,

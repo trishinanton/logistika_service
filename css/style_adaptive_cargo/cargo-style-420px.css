@@ -248,6 +248,14 @@
     top: -16px;
     right: -11px;
   }
+  .plus .cost_savings__wrapper,
+  .plus .small_parties__wrapper,
+  .plus .organization__wrapper,
+  .plus .min_delivery__wrapper,
+  .plus .fixed_cost__wrapper {
+    text-align: left;
+    padding-left: 35px;
+  }
   /* Этапы работы по доставке */
   .stages .block-header {
     font-size: 17px;

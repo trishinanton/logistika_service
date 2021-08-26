@@ -279,10 +279,10 @@ button:hover {
   width: 50%;
   position: fixed;
   left: 50%;
-  z-index: 3;
   text-align: center;
   padding: 16vh 0 10vh;
   box-sizing: border-box;
+  z-index: 11;
 }
 @keyframes show_active_menu {
   0% {
@@ -973,13 +973,13 @@ button:hover {
   font-family: Arial;
   font-style: normal;
   font-weight: 900;
-  font-size: 26px;
+  font-size: 18px;
   line-height: 37px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   -webkit-text-stroke: 1px #FFFFFF;
   color: transparent;
-  margin-top: 77px;
+  margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 4px;
 }

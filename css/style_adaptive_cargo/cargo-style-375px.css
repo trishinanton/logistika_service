@@ -111,6 +111,7 @@
     border: 14px solid #FFFFFF;
     bottom: -22px;
     left: 260px;
+    box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.2);
   }
   .about:before {
     right: -18.3px;
@@ -214,23 +215,36 @@
     right: -44px;
   }
   /* Плюсы перевозки в сотаве */
+  .plus {
+    padding-top: 50px;
+  }
   .plus__name {
     font-size: 18px;
+    line-height: 26px;
   }
   .plus-mobile {
     display: block;
   }
   .plus .block-header:after {
-    top: -11px;
+    top: -19px;
     right: 39px;
+  }
+  .plus .cost_savings__wrapper,
+  .plus .small_parties__wrapper,
+  .plus .organization__wrapper,
+  .plus .min_delivery__wrapper,
+  .plus .fixed_cost__wrapper {
+    width: 98%;
+    margin-left: 4px;
   }
   /* График и сроки доставки */
   .graph {
-    padding-bottom: 113px;
+    padding-bottom: 64px;
+    padding-top: 52px;
   }
   .graph__truck {
-    width: 174px;
-    height: 60px;
+    width: 193px;
+    height: 49px;
   }
   .graph__name {
     font-size: 26px;
@@ -238,6 +252,25 @@
   .graph .block-header:after {
     top: -13px;
     right: -5px;
+  }
+  .graph #comparisonchart table td {
+    padding: 45px 94px 40px 20px;
+    font-size: 14px;
+  }
+  .graph__usa-desc {
+    padding-right: 45px;
+  }
+  /* Цена транспортировки */
+  .price {
+    padding-top: 43px;
+  }
+  .price__name {
+    line-height: 24px;
+    font-size: 17px;
+  }
+  .price .block-header:after {
+    top: -19px;
+    right: 4px;
   }
   /* Другие услуги компании */
   .services {
@@ -260,7 +293,7 @@
   /* Индивидуальная консультация */
   .consultation {
     background-color: #2B2B51;
-    padding: 60px 0 10px;
+    padding: 30px 0 10px;
   }
   .consultation__name {
     -webkit-text-stroke: 2px white;
@@ -270,8 +303,10 @@
     display: none;
   }
   .consultation .block-header > span:after {
-    right: -90px;
-    top: -17px;
+    right: -35px;
+    top: -14px;
+    width: 58px;
+    height: 30px;
   }
   .consultation-form {
     background-color: transparent;
