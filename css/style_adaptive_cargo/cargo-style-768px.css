@@ -290,6 +290,12 @@
     width: 67px;
     height: 36px;
   }
+  .stages-desktop {
+    display: none;
+  }
+  .stages-mobile {
+    display: block;
+  }
   .stages-card {
     width: 41vw;
   }
@@ -311,6 +317,7 @@
   .stages-card:nth-child(even) {
     margin-right: 3px;
     flex-direction: row;
+    justify-content: space-between;
   }
   .stages-card:nth-child(even):after {
     display: none;
@@ -323,10 +330,12 @@
     display: none;
   }
   .stages-card__description {
-    width: auto;
+    width: 208px;
     padding-left: 0;
     text-align: center;
     padding: 0 20px;
+    font-weight: 400;
+    font-style: normal;
   }
   .graph .block-header:after {
     display: block;

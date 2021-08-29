@@ -244,6 +244,9 @@
   .plus__name {
     font-size: 26px;
   }
+  .plus-mobile {
+    display: block;
+  }
   .plus .block-header:after {
     top: -16px;
     right: -11px;
@@ -262,7 +265,7 @@
   }
   .stages .block-header {
     font-size: 17px;
-    line-height: 24px;
+    line-height: 21px;
   }
   .stages .block-header:after {
     top: -20px;
