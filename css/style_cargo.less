@@ -566,9 +566,6 @@ button{
     &-mobile{
         display: none;
     }
-    &>.container{
-        text-align: center;
-    }
     &__name{
         text-align: left;
         font-size: 34px;
@@ -586,6 +583,9 @@ button{
             font-weight: 500;
             letter-spacing: 0.3px;
             color:#2B2B51;
+        }
+        &__wrapper{
+            text-align: center;
         }
     }
     .cost_savings{
@@ -711,6 +711,7 @@ button{
     }
 }
 
+
 // Этапы работы
 .stages{
     position: relative;
@@ -743,7 +744,7 @@ button{
         background-color: white;
         box-shadow: 0px 4px 20px rgba(43, 43, 81, 0.15);
         &__number{
-            position: absolute;
+            // position: absolute;
             font-weight: 900;
             font-size: 60px;
             text-transform: uppercase;
@@ -752,24 +753,30 @@ button{
             background-color: #2B2B51;
             padding: 0px 25px;
             line-height: 97px;
-            top: -31px;
-            left: -52px;
+            margin-bottom: 50px;
+            margin-left: -55px;
         }
         &__description{
             font-weight: bold;
             font-size: 22px;
             color: #2B2B51;
+            padding: 0 25px;
+            width: 344px;
         }
         .number-right{
-            right: -64px;
+            margin-right: -55px;
             left: auto;
+            margin-left: 0px;
+        }
+        .description-right{
+            padding-right: 89px;
         }
     }
     &-card:nth-child(odd){  
-        margin-left: 55px;
+        margin-left: 57px;
         position: relative;
-        justify-content: flex-end;
-        padding-right: 31px;
+        justify-content: flex-start;
+        // padding-right: 31px;
         &:after{
             content: '';
             position: absolute;
@@ -783,10 +790,10 @@ button{
         }
     }
     &-card:nth-child(even){  
-        margin-right: 67px;
+        margin-right: 57px;
         position: relative;
-        justify-content: flex-start;
-        padding-left: 31px;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
         &:after{
             content: '';
             position: absolute;
@@ -798,6 +805,7 @@ button{
             bottom: -17px;
             left: -18px;
         }
+        
     }
 }
 

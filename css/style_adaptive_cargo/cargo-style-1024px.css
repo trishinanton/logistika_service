@@ -76,11 +76,11 @@
     right: -186px;
   }
   .stages .block-header {
-    font-size: 38px;
+    font-size: 27px;
   }
   .stages .block-header:after {
-    top: -28px;
-    right: 105px;
+    top: -23px;
+    right: 290px;
   }
   .stages-card__number {
     font-size: 41px;
@@ -88,6 +88,8 @@
   }
   .stages-card__description {
     font-size: 17px;
+    padding: 0;
+    padding-left: 22px;
   }
   .stages-card:nth-child(odd) {
     padding-right: 16px;
