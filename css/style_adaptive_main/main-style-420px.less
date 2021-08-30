@@ -1,6 +1,11 @@
 @media screen and (max-width: 420px){
     html{
         // overflow: unset;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    body{
+        width: 100%;
     }
     .grid{
         display: none;
@@ -74,6 +79,8 @@
                 padding: 45% 0 21%;
                 width: 100vw;
                 left: 0;
+                top: 0;
+                bottom: 0;
                 position: fixed;
                 overflow-y: hidden;
             }
@@ -555,7 +562,7 @@
                 }
                 &.stages-1{
                     &:before{
-                        width: 93px;
+                        width: 104px;
                         bottom: 55px;
                     }
                 }
@@ -579,7 +586,7 @@
                 }
                 &.stages-5{
                     &:before{
-                        width: 101px;
+                        width: 120px;
                         bottom: 55px;
                     }
                 }
