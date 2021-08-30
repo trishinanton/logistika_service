@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function addCSStoHTML(styleWidth){
         var url = location.pathname;
-        if(url.search('index.html') != '-1'){
+        console.log(url)
+        if(url.search('index.html') != '-1' || location.pathname == '/'){
             prefix = 'main';
         }else{
             prefix = url.substring(url.indexOf('index-'), url.indexOf('.html'));
@@ -83,10 +84,10 @@ document.addEventListener('DOMContentLoaded', function () {
             this.tl
             
             /* Просто закомменти этот блок чтоб прелоадер не мешал*/
-            // .to(this.dom.loader, this.vars.ease, {
-            //     xPercent: this.number / this.random,
-            //     ease: Expo.easeInOut
-            // })
+            .to(this.dom.loader, this.vars.ease, {
+                xPercent: this.number / this.random,
+                ease: Expo.easeInOut
+            })
             // .to(this.dom.loader, (this.vars.random * 2), {
             //     xPercent: this.number,
             //     ease: Expo.easeInOut
