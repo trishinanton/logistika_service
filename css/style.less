@@ -45,20 +45,53 @@ button{
 .split-child {
   display: inline-block;
 }
-.fade-text{
+
+// .animated
+.fade{
     opacity: 0;
     transition: all 1.3s ease-in-out;
     &--top{
-        transform: translateY(-50%);
+        transform: translateY(-30px);
     }
     &--bottom{
-        transform: translateY(50%);
+        transform: translateY(30px);
+    }
+    &--left{
+        transform: translateX(-30px);
+    }
+    &--rigth{
+        transform: translateX(30px);
     }
     &.animated{
         transform: translate(0, 0);
         opacity: 1;
     }
 }
+
+.h2 {
+    --animated-opacity: 0;
+}
+
+.slick-active, .roll-left{
+    clip-path: inset(0% 100% 0% 0%);
+    transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.slick-active.animated, .roll{
+    clip-path: inset(0% 0% 0% 0%);
+}
+.slick-active.animated--shadow{
+    clip-path: inset(-10% -10% 0% 0%);
+}
+
+
+// .slick-current .sliders__img{
+//     clip-path: inset(0% 0% 0% 0%);
+// }
+// .sliders__img {
+//     clip-path: inset(0% 100% 0% 0%);
+//     transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
+// }
+
 
 /* BLOCKS  */
 .main-screen{
@@ -789,8 +822,10 @@ button{
     -webkit-text-stroke: 2px #FFFFFF;
     position: relative;
     display: inline-block;
-    &:after{
+    --animated-opacity: 0;
+    &::after{
         content: '';
+        opacity: var(--animated-opacity);
         position: absolute;
         background-image: url(../img/about/crosses_for_header.png);
         background-size: cover;
@@ -799,7 +834,6 @@ button{
         height: 62px;
         top: -22px;
         right: -58px;
-
     }
 }
 @media(min-width: 1280px) and (max-width: 1670px){

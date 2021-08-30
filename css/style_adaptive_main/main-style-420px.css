@@ -251,10 +251,10 @@
   .block-header:after {
     display: none;
   }
-  .block-header > span {
+  .block-header span {
     position: relative;
   }
-  .block-header > span:after {
+  .block-header span:after {
     content: '';
     position: absolute;
     background-image: url(../../img/about/crosses_for_header.png);
@@ -264,6 +264,9 @@
     height: 26px;
     top: -10px;
     right: -27px;
+  }
+  .block-header span.clear-after::after {
+    content: none;
   }
   /* Наши преимущества */
   .excellence {

@@ -44,19 +44,40 @@ button:hover {
 .split-child {
   display: inline-block;
 }
-.fade-text {
+.fade {
   opacity: 0;
   transition: all 1.3s ease-in-out;
 }
-.fade-text--top {
-  transform: translateY(-50%);
+.fade--top {
+  transform: translateY(-30px);
 }
-.fade-text--bottom {
-  transform: translateY(50%);
+.fade--bottom {
+  transform: translateY(30px);
 }
-.fade-text.animated {
+.fade--left {
+  transform: translateX(-30px);
+}
+.fade--rigth {
+  transform: translateX(30px);
+}
+.fade.animated {
   transform: translate(0, 0);
   opacity: 1;
+}
+.h2 {
+  --animated-opacity: 0;
+}
+.slick-active,
+.roll-left {
+  clip-path: inset(0% 100% 0% 0%);
+  transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.slick-active.animated,
+.roll {
+  clip-path: inset(0% 0% 0% 0%);
+}
+.slick-active.animated--shadow {
+  clip-path: inset(-10% -10% 0% 0%);
 }
 /* BLOCKS  */
 .main-screen {
@@ -709,9 +730,11 @@ button:hover {
   -webkit-text-stroke: 2px #FFFFFF;
   position: relative;
   display: inline-block;
+  --animated-opacity: 0;
 }
-.block-header:after {
+.block-header::after {
   content: '';
+  opacity: var(--animated-opacity);
   position: absolute;
   background-image: url(../img/about/crosses_for_header.png);
   background-size: cover;

@@ -74,9 +74,9 @@ $(document).ready(function(){
     /* Инициализация слайдера "О компании"*/
     $('.slider-about').slick({
         infinite: true,
-        speed: 500,
+        speed: 200,
         fade: true,
-        cssEase: 'linear',
+        // cssEase: 'linear',
         adaptiveHeight: true,
         prevArrow: '<button class="sliders-button__left button-slide"> ❮ </button>',
         nextArrow: '<button class="sliders-button__right button-slide"> ❯ </button>' 
@@ -245,55 +245,143 @@ $(document).ready(function(){
     /* </движение ромбов за мышкой> */
 
     /* <Animations> */
-    const splitTextparams = {
-        duration: 1.5,
-        yPercent: 100,
-        ease: "power4",
-        stagger: 0.3
-    }
+    // if(windowWidth > 421){
+        const splitTextparams = {
+            duration: 1.5,
+            y: 100,
+            ease: Expo.easeInOut,
+            stagger: 0.3
+        }
+        
+        function mainScreenLoad(){
+            const childSplit = new SplitText(".split-text", {
+                type: "lines",
+                linesClass: "split-child"
+            });
+            const parentSplit = new SplitText(".split-text", {
+                linesClass: "split-parent"
+            });
+            
+            var tl = new TimelineLite({
+                paused: true
+            })
+            tl.from(childSplit.lines, splitTextparams);
+            $('.main-screen').addClass('animated');
+            gsap.from(".main-scroll__wrapper", {opacity: 0, duration: 1}).delay(9);
+            setTimeout(function(){
+                $('.main-skgroup').addClass('animated');
+                tl.play()
+                setTimeout(function() {
+                    $('.main-body__name').addClass('animated');
+                }, 2300);
+                $('.advantage__name').each(function(index) {
+                    var current = $(this);
+                    setTimeout(function() {
+                        current.addClass('animated');
+                    }, 3000+1000*index);
+                })
+            }, 1500);
+        }
+        // Start MainScreen Animation
+        var bodyInintObserver = new MutationObserver(function (mutation) {
+            if(mutation[0].target.classList.contains('init')) mainScreenLoad();
+        });
+        bodyInintObserver.observe(document.querySelector('body'), {attributes: true});
+        
+        
+        /* LocomotiveScroll*/
+        function getSplitTexts(parrent){
+            var childSplitScroll = new SplitText(parrent + " h2", {
+                type: "lines",
+                linesClass: "split-child"
+            });
+            var parentSplitScroll = new SplitText(parrent + " h2", {
+                linesClass: "split-parent"
+            });
+            return [childSplitScroll,parentSplitScroll]
+        }
 
-    const childSplit = new SplitText(".split-text", {
-        type: "lines",
-        linesClass: "split-child"
-    });
-    const parentSplit = new SplitText(".split-text", {
-        linesClass: "split-parent"
-    });
-    
-    var tl = new TimelineLite({
-        paused: true
-    })
-    tl.from(childSplit.lines, splitTextparams);
-    
-    function mainScreenLoad(){
-        $('.main-screen').addClass('animated');
-        tl.play()
-        setTimeout(function() {
-            $('.main-body__name').addClass('animated');
-        }, 2000);
-        setTimeout(function() {
-            $('.main-footer .fade-text').addClass('animated');
-        }, 2500);
-    }
+        // var sectionsClasses = [];
+        var timelinesForSectionHeaders = {};
 
-    var observer = new MutationObserver(function (mutation) {
-        // console.log(mutation[0].target.classList.contains('init'));
-        if(mutation[0].target.classList.contains('init')) mainScreenLoad();
-    });
-    observer.observe(document.querySelector('body'), {attributes: true});
-    // init controller
-	var controller = new ScrollMagic.Controller({
-        // globalSceneOptions: {duration: 100}
-    });
-    const scene = new ScrollMagic.Scene({
-        triggerElement: "#trigger1"
-    })
-    .setClassToggle("#test", "active") // add class toggle
-    .addIndicators()
-    // .setTween("#animate1", 0.5, {backgroundColor: "green", scale: 2.5}) // trigger a TweenMax.to tween
-    // .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
-    .addTo(controller);
+        function registerAnimationForSection(sectionClass){
+            var splitTexts = timelinesForSectionHeaders[sectionClass]['splitTexts'][0].lines;
+            var tl = timelinesForSectionHeaders[sectionClass]['timeLine'];
+            var headerClass = '.' + sectionClass +' .block-header';
+            tl.from(splitTexts, splitTextparams)
+            .to(headerClass + ' .split-parent', {'overflow': 'visible'}, "-=0.7")
+            .to(headerClass, {'--animated-opacity': 1});
+        }
 
+        /* Проходимся по всем секциям, находя в них h2 и потом манипулируем данными */
+        document.querySelectorAll('section').forEach(function(section) {
+            var splitTexts = getSplitTexts('.' + section.classList[0]);
+            timelinesForSectionHeaders[section.classList[0]] = {
+                'timeLine': new TimelineLite({paused: true}),
+                'splitTexts': splitTexts
+            };
+            registerAnimationForSection(section.classList[0])
+        });
+
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('body'),
+            class: 'animated',
+            offset: ["30%",0]
+        });
+
+        scroll.on('call', (value, way, obj) => {
+            var sectionClass = obj.el.closest('section').classList[0];
+            var animationDelay = obj.el.closest('section').attributes['data-animation-timeout']
+            animationDelay = animationDelay ? animationDelay.value : 1500;
+            switch (value) {
+                case 'headerAnimation':
+                    timelinesForSectionHeaders[sectionClass]['timeLine'].play()
+                    break;
+                case 'fadeAnimation':
+                    setTimeout(function(){
+                        $('.' + sectionClass + ' .fade').addClass('animated');
+                    }, animationDelay);
+                    break;
+            
+                default:
+                    break;
+            }
+        });
+
+        /* scrollMagic - About*/
+        var controller = new ScrollMagic.Controller({
+            // globalSceneOptions: {duration: 100}
+        });
+
+        // анимация переключения слайдов
+        function scrollSliderAnimate(slider){
+            var prevSlider = slider.find('.animated')
+            prevSlider.removeClass('animated');
+            prevSlider.removeClass('animated--shadow');
+            var activeSlider = $(slider).find('.slick-active').addClass('animated');
+            setTimeout(function(){
+                activeSlider.addClass('animated--shadow');
+            }, 1000);
+        }
+        //!!! Обсервер надо сделать универсальной функцией, как и создание Сцены
+        var aboutObserver = new MutationObserver(function (mutation) {
+            if(mutation[0].target.classList.contains('animated')){
+                scrollSliderAnimate($('.about .slick-slider'));
+            }
+        });
+        aboutObserver.observe(document.querySelector('.about'), {attributes: true});
+
+        $('.slick-slider').on('afterChange', function () {
+            console.log('step')
+            scrollSliderAnimate($(this));
+        });
+
+    // }
     /* </Animations> */
 
+    /* для отладки */
+    function dd(obj) {
+        window.t = obj;
+        console.log(window.t);   
+    }
 });
