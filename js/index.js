@@ -1,7 +1,7 @@
 $(document).ready(function(){
     let windowWidth= window.outerWidth ;
     let menu = document.querySelector('.menu');
-    const activeMenu = document.querySelector('.menu-active__wrapper')
+    let activeMenu = $('.menu-active__wrapper')
     let excellenceCard = document.querySelectorAll('.excellence-card');
     let arrExcellenceCard = Array.prototype.slice.call(excellenceCard);
     let servicesCard = document.querySelectorAll('.services-card');
@@ -24,17 +24,17 @@ $(document).ready(function(){
         $('.nicescroll-rails.nicescroll-rails-hr').remove();
     // }
     
-    menu.addEventListener('click',()=>{
+    menu.addEventListener('click', function(){
         menu.classList.add('menu-active');
         if(windowWidth < 421){
             $('body').css('overflow', 'hidden');
         }
         menu.style.animation = 'none';
         document.querySelector('.active-content').style.display = 'block';
-        activeMenu.style.transition = 'transition: 2s linear';
+        activeMenu.css('transition','2s linear');
     });
 
-    activeMenu.addEventListener('click',()=>{
+    activeMenu.on('click', function(){
         document.querySelector('.active-content').style.display = 'none';
         menu.style.animation = 'open_menu 2s';
         menu.classList.remove('menu-active');
@@ -52,11 +52,7 @@ $(document).ready(function(){
             el.addEventListener('mouseout', ()=>{
             el.classList.remove(ela)
             });
-        
-        
         })
-        
-        
     });
 
     arrServicesCard.map((el,i)=>{
@@ -67,7 +63,6 @@ $(document).ready(function(){
         el.addEventListener('mouseout', ()=>{
             el.style.backgroundSize = '100% 100%'; 
             el.classList.remove('services-card--hover');
-
         });
     });
 
@@ -94,16 +89,14 @@ $(document).ready(function(){
 
     function resizeExcellenceSlider(clientWidth){
         if (clientWidth <= 102){ //на всякий оставлю, вдруг она опять передумает
-
             $('.excellence__description').slick({
                 dots: true,
-            infinite: true,
-            speed: 500,
-            fade: true,
-            cssEase: 'linear',
-            prevArrow: '<button class="excellence-arrow excellence-prev"> ❮ </button>',
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear',
+                prevArrow: '<button class="excellence-arrow excellence-prev"> ❮ </button>',
                 nextArrow: '<button class="excellence-arrow excellence-next"> ❯ </button>'
-                
             });
         } else {
             $('.excellence__description').unslick;
@@ -116,11 +109,11 @@ $(document).ready(function(){
         if (clientWidth <= 102){ //на всякий оставлю, вдруг она опять передумает
             $('.reviews__cards').slick({
                 dots: true,
-            infinite: true,
-            speed: 500,
-            fade: true,
-            cssEase: 'linear',
-            prevArrow: '<button class="reviews-arrow reviews-prev"> ❮ </button>',
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear',
+                prevArrow: '<button class="reviews-arrow reviews-prev"> ❮ </button>',
                 nextArrow: '<button class="reviews-arrow reviews-next"> ❯ </button>'
             });
         } else {
@@ -136,6 +129,7 @@ $(document).ready(function(){
         var id  = $(this).attr('href'),
         top = $(id).offset().top;
         $('body,html').animate({scrollTop: top}, 1500);
+        activeMenu.trigger('click');
     });
 
     /* Плавный скролл по кнопке "О Компании"*/
@@ -167,18 +161,19 @@ $(document).ready(function(){
 
     $(window).on("scroll", function () {
         var scrolled = $(this).scrollTop();
+        var header = $('.header');
         if( scrolled > 200 ) {
-            $('.header').addClass('header--scroll');
-            $('.header').css('background','#2B2B51');
-            $('.header').css('box-shadow', '0px -16px 20px white');
-            $('.logo-image').addClass('logo-image__scroll');
-            $('.logo-name').addClass('logo-name__scroll');
+            header.addClass('header--scroll');
+            header.css('background','#2B2B51');
+            header.css('box-shadow', '0px -16px 20px white');
+            header.find('.logo-image').addClass('logo-image__scroll');
+            header.find('.logo-name').addClass('logo-name__scroll');
         }   
         if( scrolled <= 100 ) {     
-            $('.header').css('background','transparent');
-            $('.header').css('box-shadow', 'none');
-            $('.logo-image').removeClass('logo-image__scroll');
-            $('.logo-name').removeClass('logo-name__scroll');
+            header.css('background','transparent');
+            header.css('box-shadow', 'none');
+            header.find('.logo-image').removeClass('logo-image__scroll');
+            header.find('.logo-name').removeClass('logo-name__scroll');
         }
     });
         
@@ -194,7 +189,7 @@ $(document).ready(function(){
     })
 
     // скрыть хедер если страница загружается не на первом экране, а ниже
-    if($(this).scrollTop() > 0){
+    if($(this).scrollTop() > 20){
         $('.header').fadeOut(10);
     }
     
@@ -217,6 +212,7 @@ $(document).ready(function(){
     // .cooperation:after
     // transform: var(--float-before);
     // transform: var(--float-after);
+    // transform: attr(data-attr);
     function moving (section, pseudo, speed) {
         var deviation = pseudo == 'after' ? 30 : 0;
         var customCSSRule = '--float-' + pseudo;	
@@ -282,9 +278,12 @@ $(document).ready(function(){
                 })
             }, 1500);
         }
-        // Start MainScreen Animation
+        // Start MainScreen Animation and LocomotiveScroll init
         var bodyInintObserver = new MutationObserver(function (mutation) {
-            if(mutation[0].target.classList.contains('init')) mainScreenLoad();
+            if(mutation[0].target.classList.contains('init')){
+                mainScreenLoad();
+                animationInit();
+            } 
         });
         bodyInintObserver.observe(document.querySelector('body'), {attributes: true});
         
@@ -323,56 +322,74 @@ $(document).ready(function(){
             registerAnimationForSection(section.classList[0])
         });
 
-        const scroll = new LocomotiveScroll({
-            el: document.querySelector('body'),
-            class: 'animated',
-            offset: ["30%",0]
-        });
+        var scroll,sliderScroll;
+        function animationInit() {
+            scroll = new LocomotiveScroll({
+                el: document.querySelector('body'),
+                class: 'animated',
+                reloadOnContextChange: true,
+                offset: ["10%",0]
+            });
+            sliderScroll = new LocomotiveScroll({
+                el: document.querySelector('.sliders__wrapper'),
+                class: 'sliders-animated',
+                reloadOnContextChange: true,
+            });
 
-        scroll.on('call', (value, way, obj) => {
-            var sectionClass = obj.el.closest('section').classList[0];
-            var animationDelay = obj.el.closest('section').attributes['data-animation-timeout']
-            animationDelay = animationDelay ? animationDelay.value : 1500;
-            switch (value) {
-                case 'headerAnimation':
-                    timelinesForSectionHeaders[sectionClass]['timeLine'].play()
-                    break;
-                case 'fadeAnimation':
-                    setTimeout(function(){
-                        $('.' + sectionClass + ' .fade').addClass('animated');
-                    }, animationDelay);
-                    break;
+            scroll.on('call', function (value, way, obj){
+                var sectionClass = obj.el.closest('section').classList[0];
+                switch (value) {
+                    case 'headerAnimation':
+                        timelinesForSectionHeaders[sectionClass]['timeLine'].play()
+                        // break;    
+                    case 'fadeAnimation':
+                        var animationDelay = obj.el.closest('section').attributes['data-animation-timeout']
+                        animationDelay = animationDelay ? animationDelay.value : 1500;
+                        setTimeout(function(){
+                            $('.' + sectionClass + ' .fade').addClass('animated');
+                        }, animationDelay);
+                        break;
+                    case 'imgAnimation':
+                        var imgs = obj.el.closest('section').querySelectorAll('.roll-left');
+                        var animationDelay = obj.el.closest('section').attributes['data-animation-timeout'].value
+                        animationDelay = animationDelay ? animationDelay.value : 1500;
+                        for(let i = 0; i < imgs.length; i++ ){
+                            let el = imgs[i];
+                            dd(el)
+                            let t = setTimeout(function(){
+                                el.classList.add('animated');
+                            }, animationDelay*(i+1));
+                        }
+                    default:
+                        break;
+                }
+            });
             
-                default:
-                    break;
-            }
-        });
+            sliderScroll.on('call', function (value, way, obj){
+                switch (value) {
+                    case 'sliderAnimation':
+                        scrollSliderAnimate($('.about .slick-slider'));
+                    default:
+                        break;
+                }
+            });
+        }
 
-        /* scrollMagic - About*/
-        var controller = new ScrollMagic.Controller({
-            // globalSceneOptions: {duration: 100}
-        });
 
         // анимация переключения слайдов
         function scrollSliderAnimate(slider){
             var prevSlider = slider.find('.animated')
-            prevSlider.removeClass('animated');
-            prevSlider.removeClass('animated--shadow');
+            if(prevSlider){
+                prevSlider.removeClass('animated');
+                prevSlider.removeClass('animated--shadow');
+            }
             var activeSlider = $(slider).find('.slick-active').addClass('animated');
             setTimeout(function(){
                 activeSlider.addClass('animated--shadow');
             }, 1000);
         }
-        //!!! Обсервер надо сделать универсальной функцией, как и создание Сцены
-        var aboutObserver = new MutationObserver(function (mutation) {
-            if(mutation[0].target.classList.contains('animated')){
-                scrollSliderAnimate($('.about .slick-slider'));
-            }
-        });
-        aboutObserver.observe(document.querySelector('.about'), {attributes: true});
 
         $('.slick-slider').on('afterChange', function () {
-            console.log('step')
             scrollSliderAnimate($(this));
         });
 

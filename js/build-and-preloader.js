@@ -92,11 +92,11 @@ document.addEventListener('DOMContentLoaded', function () {
             //     xPercent: this.number,
             //     ease: Expo.easeInOut
             // })
-            // .to(this.dom.loader, this.vars.ease, {
-            //     xPercent: 99,
-            //     delay: this.vars.random,
-            //     ease: Expo.easeInOut
-            // })
+            .to(this.dom.loader, this.vars.ease, {
+                xPercent: 99,
+                delay: this.vars.random,
+                ease: Expo.easeInOut
+            })
             /* конец блока */
             this.tl.play()
         }
