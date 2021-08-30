@@ -123,7 +123,7 @@ $(document).ready(function(){
             $('.graph__truck').css({'right':rightMediumScreen})
         } else if(widthScreen<=375 && winScroll>=scroll){
             $('.graph__truck').css({'right':rightLitleScreen})
-        }else if (winScroll>=scroll) $('.graph__truck').css({'right':right})
+        }else if (winScroll>=scroll) $('.graph__truck').css({'right':rightMediumScreen})
         
         
   });

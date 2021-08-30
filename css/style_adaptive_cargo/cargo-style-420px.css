@@ -244,6 +244,9 @@
   .plus__name {
     font-size: 26px;
   }
+  .plus-mobile {
+    display: block;
+  }
   .plus .block-header:after {
     top: -16px;
     right: -11px;
@@ -257,12 +260,35 @@
     padding-left: 35px;
   }
   /* Этапы работы по доставке */
+  .stages {
+    padding-bottom: 0px;
+  }
   .stages .block-header {
     font-size: 17px;
+    line-height: 21px;
   }
   .stages .block-header:after {
-    top: -13px;
-    right: -13px;
+    top: -20px;
+    right: -11px;
+  }
+  .stages__name {
+    margin-bottom: 30px;
+  }
+  .stages-card {
+    height: 65px;
+    width: 41vw;
+  }
+  .stages-card__number {
+    font-size: 24px;
+    padding: 0px 15px;
+    line-height: 67px;
+  }
+  .stages-card__description {
+    padding: 0 5px;
+    font-size: 11px;
+  }
+  .graph {
+    padding-top: 52px;
   }
   .graph__name {
     font-size: 30px;

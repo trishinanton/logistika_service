@@ -236,6 +236,13 @@
   .plus .fixed_cost__wrapper {
     width: 98%;
     margin-left: 4px;
+    padding-right: 5px;
+  }
+  .stages .block-header {
+    font-size: 15px;
+  }
+  .stages-card__description {
+    font-size: 10px;
   }
   /* График и сроки доставки */
   .graph {

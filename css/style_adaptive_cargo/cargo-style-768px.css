@@ -290,6 +290,15 @@
     width: 67px;
     height: 36px;
   }
+  .stages-desktop {
+    display: none;
+  }
+  .stages-mobile {
+    display: block;
+  }
+  .stages-card {
+    width: 41vw;
+  }
   .stages-card:nth-child(odd) {
     margin-left: 0px;
     margin-bottom: 10px;
@@ -298,6 +307,35 @@
     position: relative;
     top: 0;
     left: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    line-height: 99px;
+  }
+  .stages-card .number-right {
+    margin-right: 0;
+  }
+  .stages-card:nth-child(even) {
+    margin-right: 3px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .stages-card:nth-child(even):after {
+    display: none;
+  }
+  .stages-card:nth-child(odd) {
+    padding-right: 0;
+    margin-left: 4px;
+  }
+  .stages-card:nth-child(odd):after {
+    display: none;
+  }
+  .stages-card__description {
+    width: 208px;
+    padding-left: 0;
+    text-align: center;
+    padding: 0 20px;
+    font-weight: 400;
+    font-style: normal;
   }
   .graph .block-header:after {
     display: block;
