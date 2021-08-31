@@ -75,9 +75,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 onComplete: () => {
                     this.dom.el.classList.add('is-done')
                     this.dom.body.classList.add('init')
-                    setTimeout(() => {
+                    // setTimeout(() => {
                         this.dom.el.style.display = 'none'
-                    }, 1000);
+                    // }, 1000);
                 }
             })
 
@@ -92,11 +92,11 @@ document.addEventListener('DOMContentLoaded', function () {
             //     xPercent: this.number,
             //     ease: Expo.easeInOut
             // })
-            .to(this.dom.loader, this.vars.ease, {
-                xPercent: 99,
-                delay: this.vars.random,
-                ease: Expo.easeInOut
-            })
+            // .to(this.dom.loader, this.vars.ease, {
+            //     xPercent: 99,
+            //     delay: this.vars.random,
+            //     ease: Expo.easeInOut
+            // })
             /* конец блока */
             this.tl.play()
         }
