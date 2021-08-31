@@ -427,6 +427,7 @@ button:hover {
   position: relative;
   z-index: 1;
   background: #2B2B51;
+  padding: 92px 0;
 }
 .about:after {
   content: '';
@@ -443,27 +444,25 @@ button:hover {
 }
 .about__name {
   position: relative;
-  margin-top: 102px;
 }
 .about__content {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .about__description {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 50%;
-  height: 662px;
 }
 .about__purpose {
   line-height: 22px;
-  margin-right: 60px;
   margin-left: 4px;
   color: white;
 }
 .about__purpose > p {
-  margin-top: 20px;
+  margin-top: 35px;
   font-style: normal;
   font-size: 16px;
   font-weight: 400;

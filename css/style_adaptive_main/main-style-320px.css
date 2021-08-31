@@ -1,7 +1,16 @@
 @media screen and (max-width: 320px) {
+  .preloader .logo-name {
+    font-size: 12px;
+  }
   .block-header > span:after {
     top: 27px;
     right: -27px;
+  }
+  .logo-image {
+    width: 56px;
+  }
+  .header__menu {
+    font-size: 14px;
   }
   .main-screen .body {
     padding-top: 95px;
@@ -38,6 +47,9 @@
   .menu-active__wrapper {
     right: -8vw;
     top: 62px;
+  }
+  .about .block-header {
+    font-size: 29px;
   }
   .about__name > span:after {
     content: '';

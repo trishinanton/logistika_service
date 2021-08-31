@@ -12,10 +12,10 @@
     <script src='./js/build-and-preloader.js'></script>
     <!-- Стили -->
     <link rel="stylesheet" href="./css/style_autsorsing.css">
-    <!-- <link rel="stylesheet" href="./css/style_adaptive_autsorsing/autsorsing-style-1024px.css">
+    <link rel="stylesheet" href="./css/style_adaptive_autsorsing/autsorsing-style-1024px.css">
     <link rel="stylesheet" href="./css/style_adaptive_autsorsing/autsorsing-style-768px.css">
     <link rel="stylesheet" href="./css/style_adaptive_autsorsing/autsorsing-style-420px.css">
-    <link rel="stylesheet" href="./css/style_adaptive_autsorsing/autsorsing-style-375px.css"> -->
+    <link rel="stylesheet" href="./css/style_adaptive_autsorsing/autsorsing-style-375px.css">
 </head>
 <!-- <Preloader> -->
 <div class="preloader js-progress">
@@ -39,11 +39,20 @@
         /* pointer-events: none; */
     }
 
+    .preloader .logo {
+        width: auto;
+    }
+
     .preloader__inner {
         position: absolute;
-        top: 50%;
+        height: 100vh;
+        width: 100vw;
+        /* top: 50%;
         left: 50%;
-        transform: translateY(-50%) translateX(-50%);
+        transform: translateY(-50%) translateX(-50%); */
+        display: flex;
+        justify-content: center;
+        align-items: center;
         opacity: 0.75;
         z-index: 2;
     }
@@ -180,15 +189,15 @@
                     <h2 class="about__name block-header"><span>Об услуге</span></h2>
                     <div class="about__purpose">
                         <p>
-                            <strong>Мы возьмем на себя функции отдела ВЭД</strong> в структуре вашего предприятия. Вам
-                            не нужно становиться импортером, вы получите товар по договору купли – продажи в России.
-                            Отсутствие скрытых расходов. Понятная стоимость услуг.
+                            <strong>Мы возьмем на себя функции отдела ВЭД</strong> в структуре вашего<br class="d-lm"> предприятия. Вам
+                            не нужно становиться импортером, вы получите<br class="d-lm"> товар по договору купли – продажи в России.
+                            Отсутствие скрытых<br class="d-lm"> расходов. Понятная стоимость услуг.
                         </p>
                         <p>
-                            Для любого юридического лица самостоятельное ведение внешнеэкономической деятельности (ВЭД)
-                            сопряжено с дополнительными трудозатратами, нагрузкой на различные отделы фирмы,
-                            дополнительной отчетностью и ответственностью перед органами таможни и ФНС. Часто затраты на
-                            ввоз продукцию превышают расчетные показатели рентабельности внешнеторговых операций.
+                            Для любого юридического лица самостоятельное ведение<br class="d-lm"> внешнеэкономической деятельности (ВЭД)
+                            сопряжено с<br class="d-lm"> дополнительными трудозатратами, нагрузкой на различные отделы<br class="d-lm"> фирмы,
+                            дополнительной отчетностью и ответственностью перед<br class="d-lm"> органами таможни и ФНС. Часто затраты на
+                            ввоз продукцию<br class="d-lm"> превышают расчетные показатели рентабельности внешнеторговых<br class="d-lm"> операций.
                         </p>
 
 
@@ -213,7 +222,7 @@
                 <div class="event__description"><span>⬦</span> Желание минимизировать риски связанные с проверками
                     таможенных и налоговых органов.</div>
                 <div class="event__footer">Аутсорсинг внешнеэкономической деятельности от компании SK-Group trans решает
-                    все перечисленные выше проблемы.
+                    все перечисленные выше проблемы. <br>
                     Мы оказываем все необходимые услуги в полном объеме, без рисков и переплат.</div>
             </div>
         </div>

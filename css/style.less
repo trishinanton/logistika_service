@@ -30,6 +30,8 @@ button{
 .container{
     padding: 0 10%;
     position: relative;
+    // max-width: 1920px;
+    margin: 0 auto;
     &-fluid{
         width: 100vw;
     }
@@ -75,8 +77,9 @@ button{
 .slick-active, .roll-left{
     clip-path: inset(0% 100% 0% 0%);
     transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
+
 }
-.slick-active.animated, .roll{
+.slick-active.animated, .roll-left.animated{
     clip-path: inset(0% 0% 0% 0%);
 }
 .slick-active.animated--shadow{
@@ -102,6 +105,7 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
     &:after{
         content: '';
         position: absolute;
@@ -189,6 +193,11 @@ button{
         background: #2B2B51;
         box-shadow: 0 0px 29px rgb(255 255 255 / 20%);
     }
+    .logo{
+        &-image{
+            transition: linear 0.5s;
+        }
+    }
     
 }
 .logo{
@@ -203,7 +212,6 @@ button{
         margin-right: 30px;
         position: relative;
         z-index: 2;
-        transition: linear 0.5s;
         &__scroll{
             margin-right: 20px;
             width: 90px;
@@ -430,6 +438,7 @@ button{
     z-index: 0;
     position: absolute;
     padding: 0 10%;
+    // max-width: 1920px;
     &-adaptive{
         display: none;
     }
@@ -835,6 +844,12 @@ button{
         top: -22px;
         right: -58px;
     }
+    .block-header.animated{
+        &::after{
+            
+        }
+    }
+
 }
 @media(min-width: 1280px) and (max-width: 1670px){
     
@@ -1344,7 +1359,6 @@ button{
         font-size: 26px;
         line-height: 35px;
         color: #FFFFFF;
-        box-shadow: 0px 4px 13px #a5a5c5;
         position: relative;
         z-index: 2;
     }
@@ -1353,6 +1367,7 @@ button{
         transition: all 1s ease-in-out 0s;
         width: 33.3%;
         position: relative;
+        box-shadow: 0px 4px 13px #a5a5c5;
         &::after{
             content: '';
             position: absolute;
@@ -2053,6 +2068,7 @@ button{
 
 .contact{
     position: relative;
+    overflow: hidden;
     &__wrapper{
         position: relative;
     }

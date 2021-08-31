@@ -279,9 +279,10 @@
     width: 41vw;
   }
   .stages-card__number {
-    font-size: 24px;
-    padding: 0px 15px;
+    font-size: 33px;
+    padding: 0px 8px;
     line-height: 67px;
+    -webkit-text-stroke: 1px white;
   }
   .stages-card__description {
     padding: 0 5px;

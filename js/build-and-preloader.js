@@ -75,9 +75,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 onComplete: () => {
                     this.dom.el.classList.add('is-done')
                     this.dom.body.classList.add('init')
-                    setTimeout(() => {
+                    // setTimeout(() => {
                         this.dom.el.style.display = 'none'
-                    }, 1000);
+                    // }, 1000);
                 }
             })
 
