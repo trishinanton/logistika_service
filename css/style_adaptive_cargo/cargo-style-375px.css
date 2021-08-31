@@ -300,7 +300,7 @@
   /* Индивидуальная консультация */
   .consultation {
     background-color: #2B2B51;
-    padding: 30px 0 10px;
+    padding: 28px 0 10px;
   }
   .consultation__name {
     -webkit-text-stroke: 1px white;

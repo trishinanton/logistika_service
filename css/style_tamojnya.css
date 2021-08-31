@@ -279,10 +279,11 @@ button:hover {
   width: 50%;
   position: fixed;
   left: 50%;
-  z-index: 3;
+  z-index: 11;
   text-align: center;
   padding: 16vh 0 10vh;
   box-sizing: border-box;
+  top: 0;
 }
 @keyframes show_active_menu {
   0% {
