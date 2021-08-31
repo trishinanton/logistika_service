@@ -75,6 +75,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  --animation: floating 2s infinite ease-out;
 }
 .main-screen__header {
   padding: 16px 3%;
@@ -95,6 +96,18 @@ button:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   right: 120px;
   bottom: -60px;
+  animation: var(--animation);
+}
+@keyframes floating {
+  0% {
+    bottom: -50px;
+  }
+  50% {
+    bottom: -55px;
+  }
+  100% {
+    bottom: -50px;
+  }
 }
 .header {
   display: flex;
@@ -448,6 +461,7 @@ button:hover {
 .about__content {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .about__description {
   display: flex;
@@ -466,6 +480,9 @@ button:hover {
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.3px;
+}
+.about__purpose > p:first-child {
+  margin-top: 35px;
 }
 .about__sliders {
   display: flex;
@@ -524,10 +541,8 @@ button:hover {
   position: relative;
   z-index: 1;
 }
-.event {
-  padding-bottom: 81px;
-}
 .event__name {
+  margin-top: 35px;
   font-family: Arial;
   font-style: normal;
   margin-bottom: 8px;
@@ -579,6 +594,7 @@ button:hover {
   justify-content: space-between;
   margin-top: 60px;
   padding: 0px 6px 0 4px;
+  position: relative;
 }
 .enterns-card {
   display: flex;
@@ -587,6 +603,7 @@ button:hover {
   box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.2);
   margin-bottom: 54px;
   position: relative;
+  background-color: #fff;
 }
 .enterns-card__number {
   width: 132.3px;
@@ -612,13 +629,14 @@ button:hover {
   display: flex;
   align-items: center;
   width: 100%;
-  justify-content: center;
   padding-left: 162px;
   padding-right: 30px;
 }
 .enterns__footer {
   color: #2B2B51;
   margin-left: 4px;
+  font-size: 22px;
+  margin-top: 22px;
 }
 /* Другие услуги компании */
 .services {

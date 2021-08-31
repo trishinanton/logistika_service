@@ -78,6 +78,7 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    --animation: floating 2s infinite ease-out;
     &__header{
         padding: 16px 3%;
         box-sizing: border-box;
@@ -98,6 +99,18 @@ button{
         box-shadow: 0 0 20px rgb(0 0 0 / 20%);
         right: 120px;
         bottom: -60px;
+        animation: var(--animation);
+    }
+}
+@keyframes floating{
+    0%{
+        bottom:-50px
+    }
+    50%{
+        bottom:-55px
+    }
+    100% {
+        bottom:-50px
     }
 }
 .header{
@@ -474,6 +487,7 @@ button{
     &__content{
         display: flex;
         flex-direction: row;
+        align-items: center;
     }
     &__description{
         display: flex;
@@ -493,6 +507,9 @@ button{
         font-size: 16px;
         font-weight: 400;
         letter-spacing: 0.3px;
+    }
+    &>p:first-child{
+        margin-top: 35px;
     }
     }
     &__sliders{
@@ -559,8 +576,8 @@ button{
     }
 }
 .event{
-    padding-bottom: 81px;
     &__name{
+        margin-top: 35px;
         font-family: Arial;
         font-style: normal;
         margin-bottom: 8px;
@@ -616,6 +633,7 @@ button{
         justify-content: space-between;
         margin-top: 60px;
         padding: 0px 6px 0 4px;
+        position: relative;
     }
     &-card{
         display: flex;
@@ -624,6 +642,7 @@ button{
         box-shadow: 2px 2px 16px rgb(0 0 0 / 20%);  
         margin-bottom: 54px;
         position: relative;
+        background-color: #fff;
         &__number{
             width: 132.3px;
             height: 114px;
@@ -648,7 +667,7 @@ button{
             display: flex;
             align-items: center; 
             width: 100%;
-            justify-content: center;
+         
             padding-left: 162px;
             padding-right: 30px;
         }
@@ -656,6 +675,8 @@ button{
     &__footer{
         color: #2B2B51;
         margin-left: 4px;
+        font-size: 22px;
+        margin-top: 22px;
     }
 }
 

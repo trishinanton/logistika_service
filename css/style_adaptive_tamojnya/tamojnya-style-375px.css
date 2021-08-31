@@ -301,7 +301,7 @@
     padding: 60px 0 10px;
   }
   .consultation__name {
-    -webkit-text-stroke: 2px white;
+    -webkit-text-stroke: 1px white;
     font-size: 25px;
   }
   .consultation-br {

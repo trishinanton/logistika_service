@@ -168,6 +168,18 @@
   .event {
     margin-top: 109px;
   }
+  .event__name {
+    margin-left: 4px;
+  }
+  .event__description {
+    line-height: 1.3em;
+    margin-top: 20px;
+    margin-top: 15px;
+    margin-left: 4px;
+  }
+  .event__footer {
+    margin-left: 4px;
+  }
   .block-header {
     margin-top: 0px;
     line-height: 62px;
