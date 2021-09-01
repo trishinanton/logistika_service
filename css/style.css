@@ -29,7 +29,6 @@ button:hover {
 .container {
   padding: 0 10%;
   position: relative;
-  margin: 0 auto;
 }
 .container-fluid {
   width: 100vw;
@@ -1379,7 +1378,6 @@ button:hover {
 .cooperation__name {
   font-size: 52px;
   margin-top: 56px;
-  width: 93%;
 }
 .cooperation__body {
   margin-top: 180px;

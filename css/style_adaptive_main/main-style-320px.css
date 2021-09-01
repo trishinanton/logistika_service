@@ -21,24 +21,24 @@
   }
   .main-screen .main-body__description {
     font-size: 22px;
-    line-height: 30px;
+    line-height: 24px;
   }
-  -footer .advantage__name {
+  .main-screen .main-footer .advantage__name {
     font-size: 14px;
     margin: 3px 0 3px 0;
     width: 100%;
   }
-  -footer .advantage__name:before {
+  .main-screen .main-footer .advantage__name:before {
     background-image: url(../../img/main_screen/Rectangle_adaptive.png);
     width: 11px;
     height: 11px;
     left: -20px;
     top: 5px;
   }
-  -footer .advantage__name-wsize:before {
+  .main-screen .main-footer .advantage__name-wsize:before {
     top: 15px;
   }
-  -footer__advantage {
+  .main-screen .main-footer__advantage {
     margin-left: 23px;
   }
   .menu-active__content {
@@ -127,5 +127,8 @@
     height: 26px;
     top: -9px;
     right: -27px;
+  }
+  .services-card {
+    height: 380px;
   }
 }

@@ -280,7 +280,7 @@ $(document).ready(function(){
         }
         // Start MainScreen Animation and LocomotiveScroll init
         var bodyInintObserver = new MutationObserver(function (mutation) {
-            if(mutation[0].target.classList.contains('init')){
+            if(mutation[0].target.classList.contains('start-animate')){
                 mainScreenLoad();
                 animationInit();
             } 
@@ -328,7 +328,7 @@ $(document).ready(function(){
                 el: document.querySelector('body'),
                 class: 'animated',
                 reloadOnContextChange: true,
-                offset: ["10%",0]
+                offset: ["20%",0]
             });
             sliderScroll = new LocomotiveScroll({
                 el: document.querySelector('.sliders__wrapper'),
@@ -351,11 +351,9 @@ $(document).ready(function(){
                         break;
                     case 'imgAnimation':
                         var imgs = obj.el.closest('section').querySelectorAll('.roll-left');
-                        var animationDelay = obj.el.closest('section').attributes['data-animation-timeout'].value
-                        animationDelay = animationDelay ? animationDelay.value : 1500;
+                        var animationDelay = +obj.el.closest('section').attributes['data-animation-timeout'].value
                         for(let i = 0; i < imgs.length; i++ ){
                             let el = imgs[i];
-                            dd(el)
                             let t = setTimeout(function(){
                                 el.classList.add('animated');
                             }, animationDelay*(i+1));

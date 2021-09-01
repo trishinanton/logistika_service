@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     /* end */
     
-    /* Preloader Class */
+    /* Preloader */
     function getRandomFloat(min, max) {
         return Math.random() * (max - min) + min;
     }
@@ -70,35 +70,32 @@ document.addEventListener('DOMContentLoaded', function () {
             this.number = Math.random( this.vars.start / this.vars.total - 0.2 ) * 100
             this.random = Math.random() * (4 - 2) + 2
 
-            this.tl = new TimelineLite({
+            this.tlBeforeLoad = new TimelineLite({
                 paused: true,
                 onComplete: () => {
-                    this.dom.el.classList.add('is-done')
-                    this.dom.body.classList.add('init')
-                    // setTimeout(() => {
-                        this.dom.el.style.display = 'none'
-                    // }, 1000);
+                    this.dom.body.classList.add('init');
                 }
             })
+            
 
-            this.tl
+            this.tlBeforeLoad
             
             /* Просто закомменти этот блок чтоб прелоадер не мешал*/
             .to(this.dom.loader, this.vars.ease, {
                 xPercent: this.number / this.random,
                 ease: Expo.easeInOut
             })
-            // .to(this.dom.loader, (this.vars.random * 2), {
-            //     xPercent: this.number,
-            //     ease: Expo.easeInOut
-            // })
+            .to(this.dom.loader, (this.vars.random * 2), {
+                xPercent: this.number,
+                ease: Expo.easeInOut
+            })
             // .to(this.dom.loader, this.vars.ease, {
-            //     xPercent: 99,
+            //     xPercent: 60,
             //     delay: this.vars.random,
             //     ease: Expo.easeInOut
             // })
             /* конец блока */
-            this.tl.play()
+            this.tlBeforeLoad.play()
         }
         
         addEvents() {
@@ -110,6 +107,32 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     const preloader = new Preloader();
-    /* preloader end */
 
+    function lastStep() {
+        gsap.to(preloader.dom.loader, {
+            xPercent: 99,
+            delay: preloader.vars.random,
+            ease: Expo.easeInOut,
+            onComplete: () => {
+                preloader.dom.el.classList.add('is-done')
+                preloader.dom.body.classList.add('start-animate')
+                setTimeout(() => {
+                    preloader.dom.el.style.display = 'none';
+                }, 1000);
+            }
+        });
+    }
+
+    window.onload = () => {
+        document.querySelector('body').classList.add('onload');
+    }
+
+    var bodyInintObserver = new MutationObserver(function (mutation) {
+        if(mutation[0].target.classList.contains('onload') && mutation[0].target.classList.contains('init')){
+            lastStep();
+            bodyInintObserver.disconnect();
+        } 
+    });
+    bodyInintObserver.observe(document.querySelector('body'), {attributes: true});
+    /* preloader end */
 }); 
