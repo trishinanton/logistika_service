@@ -46,7 +46,7 @@ button:hover {
 }
 .fade {
   opacity: 0;
-  transition: all 1.3s ease-in-out;
+  transition: opacity 1.3s ease-in-out, transform 1.3s ease-in-out;
 }
 .fade--top {
   transform: translateY(-30px);

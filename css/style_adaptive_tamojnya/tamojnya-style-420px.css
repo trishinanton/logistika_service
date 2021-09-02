@@ -1,4 +1,7 @@
 @media screen and (max-width: 420px) {
+  html {
+    overflow-x: hidden;
+  }
   .fz-sm-14 {
     font-size: 14px !important;
   }
@@ -365,6 +368,7 @@
   .consultation-form__description {
     font-size: 14px;
     line-height: 18px;
+    text-align: left;
   }
   .consultation-form__description:before {
     content: '';

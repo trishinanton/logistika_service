@@ -1,6 +1,6 @@
 @media screen and (max-width: 420px){
     html{
-        // overflow: unset;
+        overflow-x: hidden;
     }
     .fz-sm-14{
         font-size: 14px !important;
@@ -100,9 +100,9 @@
             & .word1{
                 width: 100%;
             }
-            //first line and last word
+            //last line and last word
             &.animated{
-                & .split-parent:first-of-type{
+                & .split-parent:last-of-type{
                     & .word:last-child{
                         &:after{
                             opacity: 1;
@@ -307,6 +307,7 @@
 
     //Что входит в услуги аутсорсинга
     .enterns{
+        padding-top: 74px;
         &__name{
             font-size: 22px;
         }
@@ -349,14 +350,25 @@
         &-card{
             &__description{
                 font-size: 14px;
-                padding-left: 140px;
-                padding-right: 3px;
+                padding: 10px 6px 10px 90px;
+                // padding-left: 92px;
+                // padding-right: 3px;
+                min-height: 114px;
+                height: auto;
+            }
+            &__number{
+                width: 78px;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
         &__footer{
             line-height: 22px;
             font-size: 17px;
         }
+        
     } 
     
     /* Другие услуги компании */
@@ -443,6 +455,7 @@
             &__description{
                 font-size: 14px;
                 line-height: 18px;
+                text-align: left;
                 &:before{
                 // display: none;
                     content: '';
@@ -556,5 +569,23 @@
         &__copyrigth{
             font-size: 12px; 
         }
+    }
+}
+
+@media screen and (max-width: 320px){
+    .enterns-card__number {
+        // width: 68px;
+        // font-size: 70px;
+        width: 60px;
+        font-size: 64px;
+        -webkit-text-stroke: 1px #FFFFFF;
+    }
+    .enterns-card__description{
+        padding: 0px 6px 0px 68px;
+        font-size: 14px;
+        line-height: 16px;
+    }   
+    .consultation__name{
+        font-size: 20px !important;
     }
 }

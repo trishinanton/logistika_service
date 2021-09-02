@@ -121,44 +121,73 @@ $(document).ready(function(){
     // Запуск анимации LocomotiveScroll после прогрузки перлоадера
     var bodyInintObserver = new MutationObserver(function (mutation) {
         if(mutation[0].target.classList.contains('start-animate')){
-            dd('Старт')
             animationInit();
         } 
     });
     bodyInintObserver.observe(document.querySelector('body'), {attributes: true});
 
     /* <LocomotiveScroll> */
-    function getSplitTexts(parrent){
-        var childSplitScroll = new SplitText(parrent + " .block-header", {
+    // function getSplitTexts(parrent){
+    //     var childSplitScroll = new SplitText(parrent + " .block-header", {
+    //         type: "lines,words",
+    //         wordsClass:"word word++",
+    //         linesClass: "split-child"
+    //     });
+    //     var parentSplitScroll = new SplitText(parrent + " .block-header", {
+    //         linesClass: "split-parent"
+    //     });
+    //     return [childSplitScroll,parentSplitScroll]
+    // }
+    function getSplitTextsForElem(elementClass){
+        var childSplitScroll = new SplitText(elementClass + ".block-header", {
             type: "lines,words",
             wordsClass:"word word++",
             linesClass: "split-child"
         });
-        var parentSplitScroll = new SplitText(parrent + " .block-header", {
+        var parentSplitScroll = new SplitText(elementClass + ".block-header", {
             linesClass: "split-parent"
         });
         return [childSplitScroll,parentSplitScroll]
     }
 
-    var timelinesForSectionHeaders = {};
+    // var timelinesForSectionHeaders = {};
 
-    function registerAnimationForSection(sectionClass){
-        var splitTexts = timelinesForSectionHeaders[sectionClass]['splitTexts'][0].lines;
-        var tl = timelinesForSectionHeaders[sectionClass]['timeLine'];
-        var headerClass = '.' + sectionClass +' .block-header';
+    // function registerAnimationForSection(sectionClass){
+    //     var splitTexts = timelinesForSectionHeaders[sectionClass]['splitTexts'][0].lines;
+    //     var tl = timelinesForSectionHeaders[sectionClass]['timeLine'];
+    //     var headerClass = '.' + sectionClass +' .block-header';
+    //     tl.from(splitTexts, splitTextparams)
+    //     .to(headerClass + ' .split-parent', {'overflow': 'visible'}, "-=0.7")
+    // }
+    
+    var timelinesForElements = {};
+
+    function registerAnimationForElement(elementFirstClass){
+        var splitTexts = timelinesForElements[elementFirstClass]['splitTexts'][0].lines;
+        var tl = timelinesForElements[elementFirstClass]['timeLine'];
+        var headerClass = '.' + elementFirstClass +'.block-header';
         tl.from(splitTexts, splitTextparams)
         .to(headerClass + ' .split-parent', {'overflow': 'visible'}, "-=0.7")
     }
 
     /* Проходимся по всем секциям, находя в них h2 и потом манипулируем данными */
-    document.querySelectorAll('section').forEach(function(section) {
-        var splitTexts = getSplitTexts('.' + section.classList[0]);
-        timelinesForSectionHeaders[section.classList[0]] = {
+    document.querySelectorAll('.block-header').forEach(function(elem) {
+        var splitTexts = getSplitTextsForElem('.' + elem.classList[0]);
+        timelinesForElements[elem.classList[0]] = {
             'timeLine': new TimelineLite({paused: true}),
             'splitTexts': splitTexts
         };
-        registerAnimationForSection(section.classList[0])
+        registerAnimationForElement(elem.classList[0])
     });
+
+    // document.querySelectorAll('section').forEach(function(section) {
+    //     var splitTexts = getSplitTexts('.' + section.classList[0]);
+    //     timelinesForSectionHeaders[section.classList[0]] = {
+    //         'timeLine': new TimelineLite({paused: true}),
+    //         'splitTexts': splitTexts
+    //     };
+    //     registerAnimationForSection(section.classList[0])
+    // });
 
     var scroll, sliderScroll;
     function animationInit() {
@@ -166,7 +195,7 @@ $(document).ready(function(){
             el: document.querySelector('body'),
             class: 'animated',
             reloadOnContextChange: true,
-            offset: ["30%",0]
+            offset: ["10%",0]
         });
         // sliderScroll = new LocomotiveScroll({
         //     el: document.querySelector('.sliders__wrapper'),
@@ -176,17 +205,34 @@ $(document).ready(function(){
 
         scroll.on('call', function (value, way, obj){
             var sectionClass = obj.el.closest('section').classList[0];
+            var elementClass = obj.el.classList[0];
             switch (value) {
                 case 'headerAnimation':
-                    timelinesForSectionHeaders[sectionClass]['timeLine'].play()
-                    // break;    
-                case 'fadeAnimation':
-                    var animationDelay = obj.el.closest('section').attributes['data-animation-timeout']
-                    animationDelay = animationDelay ? animationDelay.value : 1500;
+                    var animationDelay = obj.el.attributes['data-animation-timeout']
+                    animationDelay = animationDelay ? +animationDelay.value : 0;
+                    setTimeout(function(){
+                        // timelinesForSectionHeaders[sectionClass]['timeLine'].play()
+                        timelinesForElements[elementClass]['timeLine'].play()
+                    }, animationDelay);
+                    break;    
+                case 'fadeAnimationAll':
+                    var animationDelay = obj.el.attributes['data-animation-timeout']
+                    animationDelay = animationDelay ? +animationDelay.value : 1500;
                     setTimeout(function(){
                         $('.' + sectionClass + ' .fade').addClass('animated');
                     }, animationDelay);
                     break;
+                case 'fadesAnimations':
+                    var items = obj.el.querySelectorAll('.fade');
+                    var animationDelay = obj.el.attributes['data-animation-timeout']
+                    animationDelay = animationDelay ? +animationDelay.value : 1500;
+                    for(let i = 0; i < items.length; i++ ){
+                        let el = items[i];
+                        let t = setTimeout(function(){
+                            el.classList.add('animated');
+                        }, animationDelay*(i+1));
+                    }
+                break;
                 case 'imgAnimation':
                     var imgs = obj.el.closest('section').querySelectorAll('.roll-left');
                     var animationDelay = +obj.el.closest('section').attributes['data-animation-timeout'].value
@@ -196,6 +242,8 @@ $(document).ready(function(){
                             el.classList.add('animated');
                         }, animationDelay*(i+1));
                     }
+                break;
+
                 default:
                     break;
             }

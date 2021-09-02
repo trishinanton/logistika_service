@@ -25,6 +25,9 @@ button{
 .d-sm{
     display: none;
 }
+.d-lm{
+    display: none;
+}
 
 /* ANIMATIONS */
 .split-text > div {
@@ -59,9 +62,6 @@ button{
     }
 }
 
-.h2 {
-    --animated-opacity: 0;
-}
 
 .slick-active, .roll-left{
     clip-path: inset(0% 100% 0% 0%);
@@ -545,8 +545,13 @@ button{
     }
     &__name{
         position: relative;
-        
-    }
+        & .split-parent:first-of-type .word:last-child:after{
+            transition: opacity 1s 3s ease-in;
+        }
+        &:after{
+            transition: opacity 1s 3s ease-in;
+        }
+    }   
     
     &__content{
         display: flex;
@@ -800,9 +805,11 @@ button{
         font-size: 26px;
         line-height: 35px;
         color: #FFFFFF;
-        box-shadow: 0px 4px 13px #a5a5c5;
         position: relative;
         z-index: 2;
+        // &.animated{
+        //     box-shadow: 0px 4px 13px #a5a5c5;
+        // }
     }
     &-card{
         height: 497px;
@@ -975,6 +982,8 @@ button{
             position: absolute;
             left: -2px;
             z-index: 1;
+            // animation: var(--animation);
+            // animation: floating 2s infinite ease-out;
         }
         &:before{
             content: '';

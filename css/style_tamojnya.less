@@ -59,10 +59,6 @@ button{
     }
 }
 
-.h2 {
-    --animated-opacity: 0;
-}
-
 .slick-active, .roll-left{
     clip-path: inset(0% 100% 0% 0%);
     transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
@@ -532,7 +528,9 @@ button{
     }
     &__name{
         position: relative;
-        
+        &:after {
+            transition: opacity 1s 3s ease-in;
+        }
     }
     
     &__content{
@@ -692,7 +690,7 @@ button{
             &:before{
                 content: '';
                 position: absolute;
-                width: 42vw;
+                width: 20vw;
                 height: 136px;
                 top: -138px;
                 border: 6px dashed #2B2B51;
@@ -700,6 +698,8 @@ button{
                 border-right: none;
                 left: 87px;
                 z-index: -2;
+                opacity: 0;
+                transition: opacity 0.3s 1s ease-in;
             }
             &:after{
                 content: '';
@@ -710,6 +710,8 @@ button{
                 position: absolute;
                 left: 78px;
                 top: -12px;
+                opacity: 0;
+                transition: opacity 0.3s 1.1s ease-in;
             }
         }
         &-right{
@@ -719,7 +721,7 @@ button{
             &:before{
                 content: '';
                 position: absolute;
-                width: 42vw;
+                width: 20vw;
                 height: 136px;
                 top: -138px;
                 border: 6px dashed #2B2B51;
@@ -727,9 +729,8 @@ button{
                 border-left: none;
                 right: 88px;
                 z-index: -2;
-                // border-top-style: dashed;
-                // border-right-style: dashed;
-                // border-width: 5px;
+                opacity: 0;
+                transition: opacity 0.3s 1s ease-in;
             }
             &:after{
                 content: '';
@@ -740,7 +741,20 @@ button{
                 position: absolute;
                 right: 78px;
                 top: -12px;
-              
+                opacity: 0;
+                transition: opacity 0.3s 1.1s ease-in;
+            }
+        }
+        &.animated{
+            &.stages__description-left{
+                &:before,&:after{
+                    opacity: 1;
+                }
+            }
+            &.stages__description-right{
+                &:before,&:after{
+                    opacity: 1;
+                }
             }
         }
     }
@@ -907,7 +921,6 @@ button{
         font-size: 26px;
         line-height: 35px;
         color: #FFFFFF;
-        box-shadow: 0px 4px 13px #a5a5c5;
         position: relative;
         z-index: 2;
     }
@@ -917,6 +930,7 @@ button{
         width: 50%;
         position: relative;
         overflow: hidden;
+        box-shadow: 0px 4px 13px #a5a5c5;
         &::after{
             content: '';
             position: absolute;
