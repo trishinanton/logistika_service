@@ -25,57 +25,9 @@ button:hover {
 .d-sm {
   display: none;
 }
-/* ANIMATIONS */
-.split-text > div {
-  position: relative;
-  margin: 0;
+.d-m {
+  display: none;
 }
-.split-parent {
-  overflow: hidden;
-}
-.split-child {
-  display: inline-block;
-}
-.fade {
-  opacity: 0;
-  transition: all 1.3s ease-in-out;
-}
-.fade--top {
-  transform: translateY(-30px);
-}
-.fade--bottom {
-  transform: translateY(30px);
-}
-.fade--left {
-  transform: translateX(-30px);
-}
-.fade--rigth {
-  transform: translateX(30px);
-}
-.fade.animated {
-  transform: translate(0, 0);
-  opacity: 1;
-}
-.h2 {
-  --animated-opacity: 0;
-}
-.slick-active,
-.roll-left {
-  clip-path: inset(0% 100% 0% 0%);
-  transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
-}
-.slick-active.animated,
-.roll-left.animated {
-  clip-path: inset(0% 0% 0% 0%);
-}
-.roll-left__shadow:before {
-  clip-path: inset(100% 100% 0% 0%);
-  transition: clip-path 2s cubic-bezier(0.77, 0, 0.175, 1);
-}
-.roll-left__shadow.animated:before {
-  clip-path: inset(0% 0% 0% 0%);
-}
-/* END ANIMATIONS */
 .container {
   padding: 0 10%;
 }
@@ -120,8 +72,6 @@ button:hover {
   margin-top: 143px;
   background: #2B2B51;
   position: relative;
-  z-index: 1;
-  z-index: 10;
   color: white;
   display: flex;
   flex-direction: column;
@@ -152,7 +102,7 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   background: #2B2B51;
 }
@@ -446,11 +396,6 @@ button:hover {
   height: 62px;
   top: -22px;
   right: -65px;
-  opacity: 0;
-  transition: opacity 1s 1s ease-in-out;
-}
-.block-header.animated::after {
-  opacity: 1;
 }
 .body__header {
   background: white;
@@ -481,8 +426,9 @@ button:hover {
 /* Об услуге */
 .about {
   position: relative;
-  z-index: 1;
+  z-index: -1;
   background: #2B2B51;
+  padding: 92px 0px;
 }
 .about:after {
   content: '';
@@ -499,7 +445,6 @@ button:hover {
 }
 .about__name {
   position: relative;
-  margin-top: 102px;
 }
 .about__content {
   display: flex;
@@ -510,11 +455,9 @@ button:hover {
   flex-direction: column;
   align-items: flex-start;
   width: 50%;
-  height: 662px;
 }
 .about__purpose {
   line-height: 22px;
-  margin-right: 60px;
   margin-left: 4px;
   color: white;
 }
@@ -557,10 +500,10 @@ button:hover {
 .sliders .slider-about:before {
   content: '';
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 375px;
+  height: 321px;
   background: rgba(232, 232, 232, 0.13);
-  z-index: -1;
+  z-index: 1;
   bottom: 23px;
   left: 18px;
 }
@@ -580,36 +523,7 @@ button:hover {
 }
 .sliders__img {
   position: relative;
-  z-index: 0;
-  height: 100%;
-  width: 100%;
-  min-height: 309px;
-}
-.img-wrapper {
-  position: relative;
-  overflow: hidden;
-}
-.img-wrapper::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 99%;
-  top: 0;
-  left: 0;
-  background: linear-gradient(113.08deg, #5a5a8079, rgba(43, 43, 81, 0.23) 54.99%, rgba(43, 43, 81, 0.55) 110.07%);
-}
-.img-caption {
-  position: absolute;
-  transform: rotate(270deg);
-  transform-origin: right;
-  transform-origin: left;
-  top: 150px;
-  left: 18px;
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 14px;
-  z-index: 3;
-  color: rgba(255, 255, 255, 0.37);
+  z-index: 1;
 }
 .plus {
   padding-top: 101px;
@@ -772,7 +686,7 @@ button:hover {
 .stages__name {
   -webkit-text-stroke: 2px #2b2b51;
   font-size: 31px;
-  line-height: 50px;
+  line-height: 1.4em;
   margin-bottom: 68px;
 }
 .stages .block-header:after {
@@ -803,7 +717,7 @@ button:hover {
   padding: 0px 25px;
   line-height: 97px;
   margin-bottom: 50px;
-  margin-left: -55px;
+  transform: translateX(-41%);
 }
 .stages-card__description {
   font-weight: bold;
@@ -813,7 +727,7 @@ button:hover {
   width: 344px;
 }
 .stages-card .number-right {
-  transform: translateX(164px);
+  transform: translateX(41%);
 }
 .stages-card .description-right {
   padding-right: 89px;
@@ -838,7 +752,6 @@ button:hover {
   margin-right: 57px;
   position: relative;
   flex-direction: row-reverse;
-  justify-content: flex-end;
 }
 .stages-card:nth-child(even):after {
   content: '';
@@ -858,6 +771,9 @@ button:hover {
   padding-top: 92px;
   padding-bottom: 185px;
   z-index: 0;
+}
+.graph .d-s {
+  display: none;
 }
 .graph__europe {
   position: relative;
@@ -1078,6 +994,7 @@ button:hover {
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
+  margin-top: 20px;
   line-height: 1.3em;
   color: white;
   margin-left: 4px;
@@ -1104,7 +1021,8 @@ button:hover {
   padding-bottom: 20px;
 }
 .price .block-header:after {
-  top: 40px;
+  top: 11px;
+  right: -64px;
 }
 .price__description {
   font-family: 'Arial';
@@ -1322,7 +1240,6 @@ button:hover {
   padding-bottom: 70px;
 }
 .services__name {
-  margin-top: 100px;
   margin-bottom: 71px;
   font-size: 58px;
   -webkit-text-stroke: 2px #2B2B51;

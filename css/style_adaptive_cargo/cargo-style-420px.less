@@ -67,12 +67,16 @@
         &::after{
             display: none;
         }
-        .block-header>span{
+        .block-header{
+            font-size: 27px;
+          &>span{
             &:after{
                 top: -13px;
-                right: -108px;
+                right: -41px;
             }
+        }  
         }
+        
     }
     
     .menu{
@@ -206,13 +210,11 @@
                 &__item{
                     height: auto;
                     margin-right: 12px;
-                    margin-top: unset;
+                    margin-top: 28px;
                     width: 100%;
                     & img{
                         height: 100%;
                         width: 100%;  
-                        max-height: 207px;
-                        min-height: 207px;
                     }
                     &:before{
                         // max-height: 207px; 
@@ -271,7 +273,10 @@
 .event{
     &__description{
         font-size: 14px;
-        line-height: 26px;
+        line-height: 1.3em;
+    }
+    &__name{
+        font-size: 18px;
     }
 }
 
@@ -333,6 +338,9 @@
 }
 .graph{
     padding-top: 52px;
+    .d-s{
+        display: block;
+    }
     &__name{
         font-size: 30px;
     }
@@ -343,7 +351,8 @@
         }
     }
     #comparisonchart table td {
-        padding: 45px 109px 40px 20px;
+        padding: 45px 65px 40px 20px;
+        font-size: 16px;
     }
     &__europe, &__china, &__usa{
         &:after{
@@ -360,10 +369,11 @@
 .price{
     &__name{
         font-size: 20px;
+        line-height: 1.3em;
     }
     &__description{
         font-size: 14px;
-        line-height: 26px;
+        margin-top: 14px;
     }
 }
     /* Другие услуги компании */
@@ -371,13 +381,15 @@
         padding-bottom: 60px;
         &__name{
             font-size: 30px;
-            margin-top: 63px;
             margin-bottom: 24px;
         }
-        .block-header >span{
+        .block-header{
             &::after{
-                right: -124px;
-                top: -16px;
+                display: block;
+                right: 17px;
+                top: -17px;
+                width: 67px;
+                height: 36px;
             }
         }
         &__description{
@@ -449,6 +461,9 @@
                     &:after{
                         display: none;
                     }
+                }
+                .d-sm{
+                    display: block;
                 }
             }
             &__contact{

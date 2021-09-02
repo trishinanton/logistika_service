@@ -1,4 +1,10 @@
 @media screen and (max-width: 768px) {
+  .d-sm {
+    display: block;
+  }
+  .d-lm {
+    display: none;
+  }
   .grid {
     display: none;
   }
@@ -184,6 +190,9 @@
     right: -44px;
   }
   /* Плюсы перевозки */
+  .plus {
+    padding-bottom: 41px;
+  }
   .plus__name {
     font-size: 38px;
     line-height: 54px;
@@ -279,6 +288,9 @@
   .plus .fixed_cost:after {
     display: none;
   }
+  .stages {
+    padding-top: 0;
+  }
   .stages .block-header {
     font-size: 31px;
     line-height: 43px;
@@ -297,7 +309,7 @@
     display: block;
   }
   .stages-card {
-    width: 41vw;
+    width: 48%;
   }
   .stages-card:nth-child(odd) {
     margin-left: 0px;
@@ -310,9 +322,11 @@
     margin-bottom: 0;
     margin-left: 0;
     line-height: 99px;
+    transform: translateX(0);
   }
   .stages-card .number-right {
     margin-right: 0;
+    transform: translateX(0);
   }
   .stages-card:nth-child(even) {
     margin-right: 3px;
@@ -358,6 +372,9 @@
   #comparisonchart table td {
     padding: 45px 186px 40px 20px;
   }
+  .event__description {
+    font-size: 21px;
+  }
   /* Другие услуги компании */
   .services__name {
     margin-top: 63px;
@@ -398,6 +415,9 @@
   .consultation-form__description span:after {
     display: none;
   }
+  .consultation-form__description .d-sm {
+    display: none;
+  }
   .consultation .form-tamojnya {
     flex-direction: column;
   }
@@ -421,14 +441,14 @@
     font-size: 15px;
   }
 }
+.price .d-m {
+  display: block;
+}
 .price__name {
   line-height: 44px;
   font-size: 31px;
 }
-.price .block-header:after {
-  display: block;
-  top: -16px;
-  right: 114px;
-  width: 67px;
-  height: 36px;
+.price__description {
+  line-height: 1.3em;
+  margin-top: 17px;
 }
