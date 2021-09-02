@@ -58,6 +58,27 @@
   .header__menu {
     font-size: 16px;
   }
+  /* <Крестики для всех заголовков> */
+  .block-header {
+    margin-top: 9px;
+    line-height: 38px;
+    font-size: 34px;
+    -webkit-text-stroke-width: 1px;
+  }
+  .block-header .split-parent .word:last-child:after {
+    content: '';
+    position: absolute;
+    background-image: url(../../img/about/crosses_for_header.png);
+    background-size: cover;
+    z-index: 2;
+    width: 47px;
+    height: 26px;
+    top: -0.5em;
+    right: -0.85em;
+    opacity: 0;
+    transition: opacity 1s 1s ease-in;
+  }
+  /* <Крестики для всех заголовков/> */
   .main-screen {
     margin-top: 89px;
   }
@@ -67,9 +88,11 @@
   .main-screen .block-header {
     font-size: 25px;
   }
-  .main-screen .block-header > span:after {
-    top: -18px;
-    right: 51px;
+  .main-screen .block-header .word1 {
+    width: 100%;
+  }
+  .main-screen .block-header.animated .split-parent:first-of-type .word:last-child:after {
+    opacity: 1;
   }
   .menu {
     margin-right: 18px;
@@ -111,12 +134,15 @@
   }
   /* О компании */
   .about {
-    padding: 60px 0px 30px;
+    padding: 60px 0px 32%;
     overflow: unset;
   }
-  .about .block-header > span:after {
+  .about .block-header:after {
     top: -14px;
     right: -40px;
+  }
+  .about .block-header.animated .split-parent:first-of-type .word:last-child:after {
+    opacity: 1;
   }
   .about:after {
     width: 70px;
@@ -162,7 +188,7 @@
   }
   .about__sliders {
     width: 94%;
-    height: 340px;
+    height: 230px;
   }
   .about .sliders__wrapper {
     width: 100%;
@@ -187,12 +213,14 @@
   .about .sliders .slider-about__item {
     height: auto;
     margin-right: 12px;
-    margin-top: 28px;
+    margin-top: unset;
     width: 100%;
   }
   .about .sliders .slider-about__item img {
     height: 100%;
     width: 100%;
+    max-height: 207px;
+    min-height: 207px;
   }
   .about .sliders .slider-about__item:before {
     top: -10px;
@@ -202,7 +230,7 @@
   .about .sliders .slider-about:before {
     width: 100%;
     height: 207px;
-    bottom: 106px;
+    bottom: 0px;
     left: 8px;
   }
   .about .sliders .slider-about:after {
@@ -215,7 +243,7 @@
     margin-right: 10px;
   }
   .event {
-    margin-top: 0;
+    margin-top: 6.5vh;
   }
   .event__description {
     font-size: 16px;
@@ -226,38 +254,44 @@
   }
   .event__name {
     margin-bottom: 25px;
-    font-size: 23px;
+    font-size: 23px !important;
   }
-  .block-header {
-    margin-top: 9px;
-    line-height: 38px;
-    font-size: 34px;
-    -webkit-text-stroke-width: 1px;
+  .event__name .word:after {
+    display: none !important;
   }
-  .block-header:after {
-    display: none;
+  .enterns__name {
+    font-size: 22px;
   }
-  .block-header > span {
+  .enterns .block-header .split-parent:last-of-type .word:last-child:after {
+    content: none;
+  }
+  .enterns .block-header.animated .split-parent:first-of-type .word:last-child:after {
+    opacity: 1;
+  }
+  .enterns .block-header .split-parent:first-of-type .word:last-child {
     position: relative;
   }
-  .block-header > span:after {
+  .enterns .block-header .split-parent:first-of-type .word:last-child:after {
     content: '';
     position: absolute;
     background-image: url(../../img/about/crosses_for_header.png);
     background-size: cover;
     z-index: 2;
-    width: 67px;
-    height: 36px;
-    top: -11px;
-    right: -44px;
-  }
-  .enterns__name {
-    font-size: 23px;
+    width: 47px;
+    height: 26px;
+    top: -0.5em;
+    right: -0.85em;
+    opacity: 0;
+    transition: opacity 1s 1s ease-in-out;
   }
   .enterns-card__description {
     font-size: 14px;
     padding-left: 140px;
     padding-right: 3px;
+  }
+  .enterns__footer {
+    line-height: 22px;
+    font-size: 17px;
   }
   /* Другие услуги компании */
   .services {
@@ -268,9 +302,8 @@
     margin-top: 63px;
     margin-bottom: 24px;
   }
-  .services .block-header > span::after {
-    right: -124px;
-    top: -16px;
+  .services .block-header.animated .split-parent:first-of-type .word:last-child:after {
+    opacity: 1;
   }
   .services__description {
     flex-direction: column;
@@ -299,6 +332,9 @@
   .consultation__name {
     -webkit-text-stroke: 1px white;
     font-size: 25px !important;
+  }
+  .consultation .block-header.animated .split-parent:first-of-type .word:last-child:after {
+    opacity: 1;
   }
   .consultation-br {
     display: none;

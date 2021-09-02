@@ -58,18 +58,19 @@ $(document).ready(function(){
     });
     $(window).on("scroll", function () {
         var scrolled = $(this).scrollTop();
+        var header = $('.header');
         if( scrolled > 200 ) {
-            $('.header').addClass('header--scroll');
-            // $('.header').css('background','#2B2B51');
-            $('.header').css('box-shadow', '0px -16px 20px white');
-            $('.logo-image').addClass('logo-image__scroll');
-            $('.logo-name').addClass('logo-name__scroll');
+            header.addClass('header--scroll');
+            // header.css('background','#2B2B51');
+            header.css('box-shadow', '0px -16px 20px white');
+            header.find('.logo-image').addClass('logo-image__scroll');
+            header.find('.logo-name').addClass('logo-name__scroll');
         }   
         if( scrolled <= 100 ) {     
-            // $('.header').css('background','#2B2B51');
-            $('.header').css('box-shadow', 'none');
-            $('.logo-image').removeClass('logo-image__scroll');
-            $('.logo-name').removeClass('logo-name__scroll');
+            // header.css('background','#2B2B51');
+            header.css('box-shadow', 'none');
+            header.find('.logo-image').removeClass('logo-image__scroll');
+            header.find('.logo-name').removeClass('logo-name__scroll');
         }
     });
 
@@ -109,23 +110,136 @@ $(document).ready(function(){
     // Маска для поля с телефоном
     $("#form__phone").mask("+7(999) 999-99-99");
 
+    /* <Animations> */
+    const splitTextparams = {
+        duration: 1.5,
+        y: 100,
+        ease: Expo.easeInOut,
+        stagger: 0.3
+    }
+
+    // Запуск анимации LocomotiveScroll после прогрузки перлоадера
+    var bodyInintObserver = new MutationObserver(function (mutation) {
+        if(mutation[0].target.classList.contains('start-animate')){
+            dd('Старт')
+            animationInit();
+        } 
+    });
+    bodyInintObserver.observe(document.querySelector('body'), {attributes: true});
+
+    /* <LocomotiveScroll> */
+    function getSplitTexts(parrent){
+        var childSplitScroll = new SplitText(parrent + " .block-header", {
+            type: "lines,words",
+            wordsClass:"word word++",
+            linesClass: "split-child"
+        });
+        var parentSplitScroll = new SplitText(parrent + " .block-header", {
+            linesClass: "split-parent"
+        });
+        return [childSplitScroll,parentSplitScroll]
+    }
+
+    var timelinesForSectionHeaders = {};
+
+    function registerAnimationForSection(sectionClass){
+        var splitTexts = timelinesForSectionHeaders[sectionClass]['splitTexts'][0].lines;
+        var tl = timelinesForSectionHeaders[sectionClass]['timeLine'];
+        var headerClass = '.' + sectionClass +' .block-header';
+        tl.from(splitTexts, splitTextparams)
+        .to(headerClass + ' .split-parent', {'overflow': 'visible'}, "-=0.7")
+    }
+
+    /* Проходимся по всем секциям, находя в них h2 и потом манипулируем данными */
+    document.querySelectorAll('section').forEach(function(section) {
+        var splitTexts = getSplitTexts('.' + section.classList[0]);
+        timelinesForSectionHeaders[section.classList[0]] = {
+            'timeLine': new TimelineLite({paused: true}),
+            'splitTexts': splitTexts
+        };
+        registerAnimationForSection(section.classList[0])
+    });
+
+    var scroll, sliderScroll;
+    function animationInit() {
+        scroll = new LocomotiveScroll({
+            el: document.querySelector('body'),
+            class: 'animated',
+            reloadOnContextChange: true,
+            offset: ["30%",0]
+        });
+        // sliderScroll = new LocomotiveScroll({
+        //     el: document.querySelector('.sliders__wrapper'),
+        //     class: 'sliders-animated',
+        //     reloadOnContextChange: true,
+        // });
+
+        scroll.on('call', function (value, way, obj){
+            var sectionClass = obj.el.closest('section').classList[0];
+            switch (value) {
+                case 'headerAnimation':
+                    timelinesForSectionHeaders[sectionClass]['timeLine'].play()
+                    // break;    
+                case 'fadeAnimation':
+                    var animationDelay = obj.el.closest('section').attributes['data-animation-timeout']
+                    animationDelay = animationDelay ? animationDelay.value : 1500;
+                    setTimeout(function(){
+                        $('.' + sectionClass + ' .fade').addClass('animated');
+                    }, animationDelay);
+                    break;
+                case 'imgAnimation':
+                    var imgs = obj.el.closest('section').querySelectorAll('.roll-left');
+                    var animationDelay = +obj.el.closest('section').attributes['data-animation-timeout'].value
+                    for(let i = 0; i < imgs.length; i++ ){
+                        let el = imgs[i];
+                        let t = setTimeout(function(){
+                            el.classList.add('animated');
+                        }, animationDelay*(i+1));
+                    }
+                default:
+                    break;
+            }
+        });
+
+        // sliderScroll.on('call', function (value, way, obj){
+        //     switch (value) {
+        //         case 'imgAnimation':
+        //             scrollImgAnimate($('.about .slider-about__item'));
+        //         default:
+        //             break;
+        //     }
+        // });
+    }
+    // анимация переключения слайдов
+    // function scrollImgAnimate(imgWrapper){
+    //     var img = $(imgWrapper).find('.slick-active').addClass('animated');
+    //     setTimeout(function(){
+    //         img.addClass('animated--shadow');
+    //     }, 1000);
+    // }
+    /* <LocomotiveScroll/> */
+    /* </Animations> */
+    
     /* График и сроки доставки, движение грузовика */
 
- 
-  $(window).scroll(function() {
-      let scroll = $('#graph').offset().top 
-      let winScroll = $(window).scrollTop()
-      let right = winScroll-scroll;
-      let rightMediumScreen = right/2;
-      let rightLitleScreen = right/7;
-      let widthScreen = $(window).width();
-        if(widthScreen<=420 && widthScreen>375 && winScroll>=scroll) {
-            $('.graph__truck').css({'right':rightMediumScreen})
-        } else if(widthScreen<=375 && winScroll>=scroll){
-            $('.graph__truck').css({'right':rightLitleScreen})
-        }else if (winScroll>=scroll) $('.graph__truck').css({'right':rightMediumScreen})
-        
-        
-  });
+    // $(window).scroll(function() {
+    //     let scroll = $('#graph').offset().top 
+    //     let winScroll = $(window).scrollTop()
+    //     let right = winScroll-scroll;
+    //     let rightMediumScreen = right/2;
+    //     let rightLitleScreen = right/7;
+    //     let widthScreen = $(window).width();
+    //     if(widthScreen<=420 && widthScreen>375 && winScroll>=scroll) {
+    //         $('.graph__truck').css({'right':rightMediumScreen})
+    //     } else if(widthScreen<=375 && winScroll>=scroll){
+    //         $('.graph__truck').css({'right':rightLitleScreen})
+    //     }else if (winScroll>=scroll) $('.graph__truck').css({'right':rightMediumScreen})
+    // });
+
+  /* для отладки */
+    function dd(obj) {
+        window.t = obj;
+        console.log(window.t);   
+    }
 });
 

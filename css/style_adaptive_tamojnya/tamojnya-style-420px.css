@@ -57,11 +57,36 @@
   .header__menu {
     font-size: 16px;
   }
+  /* <Крестики для всех заголовков> */
+  .block-header {
+    margin-top: 9px;
+    line-height: 38px;
+    font-size: 34px;
+    -webkit-text-stroke-width: 1px;
+  }
+  .block-header .split-parent .word:last-child:after {
+    content: '';
+    position: absolute;
+    background-image: url(../../img/about/crosses_for_header.png);
+    background-size: cover;
+    z-index: 2;
+    width: 47px;
+    height: 26px;
+    top: -0.5em;
+    right: -0.85em;
+    opacity: 0;
+    transition: opacity 1s 1s ease-in;
+  }
+  /* <Крестики для всех заголовков/> */
+  /* Первый экран  */
   .main-screen {
     margin-top: 89px;
   }
   .main-screen::after {
     display: none;
+  }
+  .main-screen .block-header.animated .split-parent:first-of-type .word:first-child:after {
+    opacity: 1;
   }
   .menu {
     margin-right: 18px;
@@ -106,9 +131,8 @@
     padding: 60px 0px 30px;
     overflow: unset;
   }
-  .about .block-header > span:after {
-    top: -14px;
-    right: -40px;
+  .about .block-header.animated .split-parent:first-of-type .word:last-child:after {
+    opacity: 1;
   }
   .about:after {
     width: 70px;
@@ -179,12 +203,14 @@
   .about .sliders .slider-about__item {
     height: auto;
     margin-right: 12px;
-    margin-top: 28px;
+    margin-top: unset;
     width: 100%;
   }
   .about .sliders .slider-about__item img {
     height: 100%;
     width: 100%;
+    max-height: 207px;
+    min-height: 207px;
   }
   .about .sliders .slider-about__item:before {
     top: -10px;
@@ -206,29 +232,6 @@
   .about .sliders-button {
     margin-right: 10px;
   }
-  .block-header {
-    margin-top: 9px;
-    line-height: 38px;
-    font-size: 34px;
-    -webkit-text-stroke-width: 1px;
-  }
-  .block-header:after {
-    display: none;
-  }
-  .block-header > span {
-    position: relative;
-  }
-  .block-header > span:after {
-    content: '';
-    position: absolute;
-    background-image: url(../../img/about/crosses_for_header.png);
-    background-size: cover;
-    z-index: 2;
-    width: 67px;
-    height: 36px;
-    top: -11px;
-    right: -44px;
-  }
   /* Этапы таможенного офрмления */
   .stages {
     padding: 50px 0 60px;
@@ -238,9 +241,8 @@
     line-height: 34px;
     margin-bottom: 0;
   }
-  .stages .block-header > span:after {
-    top: 18px;
-    right: -68px;
+  .stages .block-header.animated .split-parent:nth-of-type(2) .word:first-child:after {
+    opacity: 1;
   }
   .stages__description {
     width: 100%;
@@ -298,9 +300,9 @@
     background-color: rgba(43, 43, 81, 0.2);
   }
   .stages-footer__description {
-    font-size: 15px;
+    font-size: 17px;
     margin-left: 4px;
-    line-height: 20px;
+    line-height: 22px;
   }
   .stages-footer__description strong {
     font-size: 16px;
@@ -314,9 +316,8 @@
     margin-top: 63px;
     margin-bottom: 24px;
   }
-  .services .block-header > span::after {
-    right: -124px;
-    top: -16px;
+  .services .block-header.animated .split-parent:first-of-type .word:last-child:after {
+    opacity: 1;
   }
   .services__description {
     flex-direction: column;
@@ -349,9 +350,8 @@
   .consultation-br {
     display: none;
   }
-  .consultation .block-header > span:after {
-    right: -90px;
-    top: -17px;
+  .consultation .block-header.animated .split-parent:first-of-type .word:last-child:after {
+    opacity: 1;
   }
   .consultation-form {
     background-color: transparent;

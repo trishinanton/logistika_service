@@ -58,18 +58,19 @@ $(document).ready(function(){
     });
     $(window).on("scroll", function () {
         var scrolled = $(this).scrollTop();
+        var header = $('.header');
         if( scrolled > 200 ) {
-            $('.header').addClass('header--scroll');
-            // $('.header').css('background','#2B2B51');
-            $('.header').css('box-shadow', '0px -16px 20px white');
-            $('.logo-image').addClass('logo-image__scroll');
-            $('.logo-name').addClass('logo-name__scroll');
+            header.addClass('header--scroll');
+            // header.css('background','#2B2B51');
+            header.css('box-shadow', '0px -16px 20px white');
+            header.find('.logo-image').addClass('logo-image__scroll');
+            header.find('.logo-name').addClass('logo-name__scroll');
         }   
         if( scrolled <= 100 ) {     
-            // $('.header').css('background','#2B2B51');
-            $('.header').css('box-shadow', 'none');
-            $('.logo-image').removeClass('logo-image__scroll');
-            $('.logo-name').removeClass('logo-name__scroll');
+            // header.css('background','#2B2B51');
+            header.css('box-shadow', 'none');
+            header.find('.logo-image').removeClass('logo-image__scroll');
+            header.find('.logo-name').removeClass('logo-name__scroll');
         }
     });
     /* Блок с другими услугами компании */
@@ -86,4 +87,6 @@ $(document).ready(function(){
     });
     // Маска для поля с телефоном
     $("#form__phone").mask("+7(999) 999-99-99");
+
+    
 })
