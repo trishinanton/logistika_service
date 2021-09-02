@@ -81,14 +81,14 @@ document.addEventListener('DOMContentLoaded', function () {
             this.tlBeforeLoad
             
             /* Просто закомменти этот блок чтоб прелоадер не мешал*/
-            .to(this.dom.loader, this.vars.ease, {
-                xPercent: this.number / this.random,
-                ease: Expo.easeInOut
-            })
-            .to(this.dom.loader, (this.vars.random * 2), {
-                xPercent: this.number,
-                ease: Expo.easeInOut
-            })
+            // .to(this.dom.loader, this.vars.ease, {
+            //     xPercent: this.number / this.random,
+            //     ease: Expo.easeInOut
+            // })
+            // .to(this.dom.loader, (this.vars.random * 2), {
+            //     xPercent: this.number,
+            //     ease: Expo.easeInOut
+            // })
             // .to(this.dom.loader, this.vars.ease, {
             //     xPercent: 60,
             //     delay: this.vars.random,
@@ -124,11 +124,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     window.onload = () => {
+        console.log('onload')
         document.querySelector('body').classList.add('onload');
     }
 
     var bodyInintObserver = new MutationObserver(function (mutation) {
+        console.log('Mutation')
         if(mutation[0].target.classList.contains('onload') && mutation[0].target.classList.contains('init')){
+            console.log('lastStep')
             lastStep();
             bodyInintObserver.disconnect();
         } 

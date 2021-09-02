@@ -733,11 +733,9 @@ button:hover {
   -webkit-text-stroke: 2px #FFFFFF;
   position: relative;
   display: inline-block;
-  --animated-opacity: 0;
 }
 .block-header::after {
   content: '';
-  opacity: var(--animated-opacity);
   position: absolute;
   background-image: url(../img/about/crosses_for_header.png);
   background-size: cover;
@@ -746,6 +744,11 @@ button:hover {
   height: 62px;
   top: -22px;
   right: -58px;
+  opacity: 0;
+  transition: opacity 1s 1s ease-in-out;
+}
+.block-header.animated::after {
+  opacity: 1;
 }
 @media screen and (max-width: 1280px) {
   .about__name {

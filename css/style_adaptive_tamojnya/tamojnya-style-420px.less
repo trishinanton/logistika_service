@@ -62,13 +62,52 @@
             font-size: 16px;
         }
     }
+    /* <Крестики для всех заголовков> */
+    .block-header{
+        margin-top: 9px;
+        line-height: 38px;
+        font-size: 34px;
+        -webkit-text-stroke-width: 1px;
+        & .split-parent{
+            & .word:last-child{
+                &:after{
+                    content: '';
+                    position: absolute;
+                    background-image: url(../../img/about/crosses_for_header.png);
+                    background-size: cover;
+                    z-index: 2;
+                    width: 47px;
+                    height: 26px;
+                    top: -0.5em;
+                    right: -0.85em;
+                    opacity: 0;
+                    transition: opacity 1s 1s ease-in;
+                }
+            }
+        }
+    } 
+    /* <Крестики для всех заголовков/> */
+
+
+    /* Первый экран  */
     .main-screen{
         margin-top: 89px;
         &::after{
             display: none;
         }
+        .block-header{
+            //first line and first word
+            &.animated{
+                & .split-parent:first-of-type{
+                    & .word:first-child{
+                        &:after{
+                            opacity: 1;
+                        }  
+                    }
+                } 
+            }
+        }
     }
-    
     .menu{
         margin-right: 18px;
         margin-left: 11px;
@@ -113,19 +152,22 @@
             }
         }
     }
-        /* О компании */
+
+    /* О компании */
     .about{
         padding: 60px 0px 30px;
         overflow: unset;
-        &:before{
-            
-        }
-       
-       .block-header>span{
-           &:after{
-            top: -14px;
-            right: -40px;
-           }
+        .block-header{
+            //first line and first word
+            &.animated{
+                & .split-parent:first-of-type{
+                    & .word:last-child{
+                        &:after{
+                            opacity: 1;
+                        }  
+                    }
+                } 
+            }
         }
         &:after{
             width: 70px;
@@ -200,11 +242,13 @@
                 &__item{
                     height: auto;
                     margin-right: 12px;
-                    margin-top: 28px;
+                    margin-top: unset;
                     width: 100%;
                     & img{
                         height: 100%;
-                        width: 100%;  
+                        width: 100%; 
+                        max-height: 207px;
+                        min-height: 207px; 
                     }
                     &:before{
                         // max-height: 207px; 
@@ -237,30 +281,6 @@
         
     }
 
-    .block-header{
-        margin-top: 9px;
-        line-height: 38px;
-        font-size: 34px;
-        -webkit-text-stroke-width: 1px;
-        &:after{
-            display: none;
-        }
-        &>span{
-            position: relative;
-            &:after{
-                content: '';
-                position: absolute;
-                background-image: url(../../img/about/crosses_for_header.png);
-                background-size: cover;
-                z-index: 2;
-                width: 67px;
-                height: 36px;
-                top: -11px;
-                right: -44px;
-            }  
-        }
-    } 
-
     /* Этапы таможенного офрмления */
     .stages{
         padding: 50px 0 60px;
@@ -269,10 +289,16 @@
             line-height: 34px;
             margin-bottom: 0;
         }
-        .block-header>span{
-            &:after{
-                top: 18px;
-                right: -68px;
+        .block-header{
+            //second line and first word
+            &.animated{
+                & .split-parent:nth-of-type(2){
+                    & .word:first-child{
+                        &:after{
+                            opacity: 1;
+                        }  
+                    }
+                } 
             }
         }
         &__description{
@@ -333,9 +359,9 @@
         }
         &-footer{
             &__description{
-                font-size: 15px;
+                font-size: 17px;
                 margin-left: 4px;
-                line-height: 20px;
+                line-height: 22px;
                 & strong{
                     font-size: 16px;
                 }
@@ -350,10 +376,16 @@
             margin-top: 63px;
             margin-bottom: 24px;
         }
-        .block-header >span{
-            &::after{
-                right: -124px;
-                top: -16px;
+        .block-header{
+	        //first line and last word
+            &.animated{
+                & .split-parent:first-of-type{
+                    & .word:last-child{
+                        &:after{
+                            opacity: 1;
+                        }  
+                    }
+                } 
             }
         }
         &__description{
@@ -391,10 +423,16 @@
         &-br{
             display: none;
         }
-        .block-header>span{
-            &:after{
-                right: -90px;
-                top: -17px;
+        .block-header{
+	        //first line and last word
+            &.animated{
+                & .split-parent:first-of-type{
+                    & .word:last-child{
+                        &:after{
+                            opacity: 1;
+                        }  
+                    }
+                } 
             }
         }
         &-form{

@@ -48,7 +48,6 @@ button{
   display: inline-block;
 }
 
-// .animated
 .fade{
     opacity: 0;
     transition: all 1.3s ease-in-out;
@@ -77,7 +76,6 @@ button{
 .slick-active, .roll-left{
     clip-path: inset(0% 100% 0% 0%);
     transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
-
 }
 .slick-active.animated, .roll-left.animated{
     clip-path: inset(0% 0% 0% 0%);
@@ -679,37 +677,10 @@ button{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        // &-img{
-        //     position: relative;
-        //     margin-top: 36px;
-        //     margin-right: 20px;
-        //     &:before{
-        //         content: '';
-        //         position: absolute;
-        //         width: 483px;
-        //         height: 321px;
-        //         background: rgba(232, 232, 232, 0.13);
-        //         z-index: 1;
-        //         bottom: 18px;
-        //         left: 18px;
-        //     }
-        //     &:after{
-        //         content: '';
-        //         position: absolute;
-        //         background-image: url(../img/about/crosses.png);
-        //         background-size: cover;
-        //         z-index: 2;
-        //         width: 110px;
-        //         height: 62px;
-        //         bottom: -26px;
-        //         left: -57px;
-        //     }
-        // }
     }
     .img{
         &-wrapper{
             position: relative;
-            // z-index: 1;
             overflow: hidden;
         }
         &-wrapper::after{
@@ -831,10 +802,8 @@ button{
     -webkit-text-stroke: 2px #FFFFFF;
     position: relative;
     display: inline-block;
-    --animated-opacity: 0;
     &::after{
         content: '';
-        opacity: var(--animated-opacity);
         position: absolute;
         background-image: url(../img/about/crosses_for_header.png);
         background-size: cover;
@@ -843,10 +812,12 @@ button{
         height: 62px;
         top: -22px;
         right: -58px;
+        opacity: 0;
+        transition: opacity 1s 1s ease-in-out;
     }
-    .block-header.animated{
+    &.animated{
         &::after{
-            
+            opacity: 1;
         }
     }
 

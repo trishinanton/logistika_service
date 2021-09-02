@@ -25,6 +25,63 @@ button{
 .d-sm{
     display: none;
 }
+
+/* ANIMATIONS */
+.split-text > div {
+  position: relative;
+  margin: 0;
+}
+.split-parent {
+  overflow: hidden;
+}
+.split-child {
+  display: inline-block;
+}
+
+.fade{
+    opacity: 0;
+    transition: all 1.3s ease-in-out;
+    &--top{
+        transform: translateY(-30px);
+    }
+    &--bottom{
+        transform: translateY(30px);
+    }
+    &--left{
+        transform: translateX(-30px);
+    }
+    &--rigth{
+        transform: translateX(30px);
+    }
+    &.animated{
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+.h2 {
+    --animated-opacity: 0;
+}
+
+.slick-active, .roll-left{
+    clip-path: inset(0% 100% 0% 0%);
+    transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.slick-active.animated, .roll-left.animated{
+    clip-path: inset(0% 0% 0% 0%);
+}
+.roll-left__shadow:before{
+    clip-path: inset(100% 100% 0% 0%);
+    transition: clip-path 2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.roll-left__shadow.animated:before{
+    clip-path: inset(0% 0% 0% 0%);
+}
+// .slick-active.animated--shadow{
+//     clip-path: inset(-10% -10% 0% 0%);
+// }
+/* END ANIMATIONS */
+
 .container{
     padding: 0 10%;
     &-fluid{
@@ -412,7 +469,13 @@ button{
         height: 62px;
         top: -22px;
         right: -65px;
-
+        opacity: 0;
+        transition: opacity 1s 1s ease-in-out;
+    }
+    &.animated{
+        &::after{
+            opacity: 1;
+        }
     }
 }
 
@@ -529,10 +592,10 @@ button{
         &:before{
             content: '';
             position: absolute;
-            width: 483px;
-            height: 321px;
+            width: 100%;
+            height: 100%;
             background: rgba(232, 232, 232, 0.13);
-            z-index: 1;
+            z-index: -1;
             bottom: 23px;
             left: 18px;
         }
@@ -554,11 +617,42 @@ button{
     }
     &__img{
         position: relative;
-        z-index: 1;
+        z-index: 0;
+        height: 100%;
+        width: 100%;
+        min-height: 309px;
         
     }
 }
+.img{
+    &-wrapper{
+        position: relative;
+        overflow: hidden;
+    }
+    &-wrapper::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 99%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(113.08deg, #5a5a8079, rgb(43 43 81 / 23%) 54.99%, rgb(43 43 81 / 55%) 110.07%);
+    }
+    &-caption{
+        position: absolute;
+        transform: rotate(270deg);
+        transform-origin: right;
+        transform-origin: left;
+        top: 150px;
+        left: 18px;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 14px;
+        z-index: 3;
+        color: rgba(255, 255, 255, 0.37);
+    }
 
+}
 
 /* Этапы таможенного оформления */
 

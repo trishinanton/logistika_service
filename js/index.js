@@ -205,14 +205,6 @@ $(document).ready(function(){
         return Math.random() * (max - min) + min;
     }
 
-    // .cooperation
-    // --float-before: rotate(-45deg);
-    // --float-after: rotate(-45deg);
-    
-    // .cooperation:after
-    // transform: var(--float-before);
-    // transform: var(--float-after);
-    // transform: attr(data-attr);
     function moving (section, pseudo, speed) {
         var deviation = pseudo == 'after' ? 30 : 0;
         var customCSSRule = '--float-' + pseudo;	
@@ -278,7 +270,7 @@ $(document).ready(function(){
                 })
             }, 1500);
         }
-        // Start MainScreen Animation and LocomotiveScroll init
+        // Запуск анимации MainScreen и LocomotiveScroll после прогрузки перлоадера
         var bodyInintObserver = new MutationObserver(function (mutation) {
             if(mutation[0].target.classList.contains('start-animate')){
                 mainScreenLoad();
@@ -288,7 +280,7 @@ $(document).ready(function(){
         bodyInintObserver.observe(document.querySelector('body'), {attributes: true});
         
         
-        /* LocomotiveScroll*/
+        /* <LocomotiveScroll> */
         function getSplitTexts(parrent){
             var childSplitScroll = new SplitText(parrent + " h2", {
                 type: "lines",
@@ -300,7 +292,6 @@ $(document).ready(function(){
             return [childSplitScroll,parentSplitScroll]
         }
 
-        // var sectionsClasses = [];
         var timelinesForSectionHeaders = {};
 
         function registerAnimationForSection(sectionClass){
@@ -309,7 +300,6 @@ $(document).ready(function(){
             var headerClass = '.' + sectionClass +' .block-header';
             tl.from(splitTexts, splitTextparams)
             .to(headerClass + ' .split-parent', {'overflow': 'visible'}, "-=0.7")
-            .to(headerClass, {'--animated-opacity': 1});
         }
 
         /* Проходимся по всем секциям, находя в них h2 и потом манипулируем данными */
@@ -322,7 +312,7 @@ $(document).ready(function(){
             registerAnimationForSection(section.classList[0])
         });
 
-        var scroll,sliderScroll;
+        var scroll, sliderScroll;
         function animationInit() {
             scroll = new LocomotiveScroll({
                 el: document.querySelector('body'),
@@ -373,7 +363,6 @@ $(document).ready(function(){
             });
         }
 
-
         // анимация переключения слайдов
         function scrollSliderAnimate(slider){
             var prevSlider = slider.find('.animated')
@@ -386,6 +375,7 @@ $(document).ready(function(){
                 activeSlider.addClass('animated--shadow');
             }, 1000);
         }
+        /* <LocomotiveScroll/> */
 
         $('.slick-slider').on('afterChange', function () {
             scrollSliderAnimate($(this));

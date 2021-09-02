@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Услуга - Таможенное оформление | SK Group Trans 2021</title>
     <link rel="icon" href="./img/favicon/favicon-120x120.png" type="image/x-icon">
-    <!-- Скрипты анимаций и прелоадера. Надо ли их вначале грузить -->
-    <script src='./js/TweenMax.min.js'></script>
-    <script src='./js/build-and-preloader.js'></script>
     <!-- Стили -->
     <link rel="stylesheet" href="./css/style_tamojnya.css">
     <link rel="stylesheet" href="./css/style_adaptive_tamojnya/tamojnya-style-1024px.css">
@@ -153,7 +150,7 @@
             <div class="container">
                 <div class="body__bread"><span class="body__bread-main"><a href="/">Главная /</a></span> Таможенное
                     оформление</div>
-                <h1 class="body__name block-header"><span>Таможенное оформление</span>
+                <h1 class="body__name block-header" data-scroll data-scroll-call="headerAnimation">Таможенное оформление
             </div>
         </div>
         </div>
@@ -177,7 +174,8 @@
 
             <div class="about__content">
                 <div class="about__description">
-                    <h2 class="about__name block-header"><span>Об услуге</span></h2>
+                    <h2 class="about__name block-header" data-scroll data-scroll-call="headerAnimation">Об
+                        услуге</h2>
                     <div class="about__purpose">
                         <p>
                             <strong>Таможенное оформление грузов</strong> — услуга, актуальная для всех, кто занимается
@@ -188,8 +186,10 @@
                             риски и позволяет ускорить процесс получения клиентом товара без таможенного обременения.
                         </p>
                         <p>
-                            SK Group Trans выполняет таможенное оформление «под ключ»,<br class="d-lm"> помогая сохранить время и деньги.
-                            Мы возьмем на себя вашу<br class="d-lm"> поставку от логистики до таможенной очистки или подключимся на
+                            SK Group Trans выполняет таможенное оформление «под ключ»,<br class="d-lm"> помогая
+                            сохранить время и деньги.
+                            Мы возьмем на себя вашу<br class="d-lm"> поставку от логистики до таможенной очистки или
+                            подключимся на
                             нужном этапе.
                         </p>
 
@@ -198,8 +198,14 @@
                 </div>
                 <div class="sliders__wrapper">
                     <div class="about__sliders sliders">
-                        <div class="slider-about">
-                            <img src="./img/index-tamojnya/about/about.png" alt="slide" class="sliders__img">
+                        <div class="slider-about roll-left__shadow" data-scroll>
+                            <div class="slider-about__item roll-left" data-scroll>
+                                <div class="img-wrapper img-wrapper--blue">
+                                    <div class="img-caption">SK Group Trans</div>
+                                    <img src="./img/services/registration-clear.jpg" alt="таможенное оформление"
+                                        class="sliders__img">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -224,7 +230,9 @@
         </div>
         <div class="container">
             <div class="stages__wrapper">
-                <h2 class="stages__name block-header services-header"><span>Этапы таможенного оформления</span></h2>
+                <h2 class="stages__name block-header services-header" data-scroll data-scroll-call="headerAnimation">
+                    Этапы таможенного оформления
+                </h2>
                 <div class="stages__description-wrapper">
 
                     <div class="stages__description stages__description-left">
@@ -323,10 +331,12 @@
             <div class="grid__block-white"></div>
         </div>
         <div class="container">
-            <div class="stages-footer__description"><strong>Выбирая</strong> таможенное оформление с <strong>SK Group
+            <div class="stages-footer__description"><strong>Выбирая</strong> таможенное оформление <br class="d-sm"> с
+                <strong>SK Group
                     Trans</strong> Вы получите внимательный подход наших специалистов к Вашему грузу и полный комплекс
                 услуг от выбора схемы доставки до организации перевозки, консультации в вопросах ВЭД, помощи в получении
-                всех необходимых документов и успешного выпуска товара в свободное обращение.</div>
+                всех необходимых документов и успешного выпуска товара в свободное обращение.
+            </div>
         </div>
 
     </section>
@@ -345,7 +355,8 @@
             <div class="grid__block-black"></div>
         </div>
         <div class="container">
-            <h2 class="services__name block-header"><span>Другие услуги компании</span></h2>
+            <h2 class="services__name block-header" data-scroll data-scroll-call="headerAnimation">Другие услуги
+                компании</h2>
             <div class="services__description">
 
                 <div class="services-card services-card__service">
@@ -376,11 +387,15 @@
             <div class="grid__block-white"></div>
         </div>
         <div class="container">
-            <h2 class="consultation__name block-header"><span>Индивидуальная консультация</span></h2>
+            <h2 class="consultation__name block-header" data-scroll data-scroll-call="headerAnimation">
+                Индивидуальная консультация
+            </h2>
             <div class="consultation-form">
-                <p class="consultation-form__description">Бесплатно рассчитать стоимость доставки и<br class="d-sm"> возможного выкупа
+                <p class="consultation-form__description">Бесплатно рассчитать стоимость доставки и<br class="d-sm">
+                    возможного выкупа
                     товара.<br class="d-sm">
-                    Отправляйте заявки на почту или задавайте<br class="d-sm"> вопросы с <span>помощью мессенджера</span>.</p>
+                    Отправляйте заявки на почту или задавайте<br class="d-sm"> вопросы с <span>помощью
+                        мессенджера</span>.</p>
                 <form action="send.php" method="POST" class="form-tamojnya">
                     <div class="form-tamojnya__wrapper">
                         <div class="consultation-form__contact">
@@ -442,7 +457,14 @@
     <script src='./js/jquery/jquery.js'></script>
     <script src='./js/jquery/jquery.nicescroll.min.js'></script>
     <script src='./js/jquery.maskedinput.min.js'></script>
-    <script type="text/javascript" src="./js/slick-slider/slick-slider.js"></script>
+    <script src="./js/slick-slider/slick-slider.js"></script>
+    <!-- Скрипты анимаций и прелоадера -->
+    <script src="./js/gsap.min.js"></script>
+    <script src="./js/Split3.min.js"></script>
+    <!-- <Locomotive Scroll> -->
+    <script src="./js/locomotive-scroll.min.js"></script>
+    <!-- </Locomotive Scroll> -->
+    <script src='./js/build-and-preloader.js'></script>
     <script src="./js/index-for-services.js"></script>
 </body>
 
