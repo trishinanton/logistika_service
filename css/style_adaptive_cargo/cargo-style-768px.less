@@ -1,4 +1,10 @@
 @media screen and (max-width: 768px){
+    .d-sm{
+        display: block;
+    }
+    .d-lm{
+        display: none;
+    }
     .grid{
         display: none;
         &-adaptive{
@@ -213,6 +219,7 @@
 
    /* Плюсы перевозки */
    .plus{
+    padding-bottom: 41px;
        &__name{
         font-size: 38px;
         line-height: 54px;
@@ -326,6 +333,7 @@
 
 //    Этапы работы
    .stages{
+       padding-top: 0;
        .block-header{
         font-size: 31px;
         line-height: 43px;
@@ -344,7 +352,7 @@
            display: block;
        }
        &-card{
-            width: 41vw;
+        width: 48%;
            &:nth-child(odd){
                margin-left: 0px;
                margin-bottom: 10px;
@@ -356,9 +364,11 @@
                margin-bottom: 0;
                margin-left: 0;
                line-height: 99px;
+               transform: translateX(0);
            }
            .number-right{
                margin-right: 0;
+               transform: translateX(0);
            }
            &:nth-child(even){
                 margin-right: 3px;
@@ -416,7 +426,9 @@
         }
      
    }
-   
+   .event__description{
+    font-size: 21px;
+   }
     /* Другие услуги компании */
     .services{
         &__name{
@@ -461,6 +473,9 @@
                 & span:after{
                     display: none;
                 }
+                .d-sm{
+                    display: none;
+                }
             }
         }
         .form{
@@ -496,17 +511,24 @@
 
 // Цена транспортирвки
 .price{
+    .d-m{
+        display: block;
+    }
     &__name{
         line-height: 44px;
         font-size: 31px;
     }
     .block-header{
         &:after{
-            display: block;
-            top: -16px;
-            right: 114px;        
-            width: 67px;
-             height: 36px;
+            // display: block;
+            // top: -16px;
+            // right: -19px;        
+            // width: 67px;
+            //  height: 36px;
         }
+    }
+    &__description{
+        line-height: 1.3em;
+        margin-top: 17px;
     }
 }

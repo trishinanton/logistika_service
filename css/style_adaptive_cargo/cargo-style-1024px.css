@@ -9,10 +9,10 @@
     width: 390px;
   }
   .logo-image {
-    width: 155px;
+    width: 113px;
   }
   .logo-name {
-    font-size: 18px;
+    font-size: 14px;
   }
   .header__number {
     font-size: 20px;
@@ -25,6 +25,7 @@
   }
   .main-screen {
     background-position: 39% 50%;
+    margin-top: 130px;
   }
   .advantage__name-size {
     width: 165px;
@@ -40,7 +41,7 @@
     right: -59px;
   }
   .about__purpose > p {
-    font-size: 15px;
+    font-size: 12px;
   }
   .sliders .slider-about {
     width: 400px;
@@ -79,7 +80,7 @@
     font-size: 27px;
   }
   .stages .block-header:after {
-    top: -23px;
+    top: -32px;
     right: 290px;
   }
   .stages-card__number {
@@ -118,7 +119,7 @@
   }
   .graph__truck {
     width: 436px;
-    height: 139px;
+    height: 121px;
   }
   /* Цена транспортировки */
   .price__name {
@@ -126,8 +127,8 @@
     font-size: 42px;
   }
   .price .block-header:after {
-    top: -29px;
-    right: 160px;
+    top: 15px;
+    right: -60px;
   }
   /* Индивидуальная консультация */
   .consultation {
@@ -183,6 +184,9 @@
   }
   .consultation .form__whats:after {
     display: none;
+  }
+  .services {
+    padding-top: 52px;
   }
   .footer-logo__name {
     font-size: 16px;

@@ -267,9 +267,13 @@
   .graph__usa-desc {
     padding-right: 45px;
   }
+  .event__name {
+    margin-top: 20px;
+  }
   /* Цена транспортировки */
   .price {
     padding-top: 43px;
+    padding-bottom: 70px;
   }
   .price__name {
     line-height: 24px;
@@ -280,12 +284,6 @@
     right: 4px;
   }
   /* Другие услуги компании */
-  .services {
-    height: 1136px;
-  }
-  .services__name {
-    margin-top: 63px;
-  }
   .services .block-header > span::after {
     right: -125px;
     top: -13px;

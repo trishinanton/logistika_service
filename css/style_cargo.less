@@ -25,64 +25,9 @@ button{
 .d-sm{
     display: none;
 }
-
-/* ANIMATIONS */
-.split-text > div {
-  position: relative;
-  margin: 0;
+.d-m{
+    display: none;
 }
-.split-parent {
-  overflow: hidden;
-}
-.split-child {
-  display: inline-block;
-}
-
-.fade{
-    opacity: 0;
-    transition: all 1.3s ease-in-out;
-    &--top{
-        transform: translateY(-30px);
-    }
-    &--bottom{
-        transform: translateY(30px);
-    }
-    &--left{
-        transform: translateX(-30px);
-    }
-    &--rigth{
-        transform: translateX(30px);
-    }
-    &.animated{
-        transform: translate(0, 0);
-        opacity: 1;
-    }
-}
-
-.h2 {
-    --animated-opacity: 0;
-}
-
-
-.slick-active, .roll-left{
-    clip-path: inset(0% 100% 0% 0%);
-    transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
-}
-.slick-active.animated, .roll-left.animated{
-    clip-path: inset(0% 0% 0% 0%);
-}
-.roll-left__shadow:before{
-    clip-path: inset(100% 100% 0% 0%);
-    transition: clip-path 2s cubic-bezier(0.77, 0, 0.175, 1);
-}
-.roll-left__shadow.animated:before{
-    clip-path: inset(0% 0% 0% 0%);
-}
-// .slick-active.animated--shadow{
-//     clip-path: inset(-10% -10% 0% 0%);
-// }
-/* END ANIMATIONS */
-
 .container{
     padding: 0 10%;
     &-fluid{
@@ -129,9 +74,6 @@ button{
     margin-top: 143px;
     background: #2B2B51;
     position: relative;
-    z-index: 1;
-    // height: 100vh;
-    z-index: 10;
     color: white;
     display: flex;
     flex-direction: column;
@@ -163,7 +105,7 @@ button{
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    z-index: 2;
+    z-index: 3;
     position: fixed;
     background: #2B2B51;
     &__info{
@@ -470,13 +412,7 @@ button{
         height: 62px;
         top: -22px;
         right: -65px;
-        opacity: 0;
-        transition: opacity 1s 1s ease-in-out;
-    }
-    &.animated{
-        &::after{
-            opacity: 1;
-        }
+
     }
 }
 
@@ -515,8 +451,9 @@ button{
 /* Об услуге */
 .about{
     position: relative;
-    z-index: 1;
+    z-index: -1;
     background: #2B2B51;
+    padding: 92px 0px;
     &:after{
         content: '';
         width: 62.35px;
@@ -532,7 +469,7 @@ button{
     }
     &__name{
         position: relative;
-        margin-top: 102px;
+        
     }
     
     &__content{
@@ -544,11 +481,11 @@ button{
         flex-direction: column;
         align-items: flex-start;
         width: 50%;
-        height: 662px;
+       
     }
     &__purpose{
         line-height: 22px;
-        margin-right: 60px;
+        
         margin-left: 4px;
         color: white; 
         &>p{
@@ -593,10 +530,10 @@ button{
         &:before{
             content: '';
             position: absolute;
-            width: 100%;
-            height: 100%;
+            width: 375px;
+            height: 321px;
             background: rgba(232, 232, 232, 0.13);
-            z-index: -1;
+            z-index: 1;
             bottom: 23px;
             left: 18px;
         }
@@ -618,42 +555,10 @@ button{
     }
     &__img{
         position: relative;
-        z-index: 0;
-        height: 100%;
-        width: 100%;
-        min-height: 309px;
+        z-index: 1;
+        
     }
 }
-.img{
-    &-wrapper{
-        position: relative;
-        overflow: hidden;
-    }
-    &-wrapper::after{
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 99%;
-        top: 0;
-        left: 0;
-        background: linear-gradient(113.08deg, #5a5a8079, rgb(43 43 81 / 23%) 54.99%, rgb(43 43 81 / 55%) 110.07%);
-    }
-    &-caption{
-        position: absolute;
-        transform: rotate(270deg);
-        transform-origin: right;
-        transform-origin: left;
-        top: 150px;
-        left: 18px;
-        font-weight: 900;
-        text-transform: uppercase;
-        font-size: 14px;
-        z-index: 3;
-        color: rgba(255, 255, 255, 0.37);
-    }
-
-}
-
 // Плюсы первозки
 .plus{
     padding-top: 101px;
@@ -819,7 +724,7 @@ button{
     &__name{
         -webkit-text-stroke: 2px rgb(43, 43, 81);
         font-size: 31px;
-        line-height: 50px;
+        line-height: 1.4em;
         margin-bottom: 68px;
     }
     .block-header{
@@ -853,7 +758,7 @@ button{
             padding: 0px 25px;
             line-height: 97px;
             margin-bottom: 50px;
-            margin-left: -55px;
+            transform: translateX(-41%);
         }
         &__description{
             font-weight: bold;
@@ -863,7 +768,7 @@ button{
             width: 344px;
         }
         .number-right{
-            transform: translateX(164px);
+            transform: translateX(41%);
             
            
         }
@@ -892,7 +797,7 @@ button{
         margin-right: 57px;
         position: relative;
         flex-direction: row-reverse;
-        justify-content: flex-end;
+        // justify-content: flex-end;
         &:after{
             content: '';
             position: absolute;
@@ -915,6 +820,9 @@ button{
     padding-top: 92px;
     padding-bottom: 185px;
     z-index: 0;
+    .d-s{
+        display: none;
+    }
     &__europe{
         position: relative;
         &:after{
@@ -1194,7 +1102,7 @@ button{
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
-        
+        margin-top: 20px;
         line-height: 1.3em;
 
         color: white;
@@ -1209,6 +1117,7 @@ button{
     padding-top: 77px;
     padding-bottom: 80px;
     position: relative;
+    
     &__name{
         font-family: Arial;
         font-style: normal;
@@ -1224,7 +1133,8 @@ button{
     }
     .block-header{
         &:after{
-            top: 40px;
+            top: 11px;
+            right: -64px;
         }
     }
     &__description{
@@ -1459,7 +1369,7 @@ button{
     z-index: 1;
     padding-bottom: 70px;
     &__name{
-        margin-top: 100px;
+        
         margin-bottom: 71px;
         font-size: 58px;
         -webkit-text-stroke: 2px #2B2B51;
