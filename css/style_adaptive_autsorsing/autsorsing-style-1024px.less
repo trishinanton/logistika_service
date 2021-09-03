@@ -108,6 +108,8 @@
             }
             &__description{
                 font-size: 19px;
+                text-align: center;
+
                 & span:after{
                     display: none;
                 }
@@ -142,4 +144,14 @@
             }
         }
     }
+}
+@media screen and (min-width: 1024px) and (max-width: 1500px) and (min-width: 1024px){
+    .consultation .form__name, .consultation .form__phone, .consultation .form__email, .consultation .form__button, .consultation .form__whats {
+        width: 305px;
+    }
+    
+    .consultation-form__description {
+        font-size: 20px;
+    }
+
 }

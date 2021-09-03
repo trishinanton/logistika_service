@@ -152,9 +152,11 @@ $(document).ready(function(){
     $(window).scroll(function() {
         var top = $(this).scrollTop();
         if ( top > g_top ) {
-            $('.header').fadeOut(300);
+            // $('.header').fadeOut(300);
+            $('.header').css('opacity', 0);
         } else {
-            $('.header').fadeIn(300);
+            // $('.header').fadeIn(300);
+            $('.header').css('opacity', '0.99');
         }
         g_top = top;    
     });

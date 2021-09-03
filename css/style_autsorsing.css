@@ -25,6 +25,9 @@ button:hover {
 .d-sm {
   display: none;
 }
+.d-lm {
+  display: none;
+}
 /* ANIMATIONS */
 .split-text > div {
   position: relative;
@@ -55,9 +58,6 @@ button:hover {
 .fade.animated {
   transform: translate(0, 0);
   opacity: 1;
-}
-.h2 {
-  --animated-opacity: 0;
 }
 .slick-active,
 .roll-left {
@@ -120,8 +120,7 @@ button:hover {
   margin-top: 143px;
   background: #2B2B51;
   position: relative;
-  z-index: 1;
-  z-index: 10;
+  z-index: 2;
   color: white;
   display: flex;
   flex-direction: column;
@@ -165,7 +164,8 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  z-index: 2;
+  z-index: 3;
+  transition: opacity 0.3s ease-in-out;
   position: fixed;
   background: #2B2B51;
 }
@@ -515,6 +515,12 @@ button:hover {
 .about__name {
   position: relative;
 }
+.about__name .split-parent:first-of-type .word:last-child:after {
+  transition: opacity 1s 3s ease-in;
+}
+.about__name:after {
+  transition: opacity 1s 3s ease-in;
+}
 .about__content {
   display: flex;
   flex-direction: row;
@@ -750,7 +756,6 @@ button:hover {
   font-size: 26px;
   line-height: 35px;
   color: #FFFFFF;
-  box-shadow: 0px 4px 13px #a5a5c5;
   position: relative;
   z-index: 2;
 }

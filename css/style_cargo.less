@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    overflow-x: hidden;
+}
 body{
     overflow-x: hidden;
     width: 100%;
@@ -28,6 +31,59 @@ button{
 .d-m{
     display: none;
 }
+
+/* ANIMATIONS */
+.split-text > div {
+  position: relative;
+  margin: 0;
+}
+.split-parent {
+  overflow: hidden;
+}
+.split-child {
+  display: inline-block;
+}
+
+.fade{
+    opacity: 0;
+    transition: all 1.3s ease-in-out;
+    &--top{
+        transform: translateY(-30px);
+    }
+    &--bottom{
+        transform: translateY(30px);
+    }
+    &--left{
+        transform: translateX(-30px);
+    }
+    &--rigth{
+        transform: translateX(30px);
+    }
+    &.animated{
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+.slick-active, .roll-left{
+    clip-path: inset(0% 100% 0% 0%);
+    transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.slick-active.animated, .roll-left.animated{
+    clip-path: inset(0% 0% 0% 0%);
+}
+.roll-left__shadow:before{
+    clip-path: inset(100% 100% 0% 0%);
+    transition: clip-path 2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.roll-left__shadow.animated:before{
+    clip-path: inset(0% 0% 0% 0%);
+}
+// .slick-active.animated--shadow{
+//     clip-path: inset(-10% -10% 0% 0%);
+// }
+/* END ANIMATIONS */
+
 .container{
     padding: 0 10%;
     &-fluid{
@@ -71,9 +127,10 @@ button{
     }
 }
 .main-screen{
-    margin-top: 143px;
+    padding-top: 143px;
     background: #2B2B51;
     position: relative;
+    z-index: 2;
     color: white;
     display: flex;
     flex-direction: column;
@@ -106,6 +163,7 @@ button{
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     z-index: 3;
+    transition: opacity 0.3s ease-in-out;
     position: fixed;
     background: #2B2B51;
     &__info{
@@ -412,7 +470,13 @@ button{
         height: 62px;
         top: -22px;
         right: -65px;
-
+        opacity: 0;
+        transition: opacity 1s 1s ease-in-out;
+    }
+    &.animated{
+        &::after{
+            opacity: 1;
+        }
     }
 }
 
@@ -469,9 +533,10 @@ button{
     }
     &__name{
         position: relative;
-        
+        &:after {
+            transition: opacity 1s 3s ease-in;
+        }
     }
-    
     &__content{
         display: flex;
         flex-direction: row;
@@ -481,25 +546,22 @@ button{
         flex-direction: column;
         align-items: flex-start;
         width: 50%;
-       
     }
     &__purpose{
         line-height: 22px;
-        
         margin-left: 4px;
         color: white; 
         &>p{
-        margin-top: 20px;
-        font-style: normal;
-        font-size: 16px;
-        font-weight: 400;
-        letter-spacing: 0.3px;
-    }
+            margin-top: 20px;
+            font-style: normal;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
     }
     &__sliders{
         display: flex;
         justify-content: flex-end;
-        
     }
 }
 .sliders{
@@ -530,10 +592,10 @@ button{
         &:before{
             content: '';
             position: absolute;
-            width: 375px;
-            height: 321px;
+            width: 100%;
+            height: 100%;
             background: rgba(232, 232, 232, 0.13);
-            z-index: 1;
+            z-index: -1;
             bottom: 23px;
             left: 18px;
         }
@@ -555,24 +617,69 @@ button{
     }
     &__img{
         position: relative;
-        z-index: 1;
-        
+         z-index: 0;
+        height: 100%;
+        width: 100%;
+        min-height: 309px;
     }
+}
+.img{
+    &-wrapper{
+        position: relative;
+        overflow: hidden;
+    }
+    &-wrapper::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 99%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(113.08deg, #5a5a8079, rgb(43 43 81 / 23%) 54.99%, rgb(43 43 81 / 55%) 110.07%);
+    }
+    &-caption{
+        position: absolute;
+        transform: rotate(270deg);
+        transform-origin: right;
+        transform-origin: left;
+        top: 150px;
+        left: 18px;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 14px;
+        z-index: 3;
+        color: rgba(255, 255, 255, 0.37);
+    }
+
 }
 // Плюсы первозки
 .plus{
     padding-top: 101px;
     padding-bottom: 111px;
     position: relative;
+    // &-card{
+    //     // &.animated{
+    //         & span{
+    //             &:after{
+    //                 transform-origin: bottom;
+    //                 transform: translateZ(-1px) scale(0);
+    //                 transition: all 1s 1s;
+    //             }
+    //             &:after{
+    //                 transform: translateZ(-1px) scale(1);
+    //             }
+    //         }
+    //     // }
+    // }
     &-mobile{
         display: none;
     }
     &__name{
         text-align: left;
-        font-size: 34px;
+        font-size: 38px;
         line-height: 66px;
         text-transform: uppercase;
-        -webkit-text-stroke: 2px #2B2B51;
+        -webkit-text-stroke: 1.5px #2B2B51;
     }
     &-body{
         margin-top: 187px;
@@ -722,8 +829,8 @@ button{
         display: none;
     }
     &__name{
-        -webkit-text-stroke: 2px rgb(43, 43, 81);
-        font-size: 31px;
+        -webkit-text-stroke: 1.5px rgb(43, 43, 81);
+        font-size: 36px;
         line-height: 1.4em;
         margin-bottom: 68px;
     }
@@ -743,7 +850,6 @@ button{
         height: 98px;
         display: flex;
         align-items: center;
-        
         margin-bottom: 47px;
         background-color: white;
         box-shadow: 0px 4px 20px rgba(43, 43, 81, 0.15);
@@ -764,7 +870,7 @@ button{
             font-weight: bold;
             font-size: 22px;
             color: #2B2B51;
-            padding: 0 25px;
+            // padding: 0 25px;
             width: 344px;
         }
         .number-right{
@@ -776,11 +882,11 @@ button{
             padding-right: 89px;
         }
     }
-    &-card:nth-child(odd){  
+    &-card:nth-child(odd){ 
+        padding-right: 5%; 
         margin-left: 57px;
         position: relative;
         justify-content: flex-start;
-        // padding-right: 31px;
         &:after{
             content: '';
             position: absolute;
@@ -793,11 +899,14 @@ button{
             right: -18px;
         }
     }
-    &-card:nth-child(even){  
+    &-card:nth-child(even){
+        padding-left: 5%;  
         margin-right: 57px;
         position: relative;
         flex-direction: row-reverse;
-        // justify-content: flex-end;
+        & .stages-card__description{
+            // color: red;
+        }
         &:after{
             content: '';
             position: absolute;
@@ -874,10 +983,11 @@ button{
     // }
     &__truck{
         position: absolute;
-        width: 794px;
+        width: auto;
         height: 181px;
         bottom: 0;
-        right: 0;
+        // right: 0;
+        right: -40%;
     }
 }
 @borders-color : rgba(177, 177, 177, 1);
@@ -963,13 +1073,6 @@ button{
 				}
 			}
 		}
-		// tfoot {
-		// 	> tr {
-		// 		> td {
-		// 			text-align: center;
-		// 		}
-		// 	}
-		// }
 		thead{
             box-shadow: 0px 10px 12px rgb(43 43 81 / 15%);
             &> tr {
@@ -1085,9 +1188,7 @@ button{
         font-family: Arial;
         font-style: normal;
         font-weight: 900;
-        
         font-size: 26px;
-
         line-height: 37px;
         letter-spacing: 0.05em;
         text-transform: uppercase;
@@ -1096,6 +1197,9 @@ button{
         margin-top: 77px;
         margin-bottom: 20px;
         margin-left: 4px;
+        &::after{
+            display: none;
+        }
     }
     &__description{
         font-family: 'Arial';
@@ -1117,18 +1221,16 @@ button{
     padding-top: 77px;
     padding-bottom: 80px;
     position: relative;
-    
     &__name{
         font-family: Arial;
         font-style: normal;
         font-weight: 900;
         font-size: 38px;
-        line-height: 37px;
+        line-height: 50px;
         letter-spacing: 0.05em;
         text-transform: uppercase;
-        -webkit-text-stroke: 1px #2B2B51;
+        -webkit-text-stroke: 1.5px #2B2B51;
         color: transparent;
-        line-height: 65px;
         padding-bottom: 20px;
     }
     .block-header{
@@ -1328,7 +1430,7 @@ button{
     }
     .consultation{
         &__name{
-            font-size: 40px;
+            // font-size: 40px;
         }
         &-form{
             margin: 90px 4px 0 4px;
@@ -1383,11 +1485,11 @@ button{
         font-size: 26px;
         line-height: 35px;
         color: #FFFFFF;
-        box-shadow: 0px 4px 13px #a5a5c5;
         position: relative;
         z-index: 2;
     }
     &-card{
+        box-shadow: 0px 4px 13px #a5a5c5;
         height: 497px;
         transition: all 1s ease-in-out 0s;
         width: 50%;

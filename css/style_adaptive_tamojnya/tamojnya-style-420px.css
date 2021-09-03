@@ -1,4 +1,7 @@
 @media screen and (max-width: 420px) {
+  html {
+    overflow-x: hidden;
+  }
   .fz-sm-14 {
     font-size: 14px !important;
   }
@@ -207,8 +210,6 @@
     width: 100%;
   }
   .about .sliders .slider-about__item img {
-    height: 100%;
-    width: 100%;
     max-height: 207px;
     min-height: 207px;
   }
@@ -365,6 +366,7 @@
   .consultation-form__description {
     font-size: 14px;
     line-height: 18px;
+    text-align: left;
   }
   .consultation-form__description:before {
     content: '';

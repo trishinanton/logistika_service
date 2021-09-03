@@ -1,4 +1,7 @@
 @media screen and (max-width: 420px) {
+  html {
+    overflow-x: hidden;
+  }
   .fz-sm-14 {
     font-size: 14px !important;
   }
@@ -91,7 +94,7 @@
   .main-screen .block-header .word1 {
     width: 100%;
   }
-  .main-screen .block-header.animated .split-parent:first-of-type .word:last-child:after {
+  .main-screen .block-header.animated .split-parent:last-of-type .word:last-child:after {
     opacity: 1;
   }
   .menu {
@@ -259,6 +262,9 @@
   .event__name .word:after {
     display: none !important;
   }
+  .enterns {
+    padding-top: 74px;
+  }
   .enterns__name {
     font-size: 22px;
   }
@@ -286,8 +292,16 @@
   }
   .enterns-card__description {
     font-size: 14px;
-    padding-left: 140px;
-    padding-right: 3px;
+    padding: 10px 6px 10px 90px;
+    min-height: 114px;
+    height: auto;
+  }
+  .enterns-card__number {
+    width: 78px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .enterns__footer {
     line-height: 22px;
@@ -355,6 +369,7 @@
   .consultation-form__description {
     font-size: 14px;
     line-height: 18px;
+    text-align: left;
   }
   .consultation-form__description:before {
     content: '';
@@ -458,5 +473,20 @@
   }
   .good-product__copyrigth {
     font-size: 12px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .enterns-card__number {
+    width: 60px;
+    font-size: 64px;
+    -webkit-text-stroke: 1px #FFFFFF;
+  }
+  .enterns-card__description {
+    padding: 0px 6px 0px 68px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .consultation__name {
+    font-size: 20px !important;
   }
 }
