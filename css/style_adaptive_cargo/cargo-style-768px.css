@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .d-sm {
     display: block;
   }
@@ -45,7 +45,7 @@
     font-size: 18px;
   }
   .main-screen {
-    margin-top: 133px;
+    padding-top: 133px;
   }
   .main-screen:after {
     background-position: 40% center;
@@ -67,7 +67,6 @@
   }
   /* меню навигации  */
   .active-content__points {
-    height: 30%;
     margin-top: 10%;
   }
   /* О компании */
@@ -361,10 +360,6 @@
   .graph__name {
     font-size: 42px;
   }
-  .graph__truck {
-    width: 308px;
-    height: 95px;
-  }
   /* График и сроки доставки */
   #comparisonchart {
     margin-top: 21px;
@@ -440,15 +435,15 @@
     width: 217px;
     font-size: 15px;
   }
-}
-.price .d-m {
-  display: block;
-}
-.price__name {
-  line-height: 44px;
-  font-size: 31px;
-}
-.price__description {
-  line-height: 1.3em;
-  margin-top: 17px;
+  .price .d-m {
+    display: block;
+  }
+  .price__name {
+    line-height: 44px;
+    font-size: 31px;
+  }
+  .price__description {
+    line-height: 1.3em;
+    margin-top: 17px;
+  }
 }

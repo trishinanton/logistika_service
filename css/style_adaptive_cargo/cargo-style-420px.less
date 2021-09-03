@@ -1,4 +1,4 @@
-@media screen and (max-width: 420px){
+@media screen and (max-width: 421px){
     html{
         // overflow: unset;
     }
@@ -62,23 +62,53 @@
             font-size: 16px;
         }
     }
+
+    /* <Крестики для всех заголовков> */
+    .block-header{
+        margin-top: 9px;
+        line-height: 38px;
+        font-size: 34px;
+        -webkit-text-stroke-width: 1px;
+        & .split-parent{
+            & .word:last-child{
+                &:after{
+                    content: '';
+                    position: absolute;
+                    background-image: url(../../img/about/crosses_for_header.png);
+                    background-size: cover;
+                    z-index: 2;
+                    width: 47px;
+                    height: 26px;
+                    top: -0.5em;
+                    right: -0.85em;
+                    opacity: 0;
+                    transition: opacity 1s 1s ease-in;
+                }
+            }
+        }
+    } 
+    /* <Крестики для всех заголовков/> */
+
+    /* Первый экран  */
     .main-screen{
-        margin-top: 89px;
+        padding-top: 89px;
         &::after{
             display: none;
         }
         .block-header{
             font-size: 27px;
-          &>span{
-            &:after{
-                top: -13px;
-                right: -41px;
+            //first line and last word
+            &.animated{
+                & .split-parent:first-of-type{
+                    & .word:last-child{
+                        &:after{
+                            opacity: 1;
+                        }  
+                    }
+                } 
             }
-        }  
         }
-        
     }
-    
     .menu{
         margin-right: 18px;
         margin-left: 11px;
@@ -123,19 +153,23 @@
             }
         }
     }
-        /* О компании */
+
+    /* О компании */
     .about{
         padding: 60px 0px 30px;
         overflow: unset;
-        &:before{
-            
-        }
        
-       .block-header>span{
-           &:after{
-            top: -14px;
-            right: -40px;
-           }
+       .block-header{
+            //first line and last word
+            &.animated{
+                & .split-parent:first-of-type{
+                    & .word:last-child{
+                        &:after{
+                            opacity: 1;
+                        }  
+                    }
+                } 
+            }
         }
         &:after{
             width: 70px;
@@ -210,18 +244,19 @@
                 &__item{
                     height: auto;
                     margin-right: 12px;
-                    margin-top: 28px;
+                    margin-top: unset;
                     width: 100%;
                     & img{
-                        height: 100%;
-                        width: 100%;  
+                        // height: 100%;
+                        // width: 100%; 
+                        max-height: 207px;
+                        min-height: 207px;  
                     }
                     &:before{
                         // max-height: 207px; 
                         top: -10px;
                         right: -10px;
                         left: unset;
-                        
                     }
                     
                 }
@@ -229,6 +264,8 @@
                     width: 100%;
                     height: 207px;
                     bottom: 106px;
+                    // top: -10px;
+                    // bottom: unset;
                     left: 8px;
                 }
                 &:after{
@@ -276,23 +313,41 @@
         line-height: 1.3em;
     }
     &__name{
-        font-size: 18px;
+        font-size: 20px;
+        line-height: 34px;
+        margin-bottom: 4px;
+        & .word::after{
+            right: -1.5em !important;
+        }
     }
 }
 
 /* Плюсы перевозки */
 .plus{
    padding-bottom: 0px;
+   padding-top: 15%;
     &__name{
-        font-size: 26px;
+        font-size: 18px;
+        letter-spacing: 0.01em;
+        line-height: 26px;
     }
     &-mobile{
         display: block;
     }
     .block-header{
-        &:after{
-            top: -16px;
-            right: -11px;
+        &::after{
+            display: none;
+        }
+        &.animated{
+            & .split-parent:last-of-type{
+                & .word:last-child{
+                    &:after{
+                        opacity: 1;
+                        top: -0.8em;
+                        right: -1.7em;
+                    }  
+                }
+            } 
         }
     }
     .cost_savings__wrapper, 
@@ -308,11 +363,23 @@
 .stages{
     padding-bottom: 0px;
     .block-header{
-        font-size: 17px;
+        &::after{
+            display: none;
+        }
+        font-size: 16px;
         line-height: 21px;
-        &:after{
-            top: -20px;
-            right: -11px;
+        letter-spacing: 0.01em;
+        //last line and last word
+        &.animated{
+            & .split-parent:first-of-type{
+                & .word:last-child{
+                    &:after{
+                        opacity: 1;
+                        top: -1em;
+                        right: -2em;
+                    }  
+                }
+            } 
         }
     }
     &__name{
@@ -321,18 +388,17 @@
     &-card{
         height: 65px;
         width: 41vw;
+        padding-left: 0 !important;
         &__number{
-            // font-size: 24px;
-            // padding: 0px 15px;
-            // line-height: 67px;
             font-size: 33px;
+            font-size: 26px;
             padding: 0px 8px;
             line-height: 67px;
             -webkit-text-stroke: 1px white;
         }
         &__description{
             padding: 0 5px;
-            font-size: 11px;
+            font-size: 13px;
         }
     }
 }
@@ -342,12 +408,21 @@
         display: block;
     }
     &__name{
-        font-size: 30px;
+        font-size: 32px;
     }
     .block-header{
-        &:after{
-            top: -18px;
-            right: -7px;
+        &::after{
+            display: none;
+        }
+        //first line and last word
+        &.animated{
+            & .split-parent:first-of-type{
+                & .word:last-child{
+                    &:after{
+                        opacity: 1;
+                    }  
+                }
+            } 
         }
     }
     #comparisonchart table td {
@@ -360,13 +435,10 @@
             height: 150px;
         }
     }
-    &__truck{
-        width: 213px;
-        height: 67px;
-    }
 }
 //   Цены
 .price{
+    padding: 40px 0 56px;
     &__name{
         font-size: 20px;
         line-height: 1.3em;
@@ -374,6 +446,18 @@
     &__description{
         font-size: 14px;
         margin-top: 14px;
+    }
+    & .block-header{
+        //first line and last word
+        &.animated{
+            & .split-parent:first-of-type{
+                & .word:last-child{
+                    &:after{
+                        opacity: 1;
+                    }  
+                }
+            } 
+        }
     }
 }
     /* Другие услуги компании */
@@ -420,17 +504,25 @@
     .consultation{
         background-color: #2B2B51;
         padding: 60px 0 10px;
-        &__name{
+        &__name.block-header{
             -webkit-text-stroke: 1px white;
-            font-size: 25px !important;
+            font-size: 29px;
         }
         &-br{
             display: none;
         }
-        .block-header>span{
-            &:after{
-                right: -43px;
-                top: -18px;
+        .block-header{
+            //first line and last word
+            &.animated{
+                & .split-parent:first-of-type{
+                    & .word:last-child{
+                        &:after{
+                            opacity: 1;
+                            top: -0.4em;
+                            right: -1em;
+                        }  
+                    }
+                } 
             }
         }
         &-form{
@@ -486,6 +578,7 @@
                 left: 250px;  
                 filter: blur(3px);    
                 z-index: 0;
+                box-shadow: -9px 10px 20px 0px #00000047;
             }
         }
         .form{

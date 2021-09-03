@@ -25,7 +25,7 @@
   }
   .main-screen {
     background-position: 39% 50%;
-    margin-top: 130px;
+    padding-top: 130px;
   }
   .advantage__name-size {
     width: 165px;
@@ -118,8 +118,7 @@
     height: 157px;
   }
   .graph__truck {
-    width: 436px;
-    height: 121px;
+    height: 120px;
   }
   /* Цена транспортировки */
   .price__name {

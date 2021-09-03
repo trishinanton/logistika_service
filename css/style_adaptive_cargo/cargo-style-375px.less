@@ -1,7 +1,4 @@
-@media screen and (max-width: 375px){
-    html{
-        // overflow: unset;
-    }
+@media screen and (max-width: 376px){
     .grid{
         display: none;
         &-adaptive{
@@ -57,7 +54,7 @@
         }
     }
     .main-screen{
-        margin-top: 89px;
+        padding-top: 89px;
     }
     
     .menu{
@@ -258,14 +255,14 @@
             }
         }
         .cost_savings__wrapper, 
-       .small_parties__wrapper, 
-       .organization__wrapper, 
-       .min_delivery__wrapper, 
-       .fixed_cost__wrapper{
+        .small_parties__wrapper, 
+        .organization__wrapper, 
+        .min_delivery__wrapper, 
+        .fixed_cost__wrapper{
             width: 98%;
             margin-left: 4px;
             padding-right: 5px;
-       }
+        }
     }
     // Этапы работы
     .stages{
@@ -287,7 +284,7 @@
             height: 49px;
         }
         &__name{
-            font-size: 26px;
+            font-size: 28px;
         }
         .block-header{
             &:after{
@@ -308,7 +305,11 @@
     }
     .event{
         &__name{
-            margin-top: 20px;
+            margin-top: 18px;
+            letter-spacing: 0.05em;
+            font-size: 18px;
+            line-height: 26px;
+
         }
     }
     /* Цена транспортировки */
@@ -331,10 +332,19 @@
     /* Другие услуги компании */
     .services{
         
-        .block-header >span{
+        .block-header {
             &::after{
-                right: -125px;
-                top: -13px;
+                display: none;
+            }
+            //first line and last word
+            &.animated{
+                & .split-parent:first-of-type{
+                    & .word:last-child{
+                        &:after{
+                            opacity: 1;
+                        }  
+                    }
+                } 
             }
         }
         &__description{
@@ -350,9 +360,9 @@
     .consultation{
         background-color: #2B2B51;
         padding: 28px 0 10px;
-        &__name{
+        &__name.block-header{
             -webkit-text-stroke: 1px white;
-            font-size: 25px;
+            font-size: 26px;
         }
         &-br{
             display: none;
@@ -372,9 +382,6 @@
             box-shadow: none;
             &:before{
                 display: none;
-            }
-            &__description{
-                font-size: 13px;
             }
             &__contact{
                 flex-direction: column;

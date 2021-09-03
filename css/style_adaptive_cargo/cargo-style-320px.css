@@ -49,6 +49,10 @@
   }
   .stages-card__number {
     font-size: 24px;
+    padding: 0px 5px;
+  }
+  .stages-card__description {
+    font-size: 11px;
   }
   .graph__name {
     font-size: 22px;

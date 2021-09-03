@@ -210,8 +210,6 @@
     width: 100%;
   }
   .about .sliders .slider-about__item img {
-    height: 100%;
-    width: 100%;
     max-height: 207px;
     min-height: 207px;
   }

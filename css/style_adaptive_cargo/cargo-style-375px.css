@@ -1,4 +1,4 @@
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 376px) {
   .grid {
     display: none;
   }
@@ -52,7 +52,7 @@
     font-size: 16px;
   }
   .main-screen {
-    margin-top: 89px;
+    padding-top: 89px;
   }
   .menu {
     margin-right: 18px;
@@ -254,7 +254,7 @@
     height: 49px;
   }
   .graph__name {
-    font-size: 26px;
+    font-size: 28px;
   }
   .graph .block-header:after {
     top: -13px;
@@ -268,7 +268,10 @@
     padding-right: 45px;
   }
   .event__name {
-    margin-top: 20px;
+    margin-top: 18px;
+    letter-spacing: 0.05em;
+    font-size: 18px;
+    line-height: 26px;
   }
   /* Цена транспортировки */
   .price {
@@ -284,9 +287,11 @@
     right: 4px;
   }
   /* Другие услуги компании */
-  .services .block-header > span::after {
-    right: -125px;
-    top: -13px;
+  .services .block-header::after {
+    display: none;
+  }
+  .services .block-header.animated .split-parent:first-of-type .word:last-child:after {
+    opacity: 1;
   }
   .services__description {
     flex-direction: column;
@@ -300,9 +305,9 @@
     background-color: #2B2B51;
     padding: 28px 0 10px;
   }
-  .consultation__name {
+  .consultation__name.block-header {
     -webkit-text-stroke: 1px white;
-    font-size: 25px;
+    font-size: 26px;
   }
   .consultation-br {
     display: none;
@@ -321,9 +326,6 @@
   }
   .consultation-form:before {
     display: none;
-  }
-  .consultation-form__description {
-    font-size: 13px;
   }
   .consultation-form__contact {
     flex-direction: column;

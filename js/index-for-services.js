@@ -48,9 +48,10 @@ $(document).ready(function(){
         var top = $(this).scrollTop();
         
         if ( top > g_top ) {
-            $('.header').fadeOut(300);
+            $('.header').css('opacity', 0);
         } else {
-            $('.header').fadeIn(300);
+            $('.header').css('opacity', 1);
+            // $('.header').fadeIn(300);
         }
         
         g_top = top;    
@@ -66,7 +67,7 @@ $(document).ready(function(){
             header.find('.logo-image').addClass('logo-image__scroll');
             header.find('.logo-name').addClass('logo-name__scroll');
         }   
-        if( scrolled <= 100 ) {     
+        if( scrolled < 101 ) {     
             // header.css('background','#2B2B51');
             header.css('box-shadow', 'none');
             header.find('.logo-image').removeClass('logo-image__scroll');
@@ -271,17 +272,19 @@ $(document).ready(function(){
     /* График и сроки доставки, движение грузовика */
 
     // $(window).scroll(function() {
-    //     let scroll = $('#graph').offset().top 
-    //     let winScroll = $(window).scrollTop()
-    //     let right = winScroll-scroll;
-    //     let rightMediumScreen = right/2;
-    //     let rightLitleScreen = right/7;
+    //     let scroll = $('#comparisonchart').offset().top.toFixed(0) 
+    //     let winScroll = $(window).scrollTop().toFixed(0)
+    //     let right = winScroll*1.25-scroll;
+    //     let rightMediumScreen = right/2 - 700;
+    //     let rightLitleScreen = right/7 - 440;
     //     let widthScreen = $(window).width();
     //     if(widthScreen<=420 && widthScreen>375 && winScroll>=scroll) {
     //         $('.graph__truck').css({'right':rightMediumScreen})
     //     } else if(widthScreen<=375 && winScroll>=scroll){
     //         $('.graph__truck').css({'right':rightLitleScreen})
-    //     }else if (winScroll>=scroll) $('.graph__truck').css({'right':rightMediumScreen})
+    //     }else if (winScroll>=scroll){
+    //         $('.graph__truck').css({'right':rightMediumScreen})
+    //     } 
     // });
 
   /* для отладки */

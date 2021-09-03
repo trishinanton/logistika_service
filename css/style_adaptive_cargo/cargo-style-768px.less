@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px){
+@media screen and (max-width: 769px){
     .d-sm{
         display: block;
     }
@@ -49,7 +49,7 @@
         font-size: 18px;
     }
     .main-screen{
-        margin-top: 133px;
+        padding-top: 133px;
         &:after{
             background-position: 40% center;
 
@@ -79,7 +79,6 @@
     /* меню навигации  */
     .active-content{
         &__points{
-            height: 30%;
             margin-top: 10%;
         }
     }
@@ -411,10 +410,6 @@
        &__name{
         font-size: 42px;
        }
-       &__truck{
-        width: 308px;
-        height: 95px;
-       }
    }
    /* График и сроки доставки */
    #comparisonchart{
@@ -507,28 +502,18 @@
             }
         }
     }
-}
-
-// Цена транспортирвки
-.price{
-    .d-m{
-        display: block;
-    }
-    &__name{
-        line-height: 44px;
-        font-size: 31px;
-    }
-    .block-header{
-        &:after{
-            // display: block;
-            // top: -16px;
-            // right: -19px;        
-            // width: 67px;
-            //  height: 36px;
+    // Цена транспортирвки
+    .price{
+        .d-m{
+            display: block;
         }
-    }
-    &__description{
-        line-height: 1.3em;
-        margin-top: 17px;
+        &__name{
+            line-height: 44px;
+            font-size: 31px;
+        }
+        &__description{
+            line-height: 1.3em;
+            margin-top: 17px;
+        }
     }
 }

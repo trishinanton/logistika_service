@@ -124,9 +124,8 @@ button{
     margin-top: 143px;
     background: #2B2B51;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     // height: 100vh;
-    z-index: 10;
     color: white;
     display: flex;
     flex-direction: column;
@@ -158,7 +157,8 @@ button{
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    z-index: 2;
+    z-index: 3;
+    transition: opacity 0.3s ease-in-out;
     position: fixed;
     background: #2B2B51;
     &__info{
@@ -532,7 +532,6 @@ button{
             transition: opacity 1s 3s ease-in;
         }
     }
-    
     &__content{
         display: flex;
         flex-direction: row;
@@ -549,17 +548,16 @@ button{
         margin-left: 4px;
         color: white; 
         &>p{
-        margin-top: 35px;
-        font-style: normal;
-        font-size: 16px;
-        font-weight: 400;
-        letter-spacing: 0.3px;
-    }
+            margin-top: 35px;
+            font-style: normal;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
     }
     &__sliders{
         display: flex;
         justify-content: flex-end;
-        
     }
 }
 .sliders{
@@ -619,7 +617,6 @@ button{
         height: 100%;
         width: 100%;
         min-height: 309px;
-        
     }
 }
 .img{
@@ -949,7 +946,7 @@ button{
             left: 20px;
             font-weight: 600;
             text-transform: uppercase;
-            transition: transition: all 1s ease;
+            transition: all 1s ease;
             font-size: 14px;
             z-index: 3;
             color: rgba(255, 255, 255, 0.37);
