@@ -117,9 +117,6 @@
     width: 130px;
     height: 157px;
   }
-  .graph__truck {
-    height: 120px;
-  }
   /* Цена транспортировки */
   .price__name {
     line-height: 50px;

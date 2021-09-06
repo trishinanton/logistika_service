@@ -1,4 +1,4 @@
-@media screen and (max-width: 769px){
+@media (min-width:421px) and (max-width: 769px){
     .d-sm{
         display: block;
     }
@@ -98,16 +98,26 @@
            }
        }
         &:after{
-            width: 70px;
-            height: 70px;
-            border: 14px solid #FFFFFF;
-            bottom: -13px;
-            left: 651px;
+            width: 80px;
+            height: 80px;
+            border: 16px solid #FFFFFF;
+            filter: blur(2px);
+            box-shadow: -11px 18px 20px rgb(0 0 0 / 20%);
+            left: unset;
+            bottom: -19px;
+            right: 40px;
         }
         &:before{
             right: -18.3px;
-            width: 48px;
-            height: 48px;
+        width: 32px;
+        height: 32px;
+        content: '';
+        position: absolute;
+        transform: rotate(45deg);
+        filter: blur(3px);
+        border: 11px solid #FFFFFF;
+        bottom: 56px;
+        top: unset;
         }
         &__content{
             flex-direction: column;
@@ -118,9 +128,9 @@
         }
         &__purpose{
             margin-right: 0px;
-            line-height: 18px;
+            line-height: 1.4em;
             &>p{
-                font-size: 16px;
+                font-size: 20px;
             }
         }
         .img{
@@ -157,10 +167,10 @@
                 &__item{
                     height: auto;
                     margin-right: 12px;
-                    margin-top: 28px;
+                    margin-top: 0px;
                     width: 100%;
                     & img{
-                        height: 100%;
+                        max-height: 309px;
                         width: 100%;  
                     }
                     &:before{
@@ -227,7 +237,7 @@
            &:after{
                display: block;
                top: -13px;
-                right: 91px;
+                right: 126px;
                 width: 67px;
                 height: 36px;
            }
@@ -339,7 +349,7 @@
         &:after{
             display: block;
             top: -18px;
-            right: 23px;
+            right: 0px;
             width: 67px;
             height: 36px;
         }
@@ -401,10 +411,9 @@
            &:after{
                display: block;
                top: -13px;
-            right: 163px;
-                right: 163px;
+               right: -43px;
                 width: 67px;
-            height: 36px;
+                height: 36px;
            }
        }
        &__name{
@@ -422,7 +431,21 @@
      
    }
    .event__description{
-    font-size: 21px;
+    font-size: 22px;
+    .d-sm{
+        display: none;
+    }
+   }
+   .event__name{
+        font-size: 33px;
+        margin-top: 26px;
+        line-height: 1.3em;
+        &.block-header{
+            &:after{
+                right: -44px;
+                top: -19px;
+            }
+        }
    }
     /* Другие услуги компании */
     .services{
@@ -430,10 +453,13 @@
             margin-top: 63px;
             font-size: 54px;
         }
-        .block-header >span{
+        .block-header{
             &::after{
-                right: -192px;
-                top: -7px;
+                display: block;
+                right: -46px;
+                top: -19px;
+                width: 77px;
+                height: 42px;
             }
         }
     }
@@ -446,15 +472,17 @@
             -webkit-text-stroke: 2px white;
             font-size: 43px;
         }
+        .block-header:after{
+            display: block;
+            width: 77px;
+            height: 42px;
+            right: -46px;
+            top: -11px;
+        }
         &-br{
             display: none;
         }
-        .block-header>span{
-            &:after{
-                right: -43px;
-                top: -13px;
-            }
-        }
+        
         &-form{
             background-color: transparent;
             margin: 0;
@@ -509,11 +537,12 @@
         }
         &__name{
             line-height: 44px;
-            font-size: 31px;
+            font-size: 35px;
         }
         &__description{
             line-height: 1.3em;
             margin-top: 17px;
+            font-size: 20px;
         }
     }
 }
