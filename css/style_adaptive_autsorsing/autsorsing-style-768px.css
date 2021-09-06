@@ -42,7 +42,7 @@
     background-position: 40% center;
   }
   .main-screen .block-header:after {
-    top: -7px;
+    top: 4px;
     right: -42px;
   }
   .main-br {
@@ -78,7 +78,7 @@
     top: 653px;
   }
   .about .block-header:after {
-    top: -14px;
+    top: -2px;
     right: -40px;
   }
   .about:after {
@@ -171,6 +171,8 @@
   }
   .event__name {
     margin-left: 4px;
+    font-size: 30px;
+    line-height: 1.4em;
   }
   .event__description {
     line-height: 1.3em;
@@ -183,7 +185,6 @@
   }
   .block-header {
     margin-top: 0px;
-    line-height: 62px;
   }
   .block-header:after {
     width: 67px;
@@ -192,12 +193,20 @@
   .enterns-card {
     width: 100%;
   }
+  .enterns__name {
+    font-size: 43px;
+    line-height: 1.3em;
+  }
+  .enterns .block-header:after {
+    right: -40px;
+  }
   /* Другие услуги компании */
   .services__name {
     margin-top: 63px;
+    line-height: 1.3em;
   }
-  .services .block-header > span::after {
-    right: -179px;
+  .services .block-header::after {
+    right: -43px;
   }
   /* Индивидуальная консультация */
   .consultation {
@@ -206,13 +215,13 @@
   }
   .consultation__name {
     -webkit-text-stroke: 2px white;
+    line-height: 1.3em;
   }
   .consultation-br {
     display: none;
   }
-  .consultation .block-header > span:after {
-    right: -112px;
-    top: -14px;
+  .consultation .block-header:after {
+    right: -42px;
   }
   .consultation-form {
     background-color: transparent;
