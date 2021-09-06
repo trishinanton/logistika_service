@@ -48,11 +48,23 @@
     .button{
         font-size: 18px;
     }
+    .menu-active__wrapper{
+        right: -1vw;
+    }
     .main-screen{
         padding-top: 133px;
         &:after{
             background-position: 40% center;
 
+        }
+        .block-header{
+            &:after{
+                display: block;
+                top: -13px;
+                right: -39px;
+                width: 67px;
+                height: 36px;
+            }
         }
     }
     .main-br{
@@ -91,10 +103,13 @@
             top: 653px;
         }
        
-       .block-header>span{
+       .block-header{
            &:after{
-            top: -10px;
-            right: -40px;
+               display: block;
+                top: -14px;
+                right: -40px;
+                width: 67px;
+                height: 36px
            }
        }
         &:after{
@@ -237,7 +252,7 @@
            &:after{
                display: block;
                top: -13px;
-                right: 126px;
+               right: 51px;
                 width: 67px;
                 height: 36px;
            }
@@ -380,6 +395,7 @@
                transform: translateX(0);
            }
            &:nth-child(even){
+               padding-left: 0;
                 margin-right: 3px;
                flex-direction: row;
                justify-content: space-between;

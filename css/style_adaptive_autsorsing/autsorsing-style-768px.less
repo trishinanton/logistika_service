@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px){
+@media (min-width:421px) and (max-width: 769px){
     .grid{
         display: none;
         &-adaptive{
@@ -43,10 +43,15 @@
         font-size: 18px;
     }
     .main-screen{
-        margin-top: 133px;
         &:after{
             background-position: 40% center;
 
+        }
+        .block-header{
+            &:after{
+                top: -7px;
+                right: -42px;
+            }
         }
     }
     .main-br{
@@ -89,9 +94,9 @@
             top: 653px;
         }
        
-       .block-header>span{
+       .block-header{
            &:after{
-            top: -10px;
+            top: -14px;
             right: -40px;
            }
        }
@@ -116,9 +121,9 @@
         }
         &__purpose{
             margin-right: 0px;
-            line-height: 18px;
+            line-height: 1.4em;
             &>p{
-                font-size: 16px;
+                font-size: 20px;
             }
         }
         .img{
@@ -155,10 +160,10 @@
                 &__item{
                     height: auto;
                     margin-right: 12px;
-                    margin-top: 28px;
+                    margin-top: 0px;
                     width: 100%;
                     & img{
-                        height: 100%;
+                        max-height: 309px;
                         width: 100%;  
                     }
                     &:before{
@@ -211,21 +216,8 @@
         margin-top: 0px;
         line-height: 62px;
         &:after{
-            display: none;
-        }
-        &>span{
-            position: relative;
-            &:after{
-                content: '';
-                position: absolute;
-                background-image: url(../../img/about/crosses_for_header.png);
-                background-size: cover;
-                z-index: 2;
-                width: 67px;
+            width: 67px;
                 height: 36px;
-                top: -9px;
-                right: -44px;
-            }  
         }
     } 
 

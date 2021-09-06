@@ -44,11 +44,21 @@
   .button {
     font-size: 18px;
   }
+  .menu-active__wrapper {
+    right: -1vw;
+  }
   .main-screen {
     padding-top: 133px;
   }
   .main-screen:after {
     background-position: 40% center;
+  }
+  .main-screen .block-header:after {
+    display: block;
+    top: -13px;
+    right: -39px;
+    width: 67px;
+    height: 36px;
   }
   .main-br {
     display: none;
@@ -78,9 +88,12 @@
     filter: blur(3px);
     top: 653px;
   }
-  .about .block-header > span:after {
-    top: -10px;
+  .about .block-header:after {
+    display: block;
+    top: -14px;
     right: -40px;
+    width: 67px;
+    height: 36px;
   }
   .about:after {
     width: 80px;
@@ -209,7 +222,7 @@
   .plus .block-header:after {
     display: block;
     top: -13px;
-    right: 126px;
+    right: 51px;
     width: 67px;
     height: 36px;
   }
@@ -338,6 +351,7 @@
     transform: translateX(0);
   }
   .stages-card:nth-child(even) {
+    padding-left: 0;
     margin-right: 3px;
     flex-direction: row;
     justify-content: space-between;

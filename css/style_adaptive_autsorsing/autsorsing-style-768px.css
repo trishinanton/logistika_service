@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media (min-width: 421px) and (max-width: 769px) {
   .grid {
     display: none;
   }
@@ -38,11 +38,12 @@
   .button {
     font-size: 18px;
   }
-  .main-screen {
-    margin-top: 133px;
-  }
   .main-screen:after {
     background-position: 40% center;
+  }
+  .main-screen .block-header:after {
+    top: -7px;
+    right: -42px;
   }
   .main-br {
     display: none;
@@ -76,8 +77,8 @@
     filter: blur(3px);
     top: 653px;
   }
-  .about .block-header > span:after {
-    top: -10px;
+  .about .block-header:after {
+    top: -14px;
     right: -40px;
   }
   .about:after {
@@ -101,10 +102,10 @@
   }
   .about__purpose {
     margin-right: 0px;
-    line-height: 18px;
+    line-height: 1.4em;
   }
   .about__purpose > p {
-    font-size: 16px;
+    font-size: 20px;
   }
   .about .img-caption {
     top: 58%;
@@ -138,11 +139,11 @@
   .about .sliders .slider-about__item {
     height: auto;
     margin-right: 12px;
-    margin-top: 28px;
+    margin-top: 0px;
     width: 100%;
   }
   .about .sliders .slider-about__item img {
-    height: 100%;
+    max-height: 309px;
     width: 100%;
   }
   .about .sliders .slider-about__item:before {
@@ -185,21 +186,8 @@
     line-height: 62px;
   }
   .block-header:after {
-    display: none;
-  }
-  .block-header > span {
-    position: relative;
-  }
-  .block-header > span:after {
-    content: '';
-    position: absolute;
-    background-image: url(../../img/about/crosses_for_header.png);
-    background-size: cover;
-    z-index: 2;
     width: 67px;
     height: 36px;
-    top: -9px;
-    right: -44px;
   }
   .enterns-card {
     width: 100%;

@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px){
+@media (min-width: 421px) and (max-width: 769px){
     .grid{
         display: none;
         &-adaptive{
@@ -43,7 +43,6 @@
         font-size: 18px;
     }
     .main-screen{
-        margin-top: 133px;
         &:after{
             background-position: 40% center;
 
@@ -92,18 +91,28 @@
             right: -40px;
            }
        }
-        &:after{
-            width: 70px;
-            height: 70px;
-            border: 14px solid #FFFFFF;
-            bottom: -13px;
-            left: 651px;
-        }
-        &:before{
-            right: -18.3px;
-            width: 48px;
-            height: 48px;
-        }
+       &:after{
+        width: 80px;
+        height: 80px;
+        border: 16px solid #FFFFFF;
+        filter: blur(2px);
+        box-shadow: -11px 18px 20px rgb(0 0 0 / 20%);
+        left: unset;
+        bottom: -19px;
+        right: 40px;
+    }
+    &:before{
+        right: -18.3px;
+    width: 32px;
+    height: 32px;
+    content: '';
+    position: absolute;
+    transform: rotate(45deg);
+    filter: blur(3px);
+    border: 11px solid #FFFFFF;
+    bottom: 56px;
+    top: unset;
+    }
         &__content{
             flex-direction: column;
         }
@@ -113,9 +122,9 @@
         }
         &__purpose{
             margin-right: 0px;
-            line-height: 18px;
+            line-height: 1.5em;
             &>p{
-                font-size: 16px;
+                font-size: 21px;
             }
         }
         .img{
@@ -152,11 +161,11 @@
                 &__item{
                     height: auto;
                     margin-right: 12px;
-                    margin-top: 28px;
+                    margin-top: 0px;
                     width: 100%;
                     & img{
-                        height: 100%;
-                        width: 100%;  
+                        max-height: 309px;
+                        width: 100%;   
                     }
                     &:before{
                         // max-height: 207px; 
@@ -193,22 +202,24 @@
         margin-top: 0px;
         line-height: 62px;
         &:after{
-            display: none;
+            width: 67px;
+            height: 36px;
+            right: -41px;
         }
-        &>span{
-            position: relative;
-            &:after{
-                content: '';
-                position: absolute;
-                background-image: url(../../img/about/crosses_for_header.png);
-                background-size: cover;
-                z-index: 2;
-                width: 67px;
-                height: 36px;
-                top: -9px;
-                right: -44px;
-            }  
-        }
+        // &>span{
+        //     position: relative;
+        //     &:after{
+        //         content: '';
+        //         position: absolute;
+        //         background-image: url(../../img/about/crosses_for_header.png);
+        //         background-size: cover;
+        //         z-index: 2;
+        //         width: 67px;
+        //         height: 36px;
+        //         top: -9px;
+        //         right: -44px;
+        //     }  
+        // }
     } 
 
     /* Этапы таможенного офрмления */
@@ -216,10 +227,9 @@
         &__name{
             font-size: 41px;
         }
-        .block-header>span{
+        .block-header{
             &:after{
-                top: -13px;
-                right: -274px;
+                top: -11px;
             }
         }
         &__description{
@@ -252,11 +262,15 @@
             &__description{
                 line-height: 18px;
                 font-size: 16px;
+                br{
+                    display: none;
+                }
             }
         }
         &-footer{
             &__description{
-                font-size: 16px;
+                font-size: 18px;
+                margin-left: 4px;
                 &> strong {
                     font-size: 20px;
                 }
@@ -285,10 +299,9 @@
         &-br{
             display: none;
         }
-        .block-header>span{
+        .block-header{
             &:after{
-                right: -112px;
-                top: -14px;
+                top: -11px;
             }
         }
         &-form{

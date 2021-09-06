@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media (min-width: 421px) and (max-width: 769px) {
   .grid {
     display: none;
   }
@@ -38,9 +38,6 @@
   .button {
     font-size: 18px;
   }
-  .main-screen {
-    margin-top: 133px;
-  }
   .main-screen:after {
     background-position: 40% center;
   }
@@ -78,16 +75,26 @@
     right: -40px;
   }
   .about:after {
-    width: 70px;
-    height: 70px;
-    border: 14px solid #FFFFFF;
-    bottom: -13px;
-    left: 651px;
+    width: 80px;
+    height: 80px;
+    border: 16px solid #FFFFFF;
+    filter: blur(2px);
+    box-shadow: -11px 18px 20px rgba(0, 0, 0, 0.2);
+    left: unset;
+    bottom: -19px;
+    right: 40px;
   }
   .about:before {
     right: -18.3px;
-    width: 48px;
-    height: 48px;
+    width: 32px;
+    height: 32px;
+    content: '';
+    position: absolute;
+    transform: rotate(45deg);
+    filter: blur(3px);
+    border: 11px solid #FFFFFF;
+    bottom: 56px;
+    top: unset;
   }
   .about__content {
     flex-direction: column;
@@ -98,10 +105,10 @@
   }
   .about__purpose {
     margin-right: 0px;
-    line-height: 18px;
+    line-height: 1.5em;
   }
   .about__purpose > p {
-    font-size: 16px;
+    font-size: 21px;
   }
   .about .img-caption {
     top: 58%;
@@ -135,11 +142,11 @@
   .about .sliders .slider-about__item {
     height: auto;
     margin-right: 12px;
-    margin-top: 28px;
+    margin-top: 0px;
     width: 100%;
   }
   .about .sliders .slider-about__item img {
-    height: 100%;
+    max-height: 309px;
     width: 100%;
   }
   .about .sliders .slider-about__item:before {
@@ -167,29 +174,16 @@
     line-height: 62px;
   }
   .block-header:after {
-    display: none;
-  }
-  .block-header > span {
-    position: relative;
-  }
-  .block-header > span:after {
-    content: '';
-    position: absolute;
-    background-image: url(../../img/about/crosses_for_header.png);
-    background-size: cover;
-    z-index: 2;
     width: 67px;
     height: 36px;
-    top: -9px;
-    right: -44px;
+    right: -41px;
   }
   /* Этапы таможенного офрмления */
   .stages__name {
     font-size: 41px;
   }
-  .stages .block-header > span:after {
-    top: -13px;
-    right: -274px;
+  .stages .block-header:after {
+    top: -11px;
   }
   .stages__description-left {
     left: 0;
@@ -221,8 +215,12 @@
     line-height: 18px;
     font-size: 16px;
   }
+  .stages .registration__description br {
+    display: none;
+  }
   .stages-footer__description {
-    font-size: 16px;
+    font-size: 18px;
+    margin-left: 4px;
   }
   .stages-footer__description > strong {
     font-size: 20px;
@@ -245,9 +243,8 @@
   .consultation-br {
     display: none;
   }
-  .consultation .block-header > span:after {
-    right: -112px;
-    top: -14px;
+  .consultation .block-header:after {
+    top: -11px;
   }
   .consultation-form {
     background-color: transparent;
