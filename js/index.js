@@ -146,16 +146,15 @@ $(document).ready(function(){
         var id  = $(this).attr('href'),
         top = $(id).offset().top;
         $('body,html').animate({scrollTop: top}, 1500);
+        activeMenu.trigger('click');
     });
     /* Фиксированное меню */
     var g_top = 0;
     $(window).scroll(function() {
         var top = $(this).scrollTop();
         if ( top > g_top ) {
-            // $('.header').fadeOut(300);
             $('.header').css('opacity', 0);
         } else {
-            // $('.header').fadeIn(300);
             $('.header').css('opacity', '0.99');
         }
         g_top = top;    
