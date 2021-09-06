@@ -183,49 +183,52 @@ $(document).ready(function(){
         let scrolled = $(this).scrollTop();
         var heightScreen = $(window).height();
         if(scrolled > heightScreen){
-            $('.menu-active__content').css('background','rgba(16,16,39, 0.9)');
+            // $('.menu-active__content').css('background','rgba(16,16,39, 0.9)');
+            $('.menu-active__content').addClass('backdrop-blur--dark');
         }
         if(scrolled < heightScreen){
-            $('.menu-active__content').css('background', 'rgba(145,141,154, 0.3)');
+            $('.menu-active__content').removeClass('backdrop-blur--dark');
+            // $('.menu-active__content').css('background', 'rgba(145,141,154, 0.3)');
         }
     })
 
     // скрыть хедер если страница загружается не на первом экране, а ниже
     if($(this).scrollTop() > 20){
-        $('.header').fadeOut(10);
+        $('.header').css('opacity', 0);
     }
     
     // Маска для поля с телефоном
     $("#form__phone").mask("+7(999) 999-99-99");
 
     /* <движение ромбов за мышкой> */
-    var sectionsWithRombs = []
-    sectionsWithRombs.push($('.cooperation'))
-    sectionsWithRombs.push($('.about'))
+    // var sectionsWithRombs = []
+    // sectionsWithRombs.push($('.cooperation'))
+    // sectionsWithRombs.push($('.about'))
     
-    function getRandomFloat(min, max) {
-        return Math.random() * (max - min) + min;
-    }
+    // function getRandomFloat(min, max) {
+    //     return Math.random() * (max - min) + min;
+    // }
 
-    function moving (section, pseudo, speed) {
-        var deviation = pseudo == 'after' ? 30 : 0;
-        var customCSSRule = '--float-' + pseudo;	
-        var defaultValue = section.css(customCSSRule)
-        console.log('def: ', defaultValue);
+    // function moving (section, pseudo, speed) {
+    //     var deviation = pseudo == 'after' ? 30 : 0;
+    //     var customCSSRule = '--float-' + pseudo;	
+    //     var defaultValue = section.css(customCSSRule)
+    //     console.log('def: ', defaultValue);
         
-        section.on('mousemove', function(event) {
-            console.log('event.pageX:', event.pageX)
-            console.log('event.pageY:', event.pageY)
-            var X = Math.floor((event.pageX.toString().slice(-3,-1)/1+(10+deviation))) + "px";
-            var Y = Math.floor((event.pageY.toString().slice(-3,-1)/1+10)) + "px";
-            console.log('X:', X)
-            console.log('Y:', Y)
-            section.css(customCSSRule, defaultValue + ' translate('+X+' , '+Y+')');
-        });
-        section.on('mouseleave', function(event) {
-            section.css(customCSSRule, defaultValue + ' translate(0px , 0px)');
-        });
-    }
+    //     section.on('mousemove', function(event) {
+    //         console.log('event.pageX:', event.pageX)
+    //         console.log('event.pageY:', event.pageY)
+    //         var X = Math.floor((event.pageX.toString().slice(-3,-1)/1+(10+deviation))) + "px";
+    //         var Y = Math.floor((event.pageY.toString().slice(-3,-1)/1+10)) + "px";
+    //         console.log('X:', X)
+    //         console.log('Y:', Y)
+    //         section.css(customCSSRule, defaultValue + ' translate('+X+' , '+Y+')');
+    //     });
+    //     section.on('mouseleave', function(event) {
+    //         section.css(customCSSRule, defaultValue + ' translate(0px , 0px)');
+    //     });
+    // }
+    
     // работает криво, пока отключил
     // sectionsWithRombs.forEach(function (section) {
     //     moving(section, 'before', getRandomFloat(50,150));
