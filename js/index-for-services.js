@@ -75,6 +75,11 @@ $(document).ready(function(){
         }
     });
 
+    // скрыть хедер если страница загружается не на первом экране, а ниже
+    if($(this).scrollTop() > 100){
+        $('.header').css('opacity', 0);
+    }
+
     /* Скрытие меню при нажатии на ссылку */
   
     let arrMenuLink = Array.prototype.slice.call(document.querySelectorAll('#menu a'));
@@ -194,6 +199,8 @@ $(document).ready(function(){
     function animationInit() {
         scroll = new LocomotiveScroll({
             el: document.querySelector('body'),
+            // el: document.querySelector('[data-scroll-container]'),
+            // smooth: true,
             class: 'animated',
             reloadOnContextChange: true,
             offset: ["10%",0]
@@ -271,23 +278,28 @@ $(document).ready(function(){
     
     /* График и сроки доставки, движение грузовика */
 
-    // $(window).scroll(function() {
-    //     let scroll = $('#comparisonchart').offset().top.toFixed(0) 
-    //     let winScroll = $(window).scrollTop().toFixed(0)
-    //     let right = winScroll*1.25-scroll;
-    //     let rightMediumScreen = right/2 - 700;
-    //     let rightLitleScreen = right/7 - 440;
-    //     let widthScreen = $(window).width();
-    //     if(widthScreen<=420 && widthScreen>375 && winScroll>=scroll) {
-    //         $('.graph__truck').css({'right':rightMediumScreen})
-    //     } else if(widthScreen<=375 && winScroll>=scroll){
-    //         $('.graph__truck').css({'right':rightLitleScreen})
-    //     }else if (winScroll>=scroll){
-    //         $('.graph__truck').css({'right':rightMediumScreen})
-    //     } 
-    // });
+    
 
-  /* для отладки */
+    /* Только для страницы Сборные грузы (url включает 'cargo') */
+    if(window.location.pathname.includes('cargo')){
+        /* <движение грузовика> */
+        var startObject =  $('.graph__truck').offset().top.toFixed(0) - window.outerHeight; // растояние до машины - 30px
+        var endObject =  startObject +  $('.graph__truck').height() + window.outerHeight;
+        var windowWidth = window.outerWidth
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop().toFixed(0)
+            console.log("scroll - ", scroll)
+            if(startObject < scroll && endObject > scroll){
+                var progress = (((scroll-startObject)*100/(endObject-startObject))).toFixed(0) 
+                var screenWidthProgress = windowWidth*progress/100
+                $('.graph__truck').css('transform', "translateX(-" + screenWidthProgress + "px)" )
+            }
+        });
+        /* <движение грузовика/> */
+    }
+    
+
+    /* для отладки */
     function dd(obj) {
         window.t = obj;
         console.log(window.t);   

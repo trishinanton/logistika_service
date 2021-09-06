@@ -121,7 +121,6 @@ button:hover {
 }
 .main-screen {
   padding-top: 143px;
-  background: #2B2B51;
   position: relative;
   z-index: 2;
   color: white;
@@ -910,7 +909,7 @@ button:hover {
   width: auto;
   height: 181px;
   bottom: 0;
-  right: -40%;
+  right: -543px;
 }
 #comparisonchart {
   padding-top: 44px;
@@ -1372,7 +1371,7 @@ button:hover {
   left: 20px;
   font-weight: 600;
   text-transform: uppercase;
-  transition: transition: all 1s ease;
+  transition: all 1s ease;
   font-size: 14px;
   z-index: 3;
   color: rgba(255, 255, 255, 0.37);

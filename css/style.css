@@ -306,7 +306,6 @@ button:hover {
   background: rgba(145, 141, 154, 0.6);
   opacity: 1;
   box-shadow: 0px 4px 8px rgba(43, 43, 81, 0.07);
-  backdrop-filter: saturate(180%) blur(20px);
   height: 100vh;
   width: 50%;
   position: fixed;
@@ -316,6 +315,19 @@ button:hover {
   text-align: center;
   padding: 16vh 0 10vh;
   box-sizing: border-box;
+}
+.menu-active__content.backdrop-blur {
+  background-color: rgba(16, 16, 39, 0.9);
+}
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .menu-active__content.backdrop-blur {
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgba(125, 125, 125, 0.29);
+  }
+}
+.menu-active__content.backdrop-blur--dark {
+  background-color: rgba(16, 16, 39, 0.9);
 }
 @keyframes show_active_menu {
   0% {

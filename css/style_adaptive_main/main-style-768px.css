@@ -1,4 +1,4 @@
-@media (min-width: 421px) and (max-width: 768px) {
+@media screen and (min-width: 421px) and (max-width: 768px) {
   .grid {
     display: none;
   }
@@ -38,6 +38,9 @@
   .button {
     font-size: 18px;
   }
+  .button-slide {
+    bottom: -20%;
+  }
   .main-screen:after {
     background-position: 40% center;
   }
@@ -58,7 +61,7 @@
   }
   /* О компании */
   .about {
-    padding: 61px 0px 156px;
+    padding: 61px 0px 200px;
   }
   .about:after {
     width: 60px;
