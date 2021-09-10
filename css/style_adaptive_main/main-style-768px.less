@@ -81,7 +81,7 @@
             height: 60px;
             border: 14px solid #FFFFFF;
             bottom: -19px;
-            right: 31px;
+                right: 56px;
         }
         &:before{
             right: -18.3px;
@@ -99,7 +99,8 @@
             margin-right: 0px;
             line-height: 18px;
             &>p{
-                font-size: 16px;
+                    font-size: 20px;
+                    line-height: 1.2em;
             }
         }
         .img{
@@ -124,27 +125,37 @@
         margin-top: 0px;
         -webkit-text-stroke: 1px #FFFFFF;
         &:after{
-            display: none;
+            display: block;
+            width: 67px;
+            height: 36px;
+            top:0px;
+            right: -37px;
         }
-        &>span{
-            position: relative;
-            &:after{
-                content: '';
-                position: absolute;
-                background-image: url(../../img/about/crosses_for_header.png);
-                background-size: cover;
-                z-index: 2;
-                width: 67px;
-                height: 36px;
-                top: -9px;
-                right: -37px;
-            }  
-        }
+        // &>span{
+        //     position: relative;
+        //     &:after{
+        //         content: '';
+        //         position: absolute;
+        //         background-image: url(../../img/about/crosses_for_header.png);
+        //         background-size: cover;
+        //         z-index: 2;
+        //         width: 67px;
+        //         height: 36px;
+        //         top: -9px;
+        //         right: -37px;
+        //     }  
+        // }
     } 
 
     /* Наши преимущества */
     .excellence{
         padding: 50px 0px 50px;
+        .block-header{
+            &:after{
+                    top: 47px;
+                    right: 111px;
+            }
+        }
         &__name{
             margin-top: 0px;
             margin-bottom: 64px;
@@ -282,6 +293,12 @@
     .services{
         height: auto;
         padding-bottom: 84px;
+        .block-header{
+            &::after{
+                top: -12px;
+
+            }
+        }
         &__name{
             -webkit-text-stroke: 1px#2B2B51;
             line-height: 62px;
@@ -457,6 +474,11 @@
     /* Отзывы клиентов */
     .reviews{
         padding: 64px 0 84px;
+        .block-header{
+            &:after{
+                    top: -26px;
+            }
+        }
         &__name{
             -webkit-text-stroke: 1px #5b5b91;
             line-height: 39px;
@@ -637,7 +659,7 @@
             line-height: 39px;
             -webkit-text-stroke: 1px #2B2B51;
             &:after{
-                top: -9px;
+                    top: -24px;
             }
         }
         .our-address{
