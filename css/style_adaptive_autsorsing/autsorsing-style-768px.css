@@ -38,7 +38,11 @@
   .button {
     font-size: 18px;
   }
+  .main-screen {
+    margin-top: 0px;
+  }
   .main-screen:after {
+    display: none;
     background-position: 40% center;
   }
   .main-br {

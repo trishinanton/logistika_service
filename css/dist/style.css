@@ -172,7 +172,7 @@ button:hover {
 }
 .header-top {
   background: #2B2B51;
-  box-shadow: 0 0px 29px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0px 29px rgb(255 255 12.75%);
 }
 .header .logo-image {
   transition: linear 0.5s;
@@ -323,7 +323,7 @@ button:hover {
   .menu-active__content.backdrop-blur {
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
-    background-color: rgba(125, 125, 125, 0.29);
+    background-color: rgb(125 125 4.31034483%);
   }
 }
 .menu-active__content.backdrop-blur--dark {
@@ -579,7 +579,7 @@ button:hover {
   filter: blur(2px);
   bottom: -31px;
   right: 55px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgb(0 0 0%);
   transform: var(--float-before);
 }
 .about__name {
@@ -644,7 +644,7 @@ button:hover {
   height: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(113.08deg, #5a5a8079, rgba(43, 43, 81, 0.23) 54.99%, rgba(43, 43, 81, 0.55) 110.07%);
+  background: linear-gradient(113.08deg, #5a5a8079, rgb(43 43 3.52173913%) 54.99%, rgb(43 43 1.47272727%) 110.07%);
 }
 .sliders .img-caption {
   position: absolute;
@@ -1320,7 +1320,7 @@ button:hover {
   color: rgba(223, 223, 223, 0.829);
 }
 .services-card--hover .services-card__firm-name {
-  color: rgba(255, 255, 255, 0.11);
+  color: rgb(255 255 23.18181818%);
 }
 .services-card--hover .services-card__title {
   top: 335px;
@@ -1361,7 +1361,7 @@ button:hover {
   filter: blur(2px);
   bottom: -1%;
   left: 5%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgb(0 0 0%);
   transform: var(--float-after);
   transition: all 0.3s;
 }
@@ -1376,7 +1376,7 @@ button:hover {
   filter: blur(3px);
   bottom: 14%;
   left: -0.5%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgb(0 0 0%);
   transform: var(--float-before);
 }
 .cooperation__band {
@@ -1707,7 +1707,7 @@ button:hover {
   transform: rotate(-45deg);
   top: 64%;
   left: -18px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgb(0 0 0%);
 }
 .question::after {
   content: '';
@@ -1720,7 +1720,7 @@ button:hover {
   transform: rotate(-23deg);
   bottom: 0;
   left: 15%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgb(0 0 0%);
 }
 .question__blue-fon {
   position: absolute;
@@ -1760,7 +1760,7 @@ button:hover {
   top: -35px;
   right: -5px;
   z-index: 1;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgb(0 0 0%);
 }
 .question__name {
   font-size: 42px;
@@ -1886,7 +1886,7 @@ button:hover {
   position: relative;
   background-size: cover;
   width: 100%;
-  box-shadow: -3px 1px 20px rgba(0, 0, 0, 0.22);
+  box-shadow: -3px 1px 20px rgb(0 0 0%);
 }
 .contact .map__wrapper {
   position: relative;

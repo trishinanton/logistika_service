@@ -44,6 +44,9 @@
   .main-screen:after {
     background-position: 40% center;
   }
+  .menu-active__wrapper {
+    right: -3vw;
+  }
   .main-br {
     display: none;
   }
@@ -300,7 +303,9 @@
     top: 51px;
   }
   .cooperation__name:after {
-    display: none;
+    display: block;
+    top: 47px;
+    right: 42px;
   }
   .cooperation__body {
     flex-direction: column;
@@ -495,25 +500,9 @@
   .question__name {
     line-height: 62px;
   }
-  .question__name > span {
-    position: relative;
-  }
-  .question__name > span:before {
-    content: '';
-    position: absolute;
-    background-image: url(../../img/about/crosses_for_header.png);
-    background-size: cover;
-    z-index: 2;
-    top: -11px;
-    right: -115px;
-    width: 67px;
-    height: 36px;
-  }
-  .question__name > span:after {
-    display: none;
-  }
   .question__name:after {
-    display: none;
+    display: block;
+    top: -9px;
   }
   .question__description {
     font-size: 18px;

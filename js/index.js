@@ -44,6 +44,10 @@ $(document).ready(function(){
         }
     })
 
+    // Скрытие меню при нажатии на кнопку "Заказать звонок"
+    document.querySelector('.active-content__button').addEventListener('click',()=>{
+        document.querySelector('.active-content').style.display='none'
+    })
     arrExcellenceCard.map((el,i)=>{
         arrExcellenceCardActive.map((ela,j)=>{
             el.addEventListener('mouseover', ()=>{

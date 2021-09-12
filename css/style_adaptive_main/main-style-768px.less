@@ -52,6 +52,9 @@
 
         }
     }
+    .menu-active__wrapper {
+            right: -3vw;
+    }
     .main-br{
         display: none;
     }
@@ -356,7 +359,9 @@
                 top: 51px;
             }
             &:after{
-                display: none;
+                display: block;
+                top: 47px;
+                right: 42px;
             }
         }
         &__body{
@@ -588,25 +593,10 @@
         }
         &__name{
             line-height: 62px;
-            &>span{
-                position: relative;
-                &:before{
-                    content: '';
-                    position: absolute;
-                    background-image: url(../../img/about/crosses_for_header.png);
-                    background-size: cover;
-                    z-index: 2;
-                    top: -11px;
-                    right: -115px;
-                    width: 67px;
-                    height: 36px;
-                }
-                &:after{
-                    display: none;
-                }
-            }
+            
             &:after{
-                display: none;
+                display: block;
+                    top: -9px; 
             }
         }
         &__description{

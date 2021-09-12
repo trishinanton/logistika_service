@@ -49,6 +49,7 @@
   }
   .main-screen:after {
     background-position: 40% center;
+    right: 41px;
   }
   .main-br {
     display: none;

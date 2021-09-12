@@ -83,7 +83,7 @@
   }
   /* <Крестики для всех заголовков/> */
   .main-screen {
-    margin-top: 89px;
+    padding-top: 90px;
   }
   .main-screen::after {
     display: none;
