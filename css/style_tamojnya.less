@@ -121,7 +121,7 @@ button{
     }
 }
 .main-screen{
-    padding-top: 143px;
+    padding-top: 110px;
     position: relative;
     z-index: 2;
     color: white;
@@ -129,17 +129,19 @@ button{
     flex-direction: column;
     justify-content: flex-start;
     &__header{
-        padding: 16px 3%;
+        padding: 10px 3%;
         box-sizing: border-box;
-        // position: absolute;
         width: 100vw;
         left: 0;
         top: 0;
     }
     &::after{
         content: '';
-        width: 90px;
-        height: 90px;
+        // width: 90px;
+        // height: 90px;
+        width: 70px;
+        height: 70px;
+        bottom: -40px;
         position: absolute;
         border: 20px solid #FFFFFF;
         box-sizing: border-box;
@@ -147,7 +149,7 @@ button{
         transform: rotate(-45deg);
         box-shadow: 0 0 20px rgb(0 0 0 / 20%);
         right: 120px;
-        bottom: -60px;
+        // bottom: -60px;
     }
 }
 .header{
@@ -211,9 +213,8 @@ button{
         background-size: cover;
     }
     &-image{
-        width: 128px;
-        // width: 110px;
-        margin-right: 30px;
+        width: 100px;
+        margin-right: 16px;
         position: relative;
         z-index: 2;
         transition: linear 0.5s;
@@ -225,7 +226,7 @@ button{
     &-name{
         font-style: normal;
         font-weight: 900;
-        font-size: 22px;
+        font-size: 18px;
         text-transform: uppercase;
         position: relative;
         color: white;
@@ -269,7 +270,6 @@ button{
     transform-origin: 100% 0;
     z-index: 3;
     margin-right: 40px;
-    // animation: close_menu 5s;
     &:hover{
         cursor: pointer;
         .header__menu{
@@ -510,7 +510,8 @@ button{
     position: relative;
     z-index: 1;
     background: #2B2B51;
-    padding: 92px 0;
+    // padding: 92px 0;
+    padding: 70px 0px 90px;
     &:after{
         content: '';
         width: 62.35px;

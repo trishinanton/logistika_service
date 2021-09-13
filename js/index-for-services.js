@@ -288,8 +288,8 @@ $(document).ready(function(){
         var windowWidth = window.outerWidth
         $(window).scroll(function() {
             var scroll = $(window).scrollTop().toFixed(0)
-            console.log("scroll - ", scroll)
-            if(startObject < scroll && endObject > scroll){
+            // console.log("scroll - ", scroll)
+            if(startObject < scroll && endObject+30 > scroll){
                 var progress = (((scroll-startObject)*100/(endObject-startObject))).toFixed(0) 
                 var screenWidthProgress = windowWidth*progress/100
                 $('.graph__truck').css('transform', "translateX(-" + screenWidthProgress + "px)" )

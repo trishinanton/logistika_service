@@ -41,9 +41,11 @@
 
     .preloader__inner {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translateY(-50%) translateX(-50%);
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         opacity: 0.75;
         z-index: 2;
     }
@@ -181,12 +183,11 @@
             <div class="grid__block-white"></div>
         </div>
         <div class="container">
-
             <div class="about__content">
                 <div class="about__description" data-scroll data-scroll-call="fadesAnimations"
-                    data-animation-timeout="2200">
+                    data-animation-timeout="1500">
                     <h2 class="about__name block-header" data-scroll data-scroll-call="headerAnimation"
-                        data-animation-timeout="2200">Об
+                        data-animation-timeout="700">Об
                         услуге</h2>
                     <div class="about__purpose fade fade--left">
                         <p>
@@ -205,8 +206,7 @@
                         </p>
                         <p>
                             Мы можем организовать забор груза от поставщика или Вы можете<br class="d-lm"> привезти груз
-                            на один из наших
-                            складов самостоятельно
+                            на один из наших складов самостоятельно.
                         </p>
 
 
@@ -248,16 +248,16 @@
                 перевозки&ensp;<br class="plus-mobile">в составе
                 сборной авто</h2>
             <div class="plus-body__wrapper">
-                <div class="plus-body">
+                <div class="plus-body fade fade--bottom" data-scroll>
                     <img src="./img/index-cargo/dostavka_sb_gruzov.png" alt="">
-                    <div class="plus-card cost_savings__wrapper fade fade--bottom" data-scroll>
+                    <div class="plus-card cost_savings__wrapper">
                         <span class="plus-body__description cost_savings"><strong>Экономия средств</strong>
                             на<br class='plus-mobile'>
                             транспортировку за счет<br class="plus-adaptive"> объединения<br class='plus-mobile'> грузов
                             от различных
                             отправителей</span>
                     </div>
-                    <div class="plus-card small_parties__wrapper fade fade--bottom" data-scroll>
+                    <div class="plus-card small_parties__wrapper">
                         <span class="plus-body__description small_parties">Возможность отправлять как
                             <strong>мелкие<br class='plus-mobile'>
                                 партии</strong> сборных<br class="plus-adaptive"> грузов, увеличивая<br
@@ -266,18 +266,18 @@
                             <strong>крупногабаритные партии</strong>
                             <br class='plus-mobile'>весом в несколько тонн</span>
                     </div>
-                    <div class="plus-card organization__wrapper fade fade--bottom" data-scroll>
+                    <div class="plus-card organization__wrapper">
                         <span class="plus-body__description organization">Полностью <strong>берем на себя
                                 всю<br class="plus-adaptive"><br class='plus-mobile'> организацию</strong> перевозки,
                             документов<br class="plus-adaptive"> и<br class='plus-mobile'> таможенного оформления</span>
                     </div>
-                    <div class="plus-card min_delivery__wrapper fade fade--bottom" data-scroll>
+                    <div class="plus-card min_delivery__wrapper">
                         <span class="plus-body__description min_delivery"><strong>Минимальный срок
                                 доставки.</strong><br class="plus-adaptive"><br class='plus-mobile'> Выход сборной авто
                             каждую<br class='plus-mobile'> неделю<br class="plus-adaptive"> с
                             консолидированного<br class='plus-mobile'> склада</span>
                     </div>
-                    <div class="plus-card fixed_cost__wrapper fade fade--bottom" data-scroll>
+                    <div class="plus-card fixed_cost__wrapper">
                         <span class="plus-body__description fixed_cost"><strong>Фиксированная</strong>
                             неизменная
                             <strong>цена</strong></span>
@@ -417,7 +417,7 @@
                 </table>
             </div>
             <div id="test" class="about__event event" data-scroll data-scroll-call="fadesAnimations"
-                data-animation-timeout="800">
+                data-animation-timeout="170">
                 <div class="event__name block-header" data-scroll data-scroll-call="headerAnimation">Направления
                     перевозок сборных
                     грузов</div>
@@ -456,7 +456,7 @@
             <div class="grid__block-black"></div>
             <div class="grid__block-black"></div>
         </div>
-        <div class="container" data-scroll data-scroll-call="fadesAnimations" data-animation-timeout="800">
+        <div class="container" data-scroll data-scroll-call="fadesAnimations" data-animation-timeout="170">
             <h2 class="price__name block-header" data-scroll data-scroll-call="headerAnimation">Цена транспортировки<br
                     class="d-lm">
                 формируется на основании параметров:</h2>

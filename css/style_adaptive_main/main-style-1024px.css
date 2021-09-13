@@ -1,4 +1,4 @@
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1250px) {
   .container {
     padding: 0 6%;
   }
@@ -8,11 +8,8 @@
   .logo {
     width: 390px;
   }
-  .logo-image {
-    width: 155px;
-  }
   .logo-name {
-    font-size: 18px;
+    font-size: 17px;
   }
   .header__number {
     font-size: 20px;
@@ -53,7 +50,6 @@
   .sliders .slider-about:after {
     width: 100px;
     height: 53px;
-    bottom: -20px;
     left: -50px;
   }
   /* Услуги компании */
@@ -131,5 +127,43 @@
   .footer-logo__name {
     font-size: 16px;
     width: 275px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1250px) {
+  .logo-image {
+    width: 12vw;
+  }
+  .logo-name {
+    font-size: 1.7vw;
+  }
+  .main-screen__header {
+    padding: 16px 2%;
+  }
+  .header__number {
+    font-size: 1.7vw;
+  }
+  .header-menu {
+    margin-left: 1.7vw;
+    margin-right: 2vw;
+  }
+  /* About */
+  .about__description {
+    height: auto;
+    padding-bottom: 10vw;
+  }
+  .about__name {
+    font-size: 5vw;
+  }
+  .sliders .button-slide {
+    bottom: -50%;
+  }
+  .sliders .slider-about {
+    width: 42vw;
+  }
+  .sliders .slider-about:after {
+    bottom: -35%;
+  }
+  .sliders .slider-about__item {
+    width: 40vw;
   }
 }

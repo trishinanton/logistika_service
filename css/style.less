@@ -208,9 +208,8 @@ button{
         background-size: cover;
     }
     &-image{
-        width: 180px;
-        // width: 110px;
-        margin-right: 30px;
+        width: 116px;
+        margin-right: 16px;
         position: relative;
         z-index: 2;
         &__scroll{
@@ -221,7 +220,7 @@ button{
     &-name{
         font-style: normal;
         font-weight: 900;
-        font-size: 22px;
+        font-size: 19px;
         text-transform: uppercase;
         position: relative;
         color: white;
@@ -1172,22 +1171,17 @@ button{
             }
         }
         &__name{
-            // margin-bottom: 10px;
-            // margin-top: 26px;
-            // margin-left: 22px;
             margin-right: 65px;
             font-weight: 900;
             font-size: 18px;
             color: #2B2B51;
         }
         &__description{
-            // margin-left: 22px;
-            // margin-right: 50px;
             font-style: normal;
             font-weight: normal;
             font-size: 14px;
             line-height: 16px;
-            color: #969696;
+            color: #2B2B51;
             margin-top: 15px;
             letter-spacing: 0.3px;
         }
@@ -1353,6 +1347,9 @@ button{
         width: 33.3%;
         position: relative;
         box-shadow: 0px 4px 13px #a5a5c5;
+        background-size: cover;
+        background-size: 160% 100%;
+        background-position: 15%;
         &::after{
             content: '';
             position: absolute;
@@ -1383,15 +1380,15 @@ button{
         }
         &__registration{
             background-image: url(../img/services/registration-clear.jpg);
-            background-size: 100% 100%;
+            // background-size: 100% 100%;
         }
         &__service{
             background-image: url(../img/services/service-clear.jpg);
-            background-size: 100% 100%;
+            // background-size: 100% 100%;
         }
         &__counseling{
             background-image: url(../img/services/cargo-clear.jpg);
-            background-size: 100% 100%;
+            // background-size: 100% 100%;
         }
         &__btn{
             opacity: 0;
@@ -1830,11 +1827,15 @@ button{
             line-height: 21px;
             text-transform: uppercase;
             color: #000000;
-          
-          
         }
         &__logo{
             margin-right: 16px;
+            min-height: 74px;
+            display: flex;
+            align-items: center ;
+            img{
+                max-width: 145px;
+            }
         }
         &__caption{
             font-style: normal;
