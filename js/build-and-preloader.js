@@ -67,30 +67,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         
         run() {
-            this.number = Math.random( this.vars.start / this.vars.total - 0.2 ) * 100
-            this.random = Math.random() * (4 - 2) + 2
-
+            this.random = Math.random() + 0.1
             this.tlBeforeLoad = new TimelineLite({
                 paused: true,
                 onComplete: () => {
                     this.dom.body.classList.add('init');
                 }
             })
-            
-
             this.tlBeforeLoad
-            
             /* Просто закомменти этот блок чтоб прелоадер не мешал*/
             .to(this.dom.loader, this.vars.ease, {
-                xPercent: 30 - this.number / this.random,
+                xPercent: 10 * this.random + 10,
                 ease: Expo.easeInOut
             })
             .to(this.dom.loader, this.vars.ease, {
-                xPercent: 60 - this.number / this.random,
+                xPercent: 30 * this.random + 30,
                 ease: Expo.easeInOut
             })
             .to(this.dom.loader, this.vars.ease, {
-                xPercent: 60,
+                xPercent: 30 * this.random + 60,
                 delay: this.vars.random,
                 ease: Expo.easeInOut
             })
