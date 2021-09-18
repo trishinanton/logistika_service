@@ -1953,10 +1953,14 @@ button:hover {
 .contact .our-address__social {
   display: flex;
   justify-content: space-between;
-  padding: 36px 71px 56px 73px ;
+  padding: 4% 71px 5% 57px;
   align-items: center;
 }
+.contact-link-wrapper {
+  color: #2B2B51;
+}
 .contact-link-wrapper a {
+  color: #2B2B51;
   margin-top: 4px;
   display: inline-block;
   color: inherit;
@@ -2024,6 +2028,8 @@ button:hover {
   align-items: center;
   justify-content: center;
   font-weight: normal;
+}
+.footer-contact-item {
   font-size: 18px;
   color: #FFFFFF;
   position: relative;
@@ -2034,6 +2040,7 @@ button:hover {
 }
 .footer-contact__mail {
   margin-bottom: 8px;
+  color: #fff;
 }
 .footer-contact__mail:hover {
   text-decoration: underline;

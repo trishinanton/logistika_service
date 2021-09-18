@@ -76,19 +76,19 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             this.tlBeforeLoad
             /* Просто закомменти этот блок чтоб прелоадер не мешал*/
-            // .to(this.dom.loader, this.vars.ease, {
-            //     xPercent: 10 * this.random + 10,
-            //     ease: Expo.easeInOut
-            // })
-            // .to(this.dom.loader, this.vars.ease, {
-            //     xPercent: 30 * this.random + 30,
-            //     ease: Expo.easeInOut
-            // })
-            // .to(this.dom.loader, this.vars.ease, {
-            //     xPercent: 30 * this.random + 60,
-            //     delay: this.vars.random,
-            //     ease: Expo.easeInOut
-            // })
+            .to(this.dom.loader, this.vars.ease, {
+                xPercent: 10 * this.random + 10,
+                ease: Expo.easeInOut
+            })
+            .to(this.dom.loader, this.vars.ease, {
+                xPercent: 30 * this.random + 30,
+                ease: Expo.easeInOut
+            })
+            .to(this.dom.loader, this.vars.ease, {
+                xPercent: 30 * this.random + 60,
+                delay: this.vars.random,
+                ease: Expo.easeInOut
+            })
             /* конец блока */
             this.tlBeforeLoad.play()
         }
