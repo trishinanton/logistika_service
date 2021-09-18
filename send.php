@@ -46,7 +46,7 @@ if(isset($_POST['name']) && isset($_POST['tel'])){
 
     // Получатель письма
     $mail->addAddress('skgrouptrans@gmail.com');  
-    // $mail->addAddress('maxvarvarin3@gmail.com'); 
+    $mail->addAddress('maxvarvarin3@gmail.com'); 
 
     // Отправка сообщения
     $mail->isHTML(true);

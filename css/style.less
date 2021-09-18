@@ -2158,6 +2158,16 @@ button{
             align-items: center;
         }
     }
+    &-link-wrapper{
+        a{
+            margin-top: 4px;
+            display: inline-block;
+            color: inherit;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+    }
     .social{
         &__icon{
             transition: 0.3s linear;
@@ -2233,17 +2243,24 @@ button{
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        font-weight: normal;
+        font-size: 18px;
+        color: #FFFFFF;
+        position: relative;
+        transition: 0.3s linear;
+        
         &>a{
             text-decoration: none;
         }
-        &__phone{
-            font-weight: normal;
-            font-size: 18px;
-            color: #FFFFFF;
-            position: relative;
-            transition: 0.3s linear;
+        &__mail{
+            margin-bottom: 8px;
             &:hover{
-                transform: scale(1.02);
+                text-decoration: underline;
+            }
+        }
+        &__phone{
+            &:hover{
+                text-decoration: underline;
             }
             &:before{
                 content: '';
@@ -2255,6 +2272,17 @@ button{
                 left: -30px;
             }
         }
+        // &__phone{
+        //     &:before{
+        //         content: '';
+        //         background-image: url(../img/contact/wats_footer.png);
+        //         background-size: cover;
+        //         width: 20px;
+        //         height: 20px;            
+        //         position: absolute;
+        //         left: -30px;
+        //     }
+        // }
         &__politics{
             font-weight: normal;
             font-size: 16px;
