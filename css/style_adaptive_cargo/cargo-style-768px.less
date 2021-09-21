@@ -785,3 +785,83 @@
         }
     }
 }
+
+
+
+@media (min-width:422px) and (max-width:702px){
+    /* Подвал */
+    .footer {
+        &__wrapper {
+            flex-direction: column;
+            align-items: center;
+            padding: 44px 24px 46px 24px;
+
+            &>a {
+                width: 100%;
+            }
+        }
+
+        &-logo {
+            width: 100%;
+
+            &__name {
+                font-size: 12px;
+            }
+        }
+
+        &-services {
+            &__name {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            &__description {
+                text-align: center;
+
+                &>a {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        &-contact {
+            margin-top: 48px;
+
+            &__phone {
+                font-size: 18px;
+            }
+
+            &__politics {
+                font-size: 18px;
+            }
+        }
+    }
+}
+@media (min-width:703px) and (max-width:1020px){
+    .footer-contact__politics{
+        font-size: 13px;
+    }
+    .footer-contact{
+        a{
+           width: 222px;  
+        }
+       
+    }
+}
+@media (min-width:421px) and (max-width:655px) {
+    .logo {
+        width: 258px;
+    }
+
+    .logo-image {
+        width: 63px;
+    }
+
+    .logo-name {
+        font-size: 10px;
+    }
+
+    .body__name {
+        font-size: 23px;
+    }
+}
